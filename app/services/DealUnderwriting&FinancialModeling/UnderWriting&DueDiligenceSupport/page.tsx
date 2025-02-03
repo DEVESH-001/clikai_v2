@@ -169,7 +169,7 @@ export default function UnderwritingDueDiligenceSupport() {
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
                     Expert Underwriting
                   </span>
-                  <br />
+                  <br className="hidden md:block" />
                   <span className="text-gray-900">at Unbeatable Value</span>
                 </h1>
                 <h4 className="text-xl md:text-2xl mb-8 text-gray-700 font-light">
@@ -188,7 +188,7 @@ export default function UnderwritingDueDiligenceSupport() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="lg:w-1/2 lg:-ml-72 ml-60 sm:ml-64"
+                className="lg:w-1/2 lg:-ml-64 ml-72 sm:ml-80"
               >
                 <DealFeasibilityChecker />
               </motion.div>

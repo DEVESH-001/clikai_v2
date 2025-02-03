@@ -224,11 +224,11 @@ export default function Clarity360OMPage() {
               className="relative w-full aspect-[4/3] max-w-2xl mx-auto mt-32"
             >
               <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/om-jDnb2bEQitbGHHXu0iZPkyF9YQbvDA.png"
-              alt="Clarity360 OM Interface"
-              width={1000}
-              height={1000}
-              className="object-contain"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/om-jDnb2bEQitbGHHXu0iZPkyF9YQbvDA.png"
+                alt="Clarity360 OM Interface"
+                width={1000}
+                height={1000}
+                className="object-contain"
               />
             </motion.div>
           </div>
@@ -285,9 +285,10 @@ export default function Clarity360OMPage() {
               <h3 className="text-xl font-bold mb-4">Upload & Process</h3>
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/upload-process-Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5.png"
+                  src="/images/Clarity360/Upload.png"
+                  width={1000}
+                  height={1000}
                   alt="Upload and Process Interface"
-                  fill
                   className="object-cover"
                 />
               </div>
@@ -300,9 +301,10 @@ export default function Clarity360OMPage() {
               <h3 className="text-xl font-bold mb-4">Extract & Analyze</h3>
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/extract-analyze-Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5.png"
+                  src="/images/Clarity360/Extract.png"
+                  width={1000}
+                  height={1000}
                   alt="Data Extraction Process"
-                  fill
                   className="object-cover"
                 />
               </div>
@@ -315,9 +317,10 @@ export default function Clarity360OMPage() {
               <h3 className="text-xl font-bold mb-4">Market Intelligence</h3>
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/market-intelligence-Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5.png"
+                  src="/images/Clarity360/Market.png"
+                  width={1000}
+                  height={1000}
                   alt="Market Intelligence Dashboard"
-                  fill
                   className="object-cover"
                 />
               </div>
@@ -330,9 +333,11 @@ export default function Clarity360OMPage() {
               <h3 className="text-xl font-bold mb-4">Generate Insights</h3>
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/generate-insights-Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5.png"
+                  src="/images/Clarity360/Insights.png"
+                  width={1000}
+                  height={1000}
                   alt="Insights Dashboard"
-                  fill
+
                   className="object-cover"
                 />
               </div>
