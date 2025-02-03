@@ -160,7 +160,7 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
                   >
                     Custom Reporting & Dashboards
                   </Link>
-                </li>
+                </li> 
                 <li>
                   <Link
                     href="/services/Consulting/cre-technology-consulting"
