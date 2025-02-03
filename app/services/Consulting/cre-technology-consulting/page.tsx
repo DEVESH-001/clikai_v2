@@ -447,7 +447,7 @@ export default function CRETechnologyConsultingPage() {
         </div>
       </section>
 
-
+ 
 
       {/* CTA Section */}
       <section className="relative z-10 py-16 bg-gradient-to-br from-[#001F3F] via-blue-900 to-blue-800">

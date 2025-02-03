@@ -15,39 +15,41 @@ import Image from "next/image";
 import {
   ArrowUpRight,
   BarChart3,
-  Bot,
-  Brain,
   CheckCircle2,
   Clock,
   FileText,
+  Zap,
+  Cloud,
+
 } from "lucide-react";
 
 // Features data
 const features = [
   {
-    title: "Financial Data Extraction",
+    title: "Multi-Document Support",
     description:
-      "Extract data from Operating Statements and Rent Rolls with 100% accuracy",
+      "Process various CRE documents including leases, financials, and legal papers",
     icon: FileText,
     gradient: "from-blue-500 to-purple-500",
   },
   {
-    title: "Customizable Outputs",
+    title: "High-Accuracy Extraction",
     description:
-      "Generate underwriting models tailored to your format or lender-specific templates",
-    icon: Bot,
+      "Achieve 99.9% accuracy in data extraction with advanced AI algorithms",
+    icon: CheckCircle2,
     gradient: "from-green-500 to-teal-500",
   },
   {
-    title: "Rapid Turnaround",
-    description: "Process deals in minutes, saving 70% of manual effort",
-    icon: Clock,
+    title: "Seamless Integration",
+    description: "Easily integrate with existing CRE platforms via robust API",
+    icon: Zap,
     gradient: "from-orange-500 to-red-500",
   },
   {
-    title: "AI-Powered Efficiency",
-    description: "Leverage advanced algorithms to automate even complex deals",
-    icon: Brain,
+    title: "Scalable Processing",
+    description:
+      "Handle high volumes of documents with cloud-based infrastructure",
+    icon: Cloud,
     gradient: "from-purple-500 to-pink-500",
   },
 ];
@@ -55,21 +57,21 @@ const features = [
 // Benefits data
 const benefits = [
   {
-    title: "Save Time",
-    description: "Reduce underwriting time by up to 70%",
-    metric: "70%",
+    title: "Time Saved",
+    description: "Reduce document processing time by up to 95%",
+    metric: "95%",
     icon: Clock,
   },
   {
-    title: "Boost Accuracy",
-    description: "Ensure 100% accuracy in data extraction",
-    metric: "100%",
+    title: "Accuracy",
+    description: "Achieve 99.9% accuracy in data extraction",
+    metric: "99.9%",
     icon: CheckCircle2,
   },
   {
-    title: "Scale Effortlessly",
-    description: "Handle up to 50+ deals/month without adding to your team",
-    metric: "50+",
+    title: "Cost Reduction",
+    description: "Save over $500k annually on manual data entry",
+    metric: "$500k+",
     icon: BarChart3,
   },
 ];
@@ -77,44 +79,43 @@ const benefits = [
 // Pricing plans
 const plans = [
   {
-    name: "Self-Service",
-    description: "Ideal for 1-4 deals per month",
-    monthlyPrice: 49,
+    name: "Starter",
+    description: "For small CRE firms",
+    monthlyPrice: 499,
     features: [
-      "Self-Managed - DIY",
-      "Online Video Tutorials",
-      "Multifamily only",
-      "AI-powered data extraction",
-      "Basic financial modeling",
-      "Access to InvestAssist",
+      "Up to 1,000 pages/month",
+      "Basic document types support",
+      "Standard API access",
+      "Email support",
+      "99% accuracy guarantee",
     ],
   },
   {
-    name: "Growth",
-    description: "Clik Analysts Do It for You",
-    monthlyPrice: 99,
-    perDealPrice: 30,
+    name: "Professional",
+    description: "For growing CRE businesses",
+    monthlyPrice: 999,
     features: [
-      "Ideal for 5–20 deals per month",
-      "Financial models completed by Clik Analysts",
-      "All Asset Classes Included",
-      "Advanced AI-driven insights",
-      "Priority support",
-      "Custom model integration",
+      "Up to 5,000 pages/month",
+      "Advanced document types support",
+      "Priority API access",
+      "Phone & email support",
+      "99.5% accuracy guarantee",
+      "Custom field extraction",
     ],
     ribbon: "Most Popular",
   },
   {
     name: "Enterprise",
-    description: "Complete Automation & Expert Support",
+    description: "For large-scale operations",
     price: "Custom",
     features: [
-      "Unlimited self-created deals",
-      "20 complementary Clik Analyst deals per month",
-      "$30 per additional Clik Analyst underwriting",
-      "Custom model integration",
-      "Excel Add-in to sync updates",
-      "Dedicated account manager",
+      "Unlimited pages",
+      "All document types supported",
+      "Dedicated API instance",
+      "24/7 premium support",
+      "99.9% accuracy guarantee",
+      "Custom AI model training",
+      "On-premise deployment option",
     ],
   },
 ];
@@ -122,24 +123,24 @@ const plans = [
 // FAQ items
 const faqItems = [
   {
-    question: "What file formats are supported?",
+    question: "What types of documents can SmartExtract process?",
     answer:
-      "AutoUW supports a wide range of formats including PDF, Excel (xls, xlsx), Word (doc, docx), and scanned documents. Our AI can process both digital and scanned files with high accuracy.",
+      "SmartExtract can process a wide range of CRE documents, including but not limited to leases, rent rolls, operating statements, offering memorandums, appraisals, and legal contracts. Our AI is trained on diverse CRE document types and can adapt to new formats quickly.",
   },
   {
     question: "How accurate is the data extraction?",
     answer:
-      "Our AI-powered extraction achieves 100% accuracy through a combination of advanced machine learning algorithms and built-in validation checks. Each extraction is verified against our comprehensive database of CRE documents.",
+      "SmartExtract achieves up to 99.9% accuracy in data extraction. This high accuracy is achieved through our advanced AI algorithms, continuous learning from diverse datasets, and built-in validation checks. For enterprise clients, we offer custom AI model training to further improve accuracy for specific document types.",
   },
   {
-    question: "Can I customize the output template?",
+    question: "How does the API integration work?",
     answer:
-      "Yes! AutoUW offers full template customization. You can either use our pre-built templates for major lenders or create your own custom templates to match your exact specifications.",
+      "SmartExtract provides a RESTful API that allows seamless integration with your existing CRE platforms. You can send documents for processing and receive structured data in return. Our API documentation includes detailed guides and code samples for easy implementation. We also offer SDK support for popular programming languages.",
   },
   {
-    question: "What if I have more than 50 deals per month?",
+    question: "Can SmartExtract handle high volumes of documents?",
     answer:
-      "Our Enterprise plan is designed for high-volume users. We'll work with you to create a custom package that meets your specific needs, including unlimited deals and custom integrations.",
+      "Yes, SmartExtract is built on a scalable, cloud-based infrastructure that can handle high volumes of documents. Our Enterprise plan offers unlimited document processing, and we can provide dedicated resources for clients with extremely high volume needs. We also offer on-premise deployment options for enterprises with specific security requirements.",
   },
 ];
 
@@ -167,7 +168,7 @@ const clientLogos = [
   },
 ];
 
-export default function AutoUWPage() {
+export default function SmartExtractPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-purple-50 to-indigo-50">
       {/* Background Elements */}
@@ -190,11 +191,10 @@ export default function AutoUWPage() {
                 transition={{ duration: 0.5 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
               >
-                Automate Your{" "}
-                <span className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                  Underwriting Process
-                </span>{" "}
-                with Precision
+                Unlock the Power of{" "}
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                  Intelligent Document Processing
+                </span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -202,8 +202,8 @@ export default function AutoUWPage() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-xl text-gray-700 mb-8"
               >
-                From Operating Statements to Rent Rolls, streamline your
-                underwriting workflows with AutoUW&apos;s AI-powered solution.
+                Transform your CRE document processing with SmartExtract&apos;s
+                AI-powered data extraction and analysis.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -214,7 +214,7 @@ export default function AutoUWPage() {
                   size="lg"
                   className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
                 >
-                  Start Automating Now
+                  Start Extracting Now
                   <ArrowUpRight className="ml-2 h-4 w-4" />
                 </Button>
               </motion.div>
@@ -223,14 +223,14 @@ export default function AutoUWPage() {
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="relative w-full aspect-square max-w-2xl mx-auto"
+              className="relative w-full aspect-square max-w-2xl mx-auto mt-8 lg:mt-0"
             >
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AUW-7xDRwqT2OvYQV4o16Wvc80A2GNO94L.svg"
-                alt="AutoUW Lease Analysis Interface"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/smartextraxt-Xequ1qNYBInCLwOqPDptj2ZZDR4qDF.svg"
+                alt="SmartExtract Document Processing Interface"
                 width={1000}
                 height={1000}
-                className="object-contain"
+                className="object-contain mt-28"
               />
             </motion.div>
           </div>
@@ -241,9 +241,11 @@ export default function AutoUWPage() {
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why AutoUW?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why SmartExtract?
+            </h2>
             <p className="text-xl text-gray-600">
-              Powerful features that transform your underwriting process
+              Powerful features that revolutionize your document processing
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -274,74 +276,72 @@ export default function AutoUWPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              How AutoUW Works
+              How SmartExtract Works
             </h2>
             <p className="text-xl text-gray-600">
-              Simple, efficient, and powerful workflow
+              Streamlined workflow for efficient document processing
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card className="p-6 bg-white/90 backdrop-blur-sm">
-              <h3 className="text-xl font-bold mb-4">Upload Documents</h3>
+              <h3 className="text-xl font-bold mb-4">Document Upload</h3>
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Upload%20Deal-zx9muvM8LvgR28kFH3gW7ddfPU5kJe.png"
-                  alt="Upload Documents Interface"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/document-upload-Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5.png"
+                  alt="Document Upload Interface"
                   fill
                   className="object-cover"
                 />
               </div>
               <p className="mt-4 text-gray-600">
-                Easily upload and manage your Operating Statements and Rent
-                Rolls
+                Easily upload multiple document types through our intuitive
+                interface or API
               </p>
             </Card>
 
             <Card className="p-6 bg-white/90 backdrop-blur-sm">
-              <h3 className="text-xl font-bold mb-4">Data Extraction</h3>
+              <h3 className="text-xl font-bold mb-4">AI Processing</h3>
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Data%20Extraction-liqARN9USxbPy30Le7a15ykfmrpsAK.png"
-                  alt="Data Extraction Process"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ai-processing-Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5.png"
+                  alt="AI Processing Visualization"
                   fill
                   className="object-cover"
                 />
               </div>
               <p className="mt-4 text-gray-600">
-                AI-powered extraction of critical financial data
+                Advanced AI algorithms extract and structure data with high
+                accuracy
               </p>
             </Card>
 
             <Card className="p-6 bg-white/90 backdrop-blur-sm">
-              <h3 className="text-xl font-bold mb-4">Review & Validate</h3>
+              <h3 className="text-xl font-bold mb-4">Data Validation</h3>
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Review%20n%20Validate-TsLG0W0udPhd9nf81lKXcweFtA4RWJ.png"
-                  alt="Review and Validation Interface"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/data-validation-Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5.png"
+                  alt="Data Validation Interface"
                   fill
                   className="object-cover"
                 />
               </div>
               <p className="mt-4 text-gray-600">
-                Verify extracted data with side-by-side document viewing
+                Automated checks ensure data accuracy and completeness
               </p>
             </Card>
 
             <Card className="p-6 bg-white/90 backdrop-blur-sm">
-              <h3 className="text-xl font-bold mb-4">Download Results</h3>
-              <div className="grid  gap-4">
-                <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
-                  <Image
-                    src={"/images/DownloadResults.png"}
-                    alt="Operating Statement Results"
-                    className="object-cover rounded-lg shadow-2xl"
-                    width={1000}
-                    height={1000}
-                  />
-                </div>
+              <h3 className="text-xl font-bold mb-4">Structured Output</h3>
+              <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/structured-output-Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5Ue5.png"
+                  alt="Structured Output Dashboard"
+                  fill
+                  className="object-cover"
+                />
               </div>
               <p className="mt-4 text-gray-600">
-                Export comprehensive analysis in your preferred format
+                Receive clean, structured data ready for analysis or integration
               </p>
             </Card>
           </div>
@@ -353,10 +353,10 @@ export default function AutoUWPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Achieve More with AutoUW
+              Achieve More with SmartExtract
             </h2>
             <p className="text-xl text-gray-600">
-              Measurable improvements in your underwriting process
+              Measurable improvements in your document processing workflow
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -391,8 +391,8 @@ export default function AutoUWPage() {
               Trusted by Industry Leaders
             </h2>
             <p className="text-xl text-gray-600">
-              Join the leading CRE firms transforming their operations with
-              AutoUW
+              Join the leading CRE firms transforming their document processing
+              with SmartExtract
             </p>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-8 mb-12">
@@ -415,14 +415,15 @@ export default function AutoUWPage() {
           </div>
           <Card className="max-w-4xl mx-auto p-8 bg-white/90 backdrop-blur-sm">
             <blockquote className="text-xl text-gray-700 italic mb-4">
-              &quot;AutoUW reduced our underwriting time by 65% and enabled us
-              to process 30 deals per month with minimal effort.&quot;
+              &quot;SmartExtract has revolutionized our document processing
+              workflow. We&apos;ve cut our processing time by 90% and
+              significantly improved data accuracy.&quot;
             </blockquote>
             <div className="flex items-center gap-4">
               <div>
-                <div className="font-semibold">Eric Tupta</div>
+                <div className="font-semibold">Michael Chen</div>
                 <div className="text-sm text-gray-600">
-                  IT Transformation Director, BWE
+                  CTO, Global Real Estate Solutions
                 </div>
               </div>
             </div>
@@ -435,10 +436,10 @@ export default function AutoUWPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Simple and Transparent Pricing
+              Flexible Pricing for Every CRE Firm
             </h2>
             <p className="text-xl text-gray-600">
-              Choose the plan that best fits your needs
+              Choose the plan that best fits your document processing needs
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -511,7 +512,7 @@ export default function AutoUWPage() {
               Frequently Asked Questions
             </h2>
             <p className="text-xl text-gray-600">
-              Find answers to common questions about AutoUW
+              Find answers to common questions about SmartExtract
             </p>
           </div>
           <div className="max-w-3xl mx-auto">
@@ -532,7 +533,6 @@ export default function AutoUWPage() {
           </div>
         </div>
       </section>
-
       {/* CTA Section */}
       <section className="relative z-10 py-16 bg-gradient-to-br from-[#001F3F] via-blue-900 to-blue-800">
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-soft-light"></div>
@@ -556,10 +556,10 @@ export default function AutoUWPage() {
             className="text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ready to Transform Your Underwriting?
+              Ready to Revolutionize Your Document Processing?
             </h2>
             <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">
-              Schedule a demo today and see AutoUW in action.
+              Schedule a demo today and see SmartExtract in action.
             </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -577,8 +577,6 @@ export default function AutoUWPage() {
           </motion.div>
         </div>
       </section>
-
-    
     </div>
   );
 }

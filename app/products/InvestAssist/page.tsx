@@ -14,39 +14,41 @@ import {
 import Image from "next/image";
 import {
   ArrowUpRight,
-  BarChart3,
-  Bot,
   Brain,
   CheckCircle2,
   Clock,
   FileText,
+  PieChart,
+  TrendingUp,
+  Users,
 } from "lucide-react";
 
 // Features data
 const features = [
   {
-    title: "Financial Data Extraction",
+    title: "Advanced Deal Modeling",
     description:
-      "Extract data from Operating Statements and Rent Rolls with 100% accuracy",
-    icon: FileText,
+      "Create sophisticated financial models with machine learning insights",
+    icon: TrendingUp,
     gradient: "from-blue-500 to-purple-500",
   },
   {
-    title: "Customizable Outputs",
+    title: "Portfolio Management",
     description:
-      "Generate underwriting models tailored to your format or lender-specific templates",
-    icon: Bot,
+      "Track and analyze your entire investment portfolio in real-time",
+    icon: PieChart,
     gradient: "from-green-500 to-teal-500",
   },
   {
-    title: "Rapid Turnaround",
-    description: "Process deals in minutes, saving 70% of manual effort",
-    icon: Clock,
+    title: "Investor Reporting",
+    description:
+      "Generate professional reports and presentations automatically",
+    icon: FileText,
     gradient: "from-orange-500 to-red-500",
   },
   {
-    title: "AI-Powered Efficiency",
-    description: "Leverage advanced algorithms to automate even complex deals",
+    title: "AI-Powered Insights",
+    description: "Leverage advanced algorithms for data-driven decision making",
     icon: Brain,
     gradient: "from-purple-500 to-pink-500",
   },
@@ -55,66 +57,64 @@ const features = [
 // Benefits data
 const benefits = [
   {
-    title: "Save Time",
-    description: "Reduce underwriting time by up to 70%",
-    metric: "70%",
+    title: "Boost IRR",
+    description: "Improve Internal Rate of Return by up to 20%",
+    metric: "20%",
+    icon: TrendingUp,
+  },
+  {
+    title: "Faster Analysis",
+    description: "Reduce analysis time by 10x compared to manual methods",
+    metric: "10x",
     icon: Clock,
   },
   {
-    title: "Boost Accuracy",
-    description: "Ensure 100% accuracy in data extraction",
+    title: "Investor Satisfaction",
+    description: "Achieve 100% on-time, accurate investor reporting",
     metric: "100%",
-    icon: CheckCircle2,
-  },
-  {
-    title: "Scale Effortlessly",
-    description: "Handle up to 50+ deals/month without adding to your team",
-    metric: "50+",
-    icon: BarChart3,
+    icon: Users,
   },
 ];
 
 // Pricing plans
 const plans = [
   {
-    name: "Self-Service",
-    description: "Ideal for 1-4 deals per month",
-    monthlyPrice: 49,
+    name: "Starter",
+    description: "For small investment firms",
+    monthlyPrice: 199,
     features: [
-      "Self-Managed - DIY",
-      "Online Video Tutorials",
-      "Multifamily only",
-      "AI-powered data extraction",
+      "Up to 10 deals/month",
       "Basic financial modeling",
-      "Access to InvestAssist",
+      "Portfolio tracking",
+      "Standard investor reports",
+      "Email support",
     ],
   },
   {
-    name: "Growth",
-    description: "Clik Analysts Do It for You",
-    monthlyPrice: 99,
-    perDealPrice: 30,
+    name: "Professional",
+    description: "For growing investment teams",
+    monthlyPrice: 499,
     features: [
-      "Ideal for 5–20 deals per month",
-      "Financial models completed by Clik Analysts",
-      "All Asset Classes Included",
-      "Advanced AI-driven insights",
+      "Up to 50 deals/month",
+      "Advanced financial modeling",
+      "Real-time portfolio analytics",
+      "Custom investor reports",
       "Priority support",
-      "Custom model integration",
+      "API access",
     ],
     ribbon: "Most Popular",
   },
   {
     name: "Enterprise",
-    description: "Complete Automation & Expert Support",
+    description: "For large investment firms",
     price: "Custom",
     features: [
-      "Unlimited self-created deals",
-      "20 complementary Clik Analyst deals per month",
-      "$30 per additional Clik Analyst underwriting",
-      "Custom model integration",
-      "Excel Add-in to sync updates",
+      "Unlimited deals",
+      "Custom model development",
+      "Advanced portfolio optimization",
+      "White-labeled investor portal",
       "Dedicated account manager",
+      "Custom integrations",
     ],
   },
 ];
@@ -122,24 +122,24 @@ const plans = [
 // FAQ items
 const faqItems = [
   {
-    question: "What file formats are supported?",
+    question: "How does InvestAssist improve deal analysis?",
     answer:
-      "AutoUW supports a wide range of formats including PDF, Excel (xls, xlsx), Word (doc, docx), and scanned documents. Our AI can process both digital and scanned files with high accuracy.",
+      "InvestAssist uses advanced AI algorithms to analyze deals more comprehensively than traditional methods. It considers multiple factors simultaneously, identifies patterns, and provides insights that might be missed in manual analysis, leading to more informed investment decisions.",
   },
   {
-    question: "How accurate is the data extraction?",
+    question: "Can I customize the financial models?",
     answer:
-      "Our AI-powered extraction achieves 100% accuracy through a combination of advanced machine learning algorithms and built-in validation checks. Each extraction is verified against our comprehensive database of CRE documents.",
+      "Yes, InvestAssist offers full customization of financial models. You can adjust assumptions, add custom metrics, and tailor the models to your specific investment strategy. The Professional and Enterprise plans also offer the ability to create entirely custom models.",
   },
   {
-    question: "Can I customize the output template?",
+    question: "How does the portfolio management feature work?",
     answer:
-      "Yes! AutoUW offers full template customization. You can either use our pre-built templates for major lenders or create your own custom templates to match your exact specifications.",
+      "The portfolio management feature provides a real-time overview of all your investments. It tracks performance, calculates key metrics, and allows you to run scenario analyses across your entire portfolio. You can drill down into individual assets or view aggregated data for comprehensive insights.",
   },
   {
-    question: "What if I have more than 50 deals per month?",
+    question: "What types of investor reports can I generate?",
     answer:
-      "Our Enterprise plan is designed for high-volume users. We'll work with you to create a custom package that meets your specific needs, including unlimited deals and custom integrations.",
+      "InvestAssist can generate a wide range of investor reports, including quarterly performance reports, distribution notices, capital account statements, and custom reports tailored to your investors' needs. These reports can be automated and scheduled for regular delivery.",
   },
 ];
 
@@ -167,7 +167,7 @@ const clientLogos = [
   },
 ];
 
-export default function AutoUWPage() {
+export default function InvestAssistPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-purple-50 to-indigo-50">
       {/* Background Elements */}
@@ -190,11 +190,11 @@ export default function AutoUWPage() {
                 transition={{ duration: 0.5 }}
                 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
               >
-                Automate Your{" "}
-                <span className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                  Underwriting Process
+                Elevate Your{" "}
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                  Investment Strategy
                 </span>{" "}
-                with Precision
+                with AI
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -202,8 +202,9 @@ export default function AutoUWPage() {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-xl text-gray-700 mb-8"
               >
-                From Operating Statements to Rent Rolls, streamline your
-                underwriting workflows with AutoUW&apos;s AI-powered solution.
+                Transform your investment analysis, portfolio management, and
+                investor reporting with InvestAssist&apos;s cutting-edge AI
+                technology.
               </motion.p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -214,7 +215,7 @@ export default function AutoUWPage() {
                   size="lg"
                   className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
                 >
-                  Start Automating Now
+                  Start Investing Smarter
                   <ArrowUpRight className="ml-2 h-4 w-4" />
                 </Button>
               </motion.div>
@@ -226,11 +227,11 @@ export default function AutoUWPage() {
               className="relative w-full aspect-square max-w-2xl mx-auto"
             >
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AUW-7xDRwqT2OvYQV4o16Wvc80A2GNO94L.svg"
-                alt="AutoUW Lease Analysis Interface"
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IA%20FINAL-4BlQQoZCQXV7VNJQudkGc17y7O9YaL.svg"
+                alt="InvestAssist Dashboard Interface"
                 width={1000}
                 height={1000}
-                className="object-contain"
+                className="object-contain mt-24"
               />
             </motion.div>
           </div>
@@ -241,9 +242,11 @@ export default function AutoUWPage() {
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Why AutoUW?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Why InvestAssist?
+            </h2>
             <p className="text-xl text-gray-600">
-              Powerful features that transform your underwriting process
+              Powerful features that revolutionize your investment process
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -274,74 +277,74 @@ export default function AutoUWPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              How AutoUW Works
+              How InvestAssist Works
             </h2>
             <p className="text-xl text-gray-600">
-              Simple, efficient, and powerful workflow
+              Streamlined workflow for optimal investment management
             </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card className="p-6 bg-white/90 backdrop-blur-sm">
-              <h3 className="text-xl font-bold mb-4">Upload Documents</h3>
+              <h3 className="text-xl font-bold mb-4">Deal Analysis</h3>
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Upload%20Deal-zx9muvM8LvgR28kFH3gW7ddfPU5kJe.png"
-                  alt="Upload Documents Interface"
-                  fill
+                  alt="Deal Analysis Interface"
+                  src="/images/investAssist/DealAnalysis.png"
                   className="object-cover"
+                  width={1000}
+                  height={1000}
                 />
               </div>
               <p className="mt-4 text-gray-600">
-                Easily upload and manage your Operating Statements and Rent
-                Rolls
+                Comprehensive deal modeling and risk assessment
               </p>
             </Card>
 
             <Card className="p-6 bg-white/90 backdrop-blur-sm">
-              <h3 className="text-xl font-bold mb-4">Data Extraction</h3>
+              <h3 className="text-xl font-bold mb-4">Portfolio Tracking</h3>
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Data%20Extraction-liqARN9USxbPy30Le7a15ykfmrpsAK.png"
-                  alt="Data Extraction Process"
-                  fill
+                  alt="Portfolio Tracking Dashboard"
+                  src="/images/investAssist/PortfolioTracking.png"
                   className="object-cover"
+                  width={1000}
+                  height={1000}
                 />
               </div>
               <p className="mt-4 text-gray-600">
-                AI-powered extraction of critical financial data
+                Real-time monitoring and performance analytics
               </p>
             </Card>
 
             <Card className="p-6 bg-white/90 backdrop-blur-sm">
-              <h3 className="text-xl font-bold mb-4">Review & Validate</h3>
+              <h3 className="text-xl font-bold mb-4">Investor Reporting</h3>
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Review%20n%20Validate-TsLG0W0udPhd9nf81lKXcweFtA4RWJ.png"
-                  alt="Review and Validation Interface"
-                  fill
+                  src="/images/investAssist/Resport.png"
                   className="object-cover"
+                  width={1000}
+                  height={1000}
+                  alt="Investor Reporting Interface"
                 />
               </div>
               <p className="mt-4 text-gray-600">
-                Verify extracted data with side-by-side document viewing
+                Automated, customizable reports for stakeholders
               </p>
             </Card>
 
             <Card className="p-6 bg-white/90 backdrop-blur-sm">
-              <h3 className="text-xl font-bold mb-4">Download Results</h3>
-              <div className="grid  gap-4">
-                <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
-                  <Image
-                    src={"/images/DownloadResults.png"}
-                    alt="Operating Statement Results"
-                    className="object-cover rounded-lg shadow-2xl"
-                    width={1000}
-                    height={1000}
-                  />
-                </div>
+              <h3 className="text-xl font-bold mb-4">AI-Powered Insights</h3>
+              <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
+                <Image
+                  alt="AI-Powered Insights Dashboard"
+                  src="/images/investAssist/AiPowered.png"
+                  className="object-cover"
+                  width={1000}
+                  height={1000}
+                />
               </div>
               <p className="mt-4 text-gray-600">
-                Export comprehensive analysis in your preferred format
+                Machine learning-driven recommendations and market analysis
               </p>
             </Card>
           </div>
@@ -353,10 +356,10 @@ export default function AutoUWPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Achieve More with AutoUW
+              Achieve More with InvestAssist
             </h2>
             <p className="text-xl text-gray-600">
-              Measurable improvements in your underwriting process
+              Measurable improvements in your investment process
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
@@ -391,8 +394,8 @@ export default function AutoUWPage() {
               Trusted by Industry Leaders
             </h2>
             <p className="text-xl text-gray-600">
-              Join the leading CRE firms transforming their operations with
-              AutoUW
+              Join the leading investment firms transforming their operations
+              with InvestAssist
             </p>
           </div>
           <div className="flex flex-wrap justify-center items-center gap-8 mb-12">
@@ -415,14 +418,15 @@ export default function AutoUWPage() {
           </div>
           <Card className="max-w-4xl mx-auto p-8 bg-white/90 backdrop-blur-sm">
             <blockquote className="text-xl text-gray-700 italic mb-4">
-              &quot;AutoUW reduced our underwriting time by 65% and enabled us
-              to process 30 deals per month with minimal effort.&quot;
+              &quot;InvestAssist has revolutionized our investment process.
+              We&apos;ve seen a 25% increase in our portfolio performance and
+              cut our analysis time in half.&quot;
             </blockquote>
             <div className="flex items-center gap-4">
               <div>
-                <div className="font-semibold">Eric Tupta</div>
+                <div className="font-semibold">Sarah Johnson</div>
                 <div className="text-sm text-gray-600">
-                  IT Transformation Director, BWE
+                  Chief Investment Officer, Global Investments Inc.
                 </div>
               </div>
             </div>
@@ -435,10 +439,10 @@ export default function AutoUWPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Simple and Transparent Pricing
+              Flexible Pricing for Every Investment Firm
             </h2>
             <p className="text-xl text-gray-600">
-              Choose the plan that best fits your needs
+              Choose the plan that best fits your investment needs
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -511,7 +515,7 @@ export default function AutoUWPage() {
               Frequently Asked Questions
             </h2>
             <p className="text-xl text-gray-600">
-              Find answers to common questions about AutoUW
+              Find answers to common questions about InvestAssist
             </p>
           </div>
           <div className="max-w-3xl mx-auto">
@@ -532,8 +536,7 @@ export default function AutoUWPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
+      {/* new cta */}
       <section className="relative z-10 py-16 bg-gradient-to-br from-[#001F3F] via-blue-900 to-blue-800">
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-soft-light"></div>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -556,10 +559,10 @@ export default function AutoUWPage() {
             className="text-center"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ready to Transform Your Underwriting?
+              Ready to Elevate Your Investment Strategy?
             </h2>
             <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">
-              Schedule a demo today and see AutoUW in action.
+              Schedule a demo today and see InvestAssist in action.
             </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -577,8 +580,6 @@ export default function AutoUWPage() {
           </motion.div>
         </div>
       </section>
-
-    
     </div>
   );
 }

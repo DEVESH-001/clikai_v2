@@ -35,12 +35,12 @@ const products = [
       {
         title: "InvestAssist",
         description: "Manage investments and syndications with ease",
-        href: "/products/investassist",
+        href: "/products/InvestAssist",
       },
       {
         title: "SmartExtract",
         description: "API solution for OS/RR Digitisation at Scale",
-        href: "/products/smartextract",
+        href: "/products/SmartExtract",
       },
     ],
   },
