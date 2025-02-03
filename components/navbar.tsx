@@ -42,29 +42,34 @@ const products = [
         description: "API solution for OS/RR Digitisation at Scale",
         href: "/products/SmartExtract",
       },
-    ],
-  },
-  {
-    title: "Precision Data Suite",
-    description: "Cutting-edge tools for CRE document analysis",
-    items: [
       {
         title: "Clarity360 OM",
         description: "Efficient Offering Memorandum extraction",
-        href: "/products/clarity360-om",
-      },
-      {
-        title: "Clarity360 Appraisals",
-        description: "Fast and accurate appraisal data analysis",
-        href: "/products/clarity360-appraisals",
-      },
-      {
-        title: "Clarity360 Insurance",
-        description: "Simplified insurance document digitization",
-        href: "/products/clarity360-insurance",
+        href: "/products/clarity360",
       },
     ],
   },
+  // {
+  //   title: "Precision Data Suite",
+  //   description: "Cutting-edge tools for CRE document analysis",
+  //   items: [
+  //     {
+  //       title: "Clarity360 OM",
+  //       description: "Efficient Offering Memorandum extraction",
+  //       href: "/products/clarity360-om",
+  //     },
+  //     {
+  //       title: "Clarity360 Appraisals",
+  //       description: "Fast and accurate appraisal data analysis",
+  //       href: "/products/clarity360-appraisals",
+  //     },
+  //     {
+  //       title: "Clarity360 Insurance",
+  //       description: "Simplified insurance document digitization",
+  //       href: "/products/clarity360-insurance",
+  //     },
+  //   ],
+  // },
 ];
 
 const services = [
@@ -96,17 +101,17 @@ const services = [
       {
         title: "Cash Flow Modeling & Rent Roll Analysis",
         description: "Detailed cash flow projections and rent roll insights",
-        href: "/services/underwriting/cash-flow-modeling",
+        href: "/services/DealUnderwriting&FinancialModeling/new",
       },
       {
         title: "Underwriting & Due Diligence Support",
         description: "Comprehensive due diligence and risk assessment",
-        href: "/services/underwriting/due-diligence",
+        href: "/services/DealUnderwriting&FinancialModeling/UnderWriting&DueDiligenceSupport",
       },
       {
         title: "Custom Financial Model Development",
         description: "Tailored financial models for your specific needs",
-        href: "/services/DealUnderwriting/CustomFinancialModelDevelopment",
+        href: "/services/DealUnderwriting&FinancialModeling/CustomFinancialModelDevelopment",
       },
     ],
   },
@@ -232,7 +237,7 @@ export function Navbar() {
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[600px] p-4 md:p-6 bg-white ">
-                      <div className="grid grid-cols-2 gap-4 bg-white ">
+                      <div className="grid grid-cols-1 gap-4 bg-white ">
                         {products.map((category) => (
                           <div key={category.title} className="space-y-2">
                             <h3 className="text-lg font-semibold text-blue-600">

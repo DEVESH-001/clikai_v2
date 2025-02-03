@@ -57,35 +57,33 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
             </h4>
             <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-center sm:text-left">
               <li>
-                <Link href="#" className="text-gray-300 hover:text-blue-300">
+                <Link
+                  href="/products/autouw"
+                  className="text-gray-300 hover:text-blue-300"
+                >
                   AutoUW
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-300 hover:text-blue-300">
+                <Link
+                  href="/products/InvestAssist"
+                  className="text-gray-300 hover:text-blue-300"
+                >
                   InvestAssist
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-300 hover:text-blue-300">
+                <Link href="/products/SmartExtract" className="text-gray-300 hover:text-blue-300"
+                >
                   SmartExtract
                 </Link>
               </li>
               <li>
-                <Link href="#" className="text-gray-300 hover:text-blue-300">
+                <Link href= "/products/clarity360" className="text-gray-300 hover:text-blue-300">
                   Clarity360 OM
                 </Link>
               </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-blue-300">
-                  Clarity360 Appraisals
-                </Link>
-              </li>
-              <li>
-                <Link href="#" className="text-gray-300 hover:text-blue-300">
-                  Clarity360 Insurance
-                </Link>
-              </li>
+
             </ul>
           </div>
 
@@ -160,7 +158,7 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
                   >
                     Custom Reporting & Dashboards
                   </Link>
-                </li> 
+                </li>
                 <li>
                   <Link
                     href="/services/Consulting/cre-technology-consulting"
