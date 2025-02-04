@@ -9,8 +9,8 @@ import { HeroGraphs } from "./hero-graphs";
 export function HeroSection() {
   return (
     <GradientBackground className="min-h-[80vh] pt-24 pb-0 mt-16">
-      {/* <div className="container mx-auto px-4 lg:space-y-6"> */}
-      <div className=" mx-auto px-8 lg:space-y-6">
+      {/* <div className="container mx-auto  lg:space-y-6 px-3"> */}
+      <div className=" mx-auto px-8 lg:space-y-6"> 
         <div className="flex flex-col lg:flex-row items-center justify-between h-full">
           <div className="lg:w-3/5 mb-8 lg:mb-0 w-full">
             <motion.h1
