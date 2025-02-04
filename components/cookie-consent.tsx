@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { X } from "lucide-react";
+
 
 interface CookieConsentBannerProps {
   onOpenPreferences: () => void;
@@ -14,22 +14,24 @@ export function CookieConsentBanner({
 }: CookieConsentBannerProps) {
   const [showBanner, setShowBanner] = useState(false);
 
-
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowBanner(true);
-    }, 5000); // Show after 5 seconds
+    const consent = localStorage.getItem("cookieConsent");
+    if (!consent) {
+      const timer = setTimeout(() => {
+        setShowBanner(true);
+      }, 5000); // Show after 5 seconds
 
-    return () => clearTimeout(timer);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const handleAccept = () => {
-    // Logic to accept all cookies
+    localStorage.setItem("cookieConsent", "accepted");
     setShowBanner(false);
   };
 
   const handleDecline = () => {
-    // Logic to decline non-essential cookies
+    localStorage.setItem("cookieConsent", "declined");
     setShowBanner(false);
   };
 
@@ -43,12 +45,7 @@ export function CookieConsentBanner({
         exit={{ y: 100, opacity: 0 }}
         className="fixed bottom-4 left-4 right-4 bg-white rounded-lg shadow-lg p-6 z-50 max-w-2xl mx-auto"
       >
-        <button
-          onClick={() => setShowBanner(false)}
-          className="absolute top-2 right-2 text-gray-500 hover:text-gray-700"
-        >
-          <X size={20} />
-        </button>
+       
         <h2 className="text-xl font-bold mb-4">We value your privacy</h2>
         <p className="text-gray-600 mb-6">
           We use cookies to enhance your browsing experience, serve personalized
