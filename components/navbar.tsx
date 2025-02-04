@@ -107,7 +107,7 @@ const services = [
         title: "Legacy Data Migration",
         description: "Secure transfer of historical lease data",
       },
-    ],
+    ], 
   },
   {
     title: "Consulting & Technology Solutions",

@@ -76,7 +76,7 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
                 <Link href="/products/SmartExtract" className="text-gray-300 hover:text-blue-300"
                 >
                   SmartExtract
-                </Link>
+                </Link> 
               </li>
               <li>
                 <Link href= "/products/clarity360" className="text-gray-300 hover:text-blue-300">
@@ -116,12 +116,12 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-300 hover:text-blue-300">
+                  <Link href="/services/deal/underwritingDDS" className="text-gray-300 hover:text-blue-300">
                     Underwriting & Due Diligence Support
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-300 hover:text-blue-300">
+                  <Link href="/services/deal/customFDM" className="text-gray-300 hover:text-blue-300">
                     Custom Financial Model Development
                   </Link>
                 </li>
@@ -145,7 +145,7 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/services/Consulting/salesforce-customization"
+                    href="/services/consulting/salesforce"
                     className="text-gray-300 hover:text-blue-300"
                   >
                     Salesforce Customisation & Integration
@@ -153,7 +153,7 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/services/Consulting/custom-reporting-dashboards"
+                    href= "/services/consulting/customRD"
                     className="text-gray-300 hover:text-blue-300"
                   >
                     Custom Reporting & Dashboards
@@ -161,7 +161,7 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/services/Consulting/cre-technology-consulting"
+                    href="/services/consulting/creTech"
                     className="text-gray-300 hover:text-blue-300"
                   >
                     CRE Technology Consulting
