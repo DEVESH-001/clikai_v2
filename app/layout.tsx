@@ -28,6 +28,7 @@ import { CookieConsentBanner } from "@/components/cookie-consent";
 
 import "@/app/globals.css";
 import { useState } from "react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { CookiePreferencesPopup } from "@/components/cookie-preferences-pop-up";
 
 export default function RootLayout({
@@ -40,7 +41,9 @@ export default function RootLayout({
     <html lang="en" className={GeistSans.className}>
       <body className={`${GeistSans.className} min-h-screen flex flex-col`}>
         <Navbar />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow">{children}
+           <SpeedInsights />
+        </main>
         <Footer
           onOpenCookiePreferences={() => setShowCookiePreferences(true)}
         />
