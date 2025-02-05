@@ -5,6 +5,8 @@ import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { ArrowRight, ArrowLeft, CheckCircle2 } from "lucide-react"
+import { GeistSans } from "geist/font/sans"
+import Link from "next/link"
 
 const questions = [
   {
@@ -49,19 +51,19 @@ const questions = [
 const getRecommendedProduct = (answers: Record<number, string>) => {
   const role = answers[1]
   const primaryGoal = answers[2]
-
+  //const dealsPerMonth = answers[3]
   const assetClass = answers[4]
   const automation = answers[5]
 
   if (primaryGoal === "CRE Document Data Extraction") {
-    return "Clarity360"
+    return "clarity360"
   }
 
   if (role === "Lender/Underwriter" || role === "Asset Manager") {
     if (automation === "API-Driven Integration: I want to integrate document extraction into my existing systems.") {
-      return "SmartExtract"
+      return "smartextract"
     }
-    return "AutoUW"
+    return "autouw"
   }
 
   if (role === "Investment Manager") {
@@ -74,7 +76,7 @@ const getRecommendedProduct = (answers: Record<number, string>) => {
     if (automation === "API-Driven Integration: I want to integrate document extraction into my existing systems.") {
       return "SmartExtract"
     }
-    return "AutoUW"
+    return "autouw"
   }
 
   if (role === "Broker/Syndicator") {
@@ -82,16 +84,16 @@ const getRecommendedProduct = (answers: Record<number, string>) => {
       assetClass === "Multifamily Only" &&
       automation === "Fully Automated: I prefer an end-to-end solution with little to no manual intervention."
     ) {
-      return "InvestAssist"
+      return "investassist"
     }
     if (automation === "API-Driven Integration: I want to integrate document extraction into my existing systems.") {
-      return "SmartExtract"
+      return "smartextract"
     }
-    return "AutoUW"
+    return "autouw"
   }
 
   // Default case
-  return "AutoUW"
+  return "autouw"
 }
 
 interface QuizSectionProps {
@@ -132,19 +134,14 @@ export function QuizSection({ onProductRecommended }: QuizSectionProps) {
 
   return (
     <section
-      className={`relative overflow-hidden py-12 md:py-16 lg:py-24 bg-gradient-to-b from-blue-50 via-purple-50 to-indigo-50`}
+      className={`relative overflow-hidden py-12 md:py-16 lg:py-24 bg-gradient-to-b from-blue-50 via-purple-50 to-indigo-50 ${GeistSans.className}`}
     >
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-soft-light"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-blue-100/20 via-purple-100/20 to-indigo-100/20"></div>
       {/* Decorative background elements */}
-
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {/* Curved lines */}
-        <svg
-          className="absolute w-full h-full"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
+        <svg className="absolute w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
           <motion.path
             d="M0,50 C30,20 70,80 100,50"
             stroke="rgba(59, 130, 246, 0.2)"
@@ -152,11 +149,7 @@ export function QuizSection({ onProductRecommended }: QuizSectionProps) {
             fill="none"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
-            transition={{
-              duration: 2,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
-            }}
+            transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
           />
           <motion.path
             d="M0,30 C30,60 70,40 100,70"
@@ -165,11 +158,7 @@ export function QuizSection({ onProductRecommended }: QuizSectionProps) {
             fill="none"
             initial={{ pathLength: 0 }}
             animate={{ pathLength: 1 }}
-            transition={{
-              duration: 2.5,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
-            }}
+            transition={{ duration: 2.5, repeat: Number.POSITIVE_INFINITY, repeatType: "reverse" }}
           />
         </svg>
 
@@ -195,18 +184,17 @@ export function QuizSection({ onProductRecommended }: QuizSectionProps) {
         ))}
       </div>
 
-      <div className={`container mx-auto px-4 py-8 max-w-6xl relative z-10`}>
-        <div className={`text-center mb-8`}>
+      <div className={`container mx-auto px-4 py-8 max-w-4xl relative z-10 ${GeistSans.className}`}>
+        <div className={`text-center mb-8 ${GeistSans.className}`}>
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
             Find Your Perfect Clik.ai Solution
           </h2>
-          <p className="text-base md:text-lg text-gray-700  mx-auto">
-            Answer a few questions to get personalized product recommendations
-            tailored to your needs
+          <p className="text-base md:text-lg text-gray-700 max-w-2xl mx-auto">
+            Answer a few questions to get personalized product recommendations tailored to your needs
           </p>
         </div>
 
-        <Card className="p-6 md:p-8 lg:p-10 bg-white/90 backdrop-blur shadow-xl rounded-xl">
+        <Card className="p-4 md:p-6 lg:p-8 bg-white/90 backdrop-blur shadow-xl rounded-xl">
           <AnimatePresence mode="wait">
             {!showResult ? (
               <motion.div
@@ -217,9 +205,7 @@ export function QuizSection({ onProductRecommended }: QuizSectionProps) {
                 transition={{ duration: 0.3 }}
               >
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-semibold text-blue-900">
-                    {currentQuestionData.question}
-                  </h3>
+                  <h3 className="text-xl font-semibold text-blue-900">{currentQuestionData.question}</h3>
                   <span className="text-sm text-gray-500">
                     {currentQuestion + 1} of {questions.length}
                   </span>
@@ -231,9 +217,7 @@ export function QuizSection({ onProductRecommended }: QuizSectionProps) {
                       key={index}
                       variant="outline"
                       className={`p-4 md:p-6 h-auto text-left flex items-start justify-between group hover:border-blue-500 hover:bg-blue-50 transition-all ${
-                        answers[currentQuestion + 1] === option
-                          ? "border-blue-500 bg-blue-50"
-                          : ""
+                        answers[currentQuestion + 1] === option ? "border-blue-500 bg-blue-50" : ""
                       }`}
                       onClick={() => handleAnswer(option)}
                     >
@@ -268,12 +252,8 @@ export function QuizSection({ onProductRecommended }: QuizSectionProps) {
               >
                 <div className="mb-6">
                   <CheckCircle2 className="w-12 h-12 md:w-16 md:h-16 text-green-500 mx-auto mb-4" />
-                  <h3 className="text-xl md:text-2xl font-bold text-blue-900 mb-2">
-                    We&apos;ve Found Your Perfect Match!
-                  </h3>
-                  <p className="text-base md:text-lg text-gray-600">
-                    Based on your needs, we recommend:
-                  </p>
+                  <h3 className="text-xl md:text-2xl font-bold text-blue-900 mb-2">We&apos;ve Found Your Perfect Match!</h3>
+                  <p className="text-base md:text-lg text-gray-600">Based on your needs, we recommend:</p>
                 </div>
 
                 <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-8">
@@ -281,16 +261,15 @@ export function QuizSection({ onProductRecommended }: QuizSectionProps) {
                 </div>
 
                 <div className="flex justify-center gap-4">
-                  <Button
-                    variant="outline"
-                    onClick={resetQuiz}
-                    className="text-sm md:text-base"
-                  >
+                  <Button variant="outline" onClick={resetQuiz} className="text-sm md:text-base">
                     Start Over
                   </Button>
-                  <Button className="text-sm md:text-base bg-black text-white hover:text-white hover:bg-black">
+                  <Link
+                    href={`/products/${getRecommendedProduct(answers).toLowerCase().replace(/\s+/g, "-")}`}
+                    className="inline-flex h-9 items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50"
+                  >
                     Learn More
-                  </Button>
+                  </Link>
                 </div>
               </motion.div>
             )}
@@ -298,6 +277,6 @@ export function QuizSection({ onProductRecommended }: QuizSectionProps) {
         </Card>
       </div>
     </section>
-  );
+  )
 }
 

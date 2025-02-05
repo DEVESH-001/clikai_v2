@@ -49,7 +49,7 @@ const products = [
       "Agency lenders automating compliance checks",
     ],
     image: imageUrls.products.autoUW,
-    link: "/autouw",
+    link: "/products/autouw",
     theme: "blue",
   },
   {
@@ -73,7 +73,7 @@ const products = [
       "Family offices streamlining investment decisions",
     ],
     image: imageUrls.products.investAssist,
-    link: "/investassist",
+    link: "/products/InvestAssist",
     theme: "emerald",
   },
   {
@@ -97,7 +97,7 @@ const products = [
       "Appraisal firms accelerating report generation",
     ],
     image: imageUrls.products.smartExtract,
-    link: "/smartextract",
+    link: "/products/SmartExtract",
     theme: "violet",
   },
   {
@@ -121,7 +121,7 @@ const products = [
       "Lenders assessing market risks and opportunities",
     ],
     image: imageUrls.products.clarity360,
-    link: "/clarity360",
+    link: "/products/clarity360",
     theme: "indigo",
   },
 ];
@@ -255,8 +255,11 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
                 ))}
               </ul>
 
-              <Button className="rounded-[8px] w-full group relative overflow-hidden bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 text-sm md:text-base">
+              <Button className="rounded-[8px] w-full group relative overflow-hidden bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 text-sm md:text-base"
+              onClick={() => window.location.href = product.link}
+              >
                 Explore {product.title}
+
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
               </Button>

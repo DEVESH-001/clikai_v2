@@ -1,25 +1,3 @@
-
-// import { GeistSans } from "geist/font/sans";
-// import { Navbar } from "@/components/navbar";
-// import { Footer } from "@/components/footer";
-// import "@/app/globals.css";
-
-// import { useState } from "react";
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }) {
-//   return (
-//     <html lang="en" className={GeistSans.className}>
-//       <body className="min-h-screen flex flex-col">
-//         <Navbar />
-//         <main className="flex-grow">{children}</main>
-//         <Footer />
-//       </body>
-//     </html>
-//   );
-// }
 'use client'
 import { GeistSans } from "geist/font/sans";
 import { Navbar } from "@/components/navbar";
@@ -28,8 +6,8 @@ import { CookieConsentBanner } from "@/components/cookie-consent";
 
 import "@/app/globals.css";
 import { useState } from "react";
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { CookiePreferencesPopup } from "@/components/cookie-preferences-pop-up";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function RootLayout({
   children,
