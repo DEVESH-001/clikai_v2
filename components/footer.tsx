@@ -73,79 +73,84 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link href="/products/SmartExtract" className="text-gray-300 hover:text-blue-300"
+                <Link
+                  href="/products/SmartExtract"
+                  className="text-gray-300 hover:text-blue-300"
                 >
                   SmartExtract
-                </Link> 
+                </Link>
               </li>
               <li>
-                <Link href= "/products/clarity360" className="text-gray-300 hover:text-blue-300">
+                <Link
+                  href="/products/clarity360"
+                  className="text-gray-300 hover:text-blue-300"
+                >
                   Clarity360 OM
                 </Link>
               </li>
-
             </ul>
           </div>
 
-          {/* Services Column - Centered and spans 2 columns */}
-          <div className="col-span-1 sm:col-span-2 flex flex-col items-center">
+          {/* Services Column - Adjusted to be left and right aligned */}
+          <div className="col-span-1 sm:col-span-2 flex flex-col">
             <h4 className="font-semibold mb-2 sm:mb-3 text-xs sm:text-sm md:text-base text-gray-300 text-center">
               Services
             </h4>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-xl mx-auto">
+            <div className="grid grid-cols-2 gap-x-20">
               {/* Left Services Column */}
-              <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-center md:text-left">
+              <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-left">
                 <li>
-                  <Link href="#" className="text-gray-300 hover:text-blue-300">
-                    Financial Services & Analysis (FSA)
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-300 hover:text-blue-300">
-                    Disbursement & PCNA Support
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-300 hover:text-blue-300">
-                    Loan On Boarding
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="text-gray-300 hover:text-blue-300">
-                    Cash Flow Modeling & Rent Roll Analysis
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/services/deal/underwritingDDS" className="text-gray-300 hover:text-blue-300">
+                  <Link
+                    href="/services/LoanOrigination/underwritingDDS"
+                    className="text-gray-300 hover:text-blue-300"
+                  >
                     Underwriting & Due Diligence Support
                   </Link>
                 </li>
                 <li>
-                  <Link href="/services/deal/customFDM" className="text-gray-300 hover:text-blue-300">
+                  <Link
+                    href="/services/LoanOrigination/customFDM"
+                    className="text-gray-300 hover:text-blue-300"
+                  >
                     Custom Financial Model Development
                   </Link>
                 </li>
-              </ul>
-              {/* Right Services Column */}
-              <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-center md:text-left">
+                <li>
+                  <Link
+                    href="/services/LoanOrigination/disbursement&PCNA"
+                    className="text-gray-300 hover:text-blue-300"
+                  >
+                    Disbursement & PCNA Support
+                  </Link>
+                </li>
                 <li>
                   <Link href="#" className="text-gray-300 hover:text-blue-300">
                     Lease Abstraction & Audit
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-300 hover:text-blue-300">
+                  <Link
+                    href="/services/deal/underwritingDDS"
+                    className="text-gray-300 hover:text-blue-300"
+                  >
                     Appraisal & OM Data Digitization
                   </Link>
                 </li>
-                <li>
-                  <Link href="#" className="text-gray-300 hover:text-blue-300">
-                    Legacy Data Migration
-                  </Link>
-                </li>
+              </ul>
+              {/* Right Services Column */}
+              <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-left">
                 <li>
                   <Link
-                    href="/services/consulting/salesforce"
+                    href="/services/Lease&DataAdministration/LoanOnboarding&DataDigitization"
+                    className="text-gray-300 hover:text-blue-300"
+                  >
+                    Loan Onboarding & Data Digitization
+                  </Link>
+                </li>
+
+                <li>
+                  <Link
+                    href="/services/ConsultingTech/salesforce"
                     className="text-gray-300 hover:text-blue-300"
                   >
                     Salesforce Customisation & Integration
@@ -153,7 +158,7 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href= "/services/consulting/customRD"
+                    href="/services/ConsultingTech/customRD"
                     className="text-gray-300 hover:text-blue-300"
                   >
                     Custom Reporting & Dashboards
@@ -161,7 +166,7 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/services/consulting/creTech"
+                    href="/services/ConsultingTech/creTech"
                     className="text-gray-300 hover:text-blue-300"
                   >
                     CRE Technology Consulting

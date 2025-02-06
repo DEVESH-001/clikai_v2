@@ -130,9 +130,7 @@ export function DisbursementFlowchart() {
                     text === "All Proofs/Liens" ||
                     text === "Final Approval and Funds"
                       ? "h-auto min-h-16 sm:min-h-14 md:min-h-24 lg:min-h-28"
-                      : ""
-                  }
-                >
+                      : ""}>
                   {text}
                 </FlowchartBox>
               ))}
