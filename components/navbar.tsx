@@ -58,7 +58,7 @@ const services = [
       {
         title: "Underwriting & Due Diligence Support",
         description: "Expert financial analysis and reporting services",
-        href: "/products/clarity360",
+        href: "/services/LoanOrigination/underwritingDDS",
       },
       {
         title: "Custom Financial Model Development",
@@ -67,6 +67,7 @@ const services = [
       {
         title: "Disbursement & PCNA Support",
         description: "Streamlined disbursement and PCNA processing",
+        href: "/services/LoanOrigination/disbursement&PCNA",
       },
     ],
   },
@@ -74,7 +75,7 @@ const services = [
   //   title: "Deal Underwriting & Financial Modeling",
   //   description: "Advanced financial modeling and underwriting solutions",
   //   items: [
-  
+
   //     {
   //       title: "Cash Flow Modeling & Rent Roll Analysis",
   //       description: "Detailed cash flow projections and rent roll insights",

@@ -305,7 +305,7 @@ export default function WhyPage() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </div> 
       </section>
 
       {/* Journey Section */}

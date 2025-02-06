@@ -160,6 +160,7 @@ body {
   font-family: var(--font-geist);
 }
 
+
 @keyframes blob {
   0% {
     transform: translate(0px, 0px) scale(1);
@@ -209,6 +210,7 @@ button[class*="rounded-full"],
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
     skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
+
 
 
 
