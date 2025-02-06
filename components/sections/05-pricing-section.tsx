@@ -311,7 +311,7 @@ export function PricingSection() {
             />
           </div>
           <div className="flex relative px-1 mt-2">
-            {[0, 5, 10, 20, 30, 40].map((value) => (
+            {[0, 5, 10, 15 ,20, 25, 30, 35, 40].map((value) => (
               <div
                 key={value}
                 className="absolute text-sm text-gray-600"

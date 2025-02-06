@@ -6,7 +6,6 @@ import { Card, CardContent } from "@/components/ui/card";
 //import { Button } from "@/components/ui/button";
 import {
   Building2,
-  BarChart2,
   FileText,
   Zap,
   Plus,
@@ -20,13 +19,13 @@ import { GeistSans } from "geist/font/sans";
 const services = [
   {
     id: "loan-servicing",
-    title: "Loan Servicing & Administration",
-    description: "AI-driven loan management and administration",
+    title: "Loan Origination & Servicing",
+    description: "Comprehensive loan management and administrative solutions",
     icon: Building2,
     color: "#3B82F6",
     subservices: [
       {
-        title: "Financial Services & Analysis (FSA)",
+        title: "Underwriting & Due Diligence Support",
         tagline: "Real-time insights and compliance",
         description:
           "Leverage AI for real-time financial insights, variance analysis, and regulatory compliance support.",
@@ -38,7 +37,7 @@ const services = [
       },
 
       {
-        title: "Disbursement & PCNA Support",
+        title: "Custom Financial Model Development",
         tagline: "Faster, compliant assessments",
         description:
           "Streamline property assessments and disbursements with AI-driven workflows.",
@@ -49,53 +48,14 @@ const services = [
         ],
       },
       {
-        title: "Loan On Boarding",
-        tagline: "Seamless data modernization",
+        title: "Disbursement & PCNA Support",
+        tagline: "Streamlined disbursement and PCNA processingn",
         description:
           "Migrate loan portfolios to modern platforms with AI-powered validation and error checks.",
         benefits: [
           "AI-driven data cleansing and standardization",
           "Automated validation and error detection",
           "Intelligent process optimization for scalability",
-        ],
-      },
-    ],
-  },
-  {
-    id: "deal-underwriting",
-    title: "Deal Underwriting & Financial Modeling",
-    description: "AI-powered financial modeling and underwriting",
-    icon: BarChart2,
-    color: "#10B981",
-    subservices: [
-      {
-        title: "Cash Flow Modeling & Rent Roll Analysis",
-        tagline: "Intelligent projections and analysis",
-        description:
-          "Create AI-powered cash flow models with advanced scenario analysis capabilities.",
-        benefits: [
-          "AI-generated property income and expense projections",
-          "Machine learning-based scenario analysis for market conditions",
-        ],
-      },
-      {
-        title: "Underwriting & Due Diligence",
-        tagline: "AI-assisted financial due diligence",
-        description:
-          "Comprehensive financial due diligence with AI-powered analysis of key metrics.",
-        benefits: [
-          "AI-generated financial due diligence reports",
-          "Machine learning analysis of DSCR, LTV, NOI, and other metrics",
-        ],
-      },
-      {
-        title: "Custom Financial Modeling",
-        tagline: "Tailored AI models",
-        description:
-          "Develop custom AI-powered financial models with dynamic updates and integrations.",
-        benefits: [
-          "AI-driven model customization for specific lender needs",
-          "Intelligent Excel integration for real-time updates",
         ],
       },
     ],
@@ -128,7 +88,7 @@ const services = [
         ],
       },
       {
-        title: "Legacy Data Migration",
+        title: "Loan Onboarding & Data Digitization",
         tagline: "AI-assisted data modernization",
         description:
           "Modernize historical lease and financial data using AI-powered migration tools.",

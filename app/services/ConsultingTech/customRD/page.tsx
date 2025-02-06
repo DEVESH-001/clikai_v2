@@ -418,14 +418,14 @@ const UseCaseSection = () => {
           </p>
         </motion.div>
 
-        <Tabs defaultValue="asset-manager" className="w-full">
+        <Tabs defaultValue="syndicator" className="w-full">
           <TabsList className="grid w-full grid-cols-3 mb-8">
+            <TabsTrigger value="syndicator">
+              Syndicators & Investors
+            </TabsTrigger>
             <TabsTrigger value="asset-manager">Asset Managers</TabsTrigger>
             <TabsTrigger value="property-manager">
               Property Managers
-            </TabsTrigger>
-            <TabsTrigger value="syndicator">
-              Syndicators & Investors
             </TabsTrigger>
           </TabsList>
 
@@ -1354,9 +1354,9 @@ export default function CustomReportingDashboardsPage() {
                   transition={{ duration: 0.8 }}
                   className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 mt-8"
                 >
-                  Empower Your Decisions with{" "}
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                    Custom Reporting & Dashboards
+                  Empower Your Decisions with{" "} 
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700/90 to-blue-500">
+                     Custom  <br /> Reporting & Dashboards
                   </span>
                 </motion.h1>
                 <motion.p
@@ -1389,7 +1389,7 @@ export default function CustomReportingDashboardsPage() {
               <Card className="p-6 bg-white/90 backdrop-blur-sm">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   <div>
-                    <Tabs defaultValue="rent-roll" className="w-full">
+                    <Tabs defaultValue="operating-statement" className="w-full">
                       <TabsList className="grid w-full grid-cols-2">
                         <TabsTrigger value="operating-statement">
                           Operating Statement
@@ -1471,7 +1471,7 @@ export default function CustomReportingDashboardsPage() {
                     </Button>
                   </div>
                   <div className="space-y-4">
-                    <Card className="shadow-sm">
+                    {/* <Card className="shadow-sm">
                       <CardHeader className="p-3">
                         <CardTitle className="text-sm font-medium">
                           Revenue Forecast
@@ -1517,7 +1517,7 @@ export default function CustomReportingDashboardsPage() {
                           height={150}
                         />
                       </CardContent>
-                    </Card>
+                    </Card> */}
                     <Card className="shadow-sm">
                       <CardHeader className="p-3">
                         <CardTitle className="text-sm font-medium">

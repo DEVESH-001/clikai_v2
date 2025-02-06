@@ -299,7 +299,7 @@ export default function SalesforceCustomizationPage() {
                 >
                   <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
                     Elevate Your CRE Operations with{" "}
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700/90 to-blue-500">
                       Salesforce Expertise
                     </span>
                   </h1>

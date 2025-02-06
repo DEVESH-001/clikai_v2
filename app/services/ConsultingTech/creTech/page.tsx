@@ -229,7 +229,7 @@ export default function CRETechnologyConsultingPage() {
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
                 Don&apos;t Get Left Behind - Build Your{" "}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700/90 to-blue-500">
                   Offshore Captive
                 </span>{" "}
                 Now
@@ -446,8 +446,6 @@ export default function CRETechnologyConsultingPage() {
           </div>
         </div>
       </section>
-
- 
 
       {/* CTA Section */}
       <section className="relative z-10 py-16 bg-gradient-to-br from-[#001F3F] via-blue-900 to-blue-800">

@@ -14,7 +14,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronRight, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { imageUrls } from "@/utils/imageUrls";
@@ -63,6 +63,7 @@ const services = [
       {
         title: "Custom Financial Model Development",
         description: "Seamless migration of historical data",
+        href:"/services/LoanOrigination/customFDM"
       },
       {
         title: "Disbursement & PCNA Support",
@@ -171,7 +172,7 @@ export function Navbar() {
                     PRODUCTS
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="w-[350px] p-2 md:p-4">
+                    <div className="w-[330px] p-2 md:p-4">
                       <div className="grid grid-cols-1 gap-2">
                         {products.map((category) => (
                           <>
@@ -190,7 +191,7 @@ export function Navbar() {
                                         {item.description}
                                       </p>
                                     </div>
-                                    <ChevronRight className="ml-auto w-4 h-4 text-gray-400 group-hover:text-blue-500" />
+                                    
                                   </Link>
                                 </li>
                               ))}
@@ -232,7 +233,7 @@ export function Navbar() {
                                         {item.description}
                                       </p>
                                     </div>
-                                    <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500" />
+                                    
                                   </Link>
                                 </li>
                               ))}
