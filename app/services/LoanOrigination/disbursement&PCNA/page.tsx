@@ -189,14 +189,8 @@ export default function DisbursementPCNASupport() {
             pagination={{ clickable: true }}
             scrollbar={{ draggable: true }}
             breakpoints={{
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
+              640: { slidesPerView: 2, spaceBetween: 20 },
+              768: { slidesPerView: 3, spaceBetween: 30 },
             }}
           >
             {[
@@ -219,15 +213,19 @@ export default function DisbursementPCNASupport() {
                 icon: Archive,
               },
             ].map((service, index) => (
-              <SwiperSlide key={index}>
-                <Card className="h-full bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+              <SwiperSlide key={index} className="w-64">
+                {" "}
+                {/* Set fixed width */}
+                <Card className="w-full h-[240px] flex flex-col justify-between bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
                   <CardHeader>
                     <CardTitle className="flex items-center text-xl font-bold">
                       <service.icon className="w-6 h-6 mr-2 text-blue-600" />
                       {service.title}
                     </CardTitle>
                   </CardHeader>
-                  <CardContent>
+                  <CardContent className="flex-1">
+                    {" "}
+                    {/* Ensures equal height distribution */}
                     <p className="text-gray-700">{service.description}</p>
                   </CardContent>
                 </Card>
@@ -240,13 +238,13 @@ export default function DisbursementPCNASupport() {
       {/* new reserved section */}
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-  Reserve Disbursements Management
-</h2>
-<p className="text-xl text-gray-600 max-w-3xl mx-auto">
-  Our manual disbursement process ensures accuracy, compliance, and
-  efficiency.
-</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
+            Reserve Disbursements Management
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            Our manual disbursement process ensures accuracy, compliance, and
+            efficiency.
+          </p>
 
           <div className="max-w-4xl mx-auto relative mt-16">
             <div className="absolute left-1/2 top-0 bottom-0 w-px bg-blue-200 transform -translate-x-1/2"></div>
@@ -267,7 +265,6 @@ export default function DisbursementPCNASupport() {
                       index % 2 === 0 ? "text-right" : "text-left"
                     }`}
                   >
-
                     <h3 className="text-xl font-bold mb-2">
                       {milestone.title}
                     </h3>
@@ -362,8 +359,8 @@ export default function DisbursementPCNASupport() {
               Our Edge in PCNA and Disbursement Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover how Clik&apos;s approach sets us apart in PCNA analysis and
-              reserve disbursement management.
+              Discover how Clik&apos;s approach sets us apart in PCNA analysis
+              and reserve disbursement management.
             </p>
           </motion.div>
 
