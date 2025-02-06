@@ -49,48 +49,48 @@ const products = [
   },
 ];
 
-// Updated Services structure
+// Updated Services Menu
 const services = [
   {
-    title: "Loan Servicing & Administration",
+    title: "Loan Origination & Servicing",
     description: "Comprehensive loan management and administrative solutions",
     items: [
       {
-        title: "Financial Services & Analysis (FSA)",
+        title: "Underwriting & Due Diligence Support",
         description: "Expert financial analysis and reporting services",
         href: "/products/clarity360",
+      },
+      {
+        title: "Custom Financial Model Development",
+        description: "Seamless migration of historical data",
       },
       {
         title: "Disbursement & PCNA Support",
         description: "Streamlined disbursement and PCNA processing",
       },
-      {
-        title: "Loan On Boarding",
-        description: "Seamless migration of historical data",
-      },
     ],
   },
-  {
-    title: "Deal Underwriting & Financial Modeling",
-    description: "Advanced financial modeling and underwriting solutions",
-    items: [
-      {
-        title: "Cash Flow Modeling & Rent Roll Analysis",
-        description: "Detailed cash flow projections and rent roll insights",
-        href: "#",
-      },
-      {
-        title: "Underwriting & Due Diligence Support",
-        description: "Comprehensive due diligence and risk assessment",
-        href: "/services/deal/underwritingDDS",
-      },
-      {
-        title: "Custom Financial Model Development",
-        description: "Tailored financial models for your specific needs",
-        href: "/services/deal/customFDM",
-      },
-    ],
-  },
+  // {
+  //   title: "Deal Underwriting & Financial Modeling",
+  //   description: "Advanced financial modeling and underwriting solutions",
+  //   items: [
+  //     {
+  //       title: "Cash Flow Modeling & Rent Roll Analysis",
+  //       description: "Detailed cash flow projections and rent roll insights",
+  //       href: "#",
+  //     },
+  //     {
+  //       title: "Underwriting & Due Diligence Support",
+  //       description: "Comprehensive due diligence and risk assessment",
+  //       href: "/services/deal/underwritingDDS",
+  //     },
+  //     {
+  //       title: "Custom Financial Model Development",
+  //       description: "Tailored financial models for your specific needs",
+  //       href: "/services/deal/customFDM",
+  //     },
+  //   ],
+  // },
   {
     title: "Lease & Data Administration",
     description: "Efficient lease management and data processing",
@@ -104,10 +104,10 @@ const services = [
         description: "Convert physical documents into digital format",
       },
       {
-        title: "Legacy Data Migration",
+        title: "Loan Onboarding & Data Digitization",
         description: "Secure transfer of historical lease data",
       },
-    ], 
+    ],
   },
   {
     title: "Consulting & Technology Solutions",
@@ -224,42 +224,42 @@ export function Navbar() {
                   <NavigationMenuTrigger className={navItemClass}>
                     SERVICES
                   </NavigationMenuTrigger>
-                    <NavigationMenuContent>
+                  <NavigationMenuContent>
                     <div className="w-[800px] p-4 md:p-6">
-                      <div className="grid grid-cols-2 gap-6">
-                      {services.map((category) => (
-                        <div key={category.title} className="space-y-2">
-                        <h3 className="text-lg font-semibold text-blue-600">
-                          {category.title}
-                        </h3>
-                        <p className="text-sm text-gray-600 mb-2">
-                          {category.description}
-                        </p>
-                        <ul className="space-y-2">
-                          {category.items.map((item) => (
-                          <li key={item.title}>
-                            <Link
-                            href={item.href || "#"}
-                            className="group flex items-center justify-between p-2 rounded-md hover:bg-blue-50 transition-colors"
-                            >
-                            <div>
-                              <div className="text-sm font-medium text-gray-900">
-                              {item.title}
-                              </div>
-                              <p className="text-xs text-gray-500">
-                              {item.description}
-                              </p>
-                            </div>
-                            <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500" />
-                            </Link>
-                          </li>
-                          ))}
-                        </ul>
-                        </div>
-                      ))}
+                      <div className="grid grid-cols-3 gap-6"> 
+                        {services.map((category) => (
+                          <div key={category.title} className="space-y-2">
+                            <h3 className="text-lg font-semibold text-blue-600">
+                              {category.title}
+                            </h3>
+                            <p className="text-sm text-gray-600 mb-2">
+                              {category.description}
+                            </p>
+                            <ul className="space-y-2">
+                              {category.items.map((item) => (
+                                <li key={item.title}>
+                                  <Link
+                                    href={item.href || "#"}
+                                    className="group flex items-center justify-between p-2 rounded-md hover:bg-blue-50 transition-colors"
+                                  >
+                                    <div>
+                                      <div className="text-sm font-medium text-gray-900">
+                                        {item.title}
+                                      </div>
+                                      <p className="text-xs text-gray-500">
+                                        {item.description}
+                                      </p>
+                                    </div>
+                                    <ChevronRight className="w-4 h-4 text-gray-400 group-hover:text-blue-500" />
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
                       </div>
                     </div>
-                    </NavigationMenuContent>
+                  </NavigationMenuContent>
                 </NavigationMenuItem>
 
                 <NavigationMenuItem>
@@ -324,7 +324,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden fixed top-16 left-0 right-0 bg-white z-50 shadow-lg"
+            className="lg:hidden fixed top-16 left-0 right-0 bg-white z-50 shadow-lg max-h-[80vh] overflow-y-auto"
           >
             <div className="px-4 pt-2 pb-3 space-y-1">
               <div className="relative">
