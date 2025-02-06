@@ -416,7 +416,8 @@ export default function LoanOnboardingPage() {
             </h3>
             <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">
               Join industry leaders who have already revolutionized their loan
-              onboarding process with Clik
+              <br/>
+              onboarding process with Clik.
             </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
