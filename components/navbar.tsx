@@ -1,4 +1,3 @@
-//latest nabar
 "use client";
 
 import * as React from "react";
@@ -370,7 +369,7 @@ export function Navbar() {
                             >
                               <div className="font-medium">{item.title}</div>
                               <p className="text-xs text-gray-500">
-                              {item.description}
+                                {item.description}
                               </p>
                             </Link>
                           </div>
