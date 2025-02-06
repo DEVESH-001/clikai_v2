@@ -163,9 +163,9 @@ export default function WhyPage() {
           <div className="max-w-4xl mx-auto text-center">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              animate={{ opacity: 1, y: 0 }} //bg-gradient-to-r from-blue-600 to-purple-600
               transition={{ duration: 0.5 }}
-              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-700/90 to-blue-500 "
             >
               Don&apos;t Let Manual Processes Hold You Back
             </motion.h1>
@@ -305,7 +305,7 @@ export default function WhyPage() {
               </motion.div>
             ))}
           </div>
-        </div> 
+        </div>
       </section>
 
       {/* Journey Section */}
@@ -389,7 +389,6 @@ export default function WhyPage() {
                 );
               })}
             </div>
-          
           </div>
         </div>
       </section>
@@ -439,7 +438,6 @@ export default function WhyPage() {
           </motion.div>
         </div>
       </section>
-
     </div>
   );
 }

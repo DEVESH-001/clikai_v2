@@ -9,7 +9,6 @@ import {
   Shield,
   Clock,
   ShieldCheck,
-
 } from "lucide-react";
 
 import { GeistSans } from "geist/font/sans";
@@ -150,7 +149,7 @@ export default function DisbursementPCNASupport() {
             >
               <Button
                 size="lg"
-                className="bg-[#4B85C7] hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 transform hover:scale-105"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 Optimize Your Operations
                 <ArrowRight className="ml-2 h-5 w-5" />

@@ -1,16 +1,21 @@
-"use client"
+"use client";
 
-import type React from "react"
-import { motion } from "framer-motion"
+import type React from "react";
+import { motion } from "framer-motion";
 
 interface FlowchartBoxProps {
-  children: React.ReactNode
-  className?: string
-  delay?: number
-  step?: number
+  children: React.ReactNode;
+  className?: string;
+  delay?: number;
+  step?: number;
 }
 
-const FlowchartBox = ({ children, className = "", delay = 0, step }: FlowchartBoxProps) => (
+const FlowchartBox = ({
+  children,
+  className = "",
+  delay = 0,
+  step,
+}: FlowchartBoxProps) => (
   <motion.div
     initial={{ opacity: 0, y: 20 }}
     animate={{ opacity: 1, y: 0 }}
@@ -24,18 +29,20 @@ const FlowchartBox = ({ children, className = "", delay = 0, step }: FlowchartBo
     )}
     {children}
   </motion.div>
-)
+);
 
 const ConnectingLine = ({ className = "" }: { className?: string }) => (
   <div className={`bg-[#4B85C7]/30 ${className}`} />
-)
+);
 
 export function DisbursementFlowchart() {
   return (
     <div className="w-full max-w-7xl mx-auto p-4">
       {/* Title Section */}
       <div className="text-center mb-12">
-        <h2 className="text-[#4B85C7] text-2xl md:text-3xl font-bold mb-4">Replacement Reserve Loan Examples</h2>
+        <h2 className="text-[#4B85C7] text-2xl md:text-3xl font-bold mb-4">
+          Replacement Reserve Loan Examples
+        </h2>
       </div>
 
       {/* Main Flowchart */}
@@ -55,15 +62,20 @@ export function DisbursementFlowchart() {
             <ConnectingLine className="absolute top-8 left-1/4 w-1/2 h-0.5" />
 
             <div className="grid grid-cols-3 gap-16 mb-8">
-              {["FANNIE MAE", "FREDDIE MAC", "HUD 232/232(i)"].map((text, index) => (
-                <div key={text} className="relative">
-                  {/* Vertical lines to subcategories */}
-                  <ConnectingLine className="absolute bottom-0 left-1/2 w-0.5 h-8 translate-y-full -translate-x-1/2" />
-                  <FlowchartBox className="text-center" delay={0.2 + index * 0.1}>
-                    {text}
-                  </FlowchartBox>
-                </div>
-              ))}
+              {["FANNIE MAE", "FREDDIE MAC", "HUD 232/232(i)"].map(
+                (text, index) => (
+                  <div key={text} className="relative">
+                    {/* Vertical lines to subcategories */}
+                    <ConnectingLine className="absolute bottom-0 left-1/2 w-0.5 h-8 translate-y-full -translate-x-1/2" />
+                    <FlowchartBox
+                      className="text-center"
+                      delay={0.2 + index * 0.1}
+                    >
+                      {text}
+                    </FlowchartBox>
+                  </div>
+                )
+              )}
             </div>
 
             {/* Sub Categories */}
@@ -82,17 +94,25 @@ export function DisbursementFlowchart() {
         </div>
 
         {/* Process Flow */}
-        <div className="grid grid-cols-3 gap-2">
+        <div className="grid grid-cols-[2fr_1fr] gap-0">
           {/* Main Process Steps */}
-          <div className="col-span-2 space-y-2 bg-blue-50/50 p-3 rounded-lg">
-            <div className="grid grid-cols-3 gap-2">
-              {["Disbursement Form Package Checklist", "Reserve Disbursement", "OFAC Searches"].map((text, index) => (
-                <FlowchartBox key={text} delay={0.4 + index * 0.1} step={index + 1}>
+          <div className="bg-blue-50/50 p-3 rounded-lg self-start">
+            <div className="grid grid-cols-3 gap-2 mt-12">
+              {[
+                "Disbursement Form Package Checklist",
+                "Reserve Disbursement",
+                "OFAC Searches",
+              ].map((text, index) => (
+                <FlowchartBox
+                  key={text}
+                  delay={0.4 + index * 0.1}
+                  step={index + 1}
+                >
                   {text}
                 </FlowchartBox>
               ))}
             </div>
-            <div className="grid grid-cols-3 gap-2 mt-2">
+            <div className="grid grid-cols-3 gap-2 mt-2 h-[50px]">
               {[
                 "ACH/Wire Form & Information Searches",
                 "Disbursement Worksheet",
@@ -101,7 +121,18 @@ export function DisbursementFlowchart() {
                 "All Proofs/Liens",
                 "Final Approval and Funds",
               ].map((text, index) => (
-                <FlowchartBox key={text} delay={0.7 + index * 0.1} step={index + 4}>
+                <FlowchartBox
+                  key={text}
+                  delay={0.7 + index * 0.1}
+                  step={index + 4}
+                  className={
+                    text === "Reserve Schedule" ||
+                    text === "All Proofs/Liens" ||
+                    text === "Final Approval and Funds"
+                      ? "h-auto min-h-16 sm:min-h-14 md:min-h-24 lg:min-h-28"
+                      : ""
+                  }
+                >
                   {text}
                 </FlowchartBox>
               ))}
@@ -109,7 +140,9 @@ export function DisbursementFlowchart() {
           </div>
           {/* Required Documents */}
           <div className="bg-blue-50/50 p-3 rounded-lg">
-            <h3 className="text-[#4B85C7] font-semibold mb-1 text-sm">Required Documents</h3>
+            <h3 className="text-[#4B85C7] font-semibold mb-1 text-sm">
+              Required Documents
+            </h3>
             <div className="grid grid-cols-2 gap-1">
               {[
                 "Borrower Worksheet with Borrower Certification",
@@ -128,6 +161,5 @@ export function DisbursementFlowchart() {
         </div>
       </div>
     </div>
-  )
+  );
 }
-

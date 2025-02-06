@@ -10,7 +10,7 @@ export function HeroSection() {
   return (
     <GradientBackground className="min-h-[80vh] pt-24 pb-0 mt-16">
       {/* <div className="container mx-auto  lg:space-y-6 px-3"> */}
-      <div className=" mx-auto px-8 lg:space-y-6"> 
+      <div className=" mx-auto px-8 lg:space-y-6">
         <div className="flex flex-col lg:flex-row items-center justify-between h-full">
           <div className="lg:w-3/5 mb-8 lg:mb-0 w-full">
             <motion.h1
@@ -20,7 +20,7 @@ export function HeroSection() {
               className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center lg:text-left mb-4 leading-tight text-blue-900"
             >
               The{" "}
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700/90 to-blue-500">
                 All-in-One
               </span>{" "}
               Platform for CRE
