@@ -74,6 +74,7 @@ const services = [
   //   title: "Deal Underwriting & Financial Modeling",
   //   description: "Advanced financial modeling and underwriting solutions",
   //   items: [
+  
   //     {
   //       title: "Cash Flow Modeling & Rent Roll Analysis",
   //       description: "Detailed cash flow projections and rent roll insights",
@@ -106,6 +107,7 @@ const services = [
       {
         title: "Loan Onboarding & Data Digitization",
         description: "Secure transfer of historical lease data",
+        href: "/services/Lease&DataAdministration/LoanOnboarding&DataDigitization",
       },
     ],
   },
@@ -116,17 +118,17 @@ const services = [
       {
         title: "Salesforce Customisation & Integration",
         description: "Tailored Salesforce solutions for your business",
-        href: "/services/consulting/salesforce",
+        href: "/services/ConsultingTech/salesforce",
       },
       {
         title: "Custom Reporting & Dashboards",
         description: "Bespoke reporting solutions and analytics",
-        href: "/services/consulting/customRD",
+        href: "/services/ConsultingTech/customRD",
       },
       {
         title: "CRE Technology Consulting",
         description: "Strategic technology guidance for CRE",
-        href: "/services/consulting/creTech",
+        href: "/services/ConsultingTech/creTech",
       },
     ],
   },
