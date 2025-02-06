@@ -72,28 +72,7 @@ const services = [
       },
     ],
   },
-  // {
-  //   title: "Deal Underwriting & Financial Modeling",
-  //   description: "Advanced financial modeling and underwriting solutions",
-  //   items: [
 
-  //     {
-  //       title: "Cash Flow Modeling & Rent Roll Analysis",
-  //       description: "Detailed cash flow projections and rent roll insights",
-  //       href: "#",
-  //     },
-  //     {
-  //       title: "Underwriting & Due Diligence Support",
-  //       description: "Comprehensive due diligence and risk assessment",
-  //       href: "/services/deal/underwritingDDS",
-  //     },
-  //     {
-  //       title: "Custom Financial Model Development",
-  //       description: "Tailored financial models for your specific needs",
-  //       href: "/services/deal/customFDM",
-  //     },
-  //   ],
-  // },
   {
     title: "Lease & Data Administration",
     description: "Efficient lease management and data processing",
@@ -230,7 +209,7 @@ export function Navbar() {
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[800px] p-4 md:p-6">
-                      <div className="grid grid-cols-3 gap-6"> 
+                      <div className="grid grid-cols-3 gap-6">
                         {services.map((category) => (
                           <div key={category.title} className="space-y-2">
                             <h3 className="text-lg font-semibold text-blue-600">
@@ -386,12 +365,12 @@ export function Navbar() {
                         {category.items.map((item) => (
                           <div key={item.title} className="mb-2">
                             <Link
-                              href="#"
+                              href={item.href || "#"}
                               className="block px-3 py-2 text-sm text-gray-900 hover:text-blue-600"
                             >
                               <div className="font-medium">{item.title}</div>
                               <p className="text-xs text-gray-500">
-                                {item.description}
+                              {item.description}
                               </p>
                             </Link>
                           </div>
