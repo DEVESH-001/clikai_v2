@@ -41,7 +41,7 @@ const products = [
         href: "/products/SmartExtract",
       },
       {
-        title: "Clarity360 OM",
+        title: "Clarity360 ",
         description: "Cutting-edge tools for CRE document analysis",
         href: "/products/clarity360",
       },
