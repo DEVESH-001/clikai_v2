@@ -101,7 +101,7 @@ const plans: Plan[] = [
       "Companies needing scalable, customizable solutions",
       "Power users combining automation and expert support",
     ],
-    cta: "Talk to Us",
+    cta: "Talk To Us ",
   },
 ];
 

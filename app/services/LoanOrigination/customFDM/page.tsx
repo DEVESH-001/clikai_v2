@@ -534,22 +534,13 @@ export default function CustomFinancialModelDevelopment() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 sm:">
-                  <Button
-                    size="lg"
-                    className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
-                  >
-                    Request a Custom AI Model
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                  <Button
-                    size="lg"
-                    className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
-                  >
-                    Start AI Modeling Now
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </div>
+                <Button
+                  size="lg"
+                  className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
+                >
+                  Talk To Us Now
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
               </motion.div>
               <p className="text-blue-200 mt-4">
                 Discuss your challenges with our Salesforce consultants.

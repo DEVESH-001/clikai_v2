@@ -477,6 +477,53 @@ export default function DisbursementPCNASupport() {
           </div>
         </div>
       </section>
+      {/* Call-To-Action Section */}
+
+      <section className="py-16 relative overflow-hidden bg-gradient-to-br from-[#001F3F] via-blue-900 to-blue-800">
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-soft-light"></div>
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <svg
+            className="absolute w-full h-full"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,0 C30,40 70,60 100,0 L100,100 L0,100 Z"
+              fill="rgba(255, 255, 255, 0.05)"
+            />
+          </svg>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              Ready to Elevate Your PCNA Analysis ?
+            </h2>
+            <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-12">
+              Experience expert manual processing of PCNA/PCNR report
+              analysis and reserve disbursements.
+            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Button
+                size="lg"
+                className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
+              >
+                Talk To Us Now
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </motion.div>
+
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }

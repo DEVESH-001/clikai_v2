@@ -552,30 +552,21 @@ export default function LoanOnboardingPage() {
               Ready to Outperform Your Competition?
             </h2>
             <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">
-              Join industry leaders who have already revolutionized their loan
-              onboarding process with Clik
+              Join industry leaders who have already revolutionized their <br />{" "}
+              loan onboarding process with Clik
             </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Button
                 size="lg"
                 className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
               >
-                Schedule a Demo
+                Talk To Us Now
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
-              <Button
-                size="lg"
-                className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
-              >
- Download Case Study
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-              </div>
             </motion.div>
           </motion.div>
         </div>

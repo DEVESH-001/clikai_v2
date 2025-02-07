@@ -53,7 +53,7 @@ const products = [
 const services = [
   {
     title: "Loan Origination & Servicing",
-    description: "Comprehensive loan management and administrative solutions",
+    // description: "Comprehensive loan management and administrative solutions",
     items: [
       {
         title: "Underwriting & Due Diligence Support",
@@ -75,7 +75,6 @@ const services = [
 
   {
     title: "Lease & Data Administration",
-    description: "Efficient lease management and data processing",
     items: [
       {
         title: "Lease Abstraction & Audit",
@@ -94,7 +93,6 @@ const services = [
   },
   {
     title: "Consulting & Technology Solutions",
-    description: "Expert consulting and custom technology implementation",
     items: [
       {
         title: "Salesforce Customisation & Integration",
@@ -215,9 +213,9 @@ export function Navbar() {
                             <h3 className="text-lg font-semibold text-blue-600">
                               {category.title}
                             </h3>
-                            <p className="text-sm text-gray-600 mb-2">
+                            {/* <p className="text-sm text-gray-600 mb-2">
                               {category.description}
-                            </p>
+                            </p> */}
                             <ul className="space-y-2">
                               {category.items.map((item) => (
                                 <li key={item.title}>
@@ -359,9 +357,9 @@ export function Navbar() {
                         <h3 className="text-sm font-semibold text-blue-600 mb-1">
                           {category.title}
                         </h3>
-                        <p className="text-xs text-gray-600 mb-2">
+                        {/* <p className="text-xs text-gray-600 mb-2">
                           {category.description}
-                        </p>
+                        </p> */}
                         {category.items.map((item) => (
                           <div key={item.title} className="mb-2">
                             <Link
