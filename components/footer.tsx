@@ -177,7 +177,7 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
           </div>
 
           {/* Resources Column */}
-          <div className="flex flex-col items-center">
+          <div className="flex flex-col sm:ml-20">
             <h4 className="font-semibold mb-2 sm:mb-3 text-xs sm:text-sm md:text-base text-gray-300 text-left">
               Resources
             </h4>
