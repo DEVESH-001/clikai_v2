@@ -307,33 +307,7 @@ export function ServicesSection() {
     <section
       className={`py-12 bg-gradient-to-b from-indigo-50 via-purple-50 to-blue-50 relative overflow-hidden ${GeistSans.className}`}
     >
-      {/* AI-inspired background elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <svg
-          className="absolute w-full h-full"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          {[...Array(5)].map((_, i) => (
-            <motion.path
-              key={i}
-              d={`M${i * 20},50 Q${i * 20 + 10},${30 + Math.random() * 40} ${
-                i * 20 + 20
-              },50`}
-              stroke="rgba(59, 130, 246, 0.1)"
-              strokeWidth="0.5"
-              fill="none"
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 1 }}
-              transition={{
-                duration: 2 + i,
-                repeat: Number.POSITIVE_INFINITY,
-                repeatType: "reverse",
-              }}
-            />
-          ))}
-        </svg>
-      </div>
+      
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <motion.div
