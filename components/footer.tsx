@@ -49,9 +49,9 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
         </div>
 
         {/* Footer Links */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-8 sm:gap-12 mb-8 sm:mb-12">
           {/* Products Column */}
-            <div className="flex flex-col items-center sm:items-start">
+          <div>
             <h4 className="font-semibold mb-2 sm:mb-3 text-xs sm:text-sm md:text-base text-gray-300 text-center sm:text-left">
               Products
             </h4>
@@ -92,7 +92,7 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
           </div>
 
           {/* Services Column - Adjusted to be left and right aligned */}
-            <div className="col-span-1 sm:col-span-2 flex flex-col sm:flex-row sm:justify-between">
+          <div className="col-span-1 sm:col-span-2 flex flex-col">
             <h4 className="font-semibold mb-2 sm:mb-3 text-xs sm:text-sm md:text-base text-gray-300 text-center">
               Services
             </h4>
@@ -177,8 +177,8 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
           </div>
 
           {/* Resources Column */}
-          <div className="flex flex-col sm:ml-20">
-            <h4 className="font-semibold mb-2 sm:mb-3 text-xs sm:text-sm md:text-base text-gray-300 ">
+          <div className="flex flex-col items-center">
+            <h4 className="font-semibold mb-2 sm:mb-3 text-xs sm:text-sm md:text-base text-gray-300 text-left">
               Resources
             </h4>
             <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-left">
