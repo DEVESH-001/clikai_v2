@@ -227,7 +227,7 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
               Privacy Policy
             </Link>
             <Link href="/terms-and-conditions" className="hover:text-blue-300">
-              Terms & Conditions
+              Terms & Conditions 
             </Link>
             <Link
               href="/about-us"

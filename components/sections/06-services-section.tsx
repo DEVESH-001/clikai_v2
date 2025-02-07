@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 //import { Button } from "@/components/ui/button";
@@ -10,8 +10,7 @@ import {
   Zap,
   Plus,
   Minus,
-  ChevronLeft,
-  ChevronRight,
+
   ArrowRight,
 } from "lucide-react";
 import { GeistSans } from "geist/font/sans";
@@ -20,7 +19,7 @@ const services = [
   {
     id: "loan-servicing",
     title: "Loan Origination & Servicing",
-    description: "Comprehensive loan management and administrative solutions",
+    description: "Comprehensive loan management solutions",
     icon: Building2,
     color: "#3B82F6",
     subservices: [
@@ -261,55 +260,48 @@ const ServiceSection = ({ service }: { service: Service }) => {
   );
 };
 
-const Slider = ({
-  currentIndex,
-  setCurrentIndex,
-}: {
-  currentIndex: number;
-  setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
-}) => {
-  const sliderRef = useRef<HTMLDivElement>(null);
+// const Slider = ({
+//   currentIndex,
+//   setCurrentIndex,
+// }: {
+//   currentIndex: number;
+//   setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
+// }) => {
+//   const sliderRef = useRef<HTMLDivElement>(null);
 
-  const handleSliderChange = (event: { clientX: number }) => {
-    if (sliderRef.current) {
-      const rect = sliderRef.current.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const percentage = x / rect.width;
-      setCurrentIndex(percentage > 0.5 ? 1 : 0);
-    }
-  };
+//   const handleSliderChange = (event: { clientX: number }) => {
+//     if (sliderRef.current) {
+//       const rect = sliderRef.current.getBoundingClientRect();
+//       const x = event.clientX - rect.left;
+//       const percentage = x / rect.width;
+//       setCurrentIndex(percentage > 0.5 ? 1 : 0);
+//     }
+//   };
 
-  return (
-    <div className="w-full mt-8">
-      <div
-        ref={sliderRef}
-        className="relative w-full h-2 bg-gray-200 rounded-full cursor-pointer"
-        onClick={handleSliderChange}
-      >
-        <motion.div
-          className="absolute top-0 left-0 w-1/2 h-full bg-blue-500 rounded-full"
-          animate={{ x: `${currentIndex * 100}%` }}
-          transition={{
-            type: "tween",
-            duration: .15,
-            ease: "easeOut",
-          }}
-        />
-      </div>
-    </div>
-  );
-};
+//   return (
+//     <div className="w-full mt-8">
+//       <div
+//         ref={sliderRef}
+//         className="relative w-full h-2 bg-gray-200 rounded-full cursor-pointer"
+//         onClick={handleSliderChange}
+//       >
+//         <motion.div
+//           className="absolute top-0 left-0 w-1/2 h-full bg-blue-500 rounded-full"
+//           animate={{ x: `${currentIndex * 100}%` }}
+//           transition={{
+//             type: "tween",
+//             duration: 0.15,
+//             ease: "easeOut",
+//           }}
+//         />
+//       </div>
+//     </div>
+//   );
+// };
 
 export function ServicesSection() {
-  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleNext = () => {
-    setCurrentIndex(1);
-  };
 
-  const handlePrev = () => {
-    setCurrentIndex(0);
-  };
 
   return (
     <section
@@ -358,64 +350,13 @@ export function ServicesSection() {
             your business.
           </p>
         </motion.div>
-
-        <div className="relative overflow-hidden">
-          <motion.div
-            className="flex transition-all duration-500 ease-in-out"
-            animate={{ x: `${currentIndex * -100}%` }}
-            transition={{
-              type: "tween",
-              duration: 0.15,
-              ease: "easeOut",
-            }}
-          >
-            <div className="flex-shrink-0 w-full grid md:grid-cols-2 gap-6 md:gap-8">
-              {services.slice(0, 2).map((service) => (
-                <ServiceSection key={service.id} service={service} />
-              ))}
+        <div className="flex-shrink-3 w-full grid md:grid-cols-3 gap-6 md:gap-8">
+          {services.slice(0, 3).map((service) => (
+            <div key={service.id} className="h-full">
+              <ServiceSection service={service} />
             </div>
-            <div className="flex-shrink-0 w-full grid md:grid-cols-2 gap-6 md:gap-8">
-              {services.slice(2, 4).map((service) => (
-                <ServiceSection key={service.id} service={service} />
-              ))}
-            </div>
-          </motion.div>
-
-          {currentIndex === 0 && (
-            <button
-              onClick={handleNext}
-              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
-              aria-label="Next services"
-            >
-              <ChevronRight className="w-6 h-6 text-gray-600" />
-            </button>
-          )}
-          {currentIndex === 1 && (
-            <button
-              onClick={handlePrev}
-              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md"
-              aria-label="Previous services"
-            >
-              <ChevronLeft className="w-6 h-6 text-gray-600" />
-            </button>
-          )}
+          ))}
         </div>
-
-        <Slider currentIndex={currentIndex} setCurrentIndex={setCurrentIndex} />
-
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
-          className="text-center mt-8"
-        >
-          <Button
-            size="lg"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full text-sm md:text-base font-semibold transition-all duration-300 transform hover:scale-105"
-          >
-            Explore All AI Solutions
-          </Button>
-        </motion.div> */}
       </div>
     </section>
   );
