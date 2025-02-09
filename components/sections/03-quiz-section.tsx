@@ -208,8 +208,7 @@ export function QuizSection({ onProductRecommended }: QuizSectionProps) {
             tailored to your needs
           </p>
         </div>
-
-        <Card className="p-4 md:p-6 lg:p-8 bg-white/90 backdrop-blur shadow-xl rounded-xl">
+        <Card className="p-6 md:p-8 lg:p-10 bg-white/90 backdrop-blur shadow-xl rounded-xl">
           <AnimatePresence mode="wait">
             {!showResult ? (
               <motion.div
@@ -308,4 +307,3 @@ export function QuizSection({ onProductRecommended }: QuizSectionProps) {
     </section>
   );
 }
-
