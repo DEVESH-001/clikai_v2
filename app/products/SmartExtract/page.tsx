@@ -34,6 +34,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import type React from "react";
+import { GradientBackground } from "@/components/sections/gradient-background";
 
 const CodePreview = ({ children }: { children: React.ReactNode }) => (
   <div className="relative group">
@@ -76,7 +77,7 @@ export default function SmartExtractPage() {
   return (
     <div className={`min-h-screen ${GeistSans.className}`}>
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-white">
+      <GradientBackground>
         <AIBackground />
         <div className="container mx-auto px-4 py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -160,7 +161,7 @@ export default function SmartExtractPage() {
             </motion.div>
           </div>
         </div>
-      </section>
+      </GradientBackground>
 
       {/* Who is it for? Section */}
       <section className="py-12 bg-gradient-to-b from-white to-gray-50">
@@ -658,7 +659,7 @@ console.log(result.data);`}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button
                   size="lg"
                   className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
@@ -673,13 +674,11 @@ console.log(result.data);`}
                   Request a Demo
                   <ArrowUpRight className="ml-2 h-5 w-5" />
                 </Button>
-                </div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
       </section>
-
-    
     </div>
   );
 }

@@ -63,7 +63,7 @@ const services = [
       {
         title: "Custom Financial Model Development",
         description: "Seamless migration of historical data",
-        href:"/services/LoanOrigination/customFDM"
+        href: "/services/LoanOrigination/customFDM",
       },
       {
         title: "Disbursement & PCNA Support",
@@ -146,17 +146,18 @@ export function Navbar() {
 
   return (
     <>
-      <div className={`fixed top-0 left-0 right-0 z-50 bg-white `}>
-        {/* <div className="container mx-auto flex h-16 items-center justify-between px-4"> */}
-        <div className=" mx-auto flex h-16 items-center justify-between px-8">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white">
+        {/* Update container class for consistent padding */}
+        <div className="max-w-7xl mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-4">
             <Link href="/" className="flex items-center space-x-2">
               <Image
                 src={imageUrls.logo || "/placeholder.svg"}
                 alt="Clik.ai Logo"
-                width={120}
+                width={100}
                 height={80}
                 priority
+                className=" h-8 sm:h-10"
               />
             </Link>
           </div>
@@ -189,7 +190,6 @@ export function Navbar() {
                                         {item.description}
                                       </p>
                                     </div>
-                                    
                                   </Link>
                                 </li>
                               ))}
@@ -231,7 +231,6 @@ export function Navbar() {
                                         {item.description}
                                       </p>
                                     </div>
-                                    
                                   </Link>
                                 </li>
                               ))}
