@@ -150,7 +150,10 @@ export function Navbar() {
         {/* Update container class for consistent padding */}
         <div className="max-w-7xl mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-4">
-            <Link href="/" className="flex items-center space-x-2">
+            <Link
+              href="/"
+              className="flex items-center space-x-2 cursor-pointer"
+            >
               <Image
                 src={imageUrls.logo || "/placeholder.svg"}
                 alt="Clik.ai Logo"
