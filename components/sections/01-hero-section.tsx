@@ -5,13 +5,13 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { GradientBackground } from "./gradient-background";
+
 import { HeroGraphs } from "./hero-graphs";
 import { LogoCarousel } from "./02-logo-carousel";
 
 export function HeroSection() {
   return (
-    <GradientBackground className="min-h-[50vh] pt-24 pb-0 mt-16">
+    <div className="min-h-[50vh] pt-24 pb-0 mt-8">
       {/* <div className="container mx-auto px-4 lg:space-y-6"> */}
       <div className=" mx-auto px-8 lg:space-y-6">
         <div className="flex flex-col lg:flex-row items-center justify-between h-full">
@@ -57,7 +57,7 @@ export function HeroSection() {
         </div>
       </div>
       <LogoCarousel />
-    </GradientBackground>
+    </div>
   );
 }
 

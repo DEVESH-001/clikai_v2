@@ -99,14 +99,19 @@ export function LogoCarousel() {
   };
 
   return (
-    <div className="w-full overflow-hidden bg-gradient-to-b from-indigo-100 to-blue-50 py-8 relative sm:mt-10 lg:mt-12">
+    <div className="w-full overflow-hidden bg-gradient-to-b from-indigo-100 to-blue-50 py-3 relative sm:mt-2 lg:mt-24">
+      {/* Background noise image */}
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-soft-light "></div>
-      {/* <div className="absolute inset-0 bg-gradient-to-t from-blue-100/20 via-purple-100/20 to-indigo-100/20"></div> */}
-      <div ref={scrollerRef} className="flex overflow-hidden relative z-10">
+
+      {/* Logo bar with responsive margin */}
+      <div
+        ref={scrollerRef}
+        className="flex overflow-hidden relative z-10 mt-2 md:mt-2 lg:mt-6 xl:mt-8"
+      >
         {[...logos, ...logos].map((logo, index) => (
           <div
             key={index}
-            className="flex w-[200px] flex-shrink-0 items-center justify-center px-4 "
+            className="flex w-[200px] flex-shrink-0 items-center justify-center px-4"
           >
             <Image
               src={logo.src || "/placeholder.svg"}
