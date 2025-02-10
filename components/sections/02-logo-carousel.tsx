@@ -71,7 +71,7 @@ export function LogoCarousel() {
       height: 40,
     },
   ];
-
+ 
   const scrollerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -99,7 +99,7 @@ export function LogoCarousel() {
   };
 
   return (
-    <div className="w-full overflow-hidden bg-gradient-to-b from-indigo-100 to-blue-50 py-8 relative sm:mt-10 lg:mt-20">
+    <div className="w-full overflow-hidden bg-gradient-to-b from-indigo-100 to-blue-50 py-8 relative sm:mt-10 lg:mt-12">
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-soft-light "></div>
       {/* <div className="absolute inset-0 bg-gradient-to-t from-blue-100/20 via-purple-100/20 to-indigo-100/20"></div> */}
       <div ref={scrollerRef} className="flex overflow-hidden relative z-10">

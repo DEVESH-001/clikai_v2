@@ -146,9 +146,9 @@ export function Navbar() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm w-full ">
         {/* Update container class for consistent padding */}
-        <div className="max-w-7xl mx-auto flex h-16 items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className=" mx-auto px-8 flex h-16 items-center justify-between">
           <div className="flex items-center space-x-4">
             <Link
               href="/"
