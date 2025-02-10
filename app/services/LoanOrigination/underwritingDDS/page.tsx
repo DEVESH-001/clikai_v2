@@ -29,7 +29,7 @@ import {
   ArcElement,
 } from "chart.js";
 import DealFeasibilityChecker from "../../components/DealFeasibilityChecker";
-import { GradientBackground } from "@/components/sections/gradient-background";
+
 
 ChartJS.register(
   CategoryScale,
@@ -101,10 +101,7 @@ export default function UnderwritingDueDiligenceSupport() {
       {/* AI-themed background elements */}
       <div className="absolute  w-full h-full overflow-hidden z-0">
         {/* // eslint-disable-next-line react/no-children-prop */}
-        <GradientBackground
-          className="min-h-screen"
-          children={undefined}
-        ></GradientBackground>
+      
       </div>
 
       <main className="relative z-10">
