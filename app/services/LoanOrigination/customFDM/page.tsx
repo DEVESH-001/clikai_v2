@@ -10,7 +10,7 @@ import {
   Maximize2,
   Minimize2,
   Workflow,
-  FileSearch,
+  FileSearch, 
   Code,
   CheckCircle,
   PenTool,
@@ -138,7 +138,6 @@ export default function CustomFinancialModelDevelopment() {
     <div
       className={`min-h-screen ${GeistSans.className} relative overflow-hidden bg-gradient-to-br from-blue-50 via-indigo-50 to-sky-50 text-gray-800`}
     >
-      <DynamicBackground />
       <div className="relative z-10">
         {/* Curvy background elements */}
         <div className="absolute inset-0 overflow-hidden">
@@ -194,6 +193,7 @@ export default function CustomFinancialModelDevelopment() {
 
         {/* Hero Section */}
         <section className="relative pt-24 pb-16 overflow-hidden">
+          <DynamicBackground />
           <div className="container mx-auto px-4 relative">
             <motion.div
               initial={{ opacity: 0, y: 20 }}

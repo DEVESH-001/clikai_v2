@@ -128,7 +128,7 @@ export function QuizSection({ onProductRecommended }: QuizSectionProps) {
     setAnswers({})
     setShowResult(false)
     onProductRecommended("AutoUW") // Reset to default
-  }
+  } 
 
   const currentQuestionData = questions[currentQuestion]
 

@@ -414,7 +414,9 @@ export default function DisbursementPCNASupport() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
+      <section
+        className={`bg-gradient-to-b from-indigo-50 via-purple-50 to-blue-50 py-12 md:py-16 ${GeistSans.className}`}
+      >
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -504,8 +506,8 @@ export default function DisbursementPCNASupport() {
               Ready to Elevate Your PCNA Analysis ?
             </h2>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-12">
-              Experience expert manual processing of PCNA/PCNR report
-              analysis and reserve disbursements.
+              Experience expert manual processing of PCNA/PCNR report analysis
+              and reserve disbursements.
             </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -520,7 +522,6 @@ export default function DisbursementPCNASupport() {
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
-
           </motion.div>
         </div>
       </section>

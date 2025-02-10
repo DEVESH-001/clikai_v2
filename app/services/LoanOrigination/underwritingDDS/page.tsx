@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 "use client";
 
 import { motion } from "framer-motion";
@@ -28,6 +29,7 @@ import {
   ArcElement,
 } from "chart.js";
 import DealFeasibilityChecker from "../../components/DealFeasibilityChecker";
+import { GradientBackground } from "@/components/sections/gradient-background";
 
 ChartJS.register(
   CategoryScale,
@@ -97,74 +99,26 @@ export default function UnderwritingDueDiligenceSupport() {
       className={`min-h-screen ${GeistSans.className} relative overflow-hidden`}
     >
       {/* AI-themed background elements */}
-      <div className="absolute top-0 left-0 w-full h-[85vh] overflow-hidden z-0">
-        <div className="absolute inset-0 h-full bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 opacity-70"></div>
-        <svg
-          className="absolute w-full h-full"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <motion.path
-            d="M0,50 Q25,30 50,50 T100,50"
-            stroke="rgba(59, 130, 246, 0.1)"
-            strokeWidth="0.5"
-            fill="none"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{
-              duration: 2,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
-            }}
-          />
-          <motion.path
-            d="M0,30 Q25,50 50,30 T100,30"
-            stroke="rgba(99, 102, 241, 0.1)"
-            strokeWidth="0.5"
-            fill="none"
-            initial={{ pathLength: 0 }}
-            animate={{ pathLength: 1 }}
-            transition={{
-              duration: 2.5,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
-            }}
-          />
-        </svg>
-        {/* Floating particles */}
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-blue-200 rounded-full"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -20, 0],
-              opacity: [0.2, 0.5, 0.2],
-            }}
-            transition={{
-              duration: 3 + Math.random() * 2,
-              repeat: Number.POSITIVE_INFINITY,
-              repeatType: "reverse",
-            }}
-          />
-        ))}
+      <div className="absolute  w-full h-full overflow-hidden z-0">
+        {/* // eslint-disable-next-line react/no-children-prop */}
+        <GradientBackground
+          className="min-h-screen"
+          children={undefined}
+        ></GradientBackground>
       </div>
 
       <main className="relative z-10">
         {/* Hero Section */}
         <section className="relative pt-24 pb-16 overflow-hidden">
-          <div className="container mx-auto px-4">
-            <div className="flex flex-col lg:flex-row items-center justify-between">
+          <div className="container mx-auto px-4 max-w-screen-xl">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="lg:w-1/2 mb-8 lg:mb-0"
+                className="w-full lg:w-1/2 text-center lg:text-left"
               >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                   <span className="text-gray-900">Unlock</span>{" "}
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
                     Expert Underwriting
@@ -172,7 +126,7 @@ export default function UnderwritingDueDiligenceSupport() {
                   <br className="hidden md:block" />
                   <span className="text-gray-900">at Unbeatable Value</span>
                 </h1>
-                <h4 className="text-xl md:text-2xl mb-8 text-gray-700 font-light">
+                <h4 className="text-lg sm:text-xl md:text-2xl mb-8 text-gray-700 font-light">
                   Our seasoned analysts deliver precise, AI-assisted
                   underwriting support. Accelerate deals with faster turnaround
                   times while maintaining top-tier accuracy.
@@ -184,11 +138,12 @@ export default function UnderwritingDueDiligenceSupport() {
                   Schedule a Consultation
                 </Button>
               </motion.div>
+
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="lg:w-1/2 lg:-ml-64 ml-72 sm:ml-80"
+                className="w-full lg:w-1/2 flex justify-center lg:justify-end"
               >
                 <DealFeasibilityChecker />
               </motion.div>
@@ -198,7 +153,66 @@ export default function UnderwritingDueDiligenceSupport() {
 
         {/* Why Choose Clik.ai Section with AI-themed background */}
         <section className="py-16 relative bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
-          <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+          {/* latest added */}
+          <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-soft-light"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-blue-100/20 via-purple-100/20 to-indigo-100/20"></div>
+          {/* Decorative background elements */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            {/* Curved lines */}
+            <svg
+              className="absolute w-full h-full"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            >
+              <motion.path
+                d="M0,50 C30,20 70,80 100,50"
+                stroke="rgba(59, 130, 246, 0.2)"
+                strokeWidth="0.5"
+                fill="none"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{
+                  duration: 2,
+                  repeat: Number.POSITIVE_INFINITY,
+                  repeatType: "reverse",
+                }}
+              />
+              <motion.path
+                d="M0,30 C30,60 70,40 100,70"
+                stroke="rgba(59, 130, 246, 0.2)"
+                strokeWidth="0.5"
+                fill="none"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{
+                  duration: 2.5,
+                  repeat: Number.POSITIVE_INFINITY,
+                  repeatType: "reverse",
+                }}
+              />
+            </svg>
+
+            {/* Floating circles */}
+            {[...Array(5)].map((_, i) => (
+              <motion.div
+                key={i}
+                className="absolute w-32 h-32 rounded-full bg-blue-200/10"
+                style={{
+                  left: `${Math.random() * 100}%`,
+                  top: `${Math.random() * 100}%`,
+                }}
+                animate={{
+                  y: [0, -20, 0],
+                  scale: [1, 1.1, 1],
+                }}
+                transition={{
+                  duration: 3 + i,
+                  repeat: Number.POSITIVE_INFINITY,
+                  repeatType: "reverse",
+                }}
+              />
+            ))}
+          </div>
           <div className="container mx-auto px-4 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -330,14 +344,11 @@ export default function UnderwritingDueDiligenceSupport() {
                 </MotionCard>
               </div>
             </motion.div>
-
-            {/* CTA Section with Gradient Background */}
-            {/* Removed CTA Section as per update request */}
           </div>
         </section>
 
         {/* Underwriting & Due Diligence Services Section */}
-        <section className="py-16 relative bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+        <section className="py-16 relative bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-100/80">
           <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
           <div className="container mx-auto px-4 relative z-10 max-w-full">
             <motion.div
@@ -357,34 +368,38 @@ export default function UnderwritingDueDiligenceSupport() {
               </h4>
             </motion.div>
             <Tabs defaultValue="deal-underwriting" className="w-full">
-              <TabsList className="inline-flex h-auto p-1 mb-8 bg-muted/20 backdrop-blur-sm rounded-lg">
-                {[
-                  {
-                    value: "deal-underwriting",
-                    label: "CRE Deal Underwriting",
-                  },
-                  { value: "autouw", label: "AutoUW - OS & Rent Roll" },
-                  {
-                    value: "financial-model",
-                    label: "Financial Model Creation",
-                  },
-                  {
-                    value: "due-diligence",
-                    label: "Due Diligence & Compliance",
-                  },
-                  { value: "asset-summary", label: "Asset Summary & Analysis" },
-                  { value: "cmbs", label: "CMBS & Structured Finance" },
-                ].map((tab) => (
-                  <TabsTrigger
-                    key={tab.value}
-                    value={tab.value}
-                    className="px-4 py-2 text-sm rounded-md data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all duration-200"
-                  >
-                    {tab.label}
-                  </TabsTrigger>
-                ))}
-              </TabsList>
-
+              <div className="overflow-x-auto no-scrollbar">
+                <TabsList className="inline-flex h-auto p-1 mb-4 sm:mb-8 bg-muted/20 backdrop-blur-sm rounded-lg whitespace-nowrap">
+                  {[
+                    {
+                      value: "deal-underwriting",
+                      label: "CRE Deal Underwriting",
+                    },
+                    { value: "autouw", label: "AutoUW - OS & Rent Roll" },
+                    {
+                      value: "financial-model",
+                      label: "Financial Model Creation",
+                    },
+                    {
+                      value: "due-diligence",
+                      label: "Due Diligence & Compliance",
+                    },
+                    {
+                      value: "asset-summary",
+                      label: "Asset Summary & Analysis",
+                    },
+                    { value: "cmbs", label: "CMBS & Structured Finance" },
+                  ].map((tab) => (
+                    <TabsTrigger
+                      key={tab.value}
+                      value={tab.value}
+                      className="px-4 py-2 text-sm rounded-md data-[state=active]:bg-white data-[state=active]:text-blue-600 data-[state=active]:shadow-sm transition-all duration-200"
+                    >
+                      {tab.label}
+                    </TabsTrigger>
+                  ))}
+                </TabsList>
+              </div>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
                 {/* Left Column - Features */}
                 <div className="space-y-6">
@@ -1311,7 +1326,7 @@ export default function UnderwritingDueDiligenceSupport() {
           </div>
         </section>
         {/* CTA Section */}
-        <section className="relative  py-16 bg-gradient-to-br from-[#001F3F] via-blue-900 to-blue-800 mt-20 ">
+        <section className="relative py-16 bg-gradient-to-br from-[#001F3F] via-blue-900 to-blue-800">
           <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-soft-light"></div>
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <svg
