@@ -176,7 +176,7 @@ import { motion } from "framer-motion";
 import { HeroGraphs } from "./hero-graphs";
 import { LogoCarousel } from "./02-logo-carousel";
 import ParticleBackground from "./NewBackgraound";
-//import { GradientBackground } from "./gradient-background";
+
 
 export function HeroSection() {
   return (
