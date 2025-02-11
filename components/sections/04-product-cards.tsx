@@ -255,11 +255,11 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
                 ))}
               </ul>
 
-              <Button className="rounded-[8px] w-full group relative overflow-hidden bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 text-sm md:text-base"
-              onClick={() => window.location.href = product.link}
+              <Button
+                className="rounded-[8px] w-full group relative overflow-hidden bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 text-sm md:text-base"
+                onClick={() => (window.location.href = product.link)}
               >
                 Explore {product.title}
-
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
               </Button>
