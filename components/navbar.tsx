@@ -79,6 +79,7 @@ const services = [
       {
         title: "Lease Abstraction & Audit",
         description: "Detailed lease analysis and verification",
+        href:"/services/Lease&DataAdministration/Abstraction&Audit"
       },
       {
         title: "Appraisal & OM Data Digitization",
