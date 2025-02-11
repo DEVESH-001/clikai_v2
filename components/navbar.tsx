@@ -177,9 +177,9 @@ export function Navbar() {
                   <NavigationMenuContent>
                     <div className="w-[330px] p-2 md:p-4">
                       <div className="grid grid-cols-1 gap-2">
-                        {products.map((category) => (
-                          <>
-                            <ul className="space-y-2">
+                        {products.map((category, index) => (
+                        
+                            <ul key={index} className="space-y-2">
                               {category.items.map((item) => (
                                 <li key={item.title}>
                                   <Link
@@ -198,7 +198,7 @@ export function Navbar() {
                                 </li>
                               ))}
                             </ul>
-                          </>
+                        
                         ))}
                       </div>
                     </div>
