@@ -84,6 +84,7 @@ const services = [
       {
         title: "Appraisal & OM Data Digitization",
         description: "Convert physical documents into digital format",
+        href:"/services/Lease&DataAdministration/Appraisal&OMDataDigitization"
       },
       {
         title: "Loan Onboarding & Data Digitization",
