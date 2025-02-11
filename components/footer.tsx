@@ -124,7 +124,10 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-gray-300 hover:text-blue-300">
+                  <Link
+                    href="/services/Lease&DataAdministration/Abstraction&Audit"
+                    className="text-gray-300 hover:text-blue-300"
+                  >
                     Lease Abstraction & Audit
                   </Link>
                 </li>
@@ -227,7 +230,7 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
               Privacy Policy
             </Link>
             <Link href="/terms-and-conditions" className="hover:text-blue-300">
-              Terms & Conditions 
+              Terms & Conditions
             </Link>
             <Link
               href="/about-us"
