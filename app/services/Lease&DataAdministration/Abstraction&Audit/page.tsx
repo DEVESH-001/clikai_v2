@@ -19,6 +19,7 @@ import {
   Clock,
 } from "lucide-react"
 import Image from "next/image"
+import { GradientBackground } from "@/components/sections/gradient-background"
 
 // Enhanced services with more detail from the PDF
 const services = [
@@ -321,77 +322,79 @@ export default function LeaseAbstractionAuditPage() {
 
       <div className="relative z-10">
         {/* Hero Section */}
-        <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-          <div className="container mx-auto max-w-7xl">
-            <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                className="lg:w-1/2"
-              >
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-700/90 to-blue-500">
-                  Next-Gen Lease Abstraction & Audit Services
-                </h1>
-                <p className="text-xl text-gray-600 mb-8">
-                  Clik.ai provides comprehensive lease administration services
-                  to help property owners, REITs, investors, and property
-                  managers manage their portfolios more effectively.
-                </p>
-                <Button
-                  size="lg"
-                  className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+        <GradientBackground>
+          <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
+            <div className="container mx-auto max-w-7xl">
+              <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8 }}
+                  className="lg:w-1/2"
                 >
-                  Schedule a Consultation
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </motion.div>
+                  <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-700/90 to-blue-500">
+                    Next-Gen Lease Abstraction & Audit Services
+                  </h1>
+                  <p className="text-xl text-gray-600 mb-8">
+                    Clik.ai provides comprehensive lease administration services
+                    to help property owners, REITs, investors, and property
+                    managers manage their portfolios more effectively.
+                  </p>
+                  <Button
+                    size="lg"
+                    className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+                  >
+                    Schedule a Consultation
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="lg:w-1/2"
-              >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {whyChooseUs.map((benefit, index) => (
-                    <motion.div
-                      key={index}
-                      variants={itemVariants}
-                      initial="hidden"
-                      animate="visible"
-                      transition={{ delay: index * 0.1 }}
-                    >
-                      <Card className="p-6 bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                        <CardContent className="p-0">
-                          <benefit.icon className="w-8 h-8 text-blue-600 mb-3" />
-                          <h3 className="text-lg font-semibold mb-2">
-                            {benefit.title}
-                          </h3>
-                          <div className="space-y-2">
-                            {benefit.metrics.map((metric, idx) => (
-                              <div
-                                key={idx}
-                                className="flex justify-between items-center"
-                              >
-                                <span className="text-sm text-gray-600">
-                                  {metric.label}
-                                </span>
-                                <span className="text-lg font-semibold text-blue-600">
-                                  {metric.value}
-                                </span>
-                              </div>
-                            ))}
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="lg:w-1/2"
+                >
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {whyChooseUs.map((benefit, index) => (
+                      <motion.div
+                        key={index}
+                        variants={itemVariants}
+                        initial="hidden"
+                        animate="visible"
+                        transition={{ delay: index * 0.1 }}
+                      >
+                        <Card className="p-6 bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+                          <CardContent className="p-0">
+                            <benefit.icon className="w-8 h-8 text-blue-600 mb-3" />
+                            <h3 className="text-lg font-semibold mb-2">
+                              {benefit.title}
+                            </h3>
+                            <div className="space-y-2">
+                              {benefit.metrics.map((metric, idx) => (
+                                <div
+                                  key={idx}
+                                  className="flex justify-between items-center"
+                                >
+                                  <span className="text-sm text-gray-600">
+                                    {metric.label}
+                                  </span>
+                                  <span className="text-lg font-semibold text-blue-600">
+                                    {metric.value}
+                                  </span>
+                                </div>
+                              ))}
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              </div>
             </div>
-          </div> 
-        </section>
+          </section>
+        </GradientBackground>
 
         {/* Services Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8">
@@ -459,7 +462,6 @@ export default function LeaseAbstractionAuditPage() {
 
         {/* Tools & Technology Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white/50">
-        
           <div className="container mx-auto max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
