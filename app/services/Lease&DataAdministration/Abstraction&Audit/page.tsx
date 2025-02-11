@@ -336,8 +336,7 @@ export default function LeaseAbstractionAuditPage() {
                 <p className="text-xl text-gray-600 mb-8">
                   Clik.ai provides comprehensive lease administration services
                   to help property owners, REITs, investors, and property
-                  managers manage their portfolios more effectively across
-                  retail, office, industrial, and cellular tower properties.
+                  managers manage their portfolios more effectively.
                 </p>
                 <Button
                   size="lg"
@@ -391,7 +390,7 @@ export default function LeaseAbstractionAuditPage() {
                 </div>
               </motion.div>
             </div>
-          </div>
+          </div> 
         </section>
 
         {/* Services Section */}
@@ -460,6 +459,7 @@ export default function LeaseAbstractionAuditPage() {
 
         {/* Tools & Technology Section */}
         <section className="py-16 px-4 sm:px-6 lg:px-8 bg-white/50">
+        
           <div className="container mx-auto max-w-7xl">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
