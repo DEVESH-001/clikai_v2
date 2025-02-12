@@ -100,8 +100,7 @@
 //         <Particles
 //           id="tsparticles"
 //           className="absolute inset-0 z-0"
-          
-          
+
 //           options={particlesOptions}
 //         />
 //       )}
@@ -116,7 +115,7 @@
 //                 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center lg:text-left mb-4 leading-tight text-blue-900"
 //               >
 //                 The{" "}
-//                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700/90 to-blue-500"> 
+//                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-700/90 to-blue-500">
 //                   All-in-One <br />
 //                 </span>{" "}
 //                 Platform for CRE{" "}
@@ -155,24 +154,13 @@
 //   );
 // }
 
-
-
-
-
-
-
-
-//OLDER CODE
-
-
-
+//  React Particles Hero Section
 
 "use client";
 
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-
 import { HeroGraphs } from "./hero-graphs";
 import { LogoCarousel } from "./02-logo-carousel";
 
@@ -181,8 +169,8 @@ import { LogoCarousel } from "./02-logo-carousel";
 export function HeroSection() {
   return (
     <div>
-      {/* <GradientBackground> */}
-      
+
+
         <div className="min-h-[50vh] pt-24 pb-0 mt-8 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900">
           {/* <div className="container mx-auto px-4 lg:space-y-6"> */}
           <div className=" mx-auto px-8 lg:space-y-6 ">
@@ -218,20 +206,20 @@ export function HeroSection() {
                   <Button
                     size="lg"
                     className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl text-base md:text-lg font-semibold px-6 py-3"
-
                   >
                     Get Demo
                   </Button>
                 </motion.div>
               </div>
-              <div className="lg:w-2/5 w-full mt-8 lg:mt-0 mb-0 " >
+
+              <div className="lg:w-2/5 w-full mt-8 lg:mt-0 mb-0 ">
                 <HeroGraphs />
               </div>
             </div>
           </div>
           <LogoCarousel />
         </div>
-      {/* </GradientBackground> */}
+
     </div>
   );
-};
+}

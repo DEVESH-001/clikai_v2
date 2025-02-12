@@ -26,14 +26,14 @@ import { Switch } from "@/components/ui/switch";
 import { useState } from "react";
 
 export default function InvestAssistPage() {
-const [isYearly, setIsYearly] = useState(false);
+  const [isYearly, setIsYearly] = useState(false);
 
-const calculateSavings = (monthlyPrice: number) => {
-  return (
-    ((monthlyPrice * 12 - monthlyPrice * 10) / (monthlyPrice * 12)) *
-    100
-  ).toFixed(0);
-};
+  const calculateSavings = (monthlyPrice: number) => {
+    return (
+      ((monthlyPrice * 12 - monthlyPrice * 10) / (monthlyPrice * 12)) *
+      100
+    ).toFixed(0);
+  };
   return (
     <div
       className={`min-h-screen ${GeistSans.className} bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden`}
@@ -441,12 +441,10 @@ const calculateSavings = (monthlyPrice: number) => {
                 <div className="text-right">
                   <div className="text-2xl font-extrabold text-gray-900">
                     {isYearly ? (
-                      <>
-                        $490<span className="text-xl text-gray-600">/year</span>
-                      </>
+                      <></>
                     ) : (
                       <>
-                        $49<span className="text-xl text-gray-600">/mo</span>
+                        $49<span className="text-xl text-gray-600">/month</span>
                       </>
                     )}
                   </div>
