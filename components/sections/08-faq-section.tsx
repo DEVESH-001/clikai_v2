@@ -53,7 +53,7 @@ const faqs = [
       "Yes, you can upgrade or downgrade your plan at any time to match your business needs. Our flexible pricing structure allows you to scale your usage up or down based on your deal volume and requirements.",
   },
 ]
-
+ 
 export function FAQSection() {
   return (
     <section
