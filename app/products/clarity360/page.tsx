@@ -22,6 +22,7 @@ import {
   Map,
   Database,
 } from "lucide-react";
+import { ParticleBackground } from "@/components/sections/ParticleBackground";
 
 // Features data
 const features = [
@@ -179,6 +180,7 @@ export default function Clarity360OMPage() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-16 overflow-hidden">
+        <ParticleBackground/>
         <div className="container mx-auto px-4 max-w-7xl">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="max-w-xl">

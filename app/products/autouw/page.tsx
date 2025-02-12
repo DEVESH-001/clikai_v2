@@ -22,6 +22,7 @@ import {
   FileText,
 } from "lucide-react";
 import { GradientBackground } from "@/components/sections/gradient-background";
+import { ParticleBackground } from "@/components/sections/ParticleBackground";
 
 // Features data
 const features = [
@@ -182,6 +183,7 @@ export default function AutoUWPage() {
 
       {/* Hero Section */}
       <GradientBackground>
+        <ParticleBackground/>
         <section className="relative pt-32 pb-16 overflow-hidden">
           <div className="container mx-auto px-4 max-w-7xl">
             <div className="grid lg:grid-cols-2 gap-16 items-center">
