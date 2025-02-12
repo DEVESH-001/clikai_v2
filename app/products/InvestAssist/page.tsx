@@ -4,10 +4,9 @@ import { motion } from "framer-motion"
 import { GeistSans } from "geist/font/sans"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, BarChart2, FileText, PieChart, Table, Clock, CheckCircle2, X, Check,  } from "lucide-react"
+import { ArrowRight, BarChart2, FileText, PieChart, Table, Clock, CheckCircle2, X, Check } from "lucide-react"
 import Image from "next/image"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-//import { GradientBackground } from "@/components/sections/gradient-background"
 
 export default function InvestAssistPage() {
   return (
@@ -23,7 +22,7 @@ export default function InvestAssistPage() {
       </div>
 
       {/* Hero Section */}
-       <section className="relative z-10 pt-24 pb-16 mt-24 overflow-hidden min-h-screen items-center">
+      <section className="relative z-10 pt-24 pb-16 overflow-hidden">
         <div className="container mx-auto px-4 relative">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
             <motion.div
@@ -74,72 +73,8 @@ export default function InvestAssistPage() {
           </div>
         </div>
         <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white/10"></div>
-      </section> 
-       {/* Hero Section */}
-      {/* <GradientBackground>
-        <section className="relative pt-24 pb-8 overflow-hidden">
-          <div className="container mx-auto px-4 max-w-7xl">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="max-w-xl">
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-                >
-                  Analyze Cashflows and IRRs in
-                  <span className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-  Just Minutes
-                  </span>{" "}
+      </section>
 
-                </motion.h1>
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="text-xl text-gray-700 mb-8"
-                >
-                  Stop wasting hours building cashflow models manually. Use our sophisticated investor return models or
-                plug AI directly into your financial models to run cashflow and investor return analysis at scale.
-                </motion.p>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                >
-                   <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Get Started
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
-                  Talk to Us
-                </Button>
-              </div>
-                </motion.div>
-              </div>
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="relative w-full aspect-square max-w-2xl mx-auto"
-              >
-                 <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/investAssist-combined-125jokgtmO7dgKE9jwB2QPPjWS8G6j.png"
-                alt="InvestAssist Platform Interface"
-                width={800}
-                height={600}
-                className="w-full h-auto"
-                priority
-              />
-              </motion.div>
-            </div>
-          </div>
-        </section>
-      </GradientBackground> */}
       {/* Comparison Section (Moved before Features Section) */}
       <section className="relative z-10 py-16">
         <div className="container mx-auto px-4">
@@ -551,6 +486,7 @@ export default function InvestAssistPage() {
         </div>
       </section>
 
+      {/* Final CTA Section */}
             {/* CTA Section */}
       <section className="relative z-10 py-16 bg-gradient-to-br from-[#001F3F] via-blue-900 to-blue-800">
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-soft-light"></div>
@@ -598,8 +534,6 @@ export default function InvestAssistPage() {
           </motion.div>
         </div>
       </section>
-
-
     </div>
   )
 }

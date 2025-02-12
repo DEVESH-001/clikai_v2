@@ -401,7 +401,7 @@ export default function LeaseAbstractionAuditPage() {
                       transition={{ delay: index * 0.1 }}
                       className="h-full"
                     >
-                      <Card className="p-4 bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 h-full flex flex-col">
+                      <Card className="p-4 bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300 transform hover:scale-105 h-full flex flex-col mt-8">
                         <CardContent className="h-full flex flex-col justify-between">
                           <benefit.icon className="w-8 h-8 text-blue-600 mb-3" />
                           <h3 className="text-lg font-semibold mb-2">
