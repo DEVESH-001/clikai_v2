@@ -11,11 +11,11 @@ export function HeroSection() {
   return (
     <div className="relative">
       <div className="relative z-20 min-h-[50vh] pt-24 pb-0 mt-8 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 overflow-hidden">
-        <div className="absolute inset-0">
-          <ParticleBackground height="100%" />
+        <div className="absolute inset-0 ">
+          <ParticleBackground />
         </div>
 
-        <div className="mx-auto px-8 lg:space-y-6 relative">
+        <div className="mx-auto px-8 lg:space-y-6 relative  ">
           <div className="flex flex-col lg:flex-row items-center justify-between h-full">
             <div className="lg:w-3/5 mb-8 lg:mb-0 w-full">
               {/* Hero Title */}

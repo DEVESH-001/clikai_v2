@@ -180,7 +180,7 @@ import { LogoCarousel } from "./02-logo-carousel";
 export function HeroSection() {
   return (
     <div>
-      {/* <GradientBackground> */}
+
         <div className="min-h-[50vh] pt-24 pb-0 mt-8">
           {/* <div className="container mx-auto px-4 lg:space-y-6"> */}
           <div className=" mx-auto px-8 lg:space-y-6">
@@ -228,7 +228,7 @@ export function HeroSection() {
           </div>
           <LogoCarousel />
         </div>
-      {/* </GradientBackground> */}
+
     </div>
   );
 };
