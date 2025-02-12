@@ -1,14 +1,39 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { GeistSans } from "geist/font/sans"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { ArrowRight, BarChart2, FileText, PieChart, Table, Clock, CheckCircle2, X, Check } from "lucide-react"
-import Image from "next/image"
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { motion } from "framer-motion";
+import { GeistSans } from "geist/font/sans";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import {
+  ArrowRight,
+  BarChart2,
+  FileText,
+  PieChart,
+  Table,
+  Clock,
+  CheckCircle2,
+  X,
+  Check,
+} from "lucide-react";
+import Image from "next/image";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Switch } from "@/components/ui/switch";
+import { useState } from "react";
 
 export default function InvestAssistPage() {
+const [isYearly, setIsYearly] = useState(false);
+
+const calculateSavings = (monthlyPrice: number) => {
+  return (
+    ((monthlyPrice * 12 - monthlyPrice * 10) / (monthlyPrice * 12)) *
+    100
+  ).toFixed(0);
+};
   return (
     <div
       className={`min-h-screen ${GeistSans.className} bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden`}
@@ -32,14 +57,18 @@ export default function InvestAssistPage() {
               className="lg:w-1/2 w-full"
             >
               <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
-                <span className="text-gray-900">Analyze Cashflows and IRRs in</span>{" "}
+                <span className="text-gray-900">
+                  Analyze Cashflows and IRRs in
+                </span>{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
                   Just Minutes
                 </span>
               </h1>
               <p className="text-lg md:text-xl text-gray-600 mb-8">
-                Stop wasting hours building cashflow models manually. Use our sophisticated investor return models or
-                plug AI directly into your financial models to run cashflow and investor return analysis at scale.
+                Stop wasting hours building cashflow models manually. Use our
+                sophisticated investor return models or plug AI directly into
+                your financial models to run cashflow and investor return
+                analysis at scale.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
@@ -49,7 +78,11 @@ export default function InvestAssistPage() {
                   Get Started
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
-                <Button size="lg" variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                >
                   Talk to Us
                 </Button>
               </div>
@@ -84,9 +117,12 @@ export default function InvestAssistPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Spreadsheets Are Outdated. Here&apos;s Why.</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Spreadsheets Are Outdated. Here&apos;s Why.
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              See how InvestAssist transforms your workflow and saves countless hours
+              See how InvestAssist transforms your workflow and saves countless
+              hours
             </p>
           </motion.div>
 
@@ -100,9 +136,15 @@ export default function InvestAssistPage() {
               <table className="w-full">
                 <thead className="bg-blue-100">
                   <tr>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Feature</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">Old-School Spreadsheets</th>
-                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">🚀 InvestAssist</th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
+                      Feature
+                    </th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
+                      Old-School Spreadsheets
+                    </th>
+                    <th className="px-6 py-4 text-left text-sm font-semibold text-gray-900">
+                      🚀 InvestAssist
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-gray-200">
@@ -115,7 +157,9 @@ export default function InvestAssistPage() {
                       },
                       new: {
                         text: "AI-powered, instant data parsing",
-                        icon: <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />,
+                        icon: (
+                          <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />
+                        ),
                       },
                     },
                     {
@@ -126,7 +170,9 @@ export default function InvestAssistPage() {
                       },
                       new: {
                         text: "Instant insights, no manual input",
-                        icon: <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />,
+                        icon: (
+                          <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />
+                        ),
                       },
                     },
                     {
@@ -137,7 +183,9 @@ export default function InvestAssistPage() {
                       },
                       new: {
                         text: "Auto-categorization of financials into charge codes",
-                        icon: <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />,
+                        icon: (
+                          <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />
+                        ),
                       },
                     },
                     {
@@ -148,7 +196,9 @@ export default function InvestAssistPage() {
                       },
                       new: {
                         text: "One-Click Property and Rent Comparable Summary",
-                        icon: <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />,
+                        icon: (
+                          <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />
+                        ),
                       },
                     },
                     {
@@ -159,7 +209,9 @@ export default function InvestAssistPage() {
                       },
                       new: {
                         text: "One-click pro-grade model",
-                        icon: <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />,
+                        icon: (
+                          <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />
+                        ),
                       },
                     },
                     {
@@ -170,7 +222,9 @@ export default function InvestAssistPage() {
                       },
                       new: {
                         text: "Auto-generated branded reports",
-                        icon: <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />,
+                        icon: (
+                          <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />
+                        ),
                       },
                     },
                     {
@@ -181,7 +235,9 @@ export default function InvestAssistPage() {
                       },
                       new: {
                         text: "Automated validation & error detection",
-                        icon: <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />,
+                        icon: (
+                          <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />
+                        ),
                       },
                     },
                     {
@@ -192,7 +248,9 @@ export default function InvestAssistPage() {
                       },
                       new: {
                         text: "Real-time collaboration & sharing",
-                        icon: <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />,
+                        icon: (
+                          <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />
+                        ),
                       },
                     },
                     {
@@ -203,7 +261,9 @@ export default function InvestAssistPage() {
                       },
                       new: {
                         text: "Centralized database with instant access",
-                        icon: <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />,
+                        icon: (
+                          <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />
+                        ),
                       },
                     },
                     {
@@ -214,12 +274,19 @@ export default function InvestAssistPage() {
                       },
                       new: {
                         text: "Minutes for entire portfolios",
-                        icon: <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />,
+                        icon: (
+                          <CheckCircle2 className="h-4 w-4 text-green-500 mr-2" />
+                        ),
                       },
                     },
                   ].map((row, index) => (
-                    <tr key={index} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
-                      <td className="px-6 py-4 text-sm font-medium text-gray-900">{row.feature}</td>
+                    <tr
+                      key={index}
+                      className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}
+                    >
+                      <td className="px-6 py-4 text-sm font-medium text-gray-900">
+                        {row.feature}
+                      </td>
                       <td className="px-6 py-4 text-sm text-gray-600">
                         <div className="flex items-center">
                           {row.old.icon}
@@ -265,9 +332,12 @@ export default function InvestAssistPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Comprehensive Investment Analysis</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Comprehensive Investment Analysis
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Your trusted companion for simplifying real estate investments, designed for investors and syndicators.
+              Your trusted companion for simplifying real estate investments,
+              designed for investors and syndicators.
             </p>
           </motion.div>
 
@@ -282,12 +352,14 @@ export default function InvestAssistPage() {
               {
                 icon: FileText,
                 title: "Automated Document Processing",
-                description: "Parse, clean, and analyze any rent roll PDF to generate analytics instantaneously.",
+                description:
+                  "Parse, clean, and analyze any rent roll PDF to generate analytics instantaneously.",
               },
               {
                 icon: PieChart,
                 title: "Advanced Analytics Dashboard",
-                description: "View and manage all your deals at a glance with our intuitive dashboard interface.",
+                description:
+                  "View and manage all your deals at a glance with our intuitive dashboard interface.",
               },
               {
                 icon: Table,
@@ -304,7 +376,8 @@ export default function InvestAssistPage() {
               {
                 icon: CheckCircle2,
                 title: "Data Validation & Review",
-                description: "Configure charge codes, occupancy, and floor plans with built-in validation tools.",
+                description:
+                  "Configure charge codes, occupancy, and floor plans with built-in validation tools.",
               },
             ].map((feature, index) => (
               <motion.div
@@ -316,8 +389,12 @@ export default function InvestAssistPage() {
                 <Card className="h-full bg-white/80 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
                   <CardContent className="p-4">
                     <feature.icon className="w-6 h-6 text-blue-600 mb-2" />
-                    <h3 className="text-base font-semibold mb-1 text-gray-900">{feature.title}</h3>
-                    <p className="text-sm text-gray-600">{feature.description}</p>
+                    <h3 className="text-base font-semibold mb-1 text-gray-900">
+                      {feature.title}
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      {feature.description}
+                    </p>
                   </CardContent>
                 </Card>
               </motion.div>
@@ -336,7 +413,9 @@ export default function InvestAssistPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-8"
           >
-            <h2 className="text-3xl font-bold mb-2">Simple, Transparent Pricing</h2>
+            <h2 className="text-3xl font-bold mb-2">
+              Simple, Transparent Pricing
+            </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Transform your investment analysis workflow with InvestAssist
             </p>
@@ -351,16 +430,60 @@ export default function InvestAssistPage() {
             <div className="p-6">
               <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
                 <div>
-                  <h3 className="text-2xl font-bold text-gray-900">InvestAssist Plan</h3>
-                  <p className="text-sm text-green-600 font-semibold">*Special beta pricing</p>
+                  <h3 className="text-2xl font-bold text-gray-900">
+                    InvestAssist Plan
+                  </h3>
+                  <p className="text-sm text-green-600 font-semibold">
+                    *Special beta pricing
+                  </p>
                 </div>
+                {/* right side */}
                 <div className="text-right">
-                  <div className="text-4xl font-extrabold text-gray-900">
-                    $49<span className="text-xl text-gray-600">/mo</span>
+                  <div className="text-2xl font-extrabold text-gray-900">
+                    {isYearly ? (
+                      <>
+                        $490<span className="text-xl text-gray-600">/year</span>
+                      </>
+                    ) : (
+                      <>
+                        $49<span className="text-xl text-gray-600">/mo</span>
+                      </>
+                    )}
                   </div>
-                  <Button size="sm" className="mt-2">
-                    Get Started
-                  </Button>
+
+                  <div className="flex items-center justify-center gap-3 mb-8">
+                    <span
+                      className={`text-lg ${
+                        !isYearly ? "text-gray-900 font-bold" : "text-gray-600"
+                      }`}
+                    >
+                      Monthly
+                    </span>
+                    <Switch
+                      checked={isYearly}
+                      onCheckedChange={setIsYearly}
+                      className="relative w-10 h-5 bg-blue-500 rounded-full transition-all 
+                data-[state=checked]:bg-blue-600 focus:outline-none focus:ring-2 
+                focus:ring-blue-500 focus:ring-offset-2"
+                    >
+                      <span
+                        className={`absolute w-4 h-4 bg-white rounded-full shadow-md 
+                    transition-transform transform ${
+                      isYearly ? "translate-x-5" : "translate-x-1"
+                    }`}
+                      />
+                    </Switch>
+                    <span
+                      className={`text-lg ${
+                        isYearly ? "text-gray-900 font-bold" : "text-gray-600"
+                      }`}
+                    >
+                      Yearly{" "}
+                      <span className="text-green-600 text-base font-bold">
+                        (Save {calculateSavings(49)}%)
+                      </span>
+                    </span>
+                  </div>
                 </div>
               </div>
 
@@ -442,14 +565,17 @@ export default function InvestAssistPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-8"
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-2">Frequently Asked Questions</h2>
+            <h2 className="text-2xl md:text-3xl font-bold mb-2">
+              Frequently Asked Questions
+            </h2>
           </motion.div>
 
           <div className="max-w-3xl mx-auto">
             <Accordion type="single" collapsible className="w-full space-y-2">
               {[
                 {
-                  question: "What types of properties does InvestAssist support?",
+                  question:
+                    "What types of properties does InvestAssist support?",
                   answer:
                     "InvestAssist specializes in multifamily properties. For other asset classes, try our versatile AutoUW product, which allows custom model integration.",
                 },
@@ -459,7 +585,8 @@ export default function InvestAssistPage() {
                     "Our AI-powered data extraction boasts an accuracy rate of over 99%, with built-in validation tools for added precision.",
                 },
                 {
-                  question: "How does InvestAssist handle complex multifamily deal structures?",
+                  question:
+                    "How does InvestAssist handle complex multifamily deal structures?",
                   answer:
                     "InvestAssist handles a wide range of multifamily deal structures, including waterfall distributions, preferred returns, and various LP/GP splits, providing accurate projections and analysis.",
                 },
@@ -469,7 +596,8 @@ export default function InvestAssistPage() {
                     "Yes, we are SOC2 certified and use bank-level encryption to protect your data both in transit and at rest.",
                 },
                 {
-                  question: "How long does it take to get started with InvestAssist?",
+                  question:
+                    "How long does it take to get started with InvestAssist?",
                   answer:
                     "You can start immediately. Most users complete the onboarding process, including setup and familiarization, in less than a day.",
                 },
@@ -478,7 +606,9 @@ export default function InvestAssistPage() {
                   <AccordionTrigger className="text-left text-base font-medium text-gray-900 py-3">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-sm text-gray-600 pb-3">{item.answer}</AccordionContent>
+                  <AccordionContent className="text-sm text-gray-600 pb-3">
+                    {item.answer}
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
@@ -487,7 +617,7 @@ export default function InvestAssistPage() {
       </section>
 
       {/* Final CTA Section */}
-            {/* CTA Section */}
+      {/* CTA Section */}
       <section className="relative z-10 py-16 bg-gradient-to-br from-[#001F3F] via-blue-900 to-blue-800">
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-soft-light"></div>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -513,9 +643,10 @@ export default function InvestAssistPage() {
               Ready to Revolutionize Your CRE Analysis?
             </h2>
             <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">
-              Start saving time and making smarter investment decisions with InvestAssist&apos;s powerful AI-driven analysis.
+              Start saving time and making smarter investment decisions with
+              InvestAssist&apos;s powerful AI-driven analysis.
             </p>
-          <div className="flex justify-center space-x-4">
+            <div className="flex justify-center space-x-4">
               <Button
                 size="lg"
                 className="bg-white text-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105"
@@ -535,6 +666,5 @@ export default function InvestAssistPage() {
         </div>
       </section>
     </div>
-  )
+  );
 }
-
