@@ -301,7 +301,13 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
-            className="lg:hidden text-white"
+            className={`lg:hidden ${
+              pathname === "/"
+                ? isScrolled
+                  ? "text-gray-800"
+                  : "text-white"
+                : "text-gray-800"
+            }`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
@@ -357,6 +363,7 @@ export function Navbar() {
                           <Link
                             key={index}
                             href={item.href}
+                            onClick={() => setMobileMenuOpen(false)}
                             className="block px-3 py-1 text-sm text-white hover:text-blue-300"
                           >
                             {item.title}
@@ -386,13 +393,14 @@ export function Navbar() {
                         <h3 className="text-sm font-semibold text-blue-600 mb-1">
                           {category.title}
                         </h3>
-                        {/* <p className="text-xs text-gray-600 mb-2">
-                          {category.description}
-                        </p> */}
                         {category.items.map((item) => (
                           <div key={item.title} className="mb-2">
                             <Link
                               href={item.href || "#"}
+                              onClick={() => {
+                                setMobileMenuOpen(false);
+                                setMobileServicesOpen(false);
+                              }}
                               className="block px-3 py-2 text-sm text-white hover:text-blue-300"
                             >
                               <div className="font-medium">{item.title}</div>
@@ -409,12 +417,14 @@ export function Navbar() {
               </div>
               <Link
                 href="/#pricing"
+                onClick={() => setMobileMenuOpen(false)}
                 className={`block px-3 py-2 text-white hover:text-blue-300 rounded-md ${dynamicNavItemClass}`}
               >
                 PRICING
               </Link>
               <Link
                 href="/why-clik-ai"
+                onClick={() => setMobileMenuOpen(false)}
                 className={`block px-3 py-2 text-white hover:text-blue-300 rounded-md ${dynamicNavItemClass}`}
               >
                 WHY CLIK.AI
@@ -422,12 +432,14 @@ export function Navbar() {
               <div className="border-t border-gray-200 pt-4 pb-3">
                 <Link
                   href="/login"
+                  onClick={() => setMobileMenuOpen(false)}
                   className={`block px-3 py-2 text-white hover:text-blue-300 rounded-md ${dynamicNavItemClass}`}
                 >
                   SIGN IN
                 </Link>
                 <Link
                   href="/get-started"
+                  onClick={() => setMobileMenuOpen(false)}
                   className={`block px-3 py-2 text-sm text-white bg-blue-600 hover:bg-blue-700 rounded-md mt-2 ${dynamicNavItemClass}`}
                 >
                   GET STARTED
