@@ -23,7 +23,7 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-6xl font-bold text-center lg:text-left mb-4 leading-tight text-white"
+                className="text-7xl font-bold text-center lg:text-left mb-4 leading-tight text-white"
               >
                 The{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
@@ -37,7 +37,7 @@ export function HeroSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="text-lg md:text-xl lg:text-2xl text-center lg:text-left mb-6 text-blue-200 max-w-2xl mx-auto lg:mx-0"
+                className="text-xl md:text-xl lg:text-3xl text-center lg:text-left mb-6 text-blue-200 max-w-2xl mx-auto lg:mx-0"
               >
                 Delivering smarter tools and expert support to transform the way
                 CRE works
