@@ -1,4 +1,4 @@
-//new
+ //new
 
 "use client";
 
@@ -40,7 +40,7 @@ export function LogoCarousel() {
       width: 160,
       height: 40,
     },
-    {
+    { 
       src: imageUrls.logos.acoreCapital,
       alt: "ACORE Capital",
       width: 160,

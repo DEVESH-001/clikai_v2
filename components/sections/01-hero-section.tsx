@@ -10,7 +10,7 @@ import { ParticleBackground } from "./ParticleBackground";
 export function HeroSection() {
   return (
     <div className="relative">
-      <div className="relative z-20 min-h-[50vh] pt-24 pb-0 mt-8 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 overflow-hidden">
+      <div className="relative z-20 min-h-[50vh] pt-24 pb-0 bg-gradient-to-br from-blue-900 via-indigo-900 to-purple-900 overflow-hidden">
         <div className="absolute inset-0 ">
           <ParticleBackground />
         </div>

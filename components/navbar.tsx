@@ -11,7 +11,6 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
@@ -19,7 +18,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { imageUrls } from "@/utils/imageUrls";
 
-const navItemClass = "tracking-wider text-sm uppercase font-medium";
+const navItemClass = "tracking-wider text-sm uppercase font-medium text-white";
 
 // Updated Products structure
 const products = [
@@ -79,12 +78,13 @@ const services = [
       {
         title: "Lease Abstraction & Audit",
         description: "Detailed lease analysis and verification",
-        href:"/services/Lease&DataAdministration/Abstraction&Audit"
+        href: "/services/Lease&DataAdministration/Abstraction&Audit",
       },
       {
-        title: "Appraisal & OM Data Digitization",
+        // title: "Appraisal & OM Data Digitization",
+        title:"Loan Documents Digitization",
         description: "Convert physical documents into digital format",
-        href: "/products/InvestAssist"
+        href: "/products/InvestAssist",
       },
       {
         title: "Loan Onboarding & Data Digitization",
@@ -148,14 +148,13 @@ export function Navbar() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 z-50 bg-white backdrop-blur-sm w-full ">
+      <div className="fixed top-0 left-0 right-0 z-50 bg-transparent backdrop-blur-sm w-full">
         {/* Update container class for consistent padding */}
         <div className=" mx-auto px-8 flex h-16 items-center justify-between">
           <div className="flex items-center space-x-4">
             <Link
               href="/"
               className="flex items-center space-x-2 cursor-pointer"
-
             >
               <Image
                 src={imageUrls.logo || "/placeholder.svg"}
@@ -171,36 +170,36 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex flex-1 justify-center">
             <NavigationMenu className="hidden lg:flex flex-1 justify-center">
-              <NavigationMenuList className="space-x-1">
+              <NavigationMenuList className="space-x-8">
                 <NavigationMenuItem value="products">
-                  <NavigationMenuTrigger className={navItemClass}>
+                  <NavigationMenuTrigger
+                    className={`${navItemClass} bg-transparent hover:bg-transparent hover:text-white/80`}
+                  >
                     PRODUCTS
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <div className="w-[330px] p-2 md:p-4">
                       <div className="grid grid-cols-1 gap-2">
                         {products.map((category, index) => (
-                        
-                            <ul key={index} className="space-y-2">
-                              {category.items.map((item) => (
-                                <li key={item.title}>
-                                  <Link
-                                    href={item.href}
-                                    className="group flex items-center p-2 rounded-md hover:bg-blue-50 transition-colors"
-                                  >
-                                    <div>
-                                      <div className="text-sm font-medium text-gray-900 group-hover:text-blue-600">
-                                        {item.title}
-                                      </div>
-                                      <p className="text-xs text-gray-500">
-                                        {item.description}
-                                      </p>
+                          <ul key={index} className="space-y-2">
+                            {category.items.map((item) => (
+                              <li key={item.title}>
+                                <Link
+                                  href={item.href}
+                                  className="group flex items-center p-2 rounded-md hover:bg-blue-50 transition-colors"
+                                >
+                                  <div>
+                                    <div className="text-sm font-medium text-gray-900 group-hover:text-blue-600">
+                                      {item.title}
                                     </div>
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                        
+                                    <p className="text-xs text-gray-500">
+                                      {item.description}
+                                    </p>
+                                  </div>
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
                         ))}
                       </div>
                     </div>
@@ -208,7 +207,9 @@ export function Navbar() {
                 </NavigationMenuItem>
 
                 <NavigationMenuItem value="services">
-                  <NavigationMenuTrigger className={navItemClass}>
+                  <NavigationMenuTrigger
+                    className={`${navItemClass} bg-transparent hover:bg-transparent`}
+                  >
                     SERVICES
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -250,9 +251,7 @@ export function Navbar() {
 
                 <NavigationMenuItem>
                   <Link href="/#pricing" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} ${navItemClass}`}
-                    >
+                    <NavigationMenuLink className={navItemClass}>
                       PRICING
                     </NavigationMenuLink>
                   </Link>
@@ -260,9 +259,7 @@ export function Navbar() {
 
                 <NavigationMenuItem>
                   <Link href="/why-clik-ai" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={`${navigationMenuTriggerStyle()} ${navItemClass}`}
-                    >
+                    <NavigationMenuLink className={navItemClass}>
                       WHY CLIK.AI
                     </NavigationMenuLink>
                   </Link>
@@ -286,10 +283,7 @@ export function Navbar() {
 
           {/* Right Side Actions */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link
-              href="/login"
-              className={`${navigationMenuTriggerStyle()} ${navItemClass}`}
-            >
+            <Link href="/login" className={`${navItemClass}`}>
               SIGN IN
             </Link>
             <Link href="/get-started">
@@ -310,7 +304,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden fixed top-16 left-0 right-0 bg-white z-50 shadow-lg max-h-[80vh] overflow-y-auto"
+            className="lg:hidden fixed top-16 left-0 right-0 bg-transparent z-50 shadow-lg max-h-[80vh] overflow-y-auto"
           >
             <div className="px-4 pt-2 pb-3 space-y-1">
               <div className="relative">

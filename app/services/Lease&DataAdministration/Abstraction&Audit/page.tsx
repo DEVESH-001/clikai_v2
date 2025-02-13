@@ -25,7 +25,7 @@ import Image from "next/image";
 // Enhanced services with more detail and balanced content
 const services = [
   {
-    title: "Lease Administration",
+    title: "Lease Abstraction",
     icon: FileText,
     items: [
       {

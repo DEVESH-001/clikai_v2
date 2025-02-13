@@ -9,6 +9,7 @@ import { ServicesSection } from "@/components/sections/06-services-section";
 import { TestimonialsSection } from "@/components/sections/07-testimonials";
 import { FAQSection } from "@/components/sections/08-faq-section";
 
+
 export default function Home() {
   const [highlightedProduct, setHighlightedProduct] = useState("AutoUW");
 
@@ -29,6 +30,7 @@ export default function Home() {
       <div className="absolute inset-0 bg-gradient-to-t from-blue-100/30 via-purple-100/30 to-indigo-100/30 z-0"></div>
       <div className="relative z-10">
         <HeroSection />
+
         <QuizSection onProductRecommended={setHighlightedProduct} />
         <ProductCards highlightedProduct={highlightedProduct} />
         <PricingSection />

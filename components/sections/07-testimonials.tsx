@@ -10,7 +10,7 @@ import { imageUrls } from "@/utils/imageUrls";
 
 interface Testimonial {
   id: number;
-  content: string;
+  content: string; 
   author: string;
   role: string;
   company: string;
@@ -193,29 +193,28 @@ export function TestimonialsSection() {
           </AnimatePresence>
 
           {/* Company Indicators */}
-          <div className="mt-12 border-t pt-8">
-            <div className="flex flex-wrap justify-center items-center gap-4">
+            <div className="mt-12 border-t pt-8">
+            <div className="flex justify-center items-center gap-4 flex-nowrap overflow-x-auto">
               {companies.map((company) => {
-                // Find the first testimonial for this company
-                const testimonialIndex = testimonials.findIndex(
-                  (t) => t.company === company
-                );
-                return (
-                  <button
-                    key={company}
-                    onClick={() => setCurrentIndex(testimonialIndex)}
-                    className={`whitespace-nowrap px-4 py-2 text-sm transition-colors ${
-                      testimonials[currentIndex].company === company
-                        ? "text-blue-600 font-semibold border-b-2 border-blue-600"
-                        : "text-gray-500 hover:text-gray-700"
-                    }`}
-                  >
-                    {company}
-                  </button>
-                );
+              const testimonialIndex = testimonials.findIndex(
+                (t) => t.company === company
+              );
+              return (
+                <button
+                key={company}
+                onClick={() => setCurrentIndex(testimonialIndex)}
+                className={`whitespace-nowrap px-4 py-2 text-sm transition-colors ${
+                  testimonials[currentIndex].company === company
+                  ? "text-blue-600 font-semibold border-b-2 border-blue-600"
+                  : "text-gray-500 hover:text-gray-700"
+                }`}
+                >
+                {company}
+                </button>
+              );
               })}
             </div>
-          </div>
+            </div>
         </div>
       </div>
     </section>

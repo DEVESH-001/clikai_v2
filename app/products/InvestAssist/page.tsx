@@ -39,12 +39,20 @@ export default function InvestAssistPage() {
       className={`min-h-screen ${GeistSans.className} bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden`}
     >
       {/* Background decorative elements */}
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-soft-light"></div>
+      {/* <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-soft-light"></div>
       <div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 via-purple-100/20 to-indigo-100/20"></div>
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-conic from-blue-500 via-purple-500 to-pink-500 opacity-10 animate-spin-slow"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-20 animate-pulse"></div>
+      </div> */}
+
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-0 -left-4 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"></div>
+        <div className="absolute top-0 -right-4 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-4000"></div>
       </div>
+      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-soft-light"></div>
+      <div className="absolute inset-0 bg-gradient-to-t from-blue-100/20 via-purple-100/20 to-indigo-100/20"></div>
 
       {/* Hero Section */}
       <section className="relative z-10 pt-24 pb-16 overflow-hidden">
@@ -428,62 +436,64 @@ export default function InvestAssistPage() {
             className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden"
           >
             <div className="p-6">
-              <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
+                <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900">
-                    InvestAssist Plan
+                  InvestAssist Plan
                   </h3>
                   <p className="text-sm text-green-600 font-semibold">
-                    *Special beta pricing
+                  *Special beta pricing
                   </p>
                 </div>
                 {/* right side */}
                 <div className="text-right">
                   <div className="text-2xl font-extrabold text-gray-900">
-                    {isYearly ? (
-                      <></>
-                    ) : (
-                      <>
-                        $49<span className="text-xl text-gray-600">/month</span>
-                      </>
-                    )}
+                  {isYearly ? (
+                    <>
+                    $1990<span className="text-xl text-gray-600">/year</span>
+                    </>
+                  ) : (
+                    <>
+                    $199<span className="text-xl text-gray-600">/month</span>
+                    </>
+                  )}
                   </div>
 
                   <div className="flex items-center justify-center gap-3 mb-8">
-                    <span
-                      className={`text-lg ${
-                        !isYearly ? "text-gray-900 font-bold" : "text-gray-600"
-                      }`}
-                    >
-                      Monthly
-                    </span>
-                    <Switch
-                      checked={isYearly}
-                      onCheckedChange={setIsYearly}
-                      className="relative w-10 h-5 bg-blue-500 rounded-full transition-all 
+                  {/* <span
+                    className={`text-lg ${
+                    !isYearly ? "text-gray-900 font-bold" : "text-gray-600"
+                    }`}
+                  >
+                    Monthly
+                  </span> */}
+                  <Switch
+                    checked={isYearly}
+                    onCheckedChange={setIsYearly}
+                    className="relative w-10 h-5 bg-blue-500 rounded-full transition-all 
                 data-[state=checked]:bg-blue-600 focus:outline-none focus:ring-2 
                 focus:ring-blue-500 focus:ring-offset-2"
-                    >
-                      <span
-                        className={`absolute w-4 h-4 bg-white rounded-full shadow-md 
-                    transition-transform transform ${
-                      isYearly ? "translate-x-5" : "translate-x-1"
-                    }`}
-                      />
-                    </Switch>
+                  >
                     <span
-                      className={`text-lg ${
-                        isYearly ? "text-gray-900 font-bold" : "text-gray-600"
-                      }`}
-                    >
-                      Yearly{" "}
-                      <span className="text-green-600 text-base font-bold">
-                        (Save {calculateSavings(49)}%)
-                      </span>
+                    className={`absolute w-4 h-4 bg-white rounded-full shadow-md 
+                  transition-transform transform ${
+                    isYearly ? "translate-x-5" : "translate-x-1"
+                  }`}
+                    />
+                  </Switch>
+                  <span
+                    className={`text-lg ${
+                    isYearly ? "text-gray-900 font-bold" : "text-gray-600"
+                    }`}
+                  >
+                    {/* Yearly{" "} */}
+                    <span className="text-green-600 text-base font-bold">
+                    (Save {calculateSavings(49)}%)
                     </span>
+                  </span>
                   </div>
                 </div>
-              </div>
+                </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                 {[
