@@ -19,18 +19,18 @@ export function HeroSection() {
           <div className="flex flex-col lg:flex-row items-center justify-between h-full">
             <div className="lg:w-3/5 mb-8 lg:mb-0 w-full ">
               {/* Hero Title */}
-                <motion.h1
+              <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center lg:text-left mb-4 leading-tight text-white"
-                >
+              >
                 The{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
                   All-in-One <br />
                 </span>{" "}
                 Platform for CRE
-                </motion.h1>
+              </motion.h1>
 
               {/* Hero Description */}
               <motion.p
@@ -67,7 +67,9 @@ export function HeroSection() {
         </div>
 
         {/* Logo Carousel */}
-        <LogoCarousel />
+        <div className="mt-2">
+          <LogoCarousel />
+        </div>
       </div>
     </div>
   );
