@@ -55,8 +55,8 @@ const plans: Plan[] = [
   },
   {
     name: "Growth",
-    description: "Clik Analysts Do It for You",
-    monthlyPrice: 249, 
+    description: "5 Complimentary deals done by Clik analysts",
+    monthlyPrice: 249,
     perDealPrice: 30,
     features: [
       "Ideal for 5–20 deals per month",
@@ -164,8 +164,6 @@ export function PricingSection() {
   //     100
   //   ).toFixed(0);
   // };
-
-
 
   const [dealsPerMonth, setDealsPerMonth] = React.useState(10);
   const [isYearly, setIsYearly] = React.useState(false);
@@ -311,7 +309,7 @@ export function PricingSection() {
             />
           </div>
           <div className="flex relative px-1 mt-2">
-            {[0, 5, 10, 15 ,20, 25, 30, 35, 40].map((value) => (
+            {[0, 5, 10, 15, 20, 25, 30, 35, 40].map((value) => (
               <div
                 key={value}
                 className="absolute text-sm text-gray-600"
