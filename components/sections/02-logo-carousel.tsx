@@ -14,7 +14,7 @@ export function LogoCarousel() {
       src: imageUrls.logos.newmark,
       alt: "Newmark",
       width: 160,
-      height: 40,
+      height: 40, 
     },
     {
       src: imageUrls.logos.lument,
@@ -99,14 +99,14 @@ export function LogoCarousel() {
   };
 
   return (
-    <div className="w-full overflow-hidden bg-gradient-to-b from-indigo-100 to-blue-50 py-3 relative sm:mt-2 lg:mt-24">
+    <div className="w-full overflow-hidden bg-gradient-to-b from-indigo-100 to-blue-50 py-3 relative sm:mt-2 lg:mt-8">
       {/* Background noise image */}
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-soft-light "></div>
 
       {/* Logo bar with responsive margin */}
       <div
         ref={scrollerRef}
-        className="flex overflow-hidden relative z-10 mt-2 md:mt-2 lg:mt-6 xl:mt-8"
+        className="flex overflow-hidden relative z-10  md:mt-2 lg:mt-4 xl:mt-4"
       >
         {[...logos, ...logos].map((logo, index) => (
           <div

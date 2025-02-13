@@ -17,7 +17,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { imageUrls } from "@/utils/imageUrls";
-import { usePathname } from 'next/navigation';
+import { usePathname } from "next/navigation";
 
 // const navItemClass =
 //   "tracking-wider text-sm uppercase font-bold text-white hover:text-blue-300 transition-colors";
@@ -161,18 +161,20 @@ export function Navbar() {
 
   // Update navItemClass to be dynamic based on scroll position and current page
   const dynamicNavItemClass = `tracking-wider text-sm uppercase font-bold ${
-    pathname === '/' 
-      ? isScrolled 
-        ? 'text-gray-800' 
-        : 'text-white'
-      : 'text-gray-800'
+    pathname === "/"
+      ? isScrolled
+        ? "text-gray-800"
+        : "text-white"
+      : "text-gray-800"
   } hover:text-blue-300 transition-colors`;
 
   return (
     <>
       <div
         className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-200 ${
-          isScrolled || pathname !== '/' ? "bg-white shadow-md" : "bg-transparent"
+          isScrolled || pathname !== "/"
+            ? "bg-white shadow-md"
+            : "bg-transparent"
         }`}
       >
         {/* Update container class for consistent padding */}
