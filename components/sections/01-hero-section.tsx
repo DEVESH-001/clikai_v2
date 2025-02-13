@@ -17,19 +17,19 @@ export function HeroSection() {
 
         <div className="mx-auto px-8 lg:space-y-6 relative  ">
           <div className="flex flex-col lg:flex-row items-center justify-between h-full">
-            <div className="lg:w-3/5 mb-8 lg:mb-0 w-full">
+            <div className="lg:w-3/5 mb-8 lg:mb-0 w-full ">
               {/* Hero Title */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
-                className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center lg:text-left mb-4 leading-tight text-white"
+                className="text-6xl font-bold text-center lg:text-left mb-4 leading-tight text-white"
               >
                 The{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
                   All-in-One <br />
                 </span>{" "}
-                Platform for CRE{" "}
+                Platform for CRE
               </motion.h1>
 
               {/* Hero Description */}

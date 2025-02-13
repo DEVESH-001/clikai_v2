@@ -1,16 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import { Key, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-//import { Button } from "@/components/ui/button";
+
 import {
   Building2,
   FileText,
   Zap,
   Plus,
   Minus,
-
   ArrowRight,
 } from "lucide-react";
 import { GeistSans } from "geist/font/sans";
@@ -34,7 +33,6 @@ const services = [
           "Automated compliance with regulatory requirements",
         ],
       },
-
       {
         title: "Custom Financial Model Development",
         tagline: "Faster, compliant assessments",
@@ -62,7 +60,7 @@ const services = [
   {
     id: "lease-administration",
     title: "Lease & Data Administration",
-    description: "AI-powered lease management and data processing",
+    description: "AI-powered lease management & data processing",
     icon: FileText,
     color: "#F59E0B",
     subservices: [
@@ -100,7 +98,7 @@ const services = [
   },
   {
     id: "tech-solutions",
-    title: "Consulting & Technology Solutions",
+    title: "Consulting & Tech Solutions",
     description: "AI-integrated CRE technology solutions",
     icon: Zap,
     color: "#8B5CF6",
@@ -146,76 +144,66 @@ interface Subservice {
   benefits: string[];
 }
 
-const SubserviceCard = ({
-  subservice,
-  color,
-}: {
-  subservice: Subservice;
-  color: string;
-}) => {
+const SubserviceCard = ({ subservice, color }: { subservice: Subservice; color: string }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="flex items-start">
-      <ArrowRight className="w-4 h-4 text-blue-500 mt-3 mr-2 flex-shrink-0 " />
-      <Card className="flex-grow overflow-hidden border-0 shadow-sm transition-all duration-300 hover:shadow-md bg-white">
-        <CardContent className="p-0">
-          <div className="flex">
-            <div
-              className="flex-shrink-0 w-1 bg-blue-500"
-              style={{ backgroundColor: color }}
-            ></div>
-            <div className="flex-grow">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="flex justify-between items-center w-full p-3 text-left hover:bg-gray-50 transition-colors"
-              >
-                <div>
-                  <h4 className="text-sm md:text-base font-semibold text-gray-900">
-                    {subservice.title}
-                  </h4>
-                  <p className="text-xs md:text-sm text-gray-600 mt-0.5">
-                    {subservice.tagline}
-                  </p>
-                </div>
-                {isOpen ? (
-                  <Minus className="w-4 h-4 text-gray-400" />
-                ) : (
-                  <Plus className="w-4 h-4 text-gray-400" />
-                )}
-              </button>
-              <AnimatePresence>
-                {isOpen && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="px-3 pb-3"
-                  >
+    <Card className="overflow-hidden border-0 shadow-sm transition-all duration-300 hover:shadow-md mb-3">
+      <CardContent className="p-0">
+        <div className="flex">
+          <div
+            className="flex-shrink-0 w-1"
+            style={{ backgroundColor: color }}
+          ></div>
+          <div className="flex-grow p-3">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="flex justify-between items-center w-full text-left"
+            >
+              <div>
+                <h4 className="text-sm font-semibold text-gray-900">
+                  {subservice.title}
+                </h4>
+                <p className="text-xs text-gray-600 mt-0.5">
+                  {subservice.tagline}
+                </p>
+              </div>
+              {isOpen ? (
+                <Minus className="w-4 h-4 text-gray-400" />
+              ) : (
+                <Plus className="w-4 h-4 text-gray-400" />
+              )}
+            </button>
+            <AnimatePresence>
+              {isOpen && (
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="mt-2"
+                >
                     <p className="text-xs md:text-sm text-gray-600 mb-2">
-                      {subservice.description}
+                    {subservice.description}
                     </p>
-                    <h5 className="font-semibold text-xs md:text-sm text-gray-900 mb-1">
-                      Key Benefits:
-                    </h5>
-                    <ul className="space-y-1">
-                      {subservice.benefits.map((benefit, index) => (
-                        <li key={index} className="flex items-start space-x-2">
-                          <span className="text-xs md:text-sm text-gray-600">
-                            {benefit}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
+                  <h5 className="font-semibold text-xs text-gray-900 mb-1">
+                    Key Benefits:
+                  </h5>
+                  <ul className="space-y-1">
+                    {subservice.benefits.map((benefit, index) => (
+                      <li key={index} className="flex items-start space-x-2">
+                        <ArrowRight className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
+                        <span className="text-xs text-gray-600">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
-        </CardContent>
-      </Card>
-    </div>
+        </div>
+      </CardContent>
+    </Card>
   );
 };
 
@@ -232,7 +220,7 @@ const ServiceSection = ({ service }: { service: Service }) => {
   const Icon = service.icon;
 
   return (
-    <div className="mb-6 h-full">
+    <div>
       <div className="flex items-center space-x-3 mb-3">
         <div
           className="p-1.5 rounded-full text-white"
@@ -240,15 +228,11 @@ const ServiceSection = ({ service }: { service: Service }) => {
         >
           <Icon className="w-4 h-4" />
         </div>
-        <h3 className="text-lg md:text-xl font-bold text-gray-900">
-          {service.title}
-        </h3>
+        <h3 className="text-lg font-bold text-gray-900">{service.title}</h3>
       </div>
-      <p className="text-sm md:text-base text-gray-600 mb-3">
-        {service.description}
-      </p>
-      <div className="space-y-3">
-        {service.subservices.map((subservice, index) => (
+      <p className="text-sm text-gray-600 mb-3">{service.description}</p>
+      <div>
+        {service.subservices.map((subservice: Subservice, index: Key | null | undefined) => (
           <SubserviceCard
             key={index}
             subservice={subservice}
@@ -260,54 +244,38 @@ const ServiceSection = ({ service }: { service: Service }) => {
   );
 };
 
-// const Slider = ({
-//   currentIndex,
-//   setCurrentIndex,
-// }: {
-//   currentIndex: number;
-//   setCurrentIndex: React.Dispatch<React.SetStateAction<number>>;
-// }) => {
-//   const sliderRef = useRef<HTMLDivElement>(null);
-
-//   const handleSliderChange = (event: { clientX: number }) => {
-//     if (sliderRef.current) {
-//       const rect = sliderRef.current.getBoundingClientRect();
-//       const x = event.clientX - rect.left;
-//       const percentage = x / rect.width;
-//       setCurrentIndex(percentage > 0.5 ? 1 : 0);
-//     }
-//   };
-
-//   return (
-//     <div className="w-full mt-8">
-//       <div
-//         ref={sliderRef}
-//         className="relative w-full h-2 bg-gray-200 rounded-full cursor-pointer"
-//         onClick={handleSliderChange}
-//       >
-//         <motion.div
-//           className="absolute top-0 left-0 w-1/2 h-full bg-blue-500 rounded-full"
-//           animate={{ x: `${currentIndex * 100}%` }}
-//           transition={{
-//             type: "tween",
-//             duration: 0.15,
-//             ease: "easeOut",
-//           }}
-//         />
-//       </div>
-//     </div>
-//   );
-// };
-
 export function ServicesSection() {
-
-
-
   return (
     <section
       className={`py-12 bg-gradient-to-b from-indigo-50 via-purple-50 to-blue-50 relative overflow-hidden ${GeistSans.className}`}
     >
-      
+      {/* AI-inspired background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <svg
+          className="absolute w-full h-full"
+          viewBox="0 0 100 100"
+          preserveAspectRatio="none"
+        >
+          {[...Array(5)].map((_, i) => (
+            <motion.path
+              key={i}
+              d={`M${i * 20},50 Q${i * 20 + 10},${30 + Math.random() * 40} ${
+                i * 20 + 20
+              },50`}
+              stroke="rgba(59, 130, 246, 0.1)"
+              strokeWidth="0.5"
+              fill="none"
+              initial={{ pathLength: 0, opacity: 0 }}
+              animate={{ pathLength: 1, opacity: 1 }}
+              transition={{
+                duration: 2 + i,
+                repeat: Number.POSITIVE_INFINITY,
+                repeatType: "reverse",
+              }}
+            />
+          ))}
+        </svg>
+      </div>
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10">
         <motion.div
@@ -324,11 +292,10 @@ export function ServicesSection() {
             your business.
           </p>
         </motion.div>
-        <div className="flex-shrink-3 w-full grid md:grid-cols-3 gap-6 md:gap-8">
-          {services.slice(0, 3).map((service) => (
-            <div key={service.id} className="h-full">
-              <ServiceSection service={service} />
-            </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          {services.map((service) => (
+            <ServiceSection key={service.id} service={service} />
           ))}
         </div>
       </div>
