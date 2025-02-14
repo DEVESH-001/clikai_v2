@@ -92,7 +92,7 @@ const plans = [
   {
     name: "Growth",
     description: "Clik Analysts Do It for You",
-    monthlyPrice: 249,
+    monthlyPrice: 29,
     perDealPrice: 30,
     features: [
       "Ideal for 5–20 deals per month",

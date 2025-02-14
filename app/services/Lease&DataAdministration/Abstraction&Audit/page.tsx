@@ -357,7 +357,7 @@ export default function LeaseAbstractionAuditPage() {
         {/* Hero Section */}
 
         <section className="pt-20 pb-12 px-4 sm:px-6 lg:px-8">
-          <div className="container mx-auto max-w-7xl">
+          <div className="mx-auto px-21 lg:space-y-6 relative">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-10">
               {/* Left Content */}
               <motion.div

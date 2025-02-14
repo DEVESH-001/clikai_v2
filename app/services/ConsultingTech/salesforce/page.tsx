@@ -26,7 +26,7 @@ import {
 import { GeistSans } from "geist/font/sans";
 
 import React from "react";
-import { GradientBackground } from "@/components/sections/gradient-background";
+
 
 const services = [
   {
@@ -285,11 +285,11 @@ export default function SalesforceCustomizationPage() {
     <div className={GeistSans.className}>
       <div className="min-h-screen">
         {/* Hero Section */}
-        <GradientBackground>
+
           <section className="relative pt-32 pb-16 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50/30 to-indigo-50/40" />
             <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-purple-50/50" />
-            <div className="container mx-auto px-4 relative z-10">
+            <div className="mx-auto px-8 lg:space-y-6 relative">
               <div className="grid lg:grid-cols-2 gap-12 items-center">
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
@@ -334,7 +334,7 @@ export default function SalesforceCustomizationPage() {
               </div>
             </div>
           </section>
-        </GradientBackground>
+
         {/* Approach Section */}
         <section className="py-12 relative overflow-hidden bg-gradient-to-b from-indigo-50/40 via-blue-50/30 to-purple-50/40">
           <div className="absolute inset-0 overflow-hidden pointer-events-none">

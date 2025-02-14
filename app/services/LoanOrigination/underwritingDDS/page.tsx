@@ -105,7 +105,7 @@ export default function UnderwritingDueDiligenceSupport() {
       <main className="relative z-10">
         {/* Hero Section */}
         <section className="relative pt-24 pb-16 overflow-hidden">
-          <div className="container mx-auto px-4 max-w-screen-xl">
+          <div className="mx-auto px-8 lg:space-y-6 relative">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
