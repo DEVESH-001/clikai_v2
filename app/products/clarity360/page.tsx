@@ -124,9 +124,9 @@ export default function Clarity360OMPage() {
       <div className="absolute inset-0 bg-gradient-to-t from-blue-100/20 via-purple-100/20 to-indigo-100/20"></div>
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-12 overflow-hidden">
+      <section className="relative pt-20 pb-12 overflow-hidden ">
 
-        <div className="container mx-auto px-4 max-w-7xl">
+        <div className="container mx-auto px-4 max-w-7xl mt-24">
           <div className="grid lg:grid-cols-[1fr,1.3fr] gap-12 items-center">
             <div className="max-w-xl">
               <motion.h1
