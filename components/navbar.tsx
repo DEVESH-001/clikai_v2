@@ -18,6 +18,7 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { imageUrls } from "@/utils/imageUrls";
 import { usePathname } from "next/navigation";
+import { GeistSans } from "geist/font/sans";
 
 // const navItemClass =
 //   "tracking-wider text-sm uppercase font-bold text-white hover:text-blue-300 transition-colors";
@@ -323,10 +324,8 @@ export function Navbar() {
               SIGN IN
             </Link>
             <Link href="/get-started">
-              <Button
-                className={`bg-blue-600 text-white hover:bg-blue-700 ${dynamicNavItemClass}`}
-              >
-                GET STARTED
+              <Button className="bg-blue-600 text-white font-bold hover:bg-blue-700">
+                <span className={GeistSans.className}>GET STARTED</span>
               </Button>
             </Link>
           </div>
