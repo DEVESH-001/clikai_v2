@@ -30,7 +30,6 @@ import {
 } from "chart.js";
 import DealFeasibilityChecker from "../../components/DealFeasibilityChecker";
 
-
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -101,7 +100,6 @@ export default function UnderwritingDueDiligenceSupport() {
       {/* AI-themed background elements */}
       <div className="absolute  w-full h-full overflow-hidden z-0">
         {/* // eslint-disable-next-line react/no-children-prop */}
-      
       </div>
 
       <main className="relative z-10">

@@ -21,8 +21,6 @@ import {
   Clock,
   FileText,
 } from "lucide-react";
-import { GradientBackground } from "@/components/sections/gradient-background";
-
 
 // Features data
 const features = [
@@ -146,28 +144,28 @@ const faqItems = [
 ];
 
 // Client logos
-const clientLogos = [
-  {
-    name: "Newmark",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/newmark-KnJSkOAznB2WnzRWFJGej8maFHZ8jG.svg",
-  },
-  {
-    name: "K-Star",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kstar-ufUmUi6SLAksMMJdU48s5z6de1gHCB.webp",
-  },
-  {
-    name: "Colliers",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/colliers-EdSYubmqncaB8VzVWjg0wgC8gHKo1x.png",
-  },
-  {
-    name: "BWE",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bwe-blue-ly0IASAOVCySLWrVlV011xg79JqgRV.svg",
-  },
-  {
-    name: "Merchants Capital",
-    src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/merchant-capital-lwBL8IMpwKrXXmNFgjqg03tWuue61g.png",
-  },
-];
+// const clientLogos = [
+//   {
+//     name: "Newmark",
+//     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/newmark-KnJSkOAznB2WnzRWFJGej8maFHZ8jG.svg",
+//   },
+//   {
+//     name: "K-Star",
+//     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kstar-ufUmUi6SLAksMMJdU48s5z6de1gHCB.webp",
+//   },
+//   {
+//     name: "Colliers",
+//     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/colliers-EdSYubmqncaB8VzVWjg0wgC8gHKo1x.png",
+//   },
+//   {
+//     name: "BWE",
+//     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bwe-blue-ly0IASAOVCySLWrVlV011xg79JqgRV.svg",
+//   },
+//   {
+//     name: "Merchants Capital",
+//     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/merchant-capital-lwBL8IMpwKrXXmNFgjqg03tWuue61g.png",
+//   },
+// ];
 
 export default function AutoUWPage() {
   return (
@@ -182,65 +180,63 @@ export default function AutoUWPage() {
       <div className="absolute inset-0 bg-gradient-to-t from-blue-100/20 via-purple-100/20 to-indigo-100/20"></div>
 
       {/* Hero Section */}
-      <GradientBackground>
-
-        <section className="relative pt-32 pb-16 overflow-hidden">
-          <div className="container mx-auto px-4 max-w-7xl">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <div className="max-w-xl">
-                <motion.h1
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5 }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-                >
-                  Automate Your{" "}
-                  <span className=" bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                    Underwriting Process
-                  </span>{" "}
-                  with Precision
-                </motion.h1>
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.2 }}
-                  className="text-xl text-gray-700 mb-8"
-                >
-                  From Operating Statements to Rent Rolls, streamline your
-                  underwriting workflows with AutoUW&apos;s AI-powered solution.
-                </motion.p>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
-                >
-                  <Button
-                    size="lg"
-                    className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
-                  >
-                    Start Automating Now
-                    <ArrowUpRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </motion.div>
-              </div>
-              <motion.div
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="relative w-full aspect-square max-w-2xl mx-auto"
+      <section className="relative py-16 overflow-hidden">
+        <div className="mx-auto px-4 sm:px-8 relative">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="max-w-xl mx-auto lg:mx-0">
+              <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-center lg:text-left"
               >
-                <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AUW-7xDRwqT2OvYQV4o16Wvc80A2GNO94L.svg"
-                  alt="AutoUW Lease Analysis Interface"
-                  width={1000}
-                  height={1000}
-                  className="object-contain"
-                />
+                Automate Your{" "}
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                  Underwriting Process
+                </span>{" "}
+                with Precision
+              </motion.h1>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-lg sm:text-xl text-gray-700 mb-8 text-center lg:text-left"
+              >
+                From Operating Statements to Rent Rolls, streamline your
+                underwriting workflows with AutoUW&apos;s AI-powered solution.
+              </motion.p>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="text-center lg:text-left"
+              >
+                <Button
+                  size="lg"
+                  className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
+                >
+                  Start Automating Now
+                  <ArrowUpRight className="ml-2 h-4 w-4" />
+                </Button>
               </motion.div>
             </div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="relative w-full aspect-square max-w-2xl mx-auto mt-8 lg:mt-0"
+            >
+              <Image
+                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AUW-7xDRwqT2OvYQV4o16Wvc80A2GNO94L.svg"
+                alt="AutoUW Lease Analysis Interface"
+                width={1000}
+                height={1000}
+                className="object-contain"
+              />
+            </motion.div>
           </div>
-        </section>
-      </GradientBackground>
+        </div>
+      </section>
 
       {/* Features Section */}
       <section className="py-16 relative">
@@ -389,7 +385,7 @@ export default function AutoUWPage() {
       </section>
 
       {/* Customer Success Section */}
-      <section className="py-16 relative bg-gradient-to-b from-white/50 to-blue-50/50">
+      {/* <section className="py-16 relative bg-gradient-to-b from-white/50 to-blue-50/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -433,7 +429,7 @@ export default function AutoUWPage() {
             </div>
           </Card>
         </div>
-      </section>
+      </section> */}
 
       {/* Pricing Section */}
       <section className="py-16 relative">

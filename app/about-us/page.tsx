@@ -1,11 +1,10 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Card } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import Image from "next/image"
-import {  Building2,  Send } from "lucide-react"
-import { GeistSans } from "geist/font/sans"
+import { motion } from "framer-motion";
+import { Card } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Building2, Send } from "lucide-react";
+import { GeistSans } from "geist/font/sans";
 
 export default function AboutUsPage() {
   return (
@@ -99,73 +98,86 @@ export default function AboutUsPage() {
                 </p>
               </Card>
             </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <Card className="p-6 bg-white/80 backdrop-blur-sm">
+                <div className="flex items-center gap-4 mb-4">
+                  <Building2 className="w-6 h-6 text-blue-600" />
+                  <h3 className="text-xl font-bold">Chennai </h3>
+                </div>
+                <p className="text-gray-600">
+                  8/12, 1st street, LIC colony, velachery, Chennai 600042 ,
+                  India
+                </p>
+              </Card>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+            >
+              <Card className="p-6 bg-white/80 backdrop-blur-sm">
+                <div className="flex items-center gap-4 mb-4">
+                  <Building2 className="w-6 h-6 text-blue-600" />
+                  <h3 className="text-xl font-bold">Gurgaon</h3>
+                </div>
+                <p className="text-gray-600">
+                  WeWork Platina Tower, Ground Floor, MG Rd,
+                  Sector 28, DLF Phase 1, Gurugram, Haryana 122002, India
+                </p>
+              </Card>
+            </motion.div>
           </div>
         </div>
-
-        <div className="mb-16">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Trusted By Industry Leaders
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center justify-center max-w-4xl mx-auto">
-            {[
-              {
-                name: "BWE",
-                src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bwe-blue-zthYuDcrA5o4yl4tSuTcvqohGhMILy.svg",
-              },
-              {
-                name: "Newmark",
-                src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/newmark-jyvyVTG5MHuT9TRdV2lx2bg5SQd3rR.svg",
-              },
-              {
-                name: "Merchants Capital",
-                src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/merchants-capital-hmTr2WTZIy81Nk68d4dPNgL1usWr0E.svg",
-              },
-              {
-                name: "Lument",
-                src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/lument-dp1yAsXN4aQtdiE4cPXPfNKnvzqn3b.svg",
-              },
-            ].map((client, index) => (
-              <motion.div
-                key={client.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative h-16"
-              >
-                <Image
-                  src={client.src || "/placeholder.svg"}
-                  alt={client.name}
-                  fill
-                  className="object-contain filter grayscale hover:grayscale-0 transition-all duration-300"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-        
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="max-w-2xl mx-auto text-center"
-        >
-         <Card className="p-8 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-            <h2 className="text-2xl font-bold mb-4">Want to work for us?</h2>
-            <p className="mb-6">
-              Think you&apos;d be interested in engineering and product roles at Clik.ai? Great! Let&apos;s connect!
-            </p>
-            <Button variant="secondary" size="lg" className="bg-white text-blue-600 hover:bg-blue-50">
-              Send Us Your Pitch
-              <Send className="w-4 h-4 ml-2" />
-            </Button>
-          </Card> 
-
-          
-        </motion.div>
-
-       
       </div>
+      {/* CTA Section */}
+      <section className="relative z-10 py-16 bg-gradient-to-br from-[#001F3F] via-blue-900 to-blue-800">
+        <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-soft-light"></div>
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <svg
+            className="absolute w-full h-full"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,0 C30,40 70,60 100,0 L100,100 L0,100 Z"
+              fill="rgba(255, 255, 255, 0.05)"
+            />
+          </svg>
+        </div>
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              Want to work for us?
+            </h2>
+            <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">
+              Think you&apos;d be interested in engineering and product roles at
+              Clik.ai? Great! Let&apos;s connect!
+            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <Button
+                size="lg"
+                className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
+              >
+                Send Us Your Pitch
+                <Send className="w-4 h-4 ml-2" />
+              </Button>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
     </div>
   );
 }
-

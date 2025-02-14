@@ -15,6 +15,7 @@ export function LogoCarousel() {
       alt: "Newmark",
       width: 160,
       height: 40, 
+      
     },
     {
       src: imageUrls.logos.lument,

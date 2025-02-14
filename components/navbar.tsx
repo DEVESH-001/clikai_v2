@@ -324,7 +324,7 @@ export function Navbar() {
             </Link>
             <Link href="/get-started">
               <Button
-                className={`bg-blue-500 text-white hover:bg-blue-600 ${dynamicNavItemClass}`}
+                className={`bg-blue-600 text-white hover:bg-blue-700 ${dynamicNavItemClass}`}
               >
                 GET STARTED
               </Button>

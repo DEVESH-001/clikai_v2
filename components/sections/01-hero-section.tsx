@@ -14,31 +14,29 @@ export function HeroSection() {
         <div className="absolute inset-0 ">
           <ParticleBackground />
         </div>
-
-        <div className="mx-auto px-8 lg:space-y-6 relative  ">
+        <div className="mx-auto px-8 lg:space-y-6 relative">
           <div className="flex flex-col lg:flex-row items-center justify-between h-full">
-            <div className="lg:w-3/5 mb-8 lg:mb-0 w-full ">
+            <div className="lg:w-3/5 mb-8 lg:mb-0 w-full">
               {/* Hero Title */}
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
+                animate={{ opacity: 1, y: 0 }}  
                 transition={{ duration: 0.8 }}
-                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center lg:text-left mb-4 leading-tight text-white"
-              >
+                className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-center lg:text-left mb-4 leading-tight text-white">
                 The{" "}
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
                   All-in-One <br />
                 </span>{" "}
                 Platform for CRE
               </motion.h1>
-
+              
               {/* Hero Description */}
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="text-xl md:text-xl lg:text-3xl text-center lg:text-left mb-6 text-blue-200 max-w-2xl mx-auto lg:mx-0"
-              >
+              > 
                 Delivering smarter tools and expert support to transform the way
                 CRE works
               </motion.p>

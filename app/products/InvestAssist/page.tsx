@@ -38,14 +38,6 @@ export default function InvestAssistPage() {
     <div
       className={`min-h-screen ${GeistSans.className} bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 relative overflow-hidden`}
     >
-      {/* Background decorative elements */}
-      {/* <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-soft-light"></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-100/20 via-purple-100/20 to-indigo-100/20"></div>
-      <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-gradient-conic from-blue-500 via-purple-500 to-pink-500 opacity-10 animate-spin-slow"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 opacity-20 animate-pulse"></div>
-      </div> */}
-
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 -left-4 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob"></div>
         <div className="absolute top-0 -right-4 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-10 animate-blob animation-delay-2000"></div>
@@ -55,66 +47,68 @@ export default function InvestAssistPage() {
       <div className="absolute inset-0 bg-gradient-to-t from-blue-100/20 via-purple-100/20 to-indigo-100/20"></div>
 
       {/* Hero Section */}
-      <section className="relative z-10 pt-24 pb-16 overflow-hidden">
-        <div className="container mx-auto px-4 relative">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="lg:w-1/2 w-full"
-            >
-              <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
-                <span className="text-gray-900">
-                  Analyze Cashflows and IRRs in
-                </span>{" "}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                  Just Minutes
-                </span>
-              </h1>
-              <p className="text-lg md:text-xl text-gray-600 mb-8">
-                Stop wasting hours building cashflow models manually. Use our
-                sophisticated investor return models or plug AI directly into
-                your financial models to run cashflow and investor return
-                analysis at scale.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
-                >
-                  Get Started
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-blue-600 text-blue-600 hover:bg-blue-50"
-                >
-                  Talk to Us
-                </Button>
-              </div>
-            </motion.div>
+      <div className="relative">
+        <section className="relative z-10 pt-16 pb-16 overflow-hidden mt-14 lg:mt-24">
+          <div className="mx-auto px-8 lg:space-y-6 relative">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="lg:w-1/2 w-full"
+              >
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
+                  <span className="text-gray-900">
+                    Analyze Cashflows and IRRs in
+                  </span>{" "}
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                    Just Minutes
+                  </span>
+                </h1>
+                <p className="text-lg md:text-xl text-gray-600 mb-8">
+                  Stop wasting hours building cashflow models manually. Use our
+                  sophisticated investor return models or plug AI directly into
+                  your financial models to run cashflow and investor return
+                  analysis at scale.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button
+                    size="lg"
+                    className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+                  >
+                    Get Started
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                  >
+                    Talk to Us
+                  </Button>
+                </div>
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="lg:w-1/2 w-full"
-            >
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/investAssist-combined-125jokgtmO7dgKE9jwB2QPPjWS8G6j.png"
-                alt="InvestAssist Platform Interface"
-                width={800}
-                height={600}
-                className="w-full h-auto"
-                priority
-              />
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="lg:w-1/2 w-full"
+              >
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/investAssist-combined-125jokgtmO7dgKE9jwB2QPPjWS8G6j.png"
+                  alt="InvestAssist Platform Interface"
+                  width={2000}
+                  height={1600}
+                  className="w-[800px] h-[500px]"
+                  priority
+                />
+              </motion.div>
+            </div>
           </div>
-        </div>
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white/10"></div>
-      </section>
+          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white/10"></div>
+        </section>
+      </div>
 
       {/* Comparison Section (Moved before Features Section) */}
       <section className="relative z-10 py-16">
@@ -436,64 +430,66 @@ export default function InvestAssistPage() {
             className="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden"
           >
             <div className="p-6">
-                <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
+              <div className="flex flex-col sm:flex-row justify-between items-center mb-4">
                 <div>
                   <h3 className="text-2xl font-bold text-gray-900">
-                  InvestAssist Plan
+                    InvestAssist Plan
                   </h3>
                   <p className="text-sm text-green-600 font-semibold">
-                  *Special beta pricing
+                    *Special beta pricing
                   </p>
                 </div>
                 {/* right side */}
                 <div className="text-right">
                   <div className="text-2xl font-extrabold text-gray-900">
-                  {isYearly ? (
-                    <>
-                    $1990<span className="text-xl text-gray-600">/year</span>
-                    </>
-                  ) : (
-                    <>
-                    $199<span className="text-xl text-gray-600">/month</span>
-                    </>
-                  )}
+                    {isYearly ? (
+                      <>
+                        $1990
+                        <span className="text-xl text-gray-600">/year</span>
+                      </>
+                    ) : (
+                      <>
+                        $199
+                        <span className="text-xl text-gray-600">/month</span>
+                      </>
+                    )}
                   </div>
 
                   <div className="flex items-center justify-center gap-3 mb-8">
-                  {/* <span
+                    {/* <span
                     className={`text-lg ${
                     !isYearly ? "text-gray-900 font-bold" : "text-gray-600"
                     }`}
                   >
                     Monthly
                   </span> */}
-                  <Switch
-                    checked={isYearly}
-                    onCheckedChange={setIsYearly}
-                    className="relative w-10 h-5 bg-blue-500 rounded-full transition-all 
+                    <Switch
+                      checked={isYearly}
+                      onCheckedChange={setIsYearly}
+                      className="relative w-10 h-5 bg-blue-500 rounded-full transition-all 
                 data-[state=checked]:bg-blue-600 focus:outline-none focus:ring-2 
                 focus:ring-blue-500 focus:ring-offset-2"
-                  >
-                    <span
-                    className={`absolute w-4 h-4 bg-white rounded-full shadow-md 
+                    >
+                      <span
+                        className={`absolute w-4 h-4 bg-white rounded-full shadow-md 
                   transition-transform transform ${
                     isYearly ? "translate-x-5" : "translate-x-1"
                   }`}
-                    />
-                  </Switch>
-                  <span
-                    className={`text-lg ${
-                    isYearly ? "text-gray-900 font-bold" : "text-gray-600"
-                    }`}
-                  >
-                    {/* Yearly{" "} */}
-                    <span className="text-green-600 text-base font-bold">
-                    (Save {calculateSavings(49)}%)
+                      />
+                    </Switch>
+                    <span
+                      className={`text-lg ${
+                        isYearly ? "text-gray-900 font-bold" : "text-gray-600"
+                      }`}
+                    >
+                      {/* Yearly{" "} */}
+                      <span className="text-green-600 text-base font-bold">
+                        (Save {calculateSavings(49)}%)
+                      </span>
                     </span>
-                  </span>
                   </div>
                 </div>
-                </div>
+              </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
                 {[

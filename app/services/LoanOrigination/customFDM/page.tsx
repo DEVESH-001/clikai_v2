@@ -94,7 +94,7 @@ const financialModels = [
       "ROI & Cash Flow Before vs. After 1031 Exchange",
       "Portfolio Diversification & Reinvestment Scenarios",
     ],
-  },
+  }, 
   {
     title: "Lease & Tenant Performance Model",
     for: "Asset Managers, Property Owners",

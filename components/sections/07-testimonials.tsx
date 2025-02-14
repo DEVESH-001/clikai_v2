@@ -6,11 +6,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 import { GeistSans } from "geist/font/sans";
-import { imageUrls } from "@/utils/imageUrls";
+//import { imageUrls } from "@/utils/imageUrls";
 
 interface Testimonial {
   id: number;
-  content: string; 
+  content: string;
   author: string;
   role: string;
   company: string;
@@ -27,7 +27,7 @@ const testimonials: Testimonial[] = [
     author: "Eric Tupta",
     role: "Director of Digital Transformation",
     company: "Bellwether Real Estate Capital",
-    image: imageUrls.testimonials.ericTupta,
+    image: "/images/testimonials/eric.jpeg",
   },
   {
     id: 2,
@@ -37,7 +37,7 @@ const testimonials: Testimonial[] = [
     author: "W. Cooper Ramsey",
     role: "Vice President - Strategy & Production",
     company: "TrueRate Services",
-    image: imageUrls.testimonials.cooperRamsey,
+    image: "/images/testimonials/cooper.jpg.jpeg",
   },
   {
     id: 3,
@@ -48,7 +48,7 @@ const testimonials: Testimonial[] = [
     author: "Jeremy Cisneros",
     role: "Director of Multifamily Acquisitions",
     company: "AJX Capital",
-    image: imageUrls.testimonials.jeremyCisneros,
+    image: "/images/testimonials/jeremy-cisneros.jpg.jpeg",
   },
   {
     id: 5,
@@ -59,7 +59,7 @@ const testimonials: Testimonial[] = [
     author: "James Vestal",
     role: "CEO",
     company: "Verdad Commercial Real Estate Companies",
-    image: imageUrls.testimonials.jamesVestal,
+    image: "/images/testimonials/james.jpg.jpeg",
   },
   {
     id: 6,
@@ -69,7 +69,7 @@ const testimonials: Testimonial[] = [
     author: "Vinney Chopra",
     role: "Managing Principal",
     company: "Moneil Investment Group LLC",
-    image: imageUrls.testimonials.vinneyChopra,
+    image: "/images/testimonials/vinney-chopra.jpg.jpeg",
   },
   {
     id: 7,
@@ -79,7 +79,7 @@ const testimonials: Testimonial[] = [
     author: "Christian Groomes",
     role: "Senior Sales Manager",
     company: "Lima One Capital",
-    image: imageUrls.testimonials.christianGroomes,
+    image: "/images/testimonials/christian-groomes.jpg.jpeg",
   },
 ];
 
@@ -193,28 +193,28 @@ export function TestimonialsSection() {
           </AnimatePresence>
 
           {/* Company Indicators */}
-            <div className="mt-12 border-t pt-8">
+          <div className="mt-12 border-t pt-8">
             <div className="flex justify-center items-center gap-4 flex-nowrap overflow-x-auto">
               {companies.map((company) => {
-              const testimonialIndex = testimonials.findIndex(
-                (t) => t.company === company
-              );
-              return (
-                <button
-                key={company}
-                onClick={() => setCurrentIndex(testimonialIndex)}
-                className={`whitespace-nowrap px-4 py-2 text-sm transition-colors ${
-                  testimonials[currentIndex].company === company
-                  ? "text-blue-600 font-semibold border-b-2 border-blue-600"
-                  : "text-gray-500 hover:text-gray-700"
-                }`}
-                >
-                {company}
-                </button>
-              );
+                const testimonialIndex = testimonials.findIndex(
+                  (t) => t.company === company
+                );
+                return (
+                  <button
+                    key={company}
+                    onClick={() => setCurrentIndex(testimonialIndex)}
+                    className={`whitespace-nowrap px-4 py-2 text-sm transition-colors ${
+                      testimonials[currentIndex].company === company
+                        ? "text-blue-600 font-semibold border-b-2 border-blue-600"
+                        : "text-gray-500 hover:text-gray-700"
+                    }`}
+                  >
+                    {company}
+                  </button>
+                );
               })}
             </div>
-            </div>
+          </div>
         </div>
       </div>
     </section>
