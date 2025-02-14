@@ -86,7 +86,7 @@ const services = [
       {
         title: "Appraisal & OM Data Digitization",
         description: "Convert physical documents into digital format",
-        href: "/products/InvestAssist",
+        href: "/products/clarity360",
       },
       {
         title: "Loan Onboarding & Data Digitization",
