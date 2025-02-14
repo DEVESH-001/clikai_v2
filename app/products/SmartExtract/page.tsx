@@ -35,6 +35,7 @@ import {
 } from "@/components/ui/card";
 import type React from "react";
 
+
 const CodePreview = ({ children }: { children: React.ReactNode }) => (
   <div className="relative group">
     <div className="absolute right-4 top-4 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -79,7 +80,9 @@ export default function SmartExtractPage() {
         {/* Hero Section */}
 
         <AIBackground />
+
         <div className="mx-auto px-8 lg:space-y-6 relative mt-8 sm:mt-12">
+          <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50 to-indigo-100"></div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -118,7 +121,8 @@ export default function SmartExtractPage() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-blue-200 text-blue-600 hover:bg-blue-50 px-4 py-3 sm:px-4 sm:py-4 text-sm sm:text-lg rounded-lg sm:rounded-xl transition-all duration-300 w-full sm:w-auto">
+                  className="border-blue-200 text-blue-600 hover:bg-blue-50 px-4 py-3 sm:px-4 sm:py-4 text-sm sm:text-lg rounded-lg sm:rounded-xl transition-all duration-300 w-full sm:w-auto"
+                >
                   View Documentation
                   <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
                 </Button>

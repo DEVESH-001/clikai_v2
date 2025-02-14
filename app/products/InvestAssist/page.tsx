@@ -47,6 +47,7 @@ export default function InvestAssistPage() {
       <div className="absolute inset-0 bg-gradient-to-t from-blue-100/20 via-purple-100/20 to-indigo-100/20"></div>
 
       {/* Hero Section */}
+
       <div className="relative">
         <section className="relative z-10 pt-16 pb-16 overflow-hidden mt-14 lg:mt-24">
           <div className="mx-auto px-8 lg:space-y-6 relative">

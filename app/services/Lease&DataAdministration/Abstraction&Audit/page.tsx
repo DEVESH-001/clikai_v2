@@ -355,7 +355,6 @@ export default function LeaseAbstractionAuditPage() {
 
       <div className="relative z-10">
         {/* Hero Section */}
-
         <section className="pt-20 pb-12 px-4 sm:px-6 lg:px-8">
           <div className="mx-auto px-21 lg:space-y-6 relative">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-10">

@@ -181,6 +181,7 @@ export default function AutoUWPage() {
 
       {/* Hero Section */}
       <section className="relative py-16 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50 to-indigo-100"></div>
         <div className="mx-auto px-4 sm:px-8 relative">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="max-w-xl mx-auto lg:mx-0">
