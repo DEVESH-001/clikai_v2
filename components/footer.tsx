@@ -11,7 +11,7 @@ interface FooterProps {
 // Main Footer component
 export function Footer({ onOpenCookiePreferences }: FooterProps) {
   return (
-    <footer className="relative z-50 bg-[#001F3F] pt-8 sm:pt-12 md:pt-16 pb-6 sm:pb-8 text-white">
+    <footer className="relative z-[1] bg-[#001F3F] pt-8 sm:pt-12 md:pt-16 pb-6 sm:pb-8 text-white">
       <div className="container mx-auto px-4">
         {/* Company information and newsletter signup */}
         <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-6 sm:mb-8">

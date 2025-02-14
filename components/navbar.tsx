@@ -14,7 +14,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { imageUrls } from "@/utils/imageUrls";
 import { usePathname } from "next/navigation";
@@ -169,10 +169,25 @@ export function Navbar() {
       : "text-gray-800"
   } hover:text-blue-300 transition-colors`;
 
+  // Add this function to handle navigation menu state
+  const handleNavigation = () => {
+    // Close mobile menu
+    setMobileMenuOpen(false);
+    // Close mobile submenus
+    setMobileProductsOpen(false);
+    setMobileServicesOpen(false);
+  };
+
+  // Add useEffect to handle route changes
+  useEffect(() => {
+    // Close menus on route change
+    handleNavigation();
+  }, [pathname]);
+
   return (
     <>
       <div
-        className={`fixed top-0 left-0 right-0 z-50 w-full transition-colors duration-200 ${
+        className={`fixed top-0 left-0 right-0 z-[9999] w-full transition-colors duration-200 ${
           isScrolled || pathname !== "/"
             ? "bg-white shadow-md"
             : "bg-transparent"
@@ -215,6 +230,7 @@ export function Navbar() {
                               <li key={item.title}>
                                 <Link
                                   href={item.href}
+                                  onClick={handleNavigation}
                                   className="group flex items-center p-2 rounded-md hover:bg-blue-50 transition-colors"
                                 >
                                   <div>
@@ -257,6 +273,7 @@ export function Navbar() {
                                 <li key={item.title}>
                                   <Link
                                     href={item.href || "#"}
+                                    onClick={handleNavigation}
                                     className="group flex items-center justify-between p-2 rounded-md hover:bg-blue-50 transition-colors"
                                   >
                                     <div>
@@ -280,7 +297,10 @@ export function Navbar() {
 
                 <NavigationMenuItem>
                   <Link href="/#pricing" legacyBehavior passHref>
-                    <NavigationMenuLink className={dynamicNavItemClass}>
+                    <NavigationMenuLink
+                      className={dynamicNavItemClass}
+                      onClick={handleNavigation}
+                    >
                       PRICING
                     </NavigationMenuLink>
                   </Link>
@@ -290,7 +310,10 @@ export function Navbar() {
 
                 <NavigationMenuItem>
                   <Link href="/why-clik-ai" legacyBehavior passHref>
-                    <NavigationMenuLink className={dynamicNavItemClass}>
+                    <NavigationMenuLink
+                      className={dynamicNavItemClass}
+                      onClick={handleNavigation}
+                    >
                       WHY CLIK.AI
                     </NavigationMenuLink>
                   </Link>
@@ -339,7 +362,7 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden fixed top-16 left-0 right-0 bg-black bg-opacity-80 z-50 shadow-lg max-h-[80vh] overflow-y-auto"
+            className="lg:hidden fixed top-16 left-0 right-0 bg-black bg-opacity-80 z-[9998] shadow-lg max-h-[80vh] overflow-y-auto"
           >
             <div className="px-4 pt-2 pb-3 space-y-1 text-white">
               <div className="relative">
@@ -362,7 +385,7 @@ export function Navbar() {
                           <Link
                             key={index}
                             href={item.href}
-                            onClick={() => setMobileMenuOpen(false)}
+                            onClick={handleNavigation}
                             className="block px-3 py-1 text-sm text-white hover:text-blue-300"
                           >
                             {item.title}
@@ -396,10 +419,7 @@ export function Navbar() {
                           <div key={item.title} className="mb-2">
                             <Link
                               href={item.href || "#"}
-                              onClick={() => {
-                                setMobileMenuOpen(false);
-                                setMobileServicesOpen(false);
-                              }}
+                              onClick={handleNavigation}
                               className="block px-3 py-2 text-sm text-white hover:text-blue-300"
                             >
                               <div className="font-medium">{item.title}</div>
@@ -416,14 +436,14 @@ export function Navbar() {
               </div>
               <Link
                 href="/#pricing"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={handleNavigation}
                 className={`block px-3 py-2 text-white hover:text-blue-300 rounded-md ${dynamicNavItemClass}`}
               >
                 PRICING
               </Link>
               <Link
                 href="/why-clik-ai"
-                onClick={() => setMobileMenuOpen(false)}
+                onClick={handleNavigation}
                 className={`block px-3 py-2 text-white hover:text-blue-300 rounded-md ${dynamicNavItemClass}`}
               >
                 WHY CLIK.AI
@@ -431,14 +451,14 @@ export function Navbar() {
               <div className="border-t border-gray-200 pt-4 pb-3">
                 <Link
                   href="/login"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={handleNavigation}
                   className={`block px-3 py-2 text-white hover:text-blue-300 rounded-md ${dynamicNavItemClass}`}
                 >
                   SIGN IN
                 </Link>
                 <Link
                   href="/get-started"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={handleNavigation}
                   className={`block px-3 py-2 text-sm text-white bg-blue-600 hover:bg-blue-700 rounded-md mt-2 ${dynamicNavItemClass}`}
                 >
                   GET STARTED

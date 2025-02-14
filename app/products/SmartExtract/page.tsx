@@ -35,7 +35,6 @@ import {
 } from "@/components/ui/card";
 import type React from "react";
 
-
 const CodePreview = ({ children }: { children: React.ReactNode }) => (
   <div className="relative group">
     <div className="absolute right-4 top-4 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -81,92 +80,85 @@ export default function SmartExtractPage() {
 
         <AIBackground />
         <div className="mx-auto px-8 lg:space-y-6 relative mt-8 sm:mt-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+              className="relative z-10"
+            >
+              <div className="inline-flex items-center rounded-full border border-blue-200 bg-white px-3 py-1 text-sm leading-6 text-blue-700 mb-8 mt-8">
+                <span className="font-medium ">Industry&apos;s First</span>
+                <span className="ml-3 inline-flex items-center rounded-full bg-blue-50 px-2 py-1 text-xs">
+                  100,000+ Documents/Year
+                </span>
+              </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="relative z-10"
-              >
-                <div className="inline-flex items-center rounded-full border border-blue-200 bg-white px-3 py-1 text-sm leading-6 text-blue-700 mb-8 mt-8">
-                  <span className="font-medium ">Industry&apos;s First</span>
-                  <span className="ml-3 inline-flex items-center rounded-full bg-blue-50 px-2 py-1 text-xs">
-                    100,000+ Documents/Year
-                  </span>
-                </div>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
+                <span className="text-gray-900">Smart</span>{" "}
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">
+                  Extract
+                </span>{" "}
+                <span className="text-gray-900">(SMeX)</span>
+              </h1>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+                The brain behind AutoUW, adopted by leading CRE Tech companies
+                to extract information from their exhaustive data bank of
+                Operating Statements & Rent Rolls.
+              </p>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
-                  <span className="text-gray-900">Smart</span>{" "}
-                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">
-                    Extract
-                  </span>{" "}
-                  <span className="text-gray-900">(SMeX)</span>
-                </h1>
-                <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                  The brain behind AutoUW, adopted by leading CRE Tech companies
-                  to extract information from their exhaustive data bank of
-                  Operating Statements & Rent Rolls.
-                </p>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button
+                  size="lg"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 sm:px-4 sm:py-4 text-base sm:text-lg rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25"
+                >
+                  Get API Access
+                  <Server className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                </Button>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-blue-200 text-blue-600 hover:bg-blue-50 px-4 py-3 sm:px-4 sm:py-4 text-sm sm:text-lg rounded-lg sm:rounded-xl transition-all duration-300 w-full sm:w-auto">
+                  View Documentation
+                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                </Button>
+              </div>
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button
-                    size="lg"
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25"
-                  >
-                    Get API Access
-                    <Server className="ml-2 h-5 w-5" />
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-blue-200 text-blue-600 hover:bg-blue-50 px-8 py-6 text-lg rounded-xl transition-all duration-300"
-                  >
-                    View Documentation
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </div>
-
-                {/* Stats */}
-                <div className="grid grid-cols-2 gap-4 mt-10 pr-24">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-blue-100">
-                    <div className="text-2xl font-bold text-blue-600">
-                      100K+
-                    </div>
-                    <div className="text-xs text-gray-600">
-                      Documents Processed Yearly
-                    </div>
-                  </div>
-                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-blue-100">
-                    <div className="text-2xl font-bold text-blue-600">
-                      99.9%
-                    </div>
-                    <div className="text-xs text-gray-600">
-                      Extraction Accuracy
-                    </div>
+              {/* Stats */}
+              <div className="grid grid-cols-2 gap-4 mt-10 pr-24">
+                <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-blue-100">
+                  <div className="text-2xl font-bold text-blue-600">100K+</div>
+                  <div className="text-xs text-gray-600">
+                    Documents Processed Yearly
                   </div>
                 </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.8 }}
-                style={{ y }}
-                className="relative sm:h-[400px] md:h-[500px] lg:h-[660px] w-full"
-              >
-                <div className="relative w-full h-full mt-12">
-                  <Image
-                    src="/images/products/smartExtract.png"
-                    alt="SmartExtract Architecture"
-                    fill
-                    className="object-contain"
-                    priority
-                  />
+                <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-blue-100">
+                  <div className="text-2xl font-bold text-blue-600">99.9%</div>
+                  <div className="text-xs text-gray-600">
+                    Extraction Accuracy
+                  </div>
                 </div>
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
 
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8 }}
+              style={{ y }}
+              className="relative sm:h-[400px] md:h-[500px] lg:h-[660px] w-full"
+            >
+              <div className="relative w-full h-full mt-12">
+                <Image
+                  src="/images/products/smartExtract.png"
+                  alt="SmartExtract Architecture"
+                  fill
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </motion.div>
+          </div>
         </div>
 
         {/* Who is it for? Section */}
@@ -251,7 +243,8 @@ export default function SmartExtractPage() {
             </motion.div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              <Card className="relative overflow-hidden border-2 border-blue-100 hover:border-blue-200 transition-all duration-300">
+              {/* SmartExtract Widget */}
+              <Card className="relative overflow-hidden border-2 border-blue-100 rounded-xl hover:border-blue-300 shadow-sm hover:shadow-lg transition-all duration-300">
                 <CardHeader>
                   <div className="p-3 bg-blue-100 rounded-xl w-fit">
                     <Layout className="w-6 h-6 text-blue-600" />
@@ -287,7 +280,8 @@ export default function SmartExtractPage() {
                 </CardContent>
               </Card>
 
-              <Card className="relative overflow-hidden border-2 border-blue-100 hover:border-blue-200 transition-all duration-300">
+              {/* SmartExtract JSON API */}
+              <Card className="relative overflow-hidden border-2 border-blue-100 rounded-xl hover:border-blue-300 shadow-sm hover:shadow-lg transition-all duration-300">
                 <CardHeader>
                   <div className="p-3 bg-blue-100 rounded-xl w-fit">
                     <FileJson className="w-6 h-6 text-blue-600" />
@@ -314,10 +308,10 @@ export default function SmartExtractPage() {
                       <span>Stateless architecture for scalability</span>
                     </li>
                   </ul>
-                  <div className="pt-4">
-                    <Button className="w-full">
+                  <div className="pt-4 flex justify-center">
+                    <Button className="w-full flex items-center justify-center gap-2">
                       View API Docs
-                      <ArrowRight className="ml-2 h-4 w-4" />
+                      <ArrowRight className="h-4 w-4" />
                     </Button>
                   </div>
                 </CardContent>
@@ -450,7 +444,7 @@ export default function SmartExtractPage() {
               </p>
             </motion.div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
               {[
                 {
                   icon: FileSpreadsheet,
@@ -492,8 +486,9 @@ export default function SmartExtractPage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="flex"
                 >
-                  <Card className="relative group hover:shadow-lg transition-all duration-300 border-blue-100/50">
+                  <Card className="relative group hover:shadow-lg transition-all duration-300 border-blue-100/50 flex flex-col h-full">
                     <CardHeader>
                       <div className="p-3 bg-blue-100 rounded-xl w-fit group-hover:bg-blue-600 transition-colors duration-300">
                         <docType.icon className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors duration-300" />
@@ -503,7 +498,7 @@ export default function SmartExtractPage() {
                       </CardTitle>
                       <CardDescription>{docType.description}</CardDescription>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="flex-grow">
                       <ul className="space-y-2">
                         {docType.items.map((item, i) => (
                           <li key={i} className="flex items-center gap-2">

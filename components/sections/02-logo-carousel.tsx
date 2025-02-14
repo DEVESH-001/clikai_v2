@@ -11,62 +11,61 @@ export function LogoCarousel() {
 
   const logos = [
     {
-      src: imageUrls.logos.newmark,
+      src: "/images/ClientLogos/ClientLogosRefined/newmark.svg",
       alt: "Newmark",
       width: 160,
-      height: 40, 
-      
+      height: 40,
     },
     {
-      src: imageUrls.logos.lument,
+      src: "/images/ClientLogos/ClientLogosRefined/lument.svg",
       alt: "Lument",
       width: 160,
       height: 40,
     },
     {
-      src: imageUrls.logos.bwe,
+      src: "/images/ClientLogos/ClientLogosRefined/bwe-blue.svg",
       alt: "BWE",
       width: 160,
       height: 40,
     },
     {
-      src: imageUrls.logos.merchantsCapital,
+      src: "/images/ClientLogos/ClientLogosRefined/merchant-capital.png",
       alt: "Merchants Capital",
       width: 160,
       height: 40,
     },
     {
-      src: imageUrls.logos.colliers,
+      src: "/images/ClientLogos/ClientLogosRefined/colliers.png",
       alt: "Colliers",
       width: 160,
       height: 40,
     },
-    { 
-      src: imageUrls.logos.acoreCapital,
+    {
+      src: "/images/ClientLogos/ClientLogosRefined/acore-capital.png",
       alt: "ACORE Capital",
       width: 160,
       height: 40,
     },
     {
-      src: imageUrls.logos.columbiaNational,
+        src: imageUrls.logos.columbiaNational,
       alt: "Columbia National",
       width: 160,
       height: 40,
     },
     {
-      src: imageUrls.logos.websterBank,
+      src: "/images/ClientLogos/ClientLogosRefined/webster-bank.svg",
       alt: "Webster Bank",
       width: 160,
       height: 40,
     },
     {
-      src: imageUrls.logos.northmarq,
+      src: "/images/ClientLogos/ClientLogosRefined/northmarq.svg",
       alt: "Northmarq",
       width: 160,
       height: 40,
     },
     {
-      src: imageUrls.logos.heitman,
+      src: "/images/ClientLogos/ClientLogosRefined/hietman.svg",
       alt: "Heitman",
       width: 160,
       height: 40,

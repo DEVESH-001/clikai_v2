@@ -79,7 +79,7 @@ const plans = [
   {
     name: "Self-Service",
     description: "Ideal for 1-4 deals per month",
-    monthlyPrice: 49,
+    monthlyPrice: 199,
     features: [
       "Self-Managed - DIY",
       "Online Video Tutorials",
@@ -92,7 +92,7 @@ const plans = [
   {
     name: "Growth",
     description: "Clik Analysts Do It for You",
-    monthlyPrice: 99,
+    monthlyPrice: 249,
     perDealPrice: 30,
     features: [
       "Ideal for 5–20 deals per month",
