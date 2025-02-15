@@ -23,6 +23,7 @@ import {
   Upload,
   Database,
   DollarSign,
+
 } from "lucide-react";
 
 
@@ -124,9 +125,8 @@ export default function Clarity360OMPage() {
       <div className="absolute inset-0 bg-gradient-to-t from-blue-100/20 via-purple-100/20 to-indigo-100/20"></div>
 
       {/* Hero Section */}
-      <section className="relative pt-20 pb-12 overflow-hidden ">
-
-        <div className="container mx-auto px-4 max-w-7xl mt-24">
+      <section className="relative pt-20 pb-12 overflow-hidden">
+        <div className="container mx-auto px-4 max-w-7xl mt-16 md:mt-32">
           <div className="grid lg:grid-cols-[1fr,1.3fr] gap-12 items-center">
             <div className="max-w-xl">
               <motion.h1
@@ -199,7 +199,7 @@ export default function Clarity360OMPage() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
-                <Card className="group p-4 bg-white/90 backdrop-blur-sm hover:shadow-xl transition-all duration-300">
+                <Card className="group p-4 bg-white/90 backdrop-blur-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
                   <div className="relative aspect-video mb-4 overflow-hidden rounded-lg">
                     <motion.div
                       whileHover={{ scale: 1.05 }}
@@ -248,7 +248,7 @@ export default function Clarity360OMPage() {
                       </motion.li>
                     ))}
                   </ul>
-                  <div className="border-t pt-3">
+                  <div className="border-t pt-3 mt-auto">
                     <h4 className="font-semibold mb-2">Processing Details:</h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm">
                       {Object.entries(product.stats).map(([key, value]) => (
@@ -417,11 +417,11 @@ export default function Clarity360OMPage() {
                   Unlock Efficiency with Insurance ACORD Extraction
                 </h2>
                 <p className="text-base md:text-lg text-gray-700">
-                  In today&apos;s fast-paced real estate industry, manual data entry
-                  and parsing insurance forms like ACORD 25 and ACORD 28 can be
-                  slow, inefficient, and error-prone. Transform your workflow
-                  with Clarity360&apos;s automated Insurance ACORD Extraction
-                  platform.
+                  In today&apos;s fast-paced real estate industry, manual data
+                  entry and parsing insurance forms like ACORD 25 and ACORD 28
+                  can be slow, inefficient, and error-prone. Transform your
+                  workflow with Clarity360&apos;s automated Insurance ACORD
+                  Extraction platform.
                 </p>
                 <div className="grid gap-4">
                   <Card className="p-4 bg-white/90 backdrop-blur-sm hover:shadow-lg transition-all duration-300 border-l-4 border-purple-400">
@@ -539,8 +539,8 @@ export default function Clarity360OMPage() {
                   <p className="text-sm text-gray-700">
                     In an industry where every second counts, manual document
                     processing is no longer viable. Join leading firms using
-                    Clarity360&apos;s Insurance ACORD Extraction to process documents
-                    faster, minimize risks, and close deals quicker.
+                    Clarity360&apos;s Insurance ACORD Extraction to process
+                    documents faster, minimize risks, and close deals quicker.
                   </p>
                 </div>
                 <Button
@@ -568,8 +568,8 @@ export default function Clarity360OMPage() {
               <p className="text-base md:text-lg text-gray-700">
                 Appraisals are critical to any commercial real estate
                 transaction, but extracting data from these lengthy, detailed
-                documents can take hours. That&apos;s where Clarity360&apos;s Appraisal
-                Parser steps in.
+                documents can take hours. That&apos;s where Clarity360&apos;s
+                Appraisal Parser steps in.
               </p>
               <h3 className="text-xl font-semibold">
                 Why the Appraisal Parser is a Must-Have for CRE Professionals
@@ -645,10 +645,11 @@ export default function Clarity360OMPage() {
                   Don&apos;t Fall Behind the Competition
                 </h3>
                 <p className="text-sm text-gray-700 mb-4">
-                  In CRE, speed an d accuracy are everything. If you&apos;re still
-                  extracting data manually, your competition is already one step
-                  ahead. Join the Clarity360 community and get free access to
-                  the Appraisal Parser to start working smarter, not harder.
+                  In CRE, speed an d accuracy are everything. If you&apos;re
+                  still extracting data manually, your competition is already
+                  one step ahead. Join the Clarity360 community and get free
+                  access to the Appraisal Parser to start working smarter, not
+                  harder.
                 </p>
                 <Button
                   size="lg"
@@ -687,10 +688,21 @@ export default function Clarity360OMPage() {
           </div>
         </div>
       </section>
-
-      {/* CTA Section */}
-      <section className="relative z-10 py-12 bg-gradient-to-br from-[#001F3F] via-blue-900 to-blue-800">
+      {/* new cta */}
+      <section className="relative z-10 py-16 bg-gradient-to-br from-[#001F3F] via-blue-900 to-blue-800">
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-soft-light"></div>
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <svg
+            className="absolute w-full h-full"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,0 C30,40 70,60 100,0 L100,100 L0,100 Z"
+              fill="rgba(255, 255, 255, 0.05)"
+            />
+          </svg>
+        </div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -698,23 +710,33 @@ export default function Clarity360OMPage() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               Ready to Transform Documents into Valuable Data?
             </h2>
-            <p className="text-base md:text-lg text-blue-100 max-w-2xl mx-auto mb-6">
+            <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">
               Unlock hidden value in your documents. Transform raw data into
               actionable insights for smarter, faster investment decisions.
             </p>
-            <Button
-              size="lg"
-              className="bg-white text-blue-600 hover:bg-blue-50 px-6 py-3 text-lg font-semibold rounded-[8px]"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
             >
-              Talk to Us
-              <ArrowUpRight className="ml-2 h-5 w-5" />
-            </Button>
+                <Button
+                  size="lg"
+                  className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
+                >
+                  Talk to Us
+                  <ArrowUpRight className="ml-2 h-5 w-5" />
+                </Button>
+                
+
+            </motion.div>
           </motion.div>
         </div>
       </section>
+
+     
     </div>
   );
 }
