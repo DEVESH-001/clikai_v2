@@ -5,7 +5,7 @@ const faqs = [
   {
     question: "How does Clik.ai's pricing model work?",
     answer:
-      "Our pricing is flexible and based on your needs. We offer three main plans: Self-Service starting at $49/month for 1-4 deals, Small Business at $99/month plus $30 per deal for 5-20 deals, and Enterprise with custom pricing for unlimited deals. Annual subscriptions receive a 17% discount.",
+      "Our pricing is flexible and based on your needs. We offer three main plans: Self-Service starting at $199/month ideal for those who do less than 5 deals a month, Growth Plan at $249/month with 5 complimentary deals done by Clik Analysts and additional deal at $30 ideal for customers who typically do less up to 20 deals a month, and Enterprise with custom pricing for unlimited deals. Annual subscriptions receive a 17% discount.",
   },
   {
     question: "What types of documents can Clik.ai process?",
@@ -18,7 +18,8 @@ const faqs = [
       "Our AI-powered extraction technology achieves high accuracy rates. For the Small Business and Enterprise plans, our expert analysts review the extracted data to ensure maximum accuracy. All outputs are validated against industry standards and client-specific requirements.",
   },
   {
-    question: "Can I customize the financial models to match my company's format?",
+    question:
+      "Can I customize the financial models to match my company's format?",
     answer:
       "Yes, especially with our Enterprise plan, we offer custom model integration with unlimited updates. We can adapt our outputs to match your existing templates or create new ones that align with your specific needs and workflows.",
   },
@@ -30,10 +31,11 @@ const faqs = [
   {
     question: "How quickly can I get started with Clik.ai?",
     answer:
-      "You can start immediately with our Self-Service plan. For Small Business and Enterprise plans, we provide quick onboarding and training to ensure your team can effectively use all features. Most clients are fully operational within a few days.",
+      "You can start immediately with our Self-Service plan. For Small Business and Enterprise plans, we provide quick onboarding and training to ensure your team can effectively use all features. Most clients are fully operational within first 3 days.",
   },
   {
-    question: "Do you support different types of commercial real estate assets?",
+    question:
+      "Do you support different types of commercial real estate assets?",
     answer:
       "Yes, we support multiple asset classes including multifamily, retail, office, and more. Our Small Business and Enterprise plans include analysis capabilities for all asset classes, while Self-Service focuses on multifamily properties.",
   },
@@ -52,7 +54,7 @@ const faqs = [
     answer:
       "Yes, you can upgrade or downgrade your plan at any time to match your business needs. Our flexible pricing structure allows you to scale your usage up or down based on your deal volume and requirements.",
   },
-]
+];
  
 export function FAQSection() {
   return (

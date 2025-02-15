@@ -133,10 +133,10 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
                 </li>
                 <li>
                   <Link
-                    href="/services/deal/underwritingDDS"
+                    href="/products/clarity360"
                     className="text-gray-300 hover:text-blue-300"
                   >
-                    Appraisal & OM Data Digitization
+                    Loan Document Data Digitisation
                   </Link>
                 </li>
               </ul>
@@ -221,7 +221,41 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
             </ul>
           </div>
         </div>
-
+        {/* Social Media Links */}
+        <div className="flex flex-wrap justify-center space-x-4 mb-6">
+          <a
+            href="https://www.linkedin.com/company/cliktechnologies/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-300 hover:text-blue-300 text-sm"
+          >
+            LinkedIn
+          </a>
+          <a
+            href="https://www.facebook.com/clik.ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-300 hover:text-blue-300 text-sm"
+          >
+            Facebook
+          </a>
+          <a
+            href="https://twitter.com/clik_ai"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-300 hover:text-blue-300 text-sm"
+          >
+            X
+          </a>
+          <a
+            href="https://www.youtube.com/channel/UCxxxxxxxx"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-300 hover:text-blue-300 text-sm"
+          >
+            YouTube
+          </a>
+        </div>
         <hr className="border-gray-300 mb-6 sm:mb-8" />
         {/* Copyright and legal links */}
         <div className="flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-gray-300">

@@ -121,7 +121,7 @@ export default function UnderwritingDueDiligenceSupport() {
                   <br className="hidden md:block" />
                   <span className="text-gray-900">at Unbeatable Value</span>
                 </h1>
-                <h4 className="text-lg sm:text-xl md:text-2xl mb-8 text-gray-700 font-light">
+                <h4 className="text-lg sm:text-xl text-gray-700 mb-8 text-center lg:text-left">
                   Our seasoned analysts deliver precise, AI-assisted
                   underwriting support. Accelerate deals with faster turnaround
                   times while maintaining top-tier accuracy.

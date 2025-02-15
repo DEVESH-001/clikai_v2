@@ -129,7 +129,7 @@ const faqItems = [
   {
     question: "How accurate is the data extraction?",
     answer:
-      "Our AI-powered extraction achieves 100% accuracy through a combination of advanced machine learning algorithms and built-in validation checks. Each extraction is verified against our comprehensive database of CRE documents.",
+      "Our AI-powered extraction delivers high accuracy by combining automated data processing with expert human validation. Each extraction is reviewed by our analysts to ensure 100% precision, cross-checked against our extensive database of CRE documents.",
   },
   {
     question: "Can I customize the output template?",
@@ -137,7 +137,7 @@ const faqItems = [
       "Yes! AutoUW offers full template customization. You can either use our pre-built templates for major lenders or create your own custom templates to match your exact specifications.",
   },
   {
-    question: "What if I have more than 50 deals per month?",
+    question: "What if I have more than 20 deals per month?",
     answer:
       "Our Enterprise plan is designed for high-volume users. We'll work with you to create a custom package that meets your specific needs, including unlimited deals and custom integrations.",
   },
@@ -213,7 +213,7 @@ export default function AutoUWPage() {
                 className="text-center lg:text-left"
               >
                 <Button
-                  size="lg"
+                  size="lg" 
                   className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
                 >
                   Start Automating Now

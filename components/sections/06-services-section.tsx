@@ -28,9 +28,9 @@ const services = [
         description:
           "Leverage AI for real-time financial insights, variance analysis, and regulatory compliance support.",
         benefits: [
-          "Real-time financial insights and variance analysis",
-          "Cash flow forecasting and portfolio performance reviews",
-          "Automated compliance with regulatory requirements",
+          "Comprehensive underwriting for complex deals",
+          "Detailed financial modeling and cash flow analysis",
+          "In-depth risk assessment and compliance checks",
         ],
       },
       {
@@ -39,9 +39,9 @@ const services = [
         description:
           "Streamline property assessments and disbursements with AI-driven workflows.",
         benefits: [
-          "AI-assisted property condition assessments",
-          "Automated replacement reserves disbursement",
-          "Intelligent compliance checks for HUD/FHA guidelines",
+          "Bespoke financial models tailored to your deal",
+          "Excel-based models built by CRE experts",
+          "Custom underwriting & projections to fit your needs",
         ],
       },
       {
@@ -50,9 +50,9 @@ const services = [
         description:
           "Migrate loan portfolios to modern platforms with AI-powered validation and error checks.",
         benefits: [
-          "AI-driven data cleansing and standardization",
-          "Automated validation and error detection",
-          "Intelligent process optimization for scalability",
+          "Manual data validation and quality assurance",
+          "Detailed review of disbursement requests",
+          "Accurate PCNA processing and reporting",
         ],
       },
     ],
@@ -66,16 +66,16 @@ const services = [
     subservices: [
       {
         title: "Lease Abstraction & Audit",
-        tagline: "AI-driven lease data extraction",
+        tagline: "Expert-driven lease data abstraction",
         description:
-          "Extract and audit critical lease data using advanced AI and machine learning techniques.",
+          "Extract and audit critical lease data with expert-driven review and validation.",
         benefits: [
-          "AI-powered extraction of key lease clauses",
-          "Automated lease audits for compliance and consistency",
+          "Manual extraction of key lease clauses",
+          "Detailed lease audits for accuracy and compliance",
         ],
       },
       {
-        title: "Appraisal & OM Data Digitization",
+        title: "Loan Document Data Digitisation",
         tagline: "Intelligent report conversion",
         description:
           "Transform appraisals and OMs into structured data using AI and natural language processing.",
@@ -144,7 +144,13 @@ interface Subservice {
   benefits: string[];
 }
 
-const SubserviceCard = ({ subservice, color }: { subservice: Subservice; color: string }) => {
+const SubserviceCard = ({
+  subservice,
+  color,
+}: {
+  subservice: Subservice;
+  color: string;
+}) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -183,9 +189,9 @@ const SubserviceCard = ({ subservice, color }: { subservice: Subservice; color: 
                   transition={{ duration: 0.3 }}
                   className="mt-2"
                 >
-                    <p className="text-xs md:text-sm text-gray-600 mb-2">
+                  <p className="text-xs md:text-sm text-gray-600 mb-2">
                     {subservice.description}
-                    </p>
+                  </p>
                   <h5 className="font-semibold text-xs text-gray-900 mb-1">
                     Key Benefits:
                   </h5>
@@ -232,13 +238,15 @@ const ServiceSection = ({ service }: { service: Service }) => {
       </div>
       <p className="text-sm text-gray-600 mb-3">{service.description}</p>
       <div>
-        {service.subservices.map((subservice: Subservice, index: Key | null | undefined) => (
-          <SubserviceCard
-            key={index}
-            subservice={subservice}
-            color={service.color}
-          />
-        ))}
+        {service.subservices.map(
+          (subservice: Subservice, index: Key | null | undefined) => (
+            <SubserviceCard
+              key={index}
+              subservice={subservice}
+              color={service.color}
+            />
+          )
+        )}
       </div>
     </div>
   );

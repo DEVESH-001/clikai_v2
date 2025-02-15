@@ -110,36 +110,43 @@ export default function SmartExtractPage() {
                 Operating Statements & Rent Rolls.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Button
-                  size="lg"
-                  className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 sm:px-4 sm:py-4 text-base sm:text-lg rounded-lg sm:rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25"
-                >
-                  Get API Access
-                  <Server className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-                </Button>
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="border-blue-200 text-blue-600 hover:bg-blue-50 px-4 py-3 sm:px-4 sm:py-4 text-sm sm:text-lg rounded-lg sm:rounded-xl transition-all duration-300 w-full sm:w-auto"
-                >
-                  View Documentation
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-                </Button>
-              </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-2 gap-4 mt-10 pr-24">
-                <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-blue-100">
-                  <div className="text-2xl font-bold text-blue-600">100K+</div>
-                  <div className="text-xs text-gray-600">
-                    Documents Processed Yearly
-                  </div>
+              <div className="flex flex-col gap-6 sm:gap-10">
+                {/* Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button
+                    size="lg"
+                    className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
+                  >
+                    Get API Access
+                    <Server className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="text-blue-600 hover:bg-blue-50 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
+                  >
+                    View Documentation
+                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                  </Button>
                 </div>
-                <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-blue-100">
-                  <div className="text-2xl font-bold text-blue-600">99.9%</div>
-                  <div className="text-xs text-gray-600">
-                    Extraction Accuracy
+
+                {/* Stats */}
+                <div className="flex flex-wrap justify-start gap-4 w-full ">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-blue-200 w-56 ">
+                    <div className="text-2xl font-bold text-blue-600 flex items-center justify-center">
+                      100K+
+                    </div>
+                    <div className="text-xs text-gray-600 flex items-center justify-center">
+                      Documents Processed Yearly
+                    </div>
+                  </div>
+                  <div className="bg-white/90 backdrop-blur-sm rounded-lg p-3 shadow-sm border border-blue-200 w-56 text-left">
+                    <div className="text-2xl font-bold text-blue-600 flex items-center justify-center">
+                      99.9%
+                    </div>
+                    <div className="text-xs text-gray-600 flex items-center justify-center">
+                      Extraction Accuracy
+                    </div>
                   </div>
                 </div>
               </div>
@@ -166,7 +173,7 @@ export default function SmartExtractPage() {
         </div>
 
         {/* Who is it for? Section */}
-        <section className="py-12 bg-gradient-to-b from-white to-gray-50">
+        <section className="py-12  ">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center">
               Who is it for?

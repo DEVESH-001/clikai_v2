@@ -1,6 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Download } from "lucide-react";
 import Link from "next/link";
 import { GeistSans } from "geist/font/sans";
 
@@ -35,8 +35,8 @@ export default function TermsAndConditionsPage() {
           <div className="p-6 md:p-8 space-y-6 text-gray-700">
             <p>
               This Agreement creates a binding legal agreement between you
-              (&rdquo;Customer&rdquo;) and Clik Technologies Inc. with a principal place of
-              business at ( &quot;Clik.ai&ldquo;).
+              (&rdquo;Customer&rdquo;) and Clik Technologies Inc. with a
+              principal place of business at ( &quot;Clik.ai&ldquo;).
             </p>
 
             <p className="font-semibold text-gray-900">
@@ -49,17 +49,17 @@ export default function TermsAndConditionsPage() {
             <p className="font-semibold text-gray-900">
               IF YOU ARE ENTERING THIS AGREEMENT ON BEHALF OF A COMPANY OR OTHER
               LEGAL ENTITY, YOU REPRESENT THAT YOU HAVE THE AUTHORITY TO BIND
-              SUCH ENTITY TO THIS AGREEMENT, IN WHICH CASE, THE TERM &rdquo;CUSTOMER&#34;
-              WILL REFER TO SUCH ENTITY. IF YOU DO NOT HAVE SUCH AUTHORITY, OR
-              IF YOU DO NOT AGREE WITH THIS AGREEMENT, YOU MUST NOT ACCEPT THIS
-              AGREEMENT AND MAY NOT USE THE SERVICE.
+              SUCH ENTITY TO THIS AGREEMENT, IN WHICH CASE, THE TERM
+              &rdquo;CUSTOMER&#34; WILL REFER TO SUCH ENTITY. IF YOU DO NOT HAVE
+              SUCH AUTHORITY, OR IF YOU DO NOT AGREE WITH THIS AGREEMENT, YOU
+              MUST NOT ACCEPT THIS AGREEMENT AND MAY NOT USE THE SERVICE.
             </p>
 
             <p>
               By accepting this Agreement, you agree to be bound by the terms
               and conditions of this Agreement, as well as Clik.ai Privacy
-              Policy located at (the &#34;Privacy Policy&#34;), as it may be amended
-              from time to time in the future.
+              Policy located at (the &#34;Privacy Policy&#34;), as it may be
+              amended from time to time in the future.
             </p>
 
             <p>
@@ -184,10 +184,10 @@ export default function TermsAndConditionsPage() {
                 use the Service other than as permitted by this Agreement;
               </li>
               <li>
-                use the Service to violate, infringe or appropriate any person&apos;s
-                privacy rights, publicity rights, defamation rights,
-                intellectual property rights, proprietary rights, contractual
-                rights or any other legal right;
+                use the Service to violate, infringe or appropriate any
+                person&apos;s privacy rights, publicity rights, defamation
+                rights, intellectual property rights, proprietary rights,
+                contractual rights or any other legal right;
               </li>
               <li>
                 use the Service in a manner that is misleading, deceptive or
@@ -217,9 +217,9 @@ export default function TermsAndConditionsPage() {
               <li>
                 if your subscription for or use of the Service involves the use
                 of an account for any third party site or service (each, a
-                &quot;Third Party Account&ldquo;), directly or indirectly use such Third
-                Party Account in a manner that is in contravention of the terms
-                of use applicable to such Third Party Account;
+                &quot;Third Party Account&ldquo;), directly or indirectly use
+                such Third Party Account in a manner that is in contravention of
+                the terms of use applicable to such Third Party Account;
               </li>
               <li>
                 sublicense or transfer any of Customer&#39;s rights under this
@@ -235,14 +235,16 @@ export default function TermsAndConditionsPage() {
               </li>
               <li>
                 use or launch any automated system, including without limitation
-                any &quot;robot&quot; or &quot;spider&quot; that accesses the Service;
+                any &quot;robot&quot; or &quot;spider&quot; that accesses the
+                Service;
               </li>
               <li>
                 for Customer purchasing an evaluation license, use the Service
                 other than for the purpose of evaluating the Service; without
-                limiting this restriction, the Customer must not make any &apos;live&rsquo;
-                or &apos;production&apos; use of the Service and must not rely upon the
-                uninterrupted availability of the Service or related storage; or
+                limiting this restriction, the Customer must not make any
+                &apos;live&rsquo; or &apos;production&apos; use of the Service
+                and must not rely upon the uninterrupted availability of the
+                Service or related storage; or
               </li>
               <li>
                 interfere with, or attempt to interfere with, the Service, the
@@ -442,7 +444,8 @@ export default function TermsAndConditionsPage() {
 
         <div className="mt-12 text-center">
           <Button className="bg-blue-600 text-white hover:bg-blue-700 rounded-[8px]">
-            I Agree to the Terms and Conditions
+            Download PDF Version
+            <Download className="ml-2 h-5 w-5" />
           </Button>
         </div>
       </div>

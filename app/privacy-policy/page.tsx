@@ -1,8 +1,9 @@
 import { Card } from "@/components/ui/card";
 
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, Download } from "lucide-react";
 import Link from "next/link";
 import { GeistSans } from "geist/font/sans";
+import { Button } from "@/components/ui/button";
 
 export default function PrivacyPolicyPage() {
   return (
@@ -28,20 +29,22 @@ export default function PrivacyPolicyPage() {
         <Card className="bg-white/80 backdrop-blur-sm p-6 md:p-8 shadow-lg rounded-xl space-y-8">
           <section>
             <p className="text-gray-700">
-              This privacy policy (the &quot;<b>Privacy Policy</b>&quot; or &quot;<b>Policy</b>
-              &quot;) sets out the terms and conditions under which you may access or
-              download content that we offer on the website located at
-              https://clik.ai/ (the &quot;<b>Website</b>&quot;), and use our services and
-              other features of the Website (collectively, the &quot;<b>Services</b>
+              This privacy policy (the &quot;<b>Privacy Policy</b>&quot; or
+              &quot;<b>Policy</b>
+              &quot;) sets out the terms and conditions under which you may
+              access or download content that we offer on the website located at
+              https://clik.ai/ (the &quot;<b>Website</b>&quot;), and use our
+              services and other features of the Website (collectively, the
+              &quot;<b>Services</b>
               &quot;). This Policy applies to all users of the Website and the
               Services and is incorporated into and made a part of the Terms of
-              Service. &#34;We&quot;, &#34;us&quot; or &#34;our&ldquo; is defined as{" "}
-              <b>Clik Technologies Inc</b>. (&quot;<b>Clik</b>&quot;) and its affiliates,
-              officers, agents, partners, and employees. Where applicable, &quot;you&quot;
-              or &#34;your&quot; is defined as an individual user of the Website and/or
-              Services. Your use of the Website and Services means that you
-              accept, and agree to abide by, all provisions of this Privacy
-              Policy.
+              Service. &#34;We&quot;, &#34;us&quot; or &#34;our&ldquo; is
+              defined as <b>Clik Technologies Inc</b>. (&quot;<b>Clik</b>&quot;)
+              and its affiliates, officers, agents, partners, and employees.
+              Where applicable, &quot;you&quot; or &#34;your&quot; is defined as
+              an individual user of the Website and/or Services. Your use of the
+              Website and Services means that you accept, and agree to abide by,
+              all provisions of this Privacy Policy.
             </p>
           </section>
 
@@ -54,15 +57,15 @@ export default function PrivacyPolicyPage() {
               information gathered from your visit to and use of the Website and
               Services and how such information may be used. This Privacy Policy
               will be continuously assessed against new technologies, business
-              practices and our users&apos; needs. Please check this Privacy Policy
-              from time to time for updates by checking the date of the &quot;Last
-              Update&quot; at the top of this page. We will post any Privacy Policy
-              changes on this page and, if the changes are significant, we will
-              provide a more prominent notice (including, for certain Services,
-              email notification of Privacy Policy changes). You acknowledge and
-              agree that your access to our Website and your use of the Services
-              following any posted changes to the Privacy Policy indicate your
-              acceptance of such changes.
+              practices and our users&apos; needs. Please check this Privacy
+              Policy from time to time for updates by checking the date of the
+              &quot;Last Update&quot; at the top of this page. We will post any
+              Privacy Policy changes on this page and, if the changes are
+              significant, we will provide a more prominent notice (including,
+              for certain Services, email notification of Privacy Policy
+              changes). You acknowledge and agree that your access to our
+              Website and your use of the Services following any posted changes
+              to the Privacy Policy indicate your acceptance of such changes.
             </p>
           </section>
 
@@ -71,20 +74,21 @@ export default function PrivacyPolicyPage() {
               What is Personal Information?
             </h2>
             <p className="text-gray-700">
-              This policy complies with Canada&apos;s Personal Information Protection
-              and Electronic Documents Act (&quot;
+              This policy complies with Canada&apos;s Personal Information
+              Protection and Electronic Documents Act (&quot;
               <b>PIPEDA</b>&quot;). In this Privacy Policy, &quot;
-              <b>Personal Information</b>&quot; means information that identifies or
-              can be used to identify a living individual, including, without
-              limitation, your name, address, e-mail address, country of
-              residence, and other information when such information is combined
-              with other information. Personal Information does not include
-              business contact information and also does not include &quot;
-              <b>aggregate</b>&quot; information, which is data we collect about and
-              through the use of our Website and the Services and may include
-              anonymized data which does not identify any individuals. Our
-              Privacy Policy does not restrict or limit our collection and use
-              of aggregate information or other types of non-personal
+              <b>Personal Information</b>&quot; means information that
+              identifies or can be used to identify a living individual,
+              including, without limitation, your name, address, e-mail address,
+              country of residence, and other information when such information
+              is combined with other information. Personal Information does not
+              include business contact information and also does not include
+              &quot;
+              <b>aggregate</b>&quot; information, which is data we collect about
+              and through the use of our Website and the Services and may
+              include anonymized data which does not identify any individuals.
+              Our Privacy Policy does not restrict or limit our collection and
+              use of aggregate information or other types of non-personal
               information.
             </p>
           </section>
@@ -108,14 +112,15 @@ export default function PrivacyPolicyPage() {
             </h2>
             <p className="text-gray-700">
               Certain features of the Services require you to first complete a
-              registration process and establish an account (&quot;<b>Account</b>&quot;).
-              In doing so, you will be required to provide basic information
-              such as your first and last name, valid email address and
-              establish a password (&quot;<b>Account Information</b>&quot;). We will
-              retain Account Information and associate it with your Account. You
-              are responsible for updating and maintaining the truth and
-              accuracy of the Personal Information you provide to us relating to
-              your Account.
+              registration process and establish an account (&quot;
+              <b>Account</b>&quot;). In doing so, you will be required to
+              provide basic information such as your first and last name, valid
+              email address and establish a password (&quot;
+              <b>Account Information</b>&quot;). We will retain Account
+              Information and associate it with your Account. You are
+              responsible for updating and maintaining the truth and accuracy of
+              the Personal Information you provide to us relating to your
+              Account.
             </p>
           </section>
 
@@ -246,6 +251,15 @@ export default function PrivacyPolicyPage() {
             </p>
           </section>
         </Card>
+        <div className="flex justify-center mt-8">
+          <Button
+            size="lg"
+            className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+          >
+            Download PDF Version
+            <Download className="ml-2 h-5 w-5" />
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -46,7 +46,7 @@ const advantages = [
     metrics: [
       { value: "400+", label: "Integrated Models" },
       { value: "$50B+", label: "Annual Loan Processing" },
-      { value: "98%", label: "Client Satisfaction" },
+      { value: "98%", label: "Client Retention" },
     ],
     features: [
       "Custom model integration",
@@ -59,9 +59,9 @@ const advantages = [
   {
     title: "Comprehensive Services",
     metrics: [
-      { value: "100%", label: "Service Coverage" },
+      { value: "5k+", label: "Manual Deal Underwriting yearly" },
       { value: "50+", label: "Expert Analysts" },
-      { value: "10+", label: "Industries Served" },
+      { value: "15+", label: "Enterprise Customers" },
     ],
     features: [
       "Financial spreading analysis",
