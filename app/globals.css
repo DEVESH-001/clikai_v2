@@ -1,120 +1,18 @@
-/* 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
-@keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-}
-
-.animate-blob {
-  animation: blob 7s infinite;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
-}
-
-/* Ensure consistent button styling */
-/* button,
-.button {
-  @apply rounded-md transition-all duration-200 ease-in-out;
-} */
-
-/* Override any conflicting styles for round buttons */
-/* button[class*="rounded-full"],
-.button[class*="rounded-full"] {
-  @apply rounded-full;
-}
-  */
-
-/* 2 */
-  /* @tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --font-geist: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --primary: 221.2 83.2% 53.3%;
-  --primary-foreground: 210 40% 98%;
-}
-
-.dark {
-  --primary: 217.2 91.2% 59.8%;
-  --primary-foreground: 222.2 47.4% 11.2%;
-}
-
-body {
-  font-family: var(--font-geist);
-}
-
-@keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-}
-
-.animate-blob {
-  animation: blob 7s infinite;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
-} */
-
-/* Ensure consistent button styling */
-/* button,
-.button {
-  @apply rounded-md transition-all duration-200 ease-in-out;
-} */
-
-/* Override any conflicting styles for round buttons */
-/* button[class*="rounded-full"],
-.button[class*="rounded-full"] {
-  @apply rounded-full;
-} */
-
-/* NEW */
 /* @tailwind base;
 @tailwind components;
-@tailwind utilities;
-* {
-   margin: 0;
-   padding: 0;
-   box-sizing: border-box;
-}
+@tailwind utilities; */
 
+/* Global Reset */
+/* *,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box !important;
+} */
 
-:root {
+/* Root Variables */
+/* :root {
   --font-geist: "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --primary: 221.2 83.2% 53.3%;
   --primary-foreground: 210 40% 98%;
@@ -136,9 +34,11 @@ body {
   --destructive-foreground: 210 40% 98%;
   --ring: 215 20.2% 65.1%;
   --radius: 0.5rem;
-}
+} */
 
-.dark {
+
+/* Dark Mode */
+/* .dark {
   --background: 224 71% 4%;
   --foreground: 213 31% 91%;
   --muted: 223 47% 11%;
@@ -159,14 +59,58 @@ body {
   --destructive-foreground: 210 40% 98%;
   --ring: 216 34% 17%;
   --radius: 0.5rem;
-}
+} */
 
-body {
+/* Font Fix for Safari & Chrome */
+/* body {
   font-family: var(--font-geist);
-}
+  font-display: swap;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+} */
 
+/* Navbar Styling */
+/* .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  background: hsl(var(--background));
+  padding: 1rem;
+  border-bottom: 1px solid hsl(var(--border));
+} */
 
-@keyframes blob {
+/* Hero Section */
+/* .hero {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: hsl(var(--background));
+} */
+
+/* Fix Button Styling */
+/* button,
+.button {
+  @apply rounded-md transition-all duration-200 ease-in-out;
+} */
+
+/* Override conflicting button styles */
+/* button[class*="rounded-full"],
+.button[class*="rounded-full"] {
+  @apply rounded-full;
+} */
+
+/* Animation */
+/* @keyframes blob {
   0% {
     transform: translate(0px, 0px) scale(1);
   }
@@ -179,10 +123,10 @@ body {
   100% {
     transform: translate(0px, 0px) scale(1);
   }
-}
+} */
 
-.animate-blob {
-  animation: blob 7s infinite;
+/* .animate-blob {
+  animation: blob 7s infinite both;
 }
 
 .animation-delay-2000 {
@@ -193,21 +137,9 @@ body {
   animation-delay: 4s;
 } */
 
-/* Ensure consistent button styling */
-/* button,
-.button {
-  @apply rounded-md transition-all duration-200 ease-in-out;
-} */
-
-/* Override any conflicting styles for round buttons */
-/* button[class*="rounded-full"],
-.button[class*="rounded-full"] {
-  @apply rounded-full;
-} */
-
-/* Add these new styles for the Switch component */
+/* Switch Component */
 /* .peer:checked ~ .peer-checked\:bg-primary {
-  background-color: hsl(var(--primary));
+  background-color: hsl(var(--primary, 221.2, 83.2%, 53.3%));
 }
 
 .peer:checked ~ .peer-checked\:translate-x-5 {
@@ -215,6 +147,26 @@ body {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x))
     skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 } */
+
+/* Ensure Proper Viewport Behavior */
+/* html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+    padding: 0.5rem;
+  }
+
+  .hero {
+    height: auto;
+    padding: 2rem;
+  }
+} */
+
+                          /* new */
 
 @tailwind base;
 @tailwind components;
@@ -253,7 +205,6 @@ body {
   --ring: 215 20.2% 65.1%;
   --radius: 0.5rem;
 }
-
 
 /* Dark Mode */
 .dark {

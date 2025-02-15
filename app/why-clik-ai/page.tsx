@@ -16,9 +16,13 @@ import {
   Zap,
   Clock,
   Sparkles,
-  Bot,
+  Bot, 
 
 } from "lucide-react";
+import { HeroVideoDialogDemo } from "@/components/magicui/HeroVideoDialogDemo";
+
+
+
 // import { GeistSans } from "geist/font/sans";
 
 const advantages = [
@@ -260,6 +264,9 @@ export default function WhyPage() {
         </div>
       </section>
 
+      <section className="flex items-center justify-center min-h-[500px] bg-blue-100 dark:bg-blue-100">
+        <HeroVideoDialogDemo />
+      </section>
       {/* The Clik.ai Advantage Section */}
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
