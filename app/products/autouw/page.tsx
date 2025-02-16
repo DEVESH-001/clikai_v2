@@ -22,6 +22,7 @@ import {
   Clock,
   FileText,
 } from "lucide-react";
+import { HeroVideoDialogDemo } from "@/components/magicui/HeroVideoDialogDemo";
 
 // Features data
 const features = [
@@ -180,8 +181,6 @@ export default function AutoUWPage() {
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-soft-light"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-blue-100/20 via-purple-100/20 to-indigo-100/20"></div>
 
-      
-
       <div className="relative">
         <section className="relative z-10 pt-16 pb-16 overflow-hidden mt-14 ">
           <div className="mx-auto px-8 lg:space-y-6 relative">
@@ -211,7 +210,6 @@ export default function AutoUWPage() {
                     Get Started
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
-                 
                 </div>
               </motion.div>
 
@@ -222,7 +220,7 @@ export default function AutoUWPage() {
                 className="lg:w-1/2 w-full"
               >
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/investAssist-combined-125jokgtmO7dgKE9jwB2QPPjWS8G6j.png"
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AUW-7xDRwqT2OvYQV4o16Wvc80A2GNO94L.svg"
                   alt="InvestAssist Platform Interface"
                   width={2000}
                   height={1600}
@@ -235,6 +233,7 @@ export default function AutoUWPage() {
           <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white/10"></div>
         </section>
       </div>
+
       {/* Features Section */}
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
@@ -267,6 +266,9 @@ export default function AutoUWPage() {
         </div>
       </section>
 
+      <section className="flex items-center justify-center min-h-[500px]">
+        <HeroVideoDialogDemo />
+      </section>
       {/* Workflow Section */}
       <section className="py-16 relative bg-gradient-to-b from-white/50 to-blue-50/50">
         <div className="container mx-auto px-4">
