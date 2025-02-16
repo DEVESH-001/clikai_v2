@@ -33,7 +33,7 @@ const features = [
     icon: FileText,
     gradient: "from-blue-500 to-purple-500",
   },
-  {
+  { 
     title: "Customizable Outputs",
     description:
       "Generate underwriting models tailored to your format or lender-specific templates",
@@ -80,7 +80,7 @@ const benefits = [
 const plans = [
   {
     name: "Growth",
-    description: "Clik Analysts Do It for You",
+    description: "5 Complimentary deals done by Clik analysts",
     monthlyPrice: 249,
     perDealPrice: 30,
     features: [
@@ -132,29 +132,6 @@ const faqItems = [
   },
 ];
 
-// Client logos
-// const clientLogos = [
-//   {
-//     name: "Newmark",
-//     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/newmark-KnJSkOAznB2WnzRWFJGej8maFHZ8jG.svg",
-//   },
-//   {
-//     name: "K-Star",
-//     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/kstar-ufUmUi6SLAksMMJdU48s5z6de1gHCB.webp",
-//   },
-//   {
-//     name: "Colliers",
-//     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/colliers-EdSYubmqncaB8VzVWjg0wgC8gHKo1x.png",
-//   },
-//   {
-//     name: "BWE",
-//     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/bwe-blue-ly0IASAOVCySLWrVlV011xg79JqgRV.svg",
-//   },
-//   {
-//     name: "Merchants Capital",
-//     src: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/merchant-capital-lwBL8IMpwKrXXmNFgjqg03tWuue61g.png",
-//   },
-// ];
 
 export default function AutoUWPage() {
   return (
