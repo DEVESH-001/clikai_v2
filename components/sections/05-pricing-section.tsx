@@ -354,7 +354,7 @@ export function PricingSection() {
                   {plan.name}
                 </h3>
                 {/* Description */}
-                <p className="text-gray-600 mb-4">{plan.description}</p>
+                <p className="text-blue-600 mb-4">{plan.description}</p>
                 <div className="mb-6">
                   {/* Price */}
                   {plan.monthlyPrice ? (
