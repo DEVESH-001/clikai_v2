@@ -1,8 +1,11 @@
 "use client";
 
-import { Key, useState } from "react";
+import type React from "react";
+
+import { type Key, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 import {
   Building2,
@@ -32,6 +35,7 @@ const services = [
           "Detailed financial modeling and cash flow analysis",
           "In-depth risk assessment and compliance checks",
         ],
+        href: "/services/LoanOrigination/underwritingDDS",
       },
       {
         title: "Custom Financial Model Development",
@@ -43,10 +47,11 @@ const services = [
           "Excel-based models built by CRE experts",
           "Custom underwriting & projections to fit your needs",
         ],
+        href: "/services/LoanOrigination/customFDM",
       },
       {
         title: "Disbursement & PCNA Support",
-        tagline: "Streamlined disbursement and PCNA processingn",
+        tagline: "Streamlined disbursement and PCNA processing",
         description:
           "Migrate loan portfolios to modern platforms with AI-powered validation and error checks.",
         benefits: [
@@ -54,6 +59,7 @@ const services = [
           "Detailed review of disbursement requests",
           "Accurate PCNA processing and reporting",
         ],
+        href: "/services/LoanOrigination/disbursement&PCNA",
       },
     ],
   },
@@ -73,6 +79,7 @@ const services = [
           "Manual extraction of key lease clauses",
           "Detailed lease audits for accuracy and compliance",
         ],
+        href: "/services/Lease&DataAdministration/Abstraction&Audit",
       },
       {
         title: "Loan Document Data Digitisation",
@@ -83,6 +90,7 @@ const services = [
           "AI-driven conversion of reports into actionable data",
           "Instant access to key metrics through machine learning",
         ],
+        href: "/products/clarity360",
       },
       {
         title: "Loan Onboarding & Data Digitization",
@@ -93,6 +101,7 @@ const services = [
           "Manual migration of legacy loan document and financial data",
           "Expert-driven data structuring and validation",
         ],
+        href: "/services/Lease&DataAdministration/LoanOnboarding&DataDigitization",
       },
     ],
   },
@@ -112,6 +121,7 @@ const services = [
           "Custom workflow automation and integrations",
           "Centralized management of CRE processes",
         ],
+        href: "/services/ConsultingTech/salesforce",
       },
       {
         title: "Custom Reporting & Dashboards",
@@ -122,6 +132,7 @@ const services = [
           "Custom-built dashboards for CRE performance tracking",
           "Consolidated reporting for portfolio insights",
         ],
+        href: "/services/ConsultingTech/customRD",
       },
       {
         title: "CRE Technology Consulting",
@@ -132,6 +143,7 @@ const services = [
           "Strategic guidance on CRE technology adoption",
           "Support for implementation and system scaling",
         ],
+        href: "/services/ConsultingTech/creTech",
       },
     ],
   },
@@ -142,6 +154,7 @@ interface Subservice {
   tagline: string;
   description: string;
   benefits: string[];
+  href: string;
 }
 
 const SubserviceCard = ({
@@ -195,7 +208,7 @@ const SubserviceCard = ({
                   <h5 className="font-semibold text-xs text-gray-900 mb-1">
                     Key Benefits:
                   </h5>
-                  <ul className="space-y-1">
+                  <ul className="space-y-1 mb-3">
                     {subservice.benefits.map((benefit, index) => (
                       <li key={index} className="flex items-start space-x-2">
                         <ArrowRight className="w-3 h-3 text-blue-500 mt-0.5 flex-shrink-0" />
@@ -203,6 +216,14 @@ const SubserviceCard = ({
                       </li>
                     ))}
                   </ul>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full text-xs"
+                    style={{ borderColor: color, color: color }}
+                  >
+                    <a href={subservice.href}>See Full Service Offering</a>
+                  </Button>
                 </motion.div>
               )}
             </AnimatePresence>
