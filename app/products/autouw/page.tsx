@@ -180,9 +180,8 @@ export default function AutoUWPage() {
       <div className="absolute inset-0 bg-gradient-to-t from-blue-100/20 via-purple-100/20 to-indigo-100/20"></div>
 
       {/* Hero Section */}
-
-      
-        <section className="relative z-10 pt-16 pb-16 overflow-hidden mt-14 ">
+      <div className="relative">
+        <section className="relative z-10 pt-16 pb-16 overflow-hidden mt-14">
           <div className="mx-auto px-8 lg:space-y-6 relative">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               <motion.div
@@ -191,47 +190,39 @@ export default function AutoUWPage() {
                 transition={{ duration: 0.8 }}
                 className="lg:w-1/2 w-full"
               >
-                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6">
                   <span className="text-gray-900">Automate Your</span>{" "}
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
                     Underwriting Process
                   </span>
                   <span className="text-gray-900"> with Precision</span>
                 </h1>
-                <p className="text-lg md:text-xl text-gray-600 mb-8">
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-8">
                   From Operating Statements to Rent Rolls, streamline your
                   underwriting workflows with AutoUW&apos;s AI-powered solution.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button
-                    size="lg"
-                    className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
-                  >
-                    Start Automating Now
-                    <ArrowUpRight className="ml-2 h-4 w-4" />
-                  </Button>
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-blue-600 text-blue-600 hover:bg-blue-50"
-                  >
-                    Talk to Us
-                  </Button>
-                </div>
+
+                <Button
+                  size="lg"
+                  className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+                >
+                  Start Automating Now
+                  <ArrowUpRight className="ml-2 h-4 w-4" />
+                </Button>
               </motion.div>
 
               <motion.div
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="lg:w-1/2 w-full"
+                className="lg:w-1/2 w-full flex justify-center"
               >
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/investAssist-combined-125jokgtmO7dgKE9jwB2QPPjWS8G6j.png"
                   alt="InvestAssist Platform Interface"
                   width={2000}
                   height={1600}
-                  className="w-[800px] h-[500px]"
+                  className="w-full h-auto max-w-[800px] max-h-[500px]"
                   priority
                 />
               </motion.div>
@@ -239,7 +230,7 @@ export default function AutoUWPage() {
           </div>
           <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white/10"></div>
         </section>
-
+      </div>
       {/* Features Section */}
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
