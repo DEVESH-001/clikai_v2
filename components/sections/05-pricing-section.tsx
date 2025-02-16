@@ -32,10 +32,10 @@ interface Plan {
 const plans: Plan[] = [
   {
     name: "Self-Service",
-    description: "Ideal for 1-4 deals per month",
+    description: "Unlimited Deals/Self-Managed (DIY)",
     monthlyPrice: 199,
     features: [
-      "Self-Managed - DIY",
+      "Ideal for 1-4 deals per month",
       "Online Video Tutorials",
       "Multifamily only",
       "AI-powered data extraction",
@@ -79,11 +79,11 @@ const plans: Plan[] = [
   },
   {
     name: "Enterprise",
-    description: "Complete Automation & Expert Support",
+    description: "20 complementary Clik Analyst deals per month",
     price: "Custom Pricing",
     features: [
       "Unlimited self-created deals",
-      "20 complementary Clik Analyst deals per month",
+      "Complete Automation & Expert Support",
       "$30 per additional Clik Analyst underwriting",
       "Access to self-service data extraction tools",
       "Custom model integration with unlimited updates",
@@ -151,19 +151,6 @@ const featureComparison = [
 ];
 
 export function PricingSection() {
-  // const [dealsPerMonth, setDealsPerMonth] = React.useState(10);
-  // const [isYearly, setIsYearly] = React.useState(false);
-
-  // const calculateYearlyPrice = (monthlyPrice: number) => {
-  //   return (monthlyPrice * 10).toFixed(0);
-  // };
-
-  // const calculateSavings = (monthlyPrice: number) => {
-  //   return (
-  //     ((monthlyPrice * 12 - monthlyPrice * 10) / (monthlyPrice * 12)) *
-  //     100
-  //   ).toFixed(0);
-  // };
 
   const [dealsPerMonth, setDealsPerMonth] = React.useState(10);
   const [isYearly, setIsYearly] = React.useState(false);
@@ -236,36 +223,7 @@ export function PricingSection() {
             Choose the perfect plan for your business
           </p>
         </div>
-        {/* Toggle for Monthly/Yearly Billing */}
-        {/* <div className="flex items-center justify-center gap-3 mb-8">
-          <label className="flex items-center gap-2 cursor-pointer">
-            <span className={`text-sm ${!isYearly ? "font-bold" : ""}`}>
-              Monthly
-            </span>
-            <div>
-              <input
-                type="checkbox"
-                checked={isYearly}
-                onChange={handleToggle}
-                className="sr-only"
-              />
-              <div
-                className={`relative h-6 w-12 bg-gray-300 rounded-full transition ${
-                  isYearly ? "bg-blue-600" : ""
-                }`}
-              >
-                <div
-                  className={`absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition ${
-                    isYearly ? "translate-x-6" : ""
-                  }`}
-                ></div>
-              </div>
-            </div>
-            <span className={`text-sm ${isYearly ? "font-bold" : ""}`}>
-              Yearly <span className="text-green-600">(Save 17%)</span>
-            </span>
-          </label>
-        </div> */}
+        
         {/* Billing Toggle */}
         <div className="flex items-center justify-center gap-3 mb-8">
           <span
@@ -299,7 +257,7 @@ export function PricingSection() {
             <span className="font-bold text-blue-600">{dealsPerMonth}</span>{" "}
             deals per month
           </p>
-          <div className="relative py-4">
+          <div className="relative py-4"> 
             <Slider
               value={[dealsPerMonth]}
               onValueChange={(value) => setDealsPerMonth(value[0])}
@@ -364,7 +322,7 @@ export function PricingSection() {
                         ? calculateYearlyPrice(plan.monthlyPrice)
                         : plan.monthlyPrice}
                       <span className="text-xl font-normal text-gray-600">
-                        /{isYearly ? "year" : "month"}
+                        /{isYearly ? "Year" : "Month"}
                       </span>
                       {plan.name === "Self-Service" && (
                         <span className="block text-lg font-normal text-green-600 mt-1">

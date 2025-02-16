@@ -79,22 +79,9 @@ const benefits = [
 // Pricing plans
 const plans = [
   {
-    name: "Self-Service",
-    description: "Ideal for 1-4 deals per month",
-    monthlyPrice: 199,
-    features: [
-      "Self-Managed - DIY",
-      "Online Video Tutorials",
-      "Multifamily only",
-      "AI-powered data extraction",
-      "Basic financial modeling",
-      "Access to InvestAssist",
-    ],
-  },
-  {
     name: "Growth",
     description: "Clik Analysts Do It for You",
-    monthlyPrice: 29,
+    monthlyPrice: 249,
     perDealPrice: 30,
     features: [
       "Ideal for 5–20 deals per month",
@@ -112,7 +99,7 @@ const plans = [
     price: "Custom",
     features: [
       "Unlimited self-created deals",
-      "20 complementary Clik Analyst deals per month",
+      "20 complementary Clik Analyst deals/month",
       "$30 per additional Clik Analyst underwriting",
       "Custom model integration",
       "Excel Add-in to sync updates",
@@ -383,53 +370,6 @@ export default function AutoUWPage() {
         </div>
       </section>
 
-      {/* Customer Success Section */}
-      {/* <section className="py-16 relative bg-gradient-to-b from-white/50 to-blue-50/50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Trusted by Industry Leaders
-            </h2>
-            <p className="text-xl text-gray-600">
-              Join the leading CRE firms transforming their operations with
-              AutoUW
-            </p>
-          </div>
-          <div className="flex flex-wrap justify-center items-center gap-8 mb-12">
-            {clientLogos.map((client, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="w-40 h-20 relative"
-              >
-                <Image
-                  src={client.src || "/placeholder.svg"}
-                  alt={client.name}
-                  fill
-                  className="object-contain transition-all duration-300"
-                />
-              </div>
-            ))}
-          </div>
-          <Card className="max-w-4xl mx-auto p-8 bg-white/90 backdrop-blur-sm">
-            <blockquote className="text-xl text-gray-700 italic mb-4">
-              &quot;AutoUW reduced our underwriting time by 65% and enabled us
-              to process 30 deals per month with minimal effort.&quot;
-            </blockquote>
-            <div className="flex items-center gap-4">
-              <div>
-                <div className="font-semibold">Eric Tupta</div>
-                <div className="text-sm text-gray-600">
-                  IT Transformation Director, BWE
-                </div>
-              </div>
-            </div>
-          </Card>
-        </div>
-      </section> */}
-
       {/* Pricing Section */}
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
@@ -441,7 +381,7 @@ export default function AutoUWPage() {
               Choose the plan that best fits your needs
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {plans.map((plan, index) => (
               <motion.div
                 key={index}
