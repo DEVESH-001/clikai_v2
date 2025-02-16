@@ -86,12 +86,12 @@ const services = [
       },
       {
         title: "Loan Onboarding & Data Digitization",
-        tagline: "AI-assisted data modernization",
+        tagline: "Transform and streamline loan data",
         description:
-          "Modernize historical lease and financial data using AI-powered migration tools.",
+          "Convert legacy loan data from documents into structured, reliable records in bulk",
         benefits: [
-          "Intelligent migration of legacy lease and financial data",
-          "AI-driven data structuring and accuracy checks",
+          "Manual migration of legacy loan document and financial data",
+          "Expert-driven data structuring and validation",
         ],
       },
     ],
@@ -104,33 +104,33 @@ const services = [
     color: "#8B5CF6",
     subservices: [
       {
-        title: "Salesforce Customization",
-        tagline: "AI-enhanced CRM solutions",
+        title: "Salesforce Customisation & Integration",
+        tagline: "Tailored Salesforce solutions for your business",
         description:
-          "Implement AI-powered workflows and integrations for CRE-focused Salesforce instances.",
+          "Configure and integrate Salesforce to match your CRE business needs.",
         benefits: [
-          "AI-driven workflow automation and integrations",
-          "Intelligent centralized management of CRE data",
+          "Custom workflow automation and integrations",
+          "Centralized management of CRE processes",
         ],
       },
       {
         title: "Custom Reporting & Dashboards",
-        tagline: "AI-powered insights",
+        tagline: "CRE-focused reporting & tracking",
         description:
-          "Create dynamic, AI-enhanced dashboards tailored to your specific CRE KPIs.",
+          "Create dynamic, customized dashboards tailored to your specific CRE KPIs.",
         benefits: [
-          "AI-generated dynamic dashboards for CRE KPIs",
-          "Intelligent consolidation of portfolio performance data",
+          "Custom-built dashboards for CRE performance tracking",
+          "Consolidated reporting for portfolio insights",
         ],
       },
       {
         title: "CRE Technology Consulting",
-        tagline: "AI strategy for CRE tech",
+        tagline: "Scalable CRE tech consulting",
         description:
-          "Expert guidance on implementing and scaling AI solutions for CRE operations.",
+          "Helping CRE firms adopt and scale the right technology solutions.",
         benefits: [
-          "Strategic advice on AI tool selection for CRE",
-          "Assistance with AI implementation and scaling",
+          "Strategic guidance on CRE technology adoption",
+          "Support for implementation and system scaling",
         ],
       },
     ],

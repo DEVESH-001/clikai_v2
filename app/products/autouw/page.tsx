@@ -180,64 +180,65 @@ export default function AutoUWPage() {
       <div className="absolute inset-0 bg-gradient-to-t from-blue-100/20 via-purple-100/20 to-indigo-100/20"></div>
 
       {/* Hero Section */}
-      <section className="relative py-16 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50 to-indigo-100"></div>
-        <div className="mx-auto px-4 sm:px-8 relative">
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-            <div className="max-w-xl mx-auto lg:mx-0">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight text-center lg:text-left"
-              >
-                Automate Your{" "}
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                  Underwriting Process
-                </span>{" "}
-                with Precision
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-lg sm:text-xl text-gray-700 mb-8 text-center lg:text-left"
-              >
-                From Operating Statements to Rent Rolls, streamline your
-                underwriting workflows with AutoUW&apos;s AI-powered solution.
-              </motion.p>
+
+      
+        <section className="relative z-10 pt-16 pb-16 overflow-hidden mt-14 ">
+          <div className="mx-auto px-8 lg:space-y-6 relative">
+            <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-                className="text-center lg:text-left"
+                transition={{ duration: 0.8 }}
+                className="lg:w-1/2 w-full"
               >
-                <Button
-                  size="lg" 
-                  className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
-                >
-                  Start Automating Now
-                  <ArrowUpRight className="ml-2 h-4 w-4" />
-                </Button>
+                <h1 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6">
+                  <span className="text-gray-900">Automate Your</span>{" "}
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
+                    Underwriting Process
+                  </span>
+                  <span className="text-gray-900"> with Precision</span>
+                </h1>
+                <p className="text-lg md:text-xl text-gray-600 mb-8">
+                  From Operating Statements to Rent Rolls, streamline your
+                  underwriting workflows with AutoUW&apos;s AI-powered solution.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <Button
+                    size="lg"
+                    className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+                  >
+                    Start Automating Now
+                    <ArrowUpRight className="ml-2 h-4 w-4" />
+                  </Button>
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                  >
+                    Talk to Us
+                  </Button>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
+                className="lg:w-1/2 w-full"
+              >
+                <Image
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/investAssist-combined-125jokgtmO7dgKE9jwB2QPPjWS8G6j.png"
+                  alt="InvestAssist Platform Interface"
+                  width={2000}
+                  height={1600}
+                  className="w-[800px] h-[500px]"
+                  priority
+                />
               </motion.div>
             </div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="relative w-full aspect-square max-w-2xl mx-auto mt-8 lg:mt-0"
-            >
-              <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AUW-7xDRwqT2OvYQV4o16Wvc80A2GNO94L.svg"
-                alt="AutoUW Lease Analysis Interface"
-                width={1000}
-                height={1000}
-                className="object-contain"
-              />
-            </motion.div>
           </div>
-        </div>
-      </section>
+          <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-b from-transparent to-white/10"></div>
+        </section>
 
       {/* Features Section */}
       <section className="py-16 relative">
@@ -412,7 +413,7 @@ export default function AutoUWPage() {
                   fill
                   className="object-contain transition-all duration-300"
                 />
-              </motion.div>
+              </div>
             ))}
           </div>
           <Card className="max-w-4xl mx-auto p-8 bg-white/90 backdrop-blur-sm">
