@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Linkedin, Facebook, Twitter, Youtube } from "lucide-react";
 
 interface FooterProps {
   onOpenCookiePreferences: () => void;
@@ -210,54 +211,16 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
                 </Link>
               </li>
               <li>
-                <Link
-                  // href="/posts"
-                  href="#"
-                  className="text-gray-300 hover:text-blue-300"
-                >
+                <Link href="#" className="text-gray-300 hover:text-blue-300">
                   Blog
                 </Link>
               </li>
             </ul>
           </div>
         </div>
-        {/* Social Media Links */}
-        <div className="flex flex-wrap justify-center space-x-4 mb-6">
-          <a
-            href="https://www.linkedin.com/company/cliktechnologies/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-blue-300 text-sm"
-          >
-            LinkedIn
-          </a>
-          <a
-            href="https://www.facebook.com/clik.ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-blue-300 text-sm"
-          >
-            Facebook
-          </a>
-          <a
-            href="https://twitter.com/clik_ai"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-blue-300 text-sm"
-          >
-            X
-          </a>
-          <a
-            href="https://www.youtube.com/channel/UCxxxxxxxx"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-gray-300 hover:text-blue-300 text-sm"
-          >
-            YouTube
-          </a>
-        </div>
+
         <hr className="border-gray-300 mb-6 sm:mb-8" />
-        {/* Copyright and legal links */}
+        {/* Copyright, legal links, and social media icons */}
         <div className="flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-gray-300">
           <div className="flex flex-wrap justify-center sm:justify-start space-x-2 sm:space-x-4 mb-2 sm:mb-0">
             <Link href="/privacy-policy" className="hover:text-blue-300">
@@ -278,6 +241,41 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
             >
               Cookie Preferences
             </button>
+          </div>
+          <div className="flex items-center space-x-4">
+            {[
+              {
+                Icon: Linkedin,
+                href: "https://www.linkedin.com/company/clik-ai",
+                name: "LinkedIn",
+              },
+              {
+                Icon: Facebook,
+                href: "https://www.facebook.com/clik.ai",
+                name: "Facebook",
+              },
+              {
+                Icon: Twitter,
+                href: "https://twitter.com/clik_ai",
+                name: "Twitter",
+              },
+              {
+                Icon: Youtube,
+                href: "https://www.youtube.com/channel/UCxxxxxxxx",
+                name: "YouTube",
+              },
+            ].map((social) => (
+              <a
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-blue-300"
+                aria-label={social.name}
+              >
+                <social.Icon className="w-5 h-5" />
+              </a>
+            ))}
           </div>
           <div>© 2025 Clik.ai. All rights reserved</div>
         </div>
