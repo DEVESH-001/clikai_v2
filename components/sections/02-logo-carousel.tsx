@@ -4,7 +4,7 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { imageUrls } from "@/utils/imageUrls";
+
 
 export function LogoCarousel() {
   const [, setLogoErrors] = useState<Record<string, boolean>>({});
@@ -47,7 +47,7 @@ export function LogoCarousel() {
       height: 40,
     },
     {
-        src: imageUrls.logos.columbiaNational,
+        src: "/images/company_logo/Screenshot 2025-02-17 at 2.05.13 PM.png",
       alt: "Columbia National",
       width: 160,
       height: 40,

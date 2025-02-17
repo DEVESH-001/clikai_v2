@@ -16,7 +16,6 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import { imageUrls } from "@/utils/imageUrls";
 import { usePathname } from "next/navigation";
 import { GeistSans } from "geist/font/sans";
 
@@ -201,7 +200,7 @@ export function Navbar() {
               className="flex items-center space-x-2 cursor-pointer"
             >
               <Image
-                src={imageUrls.logo || "/placeholder.svg"}
+                src={"/images/logo.svg"}
                 alt="Clik.ai Logo"
                 width={100}
                 height={80}

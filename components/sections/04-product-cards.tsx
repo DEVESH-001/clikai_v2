@@ -21,7 +21,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { GeistSans } from "geist/font/sans";
-import { imageUrls } from "@/utils/imageUrls";
+
 
 interface ProductCardsProps {
   highlightedProduct?: string;
@@ -48,9 +48,11 @@ const products = [
       "CMBS lenders improving deal flow efficiency",
       "Agency lenders automating compliance checks",
     ],
-    image: imageUrls.products.autoUW,
+    image: "/images/products/autouw.png",
     link: "/products/autouw",
     theme: "blue",
+    height: "500",
+    width: "500",
   },
   {
     title: "InvestAssist",
@@ -72,9 +74,11 @@ const products = [
       "REITs enhancing portfolio management",
       "Family offices streamlining investment decisions",
     ],
-    image: imageUrls.products.investAssist,
+    image: "/images/products/investAssist.png",
     link: "/products/InvestAssist",
     theme: "emerald",
+    height: "500",
+    width: "500",
   },
   {
     title: "SmartExtract",
@@ -96,9 +100,13 @@ const products = [
       "Property management firms automating lease abstraction",
       "Appraisal firms accelerating report generation",
     ],
-    image: imageUrls.products.smartExtract,
+    // image: imageUrls.products.smartExtract,
+    image: "/images/products/smart.png",
     link: "/products/SmartExtract",
     theme: "violet",
+    height: "500",
+    width: "500",
+
   },
   {
     title: "Clarity360",
@@ -120,9 +128,12 @@ const products = [
       "Brokers generating comprehensive property reports",
       "Lenders assessing market risks and opportunities",
     ],
-    image: imageUrls.products.clarity360,
+    image: "/images/products/clarity360.png",
     link: "/products/clarity360",
     theme: "indigo",
+    height: "500",
+    width: "500",
+    
   },
 ];
 
