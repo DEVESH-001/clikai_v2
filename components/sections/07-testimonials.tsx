@@ -190,7 +190,7 @@ export function TestimonialsSection() {
                 </div>
               </div>
             </motion.div>
-          </AnimatePresence>
+          </AnimatePresence> 
 
           {/* Company Indicators */}
           <div className="mt-12 border-t pt-8">

@@ -84,7 +84,7 @@ const services = [
         href: "/services/Lease&DataAdministration/Abstraction&Audit",
       },
       {
-        title: "Loan Document Data Digitisation",
+        title: "Loan Document Data Digitization",
         description: "Convert physical documents into digital format",
         href: "/products/clarity360",
       },
