@@ -246,7 +246,7 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
             {[
               {
                 Icon: Linkedin,
-                href: "https://www.linkedin.com/company/clik-ai",
+                href: "https://www.linkedin.com/company/cliktechnologies/",
                 name: "LinkedIn",
               },
               {
