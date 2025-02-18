@@ -125,8 +125,8 @@ export default function AboutUsPage() {
                   <h3 className="text-xl font-bold">Gurgaon</h3>
                 </div>
                 <p className="text-gray-600">
-                  WeWork Platina Tower, Ground Floor, MG Rd,
-                  Sector 28, DLF Phase 1, Gurugram, Haryana 122002, India
+                  WeWork Platina Tower, Ground Floor, MG Rd, Sector 28, DLF
+                  Phase 1, Gurugram, Haryana 122002, India
                 </p>
               </Card>
             </motion.div>

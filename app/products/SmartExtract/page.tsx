@@ -35,7 +35,6 @@ import {
 } from "@/components/ui/card";
 import type React from "react";
 
-
 const CodePreview = ({ children }: { children: React.ReactNode }) => (
   <div className="relative group">
     <div className="absolute right-4 top-4 opacity-0 group-hover:opacity-100 transition-opacity">

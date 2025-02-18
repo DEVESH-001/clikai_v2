@@ -251,17 +251,17 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
               },
               {
                 Icon: Facebook,
-                href: "https://www.facebook.com/clik.ai",
+                href: "https://www.facebook.com/Cliktechnologies",
                 name: "Facebook",
               },
               {
                 Icon: Twitter,
-                href: "https://twitter.com/clik_ai",
+                href: "https://x.com/clik_ai",
                 name: "Twitter",
               },
               {
                 Icon: Youtube,
-                href: "https://www.youtube.com/channel/UCxxxxxxxx",
+                href: "https://vimeo.com/user145765890",
                 name: "YouTube",
               },
             ].map((social) => (

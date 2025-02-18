@@ -16,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { cn } from "@/lib/utils";
+import { imageUrls } from "@/utils/imageUrls";
 import { usePathname } from "next/navigation";
 import { GeistSans } from "geist/font/sans";
 
@@ -83,7 +84,7 @@ const services = [
         href: "/services/Lease&DataAdministration/Abstraction&Audit",
       },
       {
-        title: "Loan Document Automation",
+        title: "Loan Document  Digitization",
         description: "Convert physical documents into digital format",
         href: "/products/clarity360",
       },
@@ -200,7 +201,7 @@ export function Navbar() {
               className="flex items-center space-x-2 cursor-pointer"
             >
               <Image
-                src={"/images/logo.svg"}
+                src={imageUrls.logo || "/placeholder.svg"}
                 alt="Clik.ai Logo"
                 width={100}
                 height={80}
