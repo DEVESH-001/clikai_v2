@@ -41,7 +41,7 @@ const services = [
         title: "Custom Financial Model Development",
         tagline: "Faster, compliant assessments",
         description:
-          "Streamline property assessments and disbursements with AI-driven workflows.",
+          "Streamline financial structuring with custom-built models.",
         benefits: [
           "Bespoke financial models tailored to your deal",
           "Excel-based models built by CRE experts",
@@ -53,7 +53,7 @@ const services = [
         title: "Disbursement & PCNA Support",
         tagline: "Streamlined disbursement and PCNA processing",
         description:
-          "Migrate loan portfolios to modern platforms with AI-powered validation and error checks.",
+          "Ensure accuracy in loan disbursements and PCNA processing with expert oversight.",
         benefits: [
           "Manual data validation and quality assurance",
           "Detailed review of disbursement requests",
