@@ -82,7 +82,7 @@ const services = [
         href: "/services/Lease&DataAdministration/Abstraction&Audit",
       },
       {
-        title: "Loan Document Data Digitisation",
+        title: "Loan Document Digitization",
         tagline: "Intelligent report conversion",
         description:
           "Transform appraisals and OMs into structured data using AI and natural language processing.",
