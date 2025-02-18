@@ -4,11 +4,22 @@ import Link from "next/link";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Linkedin, Facebook, Twitter, Youtube } from "lucide-react";
+import { useState } from "react";
+import { CookiePreferencesPopup } from "./cookie-preference-popup";
 
 
 
 // Main Footer component
 export function Footer() {
+  const [isPreferencesOpen, setIsPreferencesOpen] = useState(false)
+
+  const handleOpenPreferences = () => {
+    setIsPreferencesOpen(true)
+  }
+
+  const handleClosePreferences = () => {
+    setIsPreferencesOpen(false)
+  }
   return (
     <footer className="relative z-[1] bg-[#001F3F] pt-8 sm:pt-12 md:pt-16 pb-6 sm:pb-8 text-white">
       <div className="container mx-auto px-4">
@@ -233,6 +244,9 @@ export function Footer() {
             >
               Contact Us
             </Link>
+            <button onClick={handleOpenPreferences} className="hover:text-blue-300">
+              Cookie Preferences
+            </button>
            
           </div>
           <div className="flex items-center space-x-4">
@@ -273,6 +287,7 @@ export function Footer() {
           <div>© 2025 Clik.ai. All rights reserved</div>
         </div>
       </div>
+      <CookiePreferencesPopup isOpen={isPreferencesOpen} onClose={handleClosePreferences} />
     </footer>
   );
 }

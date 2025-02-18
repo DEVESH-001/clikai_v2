@@ -52,12 +52,13 @@
 
 // export default RootLayout;
 
-import type React from "react";
-import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import "./globals.css";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
+import type React from "react"
+import type { Metadata } from "next"
+import { GeistSans } from "geist/font/sans"
+import "./globals.css"
+import { Navbar } from "@/components/navbar"
+import { Footer } from "@/components/footer"
+import { CookieConsentManager } from "@/components/CookieConsentManager"
 
 
 export const metadata: Metadata = {
@@ -83,12 +84,12 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-};
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
@@ -96,8 +97,9 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
-
+        <CookieConsentManager />
       </body>
     </html>
-  );
+  )
 }
+

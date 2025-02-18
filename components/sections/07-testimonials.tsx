@@ -159,14 +159,14 @@ export function TestimonialsSection() {
               transition={{ duration: 0.5 }}
               className="grid md:grid-cols-2 gap-8 items-center"
             >
-              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-blue-100">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
                 <Image
                   src={testimonials[currentIndex].image || "/placeholder.svg"}
                   alt={testimonials[currentIndex].author}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                 />
-              </div>
+                </div>
 
               <div className="flex flex-col justify-center">
                 {/* <blockquote className="text-2xl font-medium mb-6 text-gray-900">

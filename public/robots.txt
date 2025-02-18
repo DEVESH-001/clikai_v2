@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Disallow crawling of administrative areas
+Disallow: /admin/
+Disallow: /private/
+
+# Sitemap location
+Sitemap: https://www.clik.ai/sitemap.xml
+
