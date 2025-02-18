@@ -169,12 +169,12 @@ export function TestimonialsSection() {
               </div>
 
               <div className="flex flex-col justify-center">
-                <blockquote className="text-2xl font-medium mb-6 text-gray-900">
+                {/* <blockquote className="text-2xl font-medium mb-6 text-gray-900">
                   <span className="text-blue-600">
                     The {testimonials[currentIndex].highlight}
                   </span>
-                </blockquote>
-                <p className="text-lg text-gray-600 mb-8">
+                </blockquote> */}
+                <p className="text-xl text-gray-600 mb-8">
                   &quot;{testimonials[currentIndex].content}&quot;
                 </p>
                 <div>

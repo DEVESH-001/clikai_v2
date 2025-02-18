@@ -29,7 +29,7 @@ const services = [
         title: "Underwriting & Due Diligence Support",
         tagline: "Real-time insights and compliance",
         description:
-          "Leverage AI for real-time financial insights, variance analysis, and regulatory compliance support.",
+          "Expert-led underwriting with deep financial analysis and deal validation.",
         benefits: [
           "Comprehensive underwriting for complex deals",
           "Detailed financial modeling and cash flow analysis",
