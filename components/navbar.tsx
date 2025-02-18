@@ -183,7 +183,7 @@ export function Navbar() {
     // Close menus on route change
     handleNavigation();
   }, [pathname]);
-
+ 
   return (
     <>
       <div
@@ -370,117 +370,119 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden fixed top-16 left-0 right-0 bg-black bg-opacity-80 z-[9998] shadow-lg max-h-[80vh] overflow-y-auto"
+  {mobileMenuOpen && (
+    <motion.div
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      className="lg:hidden fixed top-16 left-0 right-0 bg-white bg-opacity-95 z-[9998] shadow-xl rounded-b-lg max-h-[80vh] overflow-y-auto"
+    >
+      <div className="px-5 py-4 space-y-2 text-gray-900">
+        {/* PRODUCTS */}
+        <div className="relative">
+          <button
+            onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
+            className={`flex justify-between items-center w-full px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 transition-all ${dynamicNavItemClass}`}
           >
-            <div className="px-4 pt-2 pb-3 space-y-1 text-white">
-              <div className="relative">
-                <button
-                  onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
-                  className={`flex justify-between items-center w-full px-3 py-2 text-white hover:text-blue-300 rounded-md ${dynamicNavItemClass}`}
-                >
-                  PRODUCTS
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      mobileProductsOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {mobileProductsOpen && (
-                  <div className="pl-4 mt-2 space-y-2">
-                    {products.map((category) => (
-                      <>
-                        {category.items.map((item, index) => (
-                          <Link
-                            key={index}
-                            href={item.href}
-                            onClick={handleNavigation}
-                            className="block px-3 py-1 text-sm text-white hover:text-blue-300"
-                          >
-                            {item.title}
-                          </Link>
-                        ))}
-                      </>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <div className="relative">
-                <button
-                  onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                  className={`flex justify-between items-center w-full px-3 py-2 text-white hover:text-blue-300 rounded-md ${dynamicNavItemClass}`}
-                >
-                  SERVICES
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      mobileServicesOpen ? "rotate-180" : ""
-                    }`}
-                  />
-                </button>
-                {mobileServicesOpen && (
-                  <div className="pl-4 mt-2 space-y-4">
-                    {services.map((category) => (
-                      <div key={category.title} className="mb-4">
-                        <h3 className="text-sm font-semibold text-blue-600 mb-1">
-                          {category.title}
-                        </h3>
-                        {category.items.map((item) => (
-                          <div key={item.title} className="mb-2">
-                            <Link
-                              href={item.href || "#"}
-                              onClick={handleNavigation}
-                              className="block px-3 py-2 text-sm text-white hover:text-blue-300"
-                            >
-                              <div className="font-medium">{item.title}</div>
-                              <p className="text-xs text-gray-500">
-                                {item.description}
-                              </p>
-                            </Link>
-                          </div>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-              <Link
-                href="/#pricing"
-                onClick={handleNavigation}
-                className={`block px-3 py-2 text-white hover:text-blue-300 rounded-md ${dynamicNavItemClass}`}
-              >
-                PRICING
-              </Link>
-              <Link
-                href="/why-clik-ai"
-                onClick={handleNavigation}
-                className={`block px-3 py-2 text-white hover:text-blue-300 rounded-md ${dynamicNavItemClass}`}
-              >
-                WHY CLIK.AI
-              </Link>
-              <div className="border-t border-gray-200 pt-4 pb-3">
-                <Link
-                  href="/login"
-                  onClick={handleNavigation}
-                  className={`block px-3 py-2 text-white hover:text-blue-300 rounded-md ${dynamicNavItemClass}`}
-                >
-                  SIGN IN
-                </Link>
-                <Link
-                  href="/get-started"
-                  onClick={handleNavigation}
-                  className={`block px-3 py-2 text-sm text-white bg-blue-600 hover:bg-blue-700 rounded-md mt-2 ${dynamicNavItemClass}`}
-                >
-                  GET STARTED
-                </Link>
-              </div>
+            PRODUCTS
+            <ChevronDown
+              className={`w-4 h-4 transition-transform ${
+                mobileProductsOpen ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+          {mobileProductsOpen && (
+            <div className="pl-6 mt-2 space-y-2">
+              {products.map((category) =>
+                category.items.map((item, index) => (
+                  <Link
+                    key={index}
+                    href={item.href}
+                    onClick={handleNavigation}
+                    className="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200 rounded-md transition-all"
+                  >
+                    {item.title}
+                  </Link>
+                ))
+              )}
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          )}
+        </div>
+
+        {/* SERVICES */}
+        <div className="relative">
+          <button
+            onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
+            className={`flex justify-between items-center w-full px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 transition-all ${dynamicNavItemClass}`}
+          >
+            SERVICES
+            <ChevronDown
+              className={`w-4 h-4 transition-transform ${
+                mobileServicesOpen ? "rotate-180" : ""
+              }`}
+            />
+          </button>
+          {mobileServicesOpen && (
+            <div className="pl-6 mt-2 space-y-3">
+              {services.map((category) => (
+                <div key={category.title} className="mb-2">
+                  <h3 className="text-sm font-semibold text-blue-600">
+                    {category.title}
+                  </h3>
+                  {category.items.map((item) => (
+                    <Link
+                      key={item.title}
+                      href={item.href || "#"}
+                      onClick={handleNavigation}
+                      className="block px-4 py-2 text-sm font-medium text-gray-900 hover:bg-gray-200 rounded-md transition-all"
+                    >
+                      {item.title}
+                    </Link>
+                  ))}
+                </div>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* PRICING & WHY CLIK.AI */}
+        <Link
+          href="/#pricing"
+          onClick={handleNavigation}
+          className="block px-4 py-2 text-sm font-medium text-gray-900 rounded-lg hover:bg-gray-100 transition-all"
+        >
+          PRICING
+        </Link>
+        <Link
+          href="/why-clik-ai"
+          onClick={handleNavigation}
+          className="block px-4 py-2 text-sm font-medium text-gray-900 rounded-lg hover:bg-gray-100 transition-all"
+        >
+          WHY CLIK.AI
+        </Link>
+
+        {/* SIGN IN & GET STARTED */}
+        <div className="border-t border-gray-300 pt-4 pb-3">
+          <Link
+            href="/login"
+            onClick={handleNavigation}
+            className="block px-4 py-2 text-sm font-medium text-gray-900 rounded-lg hover:bg-gray-100 transition-all"
+          >
+            SIGN IN
+          </Link>
+          <Link
+            href="/get-started"
+            onClick={handleNavigation}
+            className="block px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg text-center transition-all"
+          >
+            GET STARTED
+          </Link>
+        </div>
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
     </>
   );
 }

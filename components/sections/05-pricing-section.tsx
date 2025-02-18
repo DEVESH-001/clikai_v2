@@ -373,18 +373,18 @@ export function PricingSection() {
         {/* Feature Comparison Table */}
         <div className="mt-16 max-w-4xl mx-auto bg-white/90 shadow-lg rounded-lg overflow-hidden backdrop-blur-sm">
           <Table>
-            <TableHeader>
+            <TableHeader >
               <TableRow>
-                <TableHead className="text-left text-gray-900">
+                <TableHead className="text-left text-black font-bold">
                   Feature
                 </TableHead>
-                <TableHead className="text-center text-gray-900">
+                <TableHead className="text-center text-black font-bold">
                   Self-Service
                 </TableHead>
-                <TableHead className="text-center text-gray-900">
+                <TableHead className="text-center text-black font-bold">
                   Growth
                 </TableHead>
-                <TableHead className="text-center text-gray-900">
+                <TableHead className="text-center text-black font-bold">
                   Enterprise
                 </TableHead>
               </TableRow>
