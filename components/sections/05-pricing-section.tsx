@@ -391,44 +391,47 @@ export function PricingSection() {
             </TableHeader>
             <TableBody>
               {featureComparison.map((item, index) => (
-                <TableRow key={index}>
-                  <TableCell className="font-medium text-gray-700">
-                    {item.feature}
-                  </TableCell>
-                  <TableCell className="text-center">
-                    {typeof item.selfService === "boolean" ? (
-                      item.selfService ? (
-                        <Check className="inline-block text-green-500" />
-                      ) : (
-                        <X className="inline-block text-red-500" />
-                      )
-                    ) : (
-                      <span className="text-gray-600">{item.selfService}</span>
-                    )}
-                  </TableCell>
-                  <TableCell className="text-center">
-                    {typeof item.growth === "boolean" ? (
-                      item.growth ? (
-                        <Check className="inline-block text-green-500" />
-                      ) : (
-                        <X className="inline-block text-red-500" />
-                      )
-                    ) : (
-                      <span className="text-gray-600">{item.growth}</span>
-                    )}
-                  </TableCell>
-                  <TableCell className="text-center">
-                    {typeof item.enterprise === "boolean" ? (
-                      item.enterprise ? (
-                        <Check className="inline-block text-green-500" />
-                      ) : (
-                        <X className="inline-block text-red-500" />
-                      )
-                    ) : (
-                      <span className="text-gray-600">{item.enterprise}</span>
-                    )}
-                  </TableCell>
-                </TableRow>
+              <TableRow
+                key={index}
+                className={index % 2 === 0 ? "bg-blue-100/40" : ""}
+              >
+                <TableCell className="font-medium text-gray-700">
+                {item.feature}
+                </TableCell>
+                <TableCell className="text-center">
+                {typeof item.selfService === "boolean" ? (
+                  item.selfService ? (
+                  <Check className="inline-block text-green-500" />
+                  ) : (
+                  <X className="inline-block text-red-500" />
+                  )
+                ) : (
+                  <span className="text-gray-600">{item.selfService}</span>
+                )}
+                </TableCell>
+                <TableCell className="text-center">
+                {typeof item.growth === "boolean" ? (
+                  item.growth ? (
+                  <Check className="inline-block text-green-500" />
+                  ) : (
+                  <X className="inline-block text-red-500" />
+                  )
+                ) : (
+                  <span className="text-gray-600">{item.growth}</span>
+                )}
+                </TableCell>
+                <TableCell className="text-center">
+                {typeof item.enterprise === "boolean" ? (
+                  item.enterprise ? (
+                  <Check className="inline-block text-green-500" />
+                  ) : (
+                  <X className="inline-block text-red-500" />
+                  )
+                ) : (
+                  <span className="text-gray-600">{item.enterprise}</span>
+                )}
+                </TableCell>
+              </TableRow>
               ))}
             </TableBody>
           </Table>
