@@ -201,10 +201,10 @@ export function Navbar() {
               className="flex items-center space-x-2 cursor-pointer"
             >
               {/* White logo */}
-              {/* <Image
+              <Image
                 src={
                   pathname === "/" && !isScrolled
-                    ? "/images/WhiteLogo.jpeg"
+                    ? "/images/logo-white.svg"
                     : "/images/logo.svg"
                 }
                 alt="Clik.ai Logo"
@@ -212,15 +212,15 @@ export function Navbar() {
                 height={80}
                 priority
                 className="w-[120px] h-8 sm:h-10"
-              /> */}
-              <Image
+              />
+             {/* <Image
                 src={"../images/logo.svg"}
                 alt="Clik.ai Logo"
                 width={100}
                 height={80}
                 priority
                 className="w-[120px] h-8 sm:h-10"
-              />
+              /> */}
             </Link>
           </div>
 
@@ -238,7 +238,7 @@ export function Navbar() {
                     <div className="w-[330px] p-2 md:p-4">
                       <div className="grid grid-cols-1 gap-2">
                         {products.map((category, index) => (
-                          <ul key={index} className="space-y-2">
+                           <ul key={index} className="space-y-2">
                             {category.items.map((item) => (
                               <li key={item.title}>
                                 <Link
