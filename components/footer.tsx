@@ -5,12 +5,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Linkedin, Facebook, Twitter, Youtube } from "lucide-react";
 
-interface FooterProps {
-  onOpenCookiePreferences: () => void;
-}
+
 
 // Main Footer component
-export function Footer({ onOpenCookiePreferences }: FooterProps) {
+export function Footer() {
   return (
     <footer className="relative z-[1] bg-[#001F3F] pt-8 sm:pt-12 md:pt-16 pb-6 sm:pb-8 text-white">
       <div className="container mx-auto px-4">
@@ -235,12 +233,7 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
             >
               Contact Us
             </Link>
-            <button
-              onClick={onOpenCookiePreferences}
-              className="hover:text-blue-300"
-            >
-              Cookie Preferences
-            </button>
+           
           </div>
           <div className="flex items-center space-x-4">
             {[

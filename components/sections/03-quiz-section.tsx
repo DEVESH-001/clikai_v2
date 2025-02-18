@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { ArrowRight, ArrowLeft, CheckCircle2 } from "lucide-react"
-import { GeistSans } from "geist/font/sans"
-import Link from "next/link"
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { ArrowRight, ArrowLeft, CheckCircle2 } from "lucide-react";
+import { GeistSans } from "geist/font/sans";
+import Link from "next/link";
 
 const questions = [
   {
@@ -29,7 +29,12 @@ const questions = [
   {
     id: 3,
     question: "How many deals do you analyze monthly?",
-    options: ["0-4 deals/month", "5-20 deals/month", "20-50 deals/month", "50+ deals/month"],
+    options: [
+      "0-4 deals/month",
+      "5-20 deals/month",
+      "20-50 deals/month",
+      "50+ deals/month",
+    ],
   },
   {
     id: 4,
@@ -46,91 +51,97 @@ const questions = [
       "API-Driven Integration: I want to integrate document extraction into my existing systems.",
     ],
   },
-]
+];
 
 const getRecommendedProduct = (answers: Record<number, string>) => {
-  const role = answers[1]
-  const primaryGoal = answers[2]
+  const role = answers[1];
+  const primaryGoal = answers[2];
   //const dealsPerMonth = answers[3]
-  const assetClass = answers[4]
-  const automation = answers[5]
+  const assetClass = answers[4];
+  const automation = answers[5];
 
   if (primaryGoal === "CRE Document Data Extraction") {
-    return "clarity360"
+    return "clarity360";
   }
 
   if (role === "Lender/Underwriter" || role === "Asset Manager") {
-    if (automation === "API-Driven Integration: I want to integrate document extraction into my existing systems.") {
-      return "smartextract"
+    if (
+      automation ===
+      "API-Driven Integration: I want to integrate document extraction into my existing systems."
+    ) {
+      return "smartextract";
     }
-    return "autouw"
+    return "autouw";
   }
 
   if (role === "Investment Manager") {
     if (
       assetClass === "Multifamily Only" &&
-      automation === "Fully Automated: I prefer an end-to-end solution with little to no manual intervention."
+      automation ===
+        "Fully Automated: I prefer an end-to-end solution with little to no manual intervention."
     ) {
-      return "InvestAssist"
+      return "InvestAssist";
     }
-    if (automation === "API-Driven Integration: I want to integrate document extraction into my existing systems.") {
-      return "SmartExtract"
+    if (
+      automation ===
+      "API-Driven Integration: I want to integrate document extraction into my existing systems."
+    ) {
+      return "SmartExtract";
     }
-    return "autouw"
+    return "autouw";
   }
 
   if (role === "Broker/Syndicator") {
     if (
       assetClass === "Multifamily Only" &&
-      automation === "Fully Automated: I prefer an end-to-end solution with little to no manual intervention."
+      automation ===
+        "Fully Automated: I prefer an end-to-end solution with little to no manual intervention."
     ) {
-      return "investassist"
+      return "investassist";
     }
-    if (automation === "API-Driven Integration: I want to integrate document extraction into my existing systems.") {
-      return "smartextract"
+    if (
+      automation ===
+      "API-Driven Integration: I want to integrate document extraction into my existing systems."
+    ) {
+      return "smartextract";
     }
-    return "autouw"
+    return "autouw";
   }
 
   // Default case
-  return "autouw"
-}
+  return "autouw";
+};
 
-interface QuizSectionProps {
-  onProductRecommended: (product: string) => void
-}
-
-export function QuizSection({ onProductRecommended }: QuizSectionProps) {
-  const [currentQuestion, setCurrentQuestion] = useState(0)
-  const [answers, setAnswers] = useState<Record<number, string>>({})
-  const [showResult, setShowResult] = useState(false)
+export function QuizSection() {
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [answers, setAnswers] = useState<Record<number, string>>({});
+  const [showResult, setShowResult] = useState(false);
 
   const handleAnswer = (answer: string) => {
-    setAnswers((prev) => ({ ...prev, [currentQuestion + 1]: answer }))
+    setAnswers((prev) => ({ ...prev, [currentQuestion + 1]: answer }));
 
     if (currentQuestion < questions.length - 1) {
-      setCurrentQuestion((prev) => prev + 1)
+      setCurrentQuestion((prev) => prev + 1);
     } else {
-      const recommendedProduct = getRecommendedProduct(answers)
-      onProductRecommended(recommendedProduct)
-      setShowResult(true)
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const recommendedProduct = getRecommendedProduct(answers);
+      setShowResult(true);
     }
-  }
+  };
 
   const handleBack = () => {
     if (currentQuestion > 0) {
-      setCurrentQuestion((prev) => prev - 1)
+      setCurrentQuestion((prev) => prev - 1);
     }
-  }
+  };
 
   const resetQuiz = () => {
-    setCurrentQuestion(0)
-    setAnswers({})
-    setShowResult(false)
-    onProductRecommended("AutoUW") // Reset to default
-  } 
+    setCurrentQuestion(0);
+    setAnswers({});
+    setShowResult(false);
+  };
 
-  const currentQuestionData = questions[currentQuestion]
+  const currentQuestionData = questions[currentQuestion];
 
   return (
     <section
