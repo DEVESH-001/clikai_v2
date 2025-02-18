@@ -94,7 +94,7 @@ export function Footer({ onOpenCookiePreferences }: FooterProps) {
 
           {/* Services Column - Adjusted to be left and right aligned */}
           <div className="col-span-1 sm:col-span-2 flex flex-col">
-            <h4 className="font-semibold mb-2 sm:mb-3 text-xs sm:text-sm md:text-base text-gray-300 text-center">
+            <h4 className="font-semibold mb-2 sm:mb-3 text-xs sm:text-sm md:text-base text-gray-300 ">
               Services
             </h4>
             <div className="grid grid-cols-2 gap-x-20">

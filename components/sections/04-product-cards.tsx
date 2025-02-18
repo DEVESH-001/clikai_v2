@@ -101,7 +101,7 @@ const products = [
       "Appraisal firms accelerating report generation",
     ],
     // image: imageUrls.products.smartExtract,
-    image: "/images/products/smart.png",
+    image: "/images/products/smartExtract.png",
     link: "/products/SmartExtract",
     theme: "violet",
     height: "500",
