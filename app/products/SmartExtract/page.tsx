@@ -77,9 +77,7 @@ export default function SmartExtractPage() {
     <>
       <div className={`min-h-screen ${GeistSans.className}`}>
         {/* Hero Section */}
-
-        <AIBackground />
-
+        <AIBackground /> 
         <div className="mx-auto px-8 lg:space-y-6 relative mt-8 sm:mt-12">
           <div className="absolute  inset-0 bg-gradient-to-b from-white via-blue-50 to-indigo-100"></div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
