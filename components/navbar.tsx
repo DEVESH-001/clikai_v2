@@ -35,17 +35,17 @@ const products = [
       {
         title: "InvestAssist",
         description: "Manage investments and syndications with ease",
-        href: "pages/products/InvestAssist",
+        href: "/pages/products/InvestAssist",
       },
       {
         title: "SmartExtract",
         description: "API solution for OS/RR Digitisation at Scale",
-        href: "pages/products/SmartExtract",
+        href: "/pages/products/SmartExtract",
       },
       {
         title: "Clarity360 ",
         description: "Cutting-edge tools for CRE document analysis",
-        href: "pages/products/clarity360",
+        href: "/pages/products/clarity360",
       },
     ],
   },
