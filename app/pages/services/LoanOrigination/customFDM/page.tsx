@@ -95,15 +95,15 @@ const financialModels = [
       "Portfolio Diversification & Reinvestment Scenarios",
     ],
   }, 
-  // {
-  //   title: "Lease & Tenant Performance Model",
-  //   for: "Asset Managers, Property Owners",
-  //   features: [
-  //     "Tenant Creditworthiness Score & Default Risk Analysis",
-  //     "Rent Growth & Lease Expiry Forecasting",
-  //     "AI-Driven Market Rent Adjustments",
-  //   ],
-  // },
+  {
+    title: "Lease & Tenant Performance Model",
+    for: "Asset Managers, Property Owners",
+    features: [
+      "Tenant Creditworthiness Score & Default Risk Analysis",
+      "Rent Growth & Lease Expiry Forecasting",
+      "AI-Driven Market Rent Adjustments",
+    ],
+  },
 ];
 
 

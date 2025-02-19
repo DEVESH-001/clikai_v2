@@ -554,7 +554,7 @@ export function HeroGraphs() {
         <CardContent className="p-0 h-[200px]">{renderTopGraph()}</CardContent>
       </Card>
 
-      <div className="grid grid-cols-2 gap-1 mt-6">
+      <div className="grid grid-cols-2 gap-6 mt-6 px-3">
         <Card className="shadow-lg rounded-[8px] overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-xl bg-white/80 backdrop-blur-sm">
           <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-800 text-white p-0.5 space-y-0">
             <CardTitle className="text-sm font-bold px-2 py-2">
