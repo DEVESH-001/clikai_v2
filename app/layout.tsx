@@ -59,7 +59,9 @@ import "./globals.css"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { CookieConsentManager } from "@/components/CookieConsentManager"
+
 import { ChatbaseWidget } from "@/components/ChatbaseWidget"
+
 
 
 export const metadata: Metadata = {
@@ -100,6 +102,7 @@ export default function RootLayout({
         <Footer />
         <CookieConsentManager />
         <ChatbaseWidget />
+
       </body>
     </html>
   )

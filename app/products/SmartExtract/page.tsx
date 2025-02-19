@@ -81,14 +81,14 @@ export default function SmartExtractPage() {
         <AIBackground />
 
         <div className="mx-auto px-8 lg:space-y-6 relative mt-8 sm:mt-12">
-          <div className="absolute inset-0 bg-gradient-to-b from-white via-blue-50 to-indigo-100"></div>
+          <div className="absolute  inset-0 bg-gradient-to-b from-white via-blue-50 to-indigo-100"></div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
               className="relative z-10"
-            >
+            > 
               <div className="inline-flex items-center rounded-full border border-blue-200 bg-white px-3 py-1 text-sm leading-6 text-blue-700 mb-8 mt-8">
                 <span className="font-medium ">Industry&apos;s First</span>
                 <span className="ml-3 inline-flex items-center rounded-full bg-blue-50 px-2 py-1 text-xs">

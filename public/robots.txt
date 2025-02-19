@@ -6,5 +6,5 @@ Disallow: /admin/
 Disallow: /private/
 
 # Sitemap location
-Sitemap: https://www.clik.ai/sitemap.xml
+Sitemap: https://clikai-v2.vercel.app/sitemap.xml
 
