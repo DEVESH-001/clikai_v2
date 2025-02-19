@@ -322,7 +322,7 @@ export function Navbar() {
                 <div className=""></div>
 
                 <NavigationMenuItem>
-                  <Link href="/why-clik-ai" legacyBehavior passHref>
+                  <Link href="/pages/why-clik-ai" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={dynamicNavItemClass}
                       onClick={handleNavigation}
