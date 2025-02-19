@@ -68,7 +68,7 @@ export function Footer() {
             <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-center sm:text-left">
               <li>
                 <Link
-                  href="/products/autouw"
+                  href="/pages/products/autouw"
                   className="text-gray-300 hover:text-blue-300"
                 >
                   AutoUW
@@ -76,7 +76,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/products/InvestAssist"
+                  href="/pages/products/InvestAssist"
                   className="text-gray-300 hover:text-blue-300"
                 >
                   InvestAssist
@@ -84,7 +84,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/products/SmartExtract"
+                  href="/pages/products/SmartExtract"
                   className="text-gray-300 hover:text-blue-300"
                 >
                   SmartExtract
@@ -92,7 +92,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/products/clarity360"
+                  href="/pages/products/clarity360"
                   className="text-gray-300 hover:text-blue-300"
                 >
                   Clarity360
@@ -111,7 +111,7 @@ export function Footer() {
               <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-left">
                 <li>
                   <Link
-                    href="/services/LoanOrigination/underwritingDDS"
+                    href="/pages/services/LoanOrigination/underwritingDDS"
                     className="text-gray-300 hover:text-blue-300"
                   >
                     Underwriting & Due Diligence Support
@@ -119,7 +119,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/services/LoanOrigination/customFDM"
+                    href="/pages/services/LoanOrigination/customFDM"
                     className="text-gray-300 hover:text-blue-300"
                   >
                     Custom Financial Model Development
@@ -127,7 +127,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/services/LoanOrigination/disbursement&PCNA"
+                    href="/pages/services/LoanOrigination/disbursement&PCNA"
                     className="text-gray-300 hover:text-blue-300"
                   >
                     Disbursement & PCNA Support
@@ -135,7 +135,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/services/Lease&DataAdministration/Abstraction&Audit"
+                    href="/pages/services/Lease&DataAdministration/Abstraction&Audit"
                     className="text-gray-300 hover:text-blue-300"
                   >
                     Lease Abstraction & Audit
@@ -143,7 +143,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/products/clarity360"
+                    href="/pages/products/clarity360"
                     className="text-gray-300 hover:text-blue-300"
                   >
                     Loan Document Data Digitisation
@@ -154,7 +154,7 @@ export function Footer() {
               <ul className="space-y-1 sm:space-y-2 text-xs sm:text-sm text-left">
                 <li>
                   <Link
-                    href="/services/Lease&DataAdministration/LoanOnboarding&DataDigitization"
+                    href="/pages/services/Lease&DataAdministration/LoanOnboarding&DataDigitization"
                     className="text-gray-300 hover:text-blue-300"
                   >
                     Loan Onboarding & Data Digitization
@@ -163,7 +163,7 @@ export function Footer() {
 
                 <li>
                   <Link
-                    href="/services/ConsultingTech/salesforce"
+                    href="/pages/services/ConsultingTech/salesforce"
                     className="text-gray-300 hover:text-blue-300"
                   >
                     Salesforce Customisation & Integration
@@ -171,7 +171,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/services/ConsultingTech/customRD"
+                    href="/pages/services/ConsultingTech/customRD"
                     className="text-gray-300 hover:text-blue-300"
                   >
                     Custom Reporting & Dashboards
@@ -179,7 +179,7 @@ export function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/services/ConsultingTech/creTech"
+                    href="/pages/services/ConsultingTech/creTech"
                     className="text-gray-300 hover:text-blue-300"
                   >
                     CRE Technology Consulting
