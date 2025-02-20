@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
+
 // Enhanced services with more detail and balanced content
 const services = [
   {
@@ -31,7 +32,7 @@ const services = [
       {
         name: "Comprehensive Lease Abstraction",
         description:
-          "Summarize key financial and non-financial information from lease documents",
+          "Summarize Key Financial and Non-Financial Information from Lease Documents",
         metrics: "100K+ leases abstracted",
       },
       {
@@ -57,23 +58,24 @@ const services = [
     items: [
       {
         name: "Tenant Information",
-        description: "Capture detailed tenant data and SF details",
+        description: "Capture Detailed Tenant Data and SF details",
         metrics: "100% tenant profile accuracy",
       },
       {
         name: "Financial Terms",
         description:
-          "Current & future base rent, percentage rent, other income",
+          "Current & Future Base Rent, Percentage Rent, other income",
         metrics: "Comprehensive financial capture",
       },
       {
         name: "Reimbursements",
-        description: "Utilities, taxes, insurance, and CAM reimbursements",
+        // description: "Utilities, taxes, insurance, and CAM reimbursements",
+        description:"CAM Reimbursements, Real Estate Taxes, Insurance Premiums, Utilities",
         metrics: "Detailed reimbursement tracking",
       },
       {
         name: "Special Provisions",
-        description: "Co-tenancy, go-dark, termination options, and more",
+        description: "Co-tenancy, Go-Dark, Termination options, and more",
         metrics: "Capture all critical lease clauses",
       },
     ],
@@ -99,7 +101,7 @@ const services = [
       },
       {
         name: "Discrepancy Resolution",
-        description: "Identify and resolve lease vs. rent roll discrepancies",
+        description: "Identify and Resolve Lease vs. Rent Roll Discrepancies",
         metrics: "100% discrepancy resolution",
       },
     ],
@@ -120,7 +122,7 @@ const services = [
       },
       {
         name: "Parking Management",
-        description: "Track parking allocations and associated income",
+        description: "Track parking allocations and Associated Income",
         metrics: "Optimize parking revenue",
       },
       {
@@ -136,7 +138,7 @@ const services = [
     items: [
       {
         name: "Rent Roll Generation",
-        description: "Accurate and up-to-date rent rolls",
+        description: "Accurate and up-to-date Rent Rolls",
         metrics: "Real-time financial insights",
       },
       {
@@ -594,7 +596,7 @@ export default function LeaseAbstractionAuditPage() {
                 {
                   title: "Data Extraction",
                   description:
-                    "Upon receipt of all documents, we start the abstraction of leases",
+                    "Upon receipt of all documents, we will start reviewing the documents",
                   icon: Zap,
                 },
                 {
@@ -612,7 +614,7 @@ export default function LeaseAbstractionAuditPage() {
                 {
                   title: "Ongoing Support",
                   description:
-                    "Unlimited revisions and support provided for 2 weeks post delivery",
+                    "On-going support provided post deliveries based on the Scope of work (SOPs)",
                   icon: Clock,
                 },
               ].map((step, index) => (
