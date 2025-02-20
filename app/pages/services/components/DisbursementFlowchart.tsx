@@ -61,34 +61,57 @@ export function DisbursementFlowchart() {
             {/* Horizontal line connecting all categories */}
             <ConnectingLine className="absolute top-4 md:top-8 left-1/4 w-1/2 h-0.5" />
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-16 mb-4 md:mb-8">
-              {["FANNIE MAE", "FREDDIE MAC", "HUD 232/232(i)"].map(
-                (text, index) => (
-                  <div key={text} className="relative">
-                    {/* Vertical lines to subcategories */}
-                    <ConnectingLine className="absolute bottom-0 left-1/2 w-0.5 h-4 md:h-8 translate-y-full -translate-x-1/2" />
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-16">
+              {[
+                {
+                  title: "FANNIE MAE",
+                  subcategories: ["Replacement Reserve", "Completion Repair"],
+                },
+                {
+                  title: "FREDDIE MAC",
+                  subcategories: ["Replacement Reserve", "Completion Repair"],
+                },
+                { title: "HUD 232", subcategories: ["FHA - LEAN"] },
+              ].map((category, index) => (
+                <div key={category.title} className="relative">
+                  <div className="relative">
                     <FlowchartBox
                       className="text-center"
                       delay={0.2 + index * 0.1}
                     >
-                      {text}
+                      {category.title}
                     </FlowchartBox>
+                    {/* Vertical line from main category to subcategories */}
+                    <ConnectingLine className="absolute -bottom-4 left-1/2 w-0.5 h-4 -translate-x-1/2" />
                   </div>
-                )
-              )}
-            </div>
-
-            {/* Sub Categories */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-16">
-              <FlowchartBox className="text-center" delay={0.3}>
-                Replacement Reserve
-              </FlowchartBox>
-              <FlowchartBox className="text-center" delay={0.4}>
-                Completion Repair
-              </FlowchartBox>
-              <FlowchartBox className="text-center" delay={0.5}>
-                FHA - LEAN
-              </FlowchartBox>
+                  {/* Conditional rendering based on number of subcategories */}
+                  {category.subcategories.length > 1 ? (
+                    <div className="grid grid-cols-2 gap-2 mt-4">
+                      {category.subcategories.map((subcat, subIndex) => (
+                        <div key={subcat} className="relative">
+                          <FlowchartBox
+                            className="text-center h-full"
+                            delay={0.3 + index * 0.1 + subIndex * 0.05}
+                          >
+                            {subcat}
+                          </FlowchartBox>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="mt-4 mx-auto w-1/2">
+                      <div className="relative">
+                        <FlowchartBox
+                          className="text-center h-full"
+                          delay={0.3 + index * 0.1}
+                        >
+                          {category.subcategories[0]}
+                        </FlowchartBox>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -143,11 +166,21 @@ export function DisbursementFlowchart() {
                 "Borrower Worksheet with Borrower Certification",
                 "Disbursement Request Form - Exhibit A",
                 "All contracts, invoices, work orders & proof of payments",
-                "Lien Waiver",
+                "Lien Waiver, W9 Form",
                 "ACH / Wire Authorisation Form with Info.",
-                "RR Schedule / Template",
+                "RR Schedule",
               ].map((text, index) => (
-                <FlowchartBox key={text} delay={0.6 + index * 0.1}>
+                <FlowchartBox
+                  key={text}
+                  delay={0.6 + index * 0.1}
+                  className={`
+                    ${
+                      text === "Lien Waiver, W9 Form" || text === "RR Schedule"
+                        ? "flex items-center justify-center text-center"
+                        : ""
+                    }
+                  `}
+                >
                   {text}
                 </FlowchartBox>
               ))}
