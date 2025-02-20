@@ -296,7 +296,7 @@ export default function AutoUWPage() {
               <div className="grid  gap-4">
                 <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                   <Image
-                    src={"/images/DownloadResults.png"}
+                    src={"/images/products/DownloadResults.png"}
                     alt="Operating Statement Results"
                     className="object-cover rounded-lg shadow-2xl"
                     width={1000}

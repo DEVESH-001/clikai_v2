@@ -162,7 +162,7 @@ const services = [
 const tools = [
   {
     name: "Oracle JD Edwards",
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Oracle%20jdewards-HyW4Mwnp5qSV7zaoQcGHRslHPuaqbF.png",
+    logo: "/images/Services_Image/Oracle.png",
     expertise: "Advanced",
     features: [
       "Financial Management",
@@ -172,13 +172,13 @@ const tools = [
   },
   {
     name: "Yardi",
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Yardi-Black_RGB-2R0nRw2sANvxfeMbOTj3Vlb0eAvSCW.png",
+    logo: "/images/Services_Image/Yardi.png",
     expertise: "Expert",
     features: ["Voyager", "Investment Management", "Lease Abstraction"],
   },
   {
     name: "MRI Software",
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MRI-logo-01-onCOiq72a8JtC2QfCJWv55ufITX2OF.webp",
+    logo: "/images/Services_Image/MRI.webp",
     expertise: "Advanced",
     features: [
       "Commercial Management",
@@ -188,7 +188,7 @@ const tools = [
   },
   {
     name: "Lease Harbor",
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Lease_Harbor.png-HeqAfmsid0ns8hs6mGE3CHhz3rtQdl.webp",
+    logo: "/images/Services_Image/Lease_Harbor.png.webp",
     expertise: "Expert",
     features: [
       "Lease Administration",
@@ -198,13 +198,13 @@ const tools = [
   },
   {
     name: "Visual Lease",
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/visual%20lease_logo-64FO9SqNTlgCOitzZL3ikYWRMf0HTK.png",
+    logo: "/images/Services_Image/visual.png",
     expertise: "Advanced",
     features: ["Lease Accounting", "FASB/IASB Compliance", "Lease Abstraction"],
   },
   {
     name: "ProLease",
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/proLease_Logo-lnXyqkK5SewyEfzBSSEIKrOmSObcZt.png",
+    logo: "/images/Services_Image/proLease.png",
     expertise: "Advanced",
     features: [
       "Lease Administration",
@@ -214,7 +214,7 @@ const tools = [
   },
   {
     name: "Red Hat",
-    logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Redhat-logo-JFjCgcj11jOJHfMQ8cLPdHUFtTGLeq.webp",
+    logo: "/images/Services_Image/Redhat.webp",
     expertise: "Expert",
     features: [
       "Enterprise Solutions",
@@ -586,7 +586,7 @@ export default function LeaseAbstractionAuditPage() {
                   icon: FileText,
                 },
                 {
-                  title: "Document Review",
+                  title: "Documents Completeness Check",
                   description:
                     "We prepare missing document report and share it with the client",
                   icon: CheckCircle,
@@ -600,7 +600,7 @@ export default function LeaseAbstractionAuditPage() {
                 {
                   title: "Quality Assurance",
                   description:
-                    "All abstracts are reviewed by Lease Abstraction Project Lead",
+                    "Abstract reports will go through QA Check by our Senior Lease Administrator",
                   icon: FileSignature,
                 },
                 {
