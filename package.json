@@ -92,6 +92,8 @@
 
     "autoprefixer": "^10.4.20",
 
+    "axios": "^1.7.9",
+
     "chart.js": "^4.4.7",
 
     "cheerio": "^1.0.0",
