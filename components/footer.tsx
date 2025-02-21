@@ -224,6 +224,22 @@ export function Footer() {
                   Blog
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/pages/security/"
+                  className="text-gray-300 hover:text-blue-300"
+                >
+                  Security
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/pages/description"
+                  className="text-gray-300 hover:text-blue-300"
+                >
+                  Disclaimer
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -235,7 +251,10 @@ export function Footer() {
             <Link href="/pages/privacy-policy" className="hover:text-blue-300">
               Privacy Policy
             </Link>
-            <Link href="/pages/terms-and-conditions" className="hover:text-blue-300">
+            <Link
+              href="/pages/terms-and-conditions"
+              className="hover:text-blue-300"
+            >
               Terms & Conditions
             </Link>
             <Link
@@ -244,10 +263,12 @@ export function Footer() {
             >
               Contact Us
             </Link>
-            <button onClick={handleOpenPreferences} className="hover:text-blue-300">
+            <button
+              onClick={handleOpenPreferences}
+              className="hover:text-blue-300"
+            >
               Cookie Preferences
             </button>
-           
           </div>
           <div className="flex items-center space-x-4">
             {[
@@ -287,7 +308,10 @@ export function Footer() {
           <div>© 2025 Clik.ai. All rights reserved</div>
         </div>
       </div>
-      <CookiePreferencesPopup isOpen={isPreferencesOpen} onClose={handleClosePreferences} />
+      <CookiePreferencesPopup
+        isOpen={isPreferencesOpen}
+        onClose={handleClosePreferences}
+      />
     </footer>
   );
 }
