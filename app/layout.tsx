@@ -1,4 +1,3 @@
-
 // "use client";
 
 // import { useState, useEffect } from "react";
@@ -52,17 +51,17 @@
 
 // export default RootLayout;
 
-import type React from "react"
-import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import "./globals.css"
-import { Navbar } from "@/components/navbar"
-import { Footer } from "@/components/footer"
-import { CookieConsentManager } from "@/components/CookieConsentManager"
+import type React from "react";
+import type { Metadata } from "next";
+import { GeistSans } from "geist/font/sans";
+import "./globals.css";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
+import { CookieConsentManager } from "@/components/CookieConsentManager";
+import ChatBot from "@/components/Chatbot";
 
-import { ChatbaseWidget } from "@/components/ChatbaseWidget"
 
-
+//import { ChatbaseWidget } from "@/components/ChatbaseWidget"
 
 export const metadata: Metadata = {
   title: {
@@ -87,24 +86,23 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-}
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body className={GeistSans.className}>
         <Navbar />
         <main>{children}</main>
+        <ChatBot />
         <Footer />
         <CookieConsentManager />
-        <ChatbaseWidget />
-
+        {/* <ChatbaseWidget /> */}
       </body>
     </html>
-  )
+  );
 }
-
