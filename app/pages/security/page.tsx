@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Security | Clik.ai",
+  title: "Security ",
   description:
     "Learn about Clik.ai's commitment to security and privacy, including our SOC 2 compliance and security standards.",
   openGraph: {

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Building2, Send } from "lucide-react";
 import { GeistSans } from "geist/font/sans";
 
-export default function AboutUsPage() {
+export default function ContactUsContent() {
   return (
     <div
       className={`min-h-screen bg-gradient-to-b from-blue-50 via-purple-50 to-indigo-50 ${GeistSans.className}`}

@@ -234,7 +234,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/pages/description"
+                  href="/pages/disclaimer"
                   className="text-gray-300 hover:text-blue-300"
                 >
                   Disclaimer
@@ -256,9 +256,9 @@ export function Footer() {
               className="hover:text-blue-300"
             >
               Terms & Conditions
-            </Link>
+            </Link>AboutUsPage
             <Link
-              href="/pages/about-us"
+              href="/pages/contact-us"
               className="text-gray-300 hover:text-blue-300"
             >
               Contact Us
