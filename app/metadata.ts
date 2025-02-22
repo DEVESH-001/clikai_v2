@@ -6,7 +6,7 @@ export const contactUsMetadata: Metadata = {
     "Get in touch with Clik.ai - Leading AI software for multifamily and commercial real estate investment underwriting. Offices in Toronto, New York, Chennai, and Gurgaon.",
 };
 
-// You can add more metadata objects for other pages
+
 export const termsAndConditionMetaData: Metadata = {
   title: "Terms and Conditions ",
   description:
@@ -24,27 +24,27 @@ export const descMetaData: Metadata = {
 
                                                       //PRODUCTS
 export const AutoUWMetaData: Metadata = {
-  title: "AutoUW – Automated Underwriting",
+  title: "AutoUW - Automated Underwriting",
   description:
     "Streamline your underwriting process with AutoUW, our AI-powered tool designed for rapid, accurate underwriting in commercial real estate.",
 };
 export const InvestAssistMetaData: Metadata = {
-  title: "InvestAssist – Investment Assistance",
+  title: "InvestAssist - Investment Assistance",
   description:
     " Empower your investment decisions with InvestAssist, offering data-driven insights and analysis to optimize your CRE investment strategies.",
 };
 export const SmartExtractMetaData: Metadata = {
-  title: "SmartExtract – Intelligent Data Extraction",
+  title: "SmartExtract - Intelligent Data Extraction",
   description:
     " Optimize document processing with SmartExtract, our solution for fast, accurate extraction of critical data from commercial real estate files.",
 };
 export const Clarity360tMetaData: Metadata = {
-  title: "Loan Abstract – Document Data Abstraction",
+  title: "Loan Abstract - Document Data Abstraction",
   description:
     "Simplify loan document analysis with Loan Abstract, our tool designed to extract and abstract key data with precision from loan documents.",
 };
 
-                                                   //SERVICES
+                                           //SERVICES
 
 export const UnderwritingDDSMetaData: Metadata = {
   title: " Underwriting & Due Diligence Support",
@@ -61,13 +61,35 @@ export const DisbursementPCNAMetaData: Metadata = {
   description:
     "Streamline your financial operations with dedicated disbursement and PCNA support services, ensuring efficient fund management and processing.",
 };
-// export const LeaseAbstractionAuditMetaData: Metadata = {
-//   title: "  Lease Abstraction & Audit",
-//   description:
-//     "Streamline your financial operations with dedicated disbursement and PCNA support services, ensuring efficient fund management and processing.",
-// };
-// export const LeaseAbstractionAuditMetaData: Metadata = {
-//   title: "Loan Document Digitisation",
-//   description:
-//     "Streamline your financial operations with dedicated disbursement and PCNA support services, ensuring efficient fund management and processing.",
-// };
+export const LeaseAbstractionAuditMetaData: Metadata = {
+  title: "  Lease Abstraction & Audit",
+  description:
+    "Improve lease management with our comprehensive lease abstraction and audit services, offering accurate data analysis and compliance checks.",
+};
+export const LoanDocumentDigitisationMetaData: Metadata = {
+  title: " Loan Document Digitisation",
+  description:
+    "Digitise your loan documents effortlessly with our data digitisation services, ensuring accurate, accessible digital records for CRE portfolios.",
+};
+export const SalesforceCustomisationIntegrationMetaData: Metadata = {
+  title: " Salesforce Customisation & Integration",
+  description:
+    "Enhance your CRM with tailored Salesforce customisation and integration services, optimizing your commercial real estate operations and data flow."
+};
+export const CustomReportingDashboardsMetaData: Metadata = {
+  title: "Custom Reporting & Dashboards",
+  description:
+    "Transform your data into actionable insights with our custom reporting and dashboard solutions, crafted to support informed decision-making.",
+};
+export const CRETechnologyConsultingMetaData: Metadata = {
+  title: "CRE Technology Consulting",
+  description:
+    "Leverage expert CRE technology consulting to drive innovation and operational efficiency, ensuring a competitive edge in the real estate market.",
+};
+
+           //WHY CLIK.Ai
+export const WhyClikAIMetaData: Metadata = {
+  title: "Why CLIK.AI – Our Advantage",
+  description:
+    "Discover why industry leaders choose CLIK.AI for advanced CRE solutions, combining innovative technology with unmatched expertise and support.",
+};

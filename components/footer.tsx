@@ -256,7 +256,7 @@ export function Footer() {
               className="hover:text-blue-300"
             >
               Terms & Conditions
-            </Link>AboutUsPage
+            </Link>
             <Link
               href="/pages/contact-us"
               className="text-gray-300 hover:text-blue-300"
