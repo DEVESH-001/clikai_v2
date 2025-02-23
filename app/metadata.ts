@@ -100,3 +100,15 @@ export const WhyClikAIMetaData: Metadata = {
   description:
     "Discover why industry leaders choose CLIK.AI for advanced CRE solutions, combining innovative technology with unmatched expertise and support.",
 };
+//Privacy Policy
+export const PrivacyPolicyMetaData: Metadata = {
+  title: "CLIK.AI Privacy Policy",
+  description:
+    "Review our privacy policy to understand how CLIK.AI protects your data, ensuring transparency and compliance with data protection standards.",
+};
+//Terms&Conditions
+export const TermsConditionsMetaData: Metadata = {
+  title: "CLIK.AI Terms & Conditions",
+  description:
+    "Read our terms and conditions to learn about the legal guidelines governing your use of CLIK.AI’s innovative CRE solutions and services.",
+};
