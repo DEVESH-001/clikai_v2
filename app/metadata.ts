@@ -22,7 +22,7 @@ export const descMetaData: Metadata = {
   description: "Clik.ai site disclaimer",
 };
 
-                                                      //PRODUCTS
+//PRODUCTS
 export const AutoUWMetaData: Metadata = {
   title: "AutoUW - Automated Underwriting",
   description:
@@ -44,8 +44,8 @@ export const Clarity360tMetaData: Metadata = {
     "Simplify loan document analysis with Loan Abstract, our tool designed to extract and abstract key data with precision from loan documents.",
 };
 
-                                           //SERVICES
-
+//SERVICES
+//Loan Origination & Servicing
 export const UnderwritingDDSMetaData: Metadata = {
   title: " Underwriting & Due Diligence Support",
   description:
@@ -61,6 +61,7 @@ export const DisbursementPCNAMetaData: Metadata = {
   description:
     "Streamline your financial operations with dedicated disbursement and PCNA support services, ensuring efficient fund management and processing.",
 };
+//Lease & Data Administration
 export const LeaseAbstractionAuditMetaData: Metadata = {
   title: "  Lease Abstraction & Audit",
   description:
@@ -71,6 +72,12 @@ export const LoanDocumentDigitisationMetaData: Metadata = {
   description:
     "Digitise your loan documents effortlessly with our data digitisation services, ensuring accurate, accessible digital records for CRE portfolios.",
 };
+export const LoanOnboardingDigitizationMetaData: Metadata = {
+  title: "Loan Onboarding & Digitization",
+  description:
+    "Streamline loan onboarding with our digitization services, designed to simplify data integration and management for improved operational efficiency.",
+};
+//Consulting & Technology Solutions
 export const SalesforceCustomisationIntegrationMetaData: Metadata = {
   title: " Salesforce Customisation & Integration",
   description:
@@ -87,7 +94,7 @@ export const CRETechnologyConsultingMetaData: Metadata = {
     "Leverage expert CRE technology consulting to drive innovation and operational efficiency, ensuring a competitive edge in the real estate market.",
 };
 
-           //WHY CLIK.Ai
+//WHY CLIK.Ai
 export const WhyClikAIMetaData: Metadata = {
   title: "Why CLIK.AI – Our Advantage",
   description:
