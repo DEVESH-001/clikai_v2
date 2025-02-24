@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 // Base configuration for metadata
 export const metadata: Metadata = {
-  metadataBase: new URL('https://clik.ai'),
+  metadataBase: new URL('https://clikai-v2.vercel.app/'),
   title: {
     template: '%s | Clik.AI',
     default: 'Clik.AI - AI Software for Commercial Real Estate'
