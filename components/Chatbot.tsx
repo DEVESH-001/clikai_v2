@@ -102,7 +102,7 @@ export default function ChatBot() {
       ) : (
         <div
           ref={chatBoxRef}
-          className="bg-white rounded-lg shadow-xl w-96 h-[500px] flex flex-col resize"
+          className="bg-white rounded-lg shadow-xl w-96 h-[600px] flex flex-col resize"
           style={{ resize: "both", overflow: "auto" }}
         >
           <div className="p-4 bg-blue-600 text-white rounded-t-lg flex justify-between items-center">

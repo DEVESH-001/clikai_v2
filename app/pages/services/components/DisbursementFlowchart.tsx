@@ -59,7 +59,7 @@ export function DisbursementFlowchart() {
             <ConnectingLine className="absolute top-0 left-1/2 w-0.5 h-4 md:h-8 -translate-x-1/2" />
 
             {/* Horizontal line connecting all categories */}
-            <ConnectingLine className="absolute top-4 md:top-8 left-1/4 w-1/2 h-0.5" />
+            <ConnectingLine className="absolute md:top-[15%] left-0 w-full h-0.5 -translate-y-1/2" />
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-16">
               {[
@@ -81,8 +81,19 @@ export function DisbursementFlowchart() {
                     >
                       {category.title}
                     </FlowchartBox>
-                    {/* Vertical line from main category to subcategories */}
-                    <ConnectingLine className="absolute -bottom-4 left-1/2 w-0.5 h-4 -translate-x-1/2" />
+                    {/* Split vertical lines for categories with 2 subcategories */}
+                    {category.subcategories.length > 1 ? (
+                      <>
+                        {/* Left branch */}
+                        <ConnectingLine className="absolute -bottom-4 left-1/4 w-0.5 h-8 -translate-x-1/2" />
+                        {/* Right branch */}
+                        <ConnectingLine className="absolute -bottom-4 left-3/4 w-0.5 h-8 -translate-x-1/2" />
+                        {/* Horizontal connector */}
+                      </>
+                    ) : (
+                      /* Single vertical line for HUD 232 */
+                      <ConnectingLine className="absolute -bottom-4 left-1/2 w-0.5 h-8 -translate-x-1/2" />
+                    )}
                   </div>
                   {/* Conditional rendering based on number of subcategories */}
                   {category.subcategories.length > 1 ? (

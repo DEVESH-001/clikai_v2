@@ -48,7 +48,6 @@ export default function RootLayout({
         <ChatBot />
         <Footer />
         <CookieConsentManager />
-        {/* <ChatbaseWidget /> */}
       </body>
     </html>
   );
