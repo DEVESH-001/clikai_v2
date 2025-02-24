@@ -54,7 +54,7 @@ export const UnderwritingDDSMetaData: Metadata = {
 export const CustomFDMMetaData: Metadata = {
   title: " Custom Financial Models",
   description:
-    "Enhance your underwriting process with expert due diligence support services, ensuring comprehensive analysis and risk mitigation for your deals.",
+    "Build tailored financial models with our custom development services, designed to address the unique needs of your CRE investments and financing.",
 };
 export const DisbursementPCNAMetaData: Metadata = {
   title: " Disbursement & PCNA Support",
