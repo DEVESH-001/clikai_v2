@@ -77,7 +77,7 @@ export default function InvestAssistPage() {
                     size="lg"
                     className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
                   >
-                    Get Started
+                    Instant Access
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                   <Button
@@ -85,7 +85,7 @@ export default function InvestAssistPage() {
                     variant="outline"
                     className="border-blue-600 text-blue-600 hover:bg-blue-50"
                   >
-                    Talk to Us
+                    Book Demo
                   </Button>
                 </div>
               </motion.div>
@@ -317,7 +317,7 @@ export default function InvestAssistPage() {
                 size="lg"
                 className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
               >
-                Upgrade Your Workflow
+                Book Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
@@ -446,7 +446,7 @@ export default function InvestAssistPage() {
                     {isYearly ? (
                       <>
                         $1990
-                        <span className="text-xl text-gray-600">/year</span>
+                        <span className="text-xl text-gray-600">/yearly</span>
                       </>
                     ) : (
                       <>
@@ -516,7 +516,7 @@ export default function InvestAssistPage() {
                   size="lg"
                   className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
                 >
-                  Get Started
+                  Instant Access
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </div>
@@ -656,7 +656,7 @@ export default function InvestAssistPage() {
                 size="lg"
                 className="bg-white text-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105"
               >
-                Get Started
+                Instant Access
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               <Button
@@ -664,7 +664,7 @@ export default function InvestAssistPage() {
                 variant="outline"
                 className="bg-transparent border-white text-white hover:bg-white/10 transition-all duration-300"
               >
-                Talk to Us
+                Book Demo
               </Button>
             </div>
           </motion.div>

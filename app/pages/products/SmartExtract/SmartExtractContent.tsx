@@ -34,6 +34,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import type React from "react";
+import Link from "next/link";
 
 const CodePreview = ({ children }: { children: React.ReactNode }) => (
   <div className="relative group">
@@ -122,8 +123,13 @@ export default function SmartExtractPage() {
                     variant="outline"
                     className="text-blue-600 hover:bg-blue-50 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
                   >
-                    View Documentation
-                    <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                    <Link
+                      href="https://clik-ai.gitbook.io/smart-extract-documentation/api-reference/"
+                      className="flex items-center"
+                    >
+                      View Documentation{" "}
+                      <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                    </Link>
                   </Button>
                 </div>
 
@@ -280,10 +286,15 @@ export default function SmartExtractPage() {
                     </li>
                   </ul>
                   <div className="pt-4">
-                    <Button className="w-full">
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
+                    <Link
+                      href="https://clik-ai.gitbook.io/smart-extract-documentation/api-reference/"
+                      className="w-full"
+                    >
+                      <Button className="w-full flex items-center justify-center gap-2">
+                        Learn More
+                        <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -317,10 +328,15 @@ export default function SmartExtractPage() {
                     </li>
                   </ul>
                   <div className="pt-4 flex justify-center">
-                    <Button className="w-full flex items-center justify-center gap-2">
-                      View API Docs
-                      <ArrowRight className="h-4 w-4" />
-                    </Button>
+                    <Link
+                      href="https://clik-ai.gitbook.io/smart-extract-documentation/api-reference/"
+                      className="w-full"
+                    >
+                      <Button className="w-full flex items-center justify-center gap-2">
+                        View API Docs
+                        <ArrowRight className="h-4 w-4" />
+                      </Button>
+                    </Link>
                   </div>
                 </CardContent>
               </Card>
@@ -679,22 +695,13 @@ console.log(result.data);`}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
               >
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button
-                    size="lg"
-                    className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
-                  >
-                    Get Started
-                    <Server className="ml-2 h-5 w-5" />
-                  </Button>
-                  <Button
-                    size="lg"
-                    className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
-                  >
-                    Request a Demo
-                    <ArrowUpRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </div>
+                <Button
+                  size="lg"
+                  className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
+                >
+                  Book Demo
+                  <ArrowUpRight className="ml-2 h-5 w-5" />
+                </Button>
               </motion.div>
             </motion.div>
           </div>

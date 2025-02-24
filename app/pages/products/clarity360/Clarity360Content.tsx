@@ -159,7 +159,7 @@ export default function Clarity360OMPage() {
                   size="lg"
                   className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
                 >
-                  Talk to Us
+                  Book Demo
                   <ArrowUpRight className="ml-2 h-4 w-4" />
                 </Button>
               </motion.div>
@@ -263,7 +263,7 @@ export default function Clarity360OMPage() {
                     className="mt-4"
                   >
                     <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
-                      Talk to Us
+                      Book Demo
                       <ArrowUpRight className="ml-2 h-4 w-4" />
                     </Button>
                   </motion.div>
@@ -545,7 +545,7 @@ export default function Clarity360OMPage() {
                   size="lg"
                   className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px] whitespace-nowrap"
                 >
-                  Talk to Us
+                  Book Demo
                   <ArrowUpRight className="ml-2 h-4 w-4" />
                 </Button>
               </div>
@@ -653,7 +653,7 @@ export default function Clarity360OMPage() {
                   size="lg"
                   className="w-full bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
                 >
-                  Talk to Us
+                  Book Demo
                   <ArrowUpRight className="ml-2 h-4 w-4" />
                 </Button>
               </Card>
@@ -724,7 +724,7 @@ export default function Clarity360OMPage() {
                 size="lg"
                 className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
               >
-                Talk to Us
+                Book Demo
                 <ArrowUpRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>

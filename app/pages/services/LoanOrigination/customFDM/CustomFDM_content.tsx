@@ -253,7 +253,7 @@ export default function CustomFinancialModelDevelopment() {
                 size="lg"
                 className="bg-blue-600 text-white hover:bg-blue-700 rounded-[8px] transition-colors duration-300"
               >
-                Request a Custom Model
+                Schedule a Consultation
                 <ChevronRight className="ml-2 h-5 w-5" />
               </Button>
               <Button
@@ -261,7 +261,7 @@ export default function CustomFinancialModelDevelopment() {
                 variant="outline"
                 className="text-blue-600 border-blue-600 hover:bg-indigo-50 transition-colors duration-300"
               >
-                Model Yourself Now
+                Book Demo
               </Button>
             </motion.div>
           </div>
@@ -536,7 +536,7 @@ export default function CustomFinancialModelDevelopment() {
                   size="lg"
                   className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
                 >
-                  Talk To Us Now
+                  Book Demo
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </motion.div>

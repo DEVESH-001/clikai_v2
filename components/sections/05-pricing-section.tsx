@@ -51,7 +51,7 @@ const plans: Plan[] = [
       "Clients testing our extraction capabilities before scaling",
       "Budget-conscious users starting with automation",
     ],
-    cta: "Get Started",
+    cta: "Instant Access",
   },
   {
     name: "Growth",
@@ -74,7 +74,7 @@ const plans: Plan[] = [
       "Clients requiring analyst expertise for deal accuracy",
       "Users balancing automation with professional support",
     ],
-    cta: "Get Started",
+    cta: "Book Demo",
     ribbon: "Most Popular",
   },
   {
@@ -101,7 +101,7 @@ const plans: Plan[] = [
       "Companies needing scalable, customizable solutions",
       "Power users combining automation and expert support",
     ],
-    cta: "Talk To Us ",
+    cta: "Book Demo",
   },
 ];
 

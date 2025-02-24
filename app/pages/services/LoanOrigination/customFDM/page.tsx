@@ -1,10 +1,11 @@
 import { CustomFDMMetaData } from "@/app/metadata";
 
 
-import LeaseAbstractionAuditPage from "../../Lease&DataAdministration/Abstraction&Audit/LeaseAbstractionAuditContent";
+
+import CustomFinancialModelDevelopment from "./CustomFDM_content";
 
 export const metadata = CustomFDMMetaData;
 
 export default function ContactUsPage() {
-  return <LeaseAbstractionAuditPage />;
+  return <CustomFinancialModelDevelopment />;
 }

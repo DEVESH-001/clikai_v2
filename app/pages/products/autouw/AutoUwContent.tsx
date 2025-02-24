@@ -92,6 +92,7 @@ const plans = [
       "Custom model integration",
     ],
     ribbon: "Most Popular",
+    cta: "Book Demo",
   },
   {
     name: "Enterprise",
@@ -105,6 +106,7 @@ const plans = [
       "Excel Add-in to sync updates",
       "Dedicated account manager",
     ],
+    cta: "Get Started",
   },
 ];
 
@@ -170,7 +172,7 @@ export default function AutoUWPage() {
                     size="lg"
                     className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
                   >
-                    Get Started
+                    Book Demo
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </div>
@@ -350,71 +352,71 @@ export default function AutoUWPage() {
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Simple and Transparent Pricing
-            </h2>
-            <p className="text-xl text-gray-600">
-              Choose the plan that best fits your needs
-            </p>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          Simple and Transparent Pricing
+        </h2>
+        <p className="text-xl text-gray-600">
+          Choose the plan that best fits your needs
+        </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {plans.map((plan, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-              >
-                <Card
-                  className={`p-6 h-full ${
-                    index === 1
-                      ? "bg-gradient-to-br from-blue-600 to-blue-600 text-white"
-                      : "bg-white/90 backdrop-blur-sm"
-                  } hover:shadow-lg transition-all duration-300`}
-                >
-                  <div className="text-center">
-                    <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                    <div className="text-4xl font-bold mb-4">
-                      {typeof plan.price === "number" ||
-                      typeof plan.monthlyPrice === "number"
-                        ? `$${plan.monthlyPrice || plan.price}`
-                        : plan.price}
-                      {typeof plan.price === "number" && (
-                        <span className="text-lg">/month</span>
-                      )}
-                    </div>
-                    <p
-                      className={`mb-6 ${
-                        index === 1 ? "text-blue-100" : "text-gray-600"
-                      }`}
-                    >
-                      {plan.description}
-                    </p>
-                    <ul className="space-y-3 mb-6 text-left">
-                      {plan.features.map((feature, i) => (
-                        <li key={i} className="flex items-center gap-2">
-                          <CheckCircle2
-                            className={`h-5 w-5 ${
-                              index === 1 ? "text-blue-200" : "text-green-500"
-                            }`}
-                          />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <Button
-                      className={`w-full rounded-[8px] ${
-                        index === 1
-                          ? "bg-white text-blue-600 hover:bg-blue-50"
-                          : "bg-blue-600 text-white hover:bg-blue-700"
-                      }`}
-                    >
-                      Get Started
-                    </Button>
-                  </div>
-                </Card>
-              </motion.div>
-            ))}
+        {plans.map((plan, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+          >
+            <Card
+          className={`p-6 h-full ${
+            index === 1
+              ? "bg-gradient-to-br from-blue-600 to-blue-600 text-white"
+              : "bg-white/90 backdrop-blur-sm"
+          } hover:shadow-lg transition-all duration-300`}
+            >
+          <div className="text-center">
+            <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+            <div className="text-4xl font-bold mb-4">
+              {typeof plan.price === "number" ||
+              typeof plan.monthlyPrice === "number"
+            ? `$${plan.monthlyPrice || plan.price}`
+            : plan.price}
+              {typeof plan.price === "number" && (
+            <span className="text-lg">/month</span>
+              )}
+            </div>
+            <p
+              className={`mb-6 ${
+            index === 1 ? "text-blue-100" : "text-gray-600"
+              }`}
+            >
+              {plan.description}
+            </p>
+            <ul className="space-y-3 mb-6 text-left">
+              {plan.features.map((feature, i) => (
+            <li key={i} className="flex items-center gap-2">
+              <CheckCircle2
+                className={`h-5 w-5 ${
+              index === 1 ? "text-blue-200" : "text-green-500"
+                }`}
+              />
+              <span>{feature}</span>
+            </li>
+              ))}
+            </ul>
+            <Button
+              className={`w-full rounded-[8px] ${
+            index === 1
+              ? "bg-white text-blue-600 hover:bg-blue-50"
+              : "bg-blue-600 text-white hover:bg-blue-700"
+              }`}
+            >
+              {plan.cta}
+            </Button>
+          </div>
+            </Card>
+          </motion.div>
+        ))}
           </div>
         </div>
       </section>
@@ -486,7 +488,7 @@ export default function AutoUWPage() {
                 size="lg"
                 className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
               >
-                Request a Demo
+                Book Demo
                 <ArrowUpRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
