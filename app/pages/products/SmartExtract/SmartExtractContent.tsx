@@ -100,7 +100,7 @@ export default function SmartExtractPage() {
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400">
                   Extract
                 </span>{" "}
-                <span className="text-gray-900">(SMeX)</span>
+                <span className="text-gray-900">(SmEx)</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 The brain behind AutoUW, adopted by leading CRE Tech companies
