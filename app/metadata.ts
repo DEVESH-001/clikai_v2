@@ -31,7 +31,7 @@ export const contactUsMetadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "/opengraph/default.jpg",
+        url: "/opengraph/contact-us.jpg",
         width: 1200,
         height: 630,
         alt: "Contact Clik.AI",
@@ -97,7 +97,7 @@ export const SmartExtractMetaData: Metadata = {
   description:
     "Optimize document processing with SmartExtract, our solution for fast, accurate extraction of critical data from commercial real estate files.",
   openGraph: {
-    images: "/opengraph/smartextract.jpg",
+    images: "/opengraph/smartextract.png",
   },
 };
 
@@ -106,7 +106,7 @@ export const Clarity360tMetaData: Metadata = {
   description:
     "Simplify loan document analysis with Loan Abstract, our tool designed to extract and abstract key data with precision from loan documents.",
   openGraph: {
-    images: "/opengraph/loanabstract.jpg",
+    images: "/opengraph/clarity360.png",
   },
 };
 
@@ -143,7 +143,7 @@ export const LeaseAbstractionAuditMetaData: Metadata = {
   description:
     "Improve lease management with our comprehensive lease abstraction and audit services, offering accurate data analysis and compliance checks.",
   openGraph: {
-    images: "/opengraph/lease-abstraction.jpg",
+    images: "/opengraph/lease-abstraction.png",
   },
 };
 
@@ -152,7 +152,7 @@ export const LoanDocumentDigitisationMetaData: Metadata = {
   description:
     "Digitise your loan documents effortlessly with our data digitisation services, ensuring accurate, accessible digital records for CRE portfolios.",
   openGraph: {
-    images: "/opengraph/loan-digitisation.jpg",
+    images: "/opengraph/loan-loan-digitisation.png",
   },
 };
 
@@ -161,7 +161,7 @@ export const LoanOnboardingDigitizationMetaData: Metadata = {
   description:
     "Streamline loan onboarding with our digitization services, designed to simplify data integration and management for improved operational efficiency.",
   openGraph: {
-    images: "/opengraph/loan-onboarding.jpg",
+    images: "/opengraph/loan-onboarding.png",
   },
 };
 
@@ -170,7 +170,7 @@ export const SalesforceCustomisationIntegrationMetaData: Metadata = {
   description:
     "Enhance your CRM with tailored Salesforce customisation and integration services, optimizing your commercial real estate operations and data flow.",
   openGraph: {
-    images: "/opengraph/salesforce-integration.jpg",
+    images: "/opengraph/salesforce-customization.png",
   },
 };
 
@@ -179,7 +179,7 @@ export const CustomReportingDashboardsMetaData: Metadata = {
   description:
     "Transform your data into actionable insights with our custom reporting and dashboard solutions, crafted to support informed decision-making.",
   openGraph: {
-    images: "/opengraph/custom-reporting.jpg",
+    images: "/opengraph/custom-reporting.png",
   },
 };
 
@@ -188,7 +188,7 @@ export const CRETechnologyConsultingMetaData: Metadata = {
   description:
     "Leverage expert CRE technology consulting to drive innovation and operational efficiency, ensuring a competitive edge in the real estate market.",
   openGraph: {
-    images: "/opengraph/cre-consulting.jpg",
+    images: "/opengraph/cre-consulting.png",
   },
 };
 
@@ -197,7 +197,7 @@ export const WhyClikAIMetaData: Metadata = {
   description:
     "Discover why industry leaders choose CLIK.AI for advanced CRE solutions, combining innovative technology with unmatched expertise and support.",
   openGraph: {
-    images: "/opengraph/why-clikai.jpg",
+    images: "/opengraph/default2.png",
   },
 };
 
@@ -206,7 +206,7 @@ export const PrivacyPolicyMetaData: Metadata = {
   description:
     "Review our privacy policy to understand how CLIK.AI protects your data, ensuring transparency and compliance with data protection standards.",
   openGraph: {
-    images: "/opengraph/privacy-policy.jpg",
+    images: "/opengraph/default2.png",
   },
 };
 
@@ -215,6 +215,6 @@ export const TermsConditionsMetaData: Metadata = {
   description:
     "Read our terms and conditions to learn about the legal guidelines governing your use of CLIK.AI's innovative CRE solutions and services.",
   openGraph: {
-    images: "/opengraph/terms-conditions.jpg",
+    images: "/opengraph/default2.png",
   },
 };
