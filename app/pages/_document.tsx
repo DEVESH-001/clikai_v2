@@ -1,6 +1,5 @@
-/* eslint-disable @next/next/next-script-for-ga */
-// /pages/_document.tsx
 import Document, { Html, Head,  NextScript } from "next/document";
+import Script from "next/script";
 
 class MyDocument extends Document {
   render() {
@@ -8,10 +7,10 @@ class MyDocument extends Document {
       <Html lang="en">
         <Head>
           {/* Google Tag Manager (Head) */}
-          <script
+          <Script
             async
             src="https://www.googletagmanager.com/gtag/js?id=UA-104886160-1"
-          ></script>
+          ></Script>
           <script
             dangerouslySetInnerHTML={{
               __html: `

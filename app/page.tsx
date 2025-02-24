@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next"
 import { HeroSection } from "@/components/sections/01-hero-section"
 import { QuizSection } from "@/components/sections/03-quiz-section"

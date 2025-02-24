@@ -1,10 +1,9 @@
- //new
+//new
 
 "use client";
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-
 
 export function LogoCarousel() {
   const [, setLogoErrors] = useState<Record<string, boolean>>({});
@@ -47,7 +46,7 @@ export function LogoCarousel() {
       height: 40,
     },
     {
-        src: "/images/company_logo/Screenshot 2025-02-17 at 2.05.13 PM.png",
+      src: "/images/company_logo/Columbia_noational.png",
       alt: "Columbia National",
       width: 160,
       height: 40,
@@ -71,7 +70,7 @@ export function LogoCarousel() {
       height: 40,
     },
   ];
- 
+
   const scrollerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -101,12 +100,13 @@ export function LogoCarousel() {
   return (
     <div className="w-full overflow-hidden bg-gradient-to-b from-indigo-100 to-blue-50 py-3 relative sm:mt-2 lg:mt-8 ">
       {/* Background noise image */}
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-soft-light "></div>
+      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-soft-light"></div>
 
-      {/* Logo bar with responsive margin */}
+      {/* Logo bar with proper position */}
       <div
         ref={scrollerRef}
-        className="flex overflow-hidden relative z-10  md:mt-2 lg:mt-4 xl:mt-4 "
+        className="flex overflow-hidden relative z-10 md:mt-2 lg:mt-4 xl:mt-4"
+        style={{ position: "relative" }} // Ensure proper positioning
       >
         {[...logos, ...logos].map((logo, index) => (
           <div
@@ -116,9 +116,9 @@ export function LogoCarousel() {
             <Image
               src={logo.src || "/placeholder.svg"}
               alt={logo.alt}
-              width={logo.width}
-              height={logo.height}
-              className="h-12 w-auto object-contain"
+              width={160}
+              height={40}
+              className="w-auto h-auto object-contain" // Maintain aspect ratio
               onError={() => handleImageError(logo)}
             />
           </div>
