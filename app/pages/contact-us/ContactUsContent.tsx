@@ -171,7 +171,7 @@ export default function ContactUsContent() {
                 size="lg"
                 className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
               >
-                Send Us Your Pitch
+                Submit Your Details
                 <Send className="w-4 h-4 ml-2" />
               </Button>
             </motion.div>

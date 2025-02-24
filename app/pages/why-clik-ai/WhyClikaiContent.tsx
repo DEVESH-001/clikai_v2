@@ -187,7 +187,7 @@ export default function WhyClikaiPage() {
                 size="lg"
                 className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
               >
-                Get Started Today
+                Schedule a Consultation
                 <ArrowUpRightIcon className="ml-2 h-4 w-4" />
               </Button>
             </motion.div>
@@ -431,7 +431,7 @@ export default function WhyClikaiPage() {
                 variant="secondary"
                 className="bg-white text-blue-600 hover:bg-blue-50 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
               >
-                Get Demo
+                Schedule a Consultation
                 <ArrowUpRightIcon className="ml-2 h-4 w-4" />
               </Button>
             </motion.div>

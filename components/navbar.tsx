@@ -322,7 +322,7 @@ export function Navbar() {
                 <div className=""></div>
 
                 <NavigationMenuItem>
-                  <Link href="/pages/why-clik-ai" legacyBehavior passHref>
+                  <Link href="/pages/why-clik-ai/" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={dynamicNavItemClass}
                       onClick={handleNavigation}
@@ -375,14 +375,14 @@ export function Navbar() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="lg:hidden fixed top-16 left-0 right-0 bg-white bg-opacity-95 z-[9998] shadow-xl rounded-b-lg max-h-[80vh] overflow-y-auto"
+            className="lg:hidden fixed top-16 left-0 right-0 bg-white text-black bg-opacity-95 z-[9998] shadow-xl rounded-b-lg max-h-[80vh] overflow-y-auto"
           >
             <div className="px-5 py-4 space-y-2 text-gray-900">
               {/* PRODUCTS */}
               <div className="relative">
                 <button
                   onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
-                  className={`flex justify-between items-center w-full px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 transition-all ${dynamicNavItemClass}`}
+                  className={`flex justify-between items-center w-full px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 transition-all text-black ${dynamicNavItemClass}`}
                 >
                   PRODUCTS
                   <ChevronDown
@@ -454,7 +454,7 @@ export function Navbar() {
                 PRICING
               </Link>
               <Link
-                href="/why-clik-ai"
+                href="/pages/why-clik-ai"
                 onClick={handleNavigation}
                 className="block px-4 py-2 text-sm font-medium text-gray-900 rounded-lg hover:bg-gray-100 transition-all"
               >

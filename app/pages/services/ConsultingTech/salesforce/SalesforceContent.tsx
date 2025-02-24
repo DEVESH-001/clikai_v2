@@ -311,7 +311,7 @@ export default function SalesforceCustomizationPage() {
                     size="lg"
                     className="bg-blue-600 hover:bg-blue-700 text-white px-8 rounded-[8px]"
                   >
-                    Talk to Us Now
+                    Schedule a Consultation
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </div>
@@ -508,20 +508,6 @@ export default function SalesforceCustomizationPage() {
                 <TechnologyCard key={index} item={tech} />
               ))}
             </div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-12 text-center"
-            >
-              <Button
-                size="lg"
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 rounded-[8px]"
-              >
-                Learn More About Our Tech Stack
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </motion.div>
           </div>
           <div className="absolute inset-x-0 -top-24 h-24 bg-gradient-to-b from-transparent to-blue-50/40 opacity-10"></div>
           <div className="absolute inset-x-0 -bottom-24 h-24 bg-gradient-to-t from-transparent to-blue-50/40 opacity-10"></div>
@@ -620,7 +606,7 @@ export default function SalesforceCustomizationPage() {
                   size="lg"
                   className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
                 >
-                  Talk To Us Now
+                  Schedule a Consultation
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </motion.div>
