@@ -24,11 +24,27 @@ export const metadata: Metadata = {
 
 export default function SecurityPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-white via-blue-50/50 to-purple-50/50 mt-16">
-      <div className="container mx-auto px-4 py-12 max-w-4xl">
-        <h1 className="text-4xl md:text-5xl font-bold text-[#42A5F5] mb-16">
+    <div
+      className="min-h-screen relative overflow-hidden"
+      style={{
+        background:
+          "linear-gradient(135deg, #ffffff 0%, #e8f0fe 50%, #fce7f6 100%)",
+      }}
+    >
+      {/* Background blur elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 -left-4 w-[500px] h-[500px] bg-blue-200 rounded-full mix-blend-multiply filter blur-[100px] opacity-20 animate-blob"></div>
+        <div className="absolute top-0 -right-4 w-[500px] h-[500px] bg-pink-200 rounded-full mix-blend-multiply filter blur-[100px] opacity-20 animate-blob animation-delay-2000"></div>
+        <div className="absolute -bottom-8 left-20 w-[500px] h-[500px] bg-purple-200 rounded-full mix-blend-multiply filter blur-[100px] opacity-20 animate-blob animation-delay-4000"></div>
+      </div>
+      <section className="px-4 md:px-16 mt-24">
+        <h1 className="text-4xl md:text-7xl font-bold text-[#42A5F5]">
           Security
         </h1>
+      </section>
+      {/* Content */}
+      <div className="relative container mx-auto px-4 py-24">
+        {/* Hero Section */}
 
         {/* Security at Clik Section */}
         <section className="mb-16">
@@ -42,44 +58,33 @@ export default function SecurityPage() {
             is our top priority; so we hold ourselves to the highest privacy and
             security standards.
           </p>
-        </section>
-
-        {/* SOC 2 Section */}
-        <section className="mb-16">
           <div className="flex justify-center mb-8">
             <Image
               src="/images/Assets/Security.png"
-              alt="AICPA SOC Certification"
+              alt="Security at Clik"
               width={300}
               height={300}
               className="rounded-full"
             />
           </div>
+        </section>
+        <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-semibold text-[#3F3D56] mb-6">
             SOC 2 compliance
           </h2>
           <p className="text-gray-600 text-lg leading-relaxed mb-8">
             Clik has undergone a Service Organization Controls audit (SOC 2 Type
-            1). Please contact your account manager or{" "}
-            <a
-              href="mailto:security@clik.ai"
-              className="text-blue-500 hover:text-blue-600 underline"
-            >
-              security@clik.ai
-            </a>{" "}
-            to request Clik&apos;s most recent report.
+            1). Please contact your account manager or security@clik.ai to
+            request Clik&apos;s most recent report.
           </p>
         </section>
-
-        {/* Network and System Security Section */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-semibold text-[#3F3D56] mb-6">
             Network and system security
           </h2>
-          <p className="text-gray-600 text-lg leading-relaxed mb-4">
-            Clik supports encrypted data transfer using HTTPS with high-grade
-            encryption. Data transfer between AWS processing nodes and the
-            storage in AWS is also protected with an encryption.
+
+          <p className="text-gray-600 text-lg leading-relaxed mb-8">
+          Clik supports encrypted data transfer using HTTPS with high-grade encryption. Data transfer between AWS processing nodes and the storage in AWS is also protected with an encryption.
           </p>
           <p className="text-gray-600 text-lg leading-relaxed mb-8">
             All the Clik servers are located in AWS data centers in the US that
