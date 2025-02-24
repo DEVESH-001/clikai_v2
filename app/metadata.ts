@@ -74,7 +74,7 @@ export const AutoUWMetaData: Metadata = {
   openGraph: {
     images: [
       {
-        url: "/opengraph/autouw.jpg",
+        url: "/opengraph/autouw.png",
         width: 1200,
         height: 630,
         alt: "AutoUW - Automated Underwriting",
@@ -88,7 +88,7 @@ export const InvestAssistMetaData: Metadata = {
   description:
     "Empower your investment decisions with InvestAssist, offering data-driven insights and analysis to optimize your CRE investment strategies.",
   openGraph: {
-    images: "/opengraph/investassist.jpg",
+    images: "/opengraph/investAssist.png",
   },
 };
 
