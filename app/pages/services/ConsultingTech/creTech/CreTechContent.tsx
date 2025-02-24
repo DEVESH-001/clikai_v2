@@ -254,13 +254,13 @@ export default function CRETechnologyConsultingPage() {
               transition={{ duration: 1, delay: 0.2 }}
               className="w-full mx-auto px-4 py-6"
             >
-              <div className="relative w-full h-[800px]">
+              <div className="relative w-full h-[50vh] md:h-[800px]">
                 <Image
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/managed-services-ecosystem-9dLjT4mCgNpOl4DTMhp7OD0xVCvm2S.png"
                   alt="Managed Services Ecosystem"
                   fill
                   priority
-                  className="object-contain"
+                  className="object-cover"
                 />
               </div>
             </motion.div>
