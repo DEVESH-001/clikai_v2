@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer";
 import { CookieConsentManager } from "@/components/CookieConsentManager";
 import ChatBot from "@/components/Chatbot";
 import { Scripts } from "@/components/Scripts";
-
+import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: {
@@ -69,7 +69,10 @@ export default function RootLayout({
         </noscript>
         <Scripts />
         <Navbar />
-        <main>{children}</main>
+        <main>
+          {children}
+          <Analytics />
+        </main>
         <ChatBot />
         <Footer />
         <CookieConsentManager />
@@ -87,8 +90,6 @@ export default function RootLayout({
     </html>
   );
 }
-
-
 
 //OLD
 
