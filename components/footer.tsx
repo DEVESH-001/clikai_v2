@@ -248,7 +248,7 @@ export function Footer() {
         {/* Copyright, legal links, and social media icons */}
         <div className="flex flex-col sm:flex-row justify-between items-center text-xs sm:text-sm text-gray-300">
           <div className="flex flex-wrap justify-center sm:justify-start space-x-2 sm:space-x-4 mb-2 sm:mb-0">
-            <Link href="/pages/privacy-policy" className="hover:text-blue-300">
+            <Link href="/pages/privacy-policy/" className="hover:text-blue-300">
               Privacy Policy
             </Link>
             <Link

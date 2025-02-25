@@ -1,9 +1,10 @@
 import { PrivacyPolicyMetaData } from "@/app/metadata";
-import WhyClikaiPage from "../why-clik-ai/WhyClikaiContent";
+
+import PrivacyPolicyPage from "./Privacy-PolicyContent";
 
 
 export const metadata = PrivacyPolicyMetaData;
 
 export default function ContactUsPage() {
-  return <WhyClikaiPage/>;
+  return <PrivacyPolicyPage/>;
 }
