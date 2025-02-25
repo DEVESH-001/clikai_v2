@@ -1,4 +1,113 @@
-<!-- <?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://clikai-v2.vercel.app/</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/why-clik-ai</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/products/autouw</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/products/InvestAssist</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/products/SmartExtract</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/products/clarity360</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/services/LoanOrigination/underwritingDDS</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/services/LoanOrigination/customFDM</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/services/LoanOrigination/disbursement&amp;PCNA</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/services/Lease&amp;DataAdministration/Abstraction&amp;Audit</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/services/Lease&amp;DataAdministration/LoanOnboarding&amp;DataDigitization</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/services/ConsultingTech/salesforce</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/services/ConsultingTech/customRD</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/services/ConsultingTech/creTech</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/security</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/disclaimer</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/privacy-policy</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/terms-and-conditions</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/contact-us</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+
+
+</urlset>
+
+
+<!-- <!-- <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://clikai-v2.vercel.app/</loc>
@@ -118,4 +227,5 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-</urlset>
+</urlset> -->
+
