@@ -47,7 +47,7 @@ export function LogoCarousel() {
       height: 40,
     },
     {
-        src: "/images/company_logo/Screenshot 2025-02-17 at 2.05.13 PM.png",
+      src: "/images/company_logo/Columbia_noational.png",
       alt: "Columbia National",
       width: 160,
       height: 40,
