@@ -60,7 +60,7 @@ export default function SecurityPage() {
             </p>
             <div className="flex justify-center">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-25%20at%205.37.52%E2%80%AFPM-ObYf0f87BjKgONuNptD3l0FlwET431.png"
+                src="/images/Assets/Security.png"
                 alt="AICPA SOC Certification"
                 width={300}
                 height={300}
