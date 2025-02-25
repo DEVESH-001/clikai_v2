@@ -1,10 +1,40 @@
-User-agent: *
-Allow: /
+# robots.txt for Clik.ai
 
-# Disallow crawling of administrative areas
+# Allow all crawlers
+User-agent: *
+
+# General rules
+Allow: /
+Allow: /products/
+Allow: /services/
+Allow: /about-us
+Allow: /contact-us
+Allow: /security
+Allow: /privacy-policy
+Allow: /terms-and-conditions
+
+# Disallow crawling of administrative and private areas
 Disallow: /admin/
 Disallow: /private/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /*?*
 
-# Sitemap location
+# Disallow duplicate content
+Disallow: /*?source=*
+Disallow: /*?ref=*
+Disallow: /*?utm_*
+
+# Crawl-delay directive (optional, uncomment if needed)
+# Crawl-delay: 10
+
+# Sitemaps
 Sitemap: https://clikai-v2.vercel.app/sitemap.xml
+
+
+# Host directive
+Host:  https://clikai-v2.vercel.app/sitemap.xml
+
+
+
 
