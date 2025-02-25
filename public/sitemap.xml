@@ -14,6 +14,7 @@
   <lastmod>2025-02-25T06:48:15+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+            <!-- Product Pages -->
 <url>
   <loc>https://clikai-v2.vercel.app/pages/products/autouw</loc>
   <lastmod>2025-02-25T06:48:15+00:00</lastmod>
@@ -34,6 +35,8 @@
   <lastmod>2025-02-25T06:48:15+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+                          <!-- Service Pages -->
+<!-- Loan Origination -->
 <url>
   <loc>https://clikai-v2.vercel.app/pages/services/LoanOrigination/underwritingDDS</loc>
   <lastmod>2025-02-25T06:48:15+00:00</lastmod>
@@ -49,8 +52,14 @@
   <lastmod>2025-02-25T06:48:15+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+<!-- Lease & Data Administration -->
 <url>
   <loc>https://clikai-v2.vercel.app/pages/services/Lease&amp;DataAdministration/Abstraction&amp;Audit</loc>
+  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/pages/services/Lease&amp;DataAdministration/Appraisal&amp;OMDataDigitization</loc>
   <lastmod>2025-02-25T06:48:15+00:00</lastmod>
   <priority>0.80</priority>
 </url>
@@ -59,6 +68,7 @@
   <lastmod>2025-02-25T06:48:15+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+<!-- Consulting & Technology Solutions -->
 <url>
   <loc>https://clikai-v2.vercel.app/pages/services/ConsultingTech/salesforce</loc>
   <lastmod>2025-02-25T06:48:15+00:00</lastmod>
