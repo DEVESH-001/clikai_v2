@@ -8,6 +8,7 @@ import { CookieConsentManager } from "@/components/CookieConsentManager";
 import ChatBot from "@/components/Chatbot";
 import { Scripts } from "@/components/Scripts";
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: {
@@ -72,6 +73,7 @@ export default function RootLayout({
         <main>
           {children}
           <Analytics />
+           <SpeedInsights />
         </main>
         <ChatBot />
         <Footer />
