@@ -1,45 +1,41 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { CookieConsentBanner } from "@/components/cookie-consent"
-import { CookiePreferencesPopup } from "./cookie-preference-popup"
-
+import { useState, useEffect } from "react";
+import { CookieConsentBanner } from "@/components/cookie-consent";
+import { CookiePreferencesPopup } from "./cookie-preference-popup";
 
 export function CookieConsentManager() {
-  const [isPreferencesOpen, setIsPreferencesOpen] = useState(false)
-  const [showBanner, setShowBanner] = useState(false)
+  const [isPreferencesOpen, setIsPreferencesOpen] = useState(false);
+  const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem("cookieConsent")
+    const consent = localStorage.getItem("cookieConsent");
     if (!consent) {
-      const timer = setTimeout(
-        () => {
-          setShowBanner(true)
-        },
-        5000 + Math.random() * 3000,
-      ) // Show after 5-8 seconds
+      const timer = setTimeout(() => {
+        setShowBanner(true);
+      }, 5000 + Math.random() * 3000); // Show after 5-8 seconds
 
-      return () => clearTimeout(timer)
+      return () => clearTimeout(timer);
     }
-  }, [])
+  }, []);
 
   const handleOpenPreferences = () => {
-    setIsPreferencesOpen(true)
-  }
+    setIsPreferencesOpen(true);
+  };
 
   const handleClosePreferences = () => {
-    setIsPreferencesOpen(false)
-  }
+    setIsPreferencesOpen(false);
+  };
 
   const handleAccept = () => {
-    localStorage.setItem("cookieConsent", "accepted")
-    setShowBanner(false)
-  }
+    localStorage.setItem("cookieConsent", "accepted");
+    setShowBanner(false);
+  };
 
   const handleDecline = () => {
-    localStorage.setItem("cookieConsent", "declined")
-    setShowBanner(false)
-  }
+    localStorage.setItem("cookieConsent", "declined");
+    setShowBanner(false);
+  };
 
   return (
     <>
@@ -50,8 +46,10 @@ export function CookieConsentManager() {
           onDecline={handleDecline}
         />
       )}
-      <CookiePreferencesPopup isOpen={isPreferencesOpen} onClose={handleClosePreferences} />
+      <CookiePreferencesPopup
+        isOpen={isPreferencesOpen}
+        onClose={handleClosePreferences}
+      />
     </>
-  )
+  );
 }
-

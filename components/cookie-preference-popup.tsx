@@ -1,56 +1,59 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { motion, AnimatePresence } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { Switch } from "@/components/ui/switch"
-import { X } from "lucide-react"
-import { createPortal } from "react-dom"
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Switch } from "@/components/ui/switch";
+import { X } from "lucide-react";
+import { createPortal } from "react-dom";
 
 interface CookiePreferencesPopupProps {
-  isOpen: boolean
-  onClose: () => void
+  isOpen: boolean;
+  onClose: () => void;
 }
 
-export function CookiePreferencesPopup({ isOpen, onClose }: CookiePreferencesPopupProps) {
-  const [mounted, setMounted] = useState(false)
+export function CookiePreferencesPopup({
+  isOpen,
+  onClose,
+}: CookiePreferencesPopupProps) {
+  const [mounted, setMounted] = useState(false);
   const [preferences, setPreferences] = useState({
     necessary: true,
     analytics: false,
     marketing: false,
-  })
+  });
 
   useEffect(() => {
-    setMounted(true)
-    const savedPreferences = localStorage.getItem("cookiePreferences")
+    setMounted(true);
+    const savedPreferences = localStorage.getItem("cookiePreferences");
     if (savedPreferences) {
-      setPreferences(JSON.parse(savedPreferences))
+      setPreferences(JSON.parse(savedPreferences));
     }
-  }, [])
+  }, []);
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "unset"
+      document.body.style.overflow = "unset";
     }
 
     return () => {
-      document.body.style.overflow = "unset"
-    }
-  }, [isOpen])
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
 
   const handlePreferenceChange = (key: keyof typeof preferences) => {
-    setPreferences((prev) => ({ ...prev, [key]: !prev[key] }))
-  }
+    setPreferences((prev) => ({ ...prev, [key]: !prev[key] }));
+  };
 
   const savePreferences = () => {
-    localStorage.setItem("cookiePreferences", JSON.stringify(preferences))
-    localStorage.setItem("cookieConsent", "customized")
-    onClose()
-  }
+    localStorage.setItem("cookiePreferences", JSON.stringify(preferences));
+    localStorage.setItem("cookieConsent", "customized");
+    onClose();
+  };
 
-  if (!mounted) return null
+  if (!mounted) return null;
 
   const modalContent = (
     <AnimatePresence>
@@ -77,7 +80,10 @@ export function CookiePreferencesPopup({ isOpen, onClose }: CookiePreferencesPop
             >
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-bold">Cookie Preferences</h2>
-                <button onClick={onClose} className="text-gray-500 hover:text-gray-700 transition-colors">
+                <button
+                  onClick={onClose}
+                  className="text-gray-500 hover:text-gray-700 transition-colors"
+                >
                   <X size={20} />
                 </button>
               </div>
@@ -86,7 +92,8 @@ export function CookiePreferencesPopup({ isOpen, onClose }: CookiePreferencesPop
                   <div>
                     <h3 className="font-semibold">Necessary Cookies</h3>
                     <p className="text-sm text-gray-500">
-                      These cookies are essential for the website to function properly.
+                      These cookies are essential for the website to function
+                      properly.
                     </p>
                   </div>
                   <Switch checked={preferences.necessary} disabled />
@@ -95,19 +102,27 @@ export function CookiePreferencesPopup({ isOpen, onClose }: CookiePreferencesPop
                   <div>
                     <h3 className="font-semibold">Analytics Cookies</h3>
                     <p className="text-sm text-gray-500">
-                      These cookies help us improve our website by collecting usage information.
+                      These cookies help us improve our website by collecting
+                      usage information.
                     </p>
                   </div>
-                  <Switch checked={preferences.analytics} onCheckedChange={() => handlePreferenceChange("analytics")} />
+                  <Switch
+                    checked={preferences.analytics}
+                    onCheckedChange={() => handlePreferenceChange("analytics")}
+                  />
                 </div>
                 <div className="flex items-center justify-between">
                   <div>
                     <h3 className="font-semibold">Marketing Cookies</h3>
                     <p className="text-sm text-gray-500">
-                      These cookies are used to deliver personalized advertisements.
+                      These cookies are used to deliver personalized
+                      advertisements.
                     </p>
                   </div>
-                  <Switch checked={preferences.marketing} onCheckedChange={() => handlePreferenceChange("marketing")} />
+                  <Switch
+                    checked={preferences.marketing}
+                    onCheckedChange={() => handlePreferenceChange("marketing")}
+                  />
                 </div>
               </div>
               <div className="mt-6 flex justify-end pt-4 border-t">
@@ -123,8 +138,7 @@ export function CookiePreferencesPopup({ isOpen, onClose }: CookiePreferencesPop
         </>
       )}
     </AnimatePresence>
-  )
+  );
 
-  return createPortal(modalContent, document.body)
+  return createPortal(modalContent, document.body);
 }
-

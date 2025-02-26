@@ -9,8 +9,10 @@ import ChatBot from "@/components/Chatbot";
 import { Scripts } from "@/components/Scripts";
 import { Analytics } from "@vercel/analytics/react";
 
-
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_APP_URL || "http://clikai-v2.vercel.app/"
+  ),
   title: {
     default: "Clik.ai - AI-Powered Commercial Real Estate Solutions",
     template: "%s | Clik.ai",

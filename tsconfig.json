@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "app/api/content/data.ts"  ],
+, "app/api/content/data.ts", "components/CookieConsent.tsx "  ],
   "exclude": [
     "node_modules"
   ]

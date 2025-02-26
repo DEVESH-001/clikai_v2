@@ -114,6 +114,8 @@
 
     "input-otp": "1.4.1",
 
+    "js-cookie": "^3.0.5",
+
     "langchain": "^0.3.19",
 
     "lucide-react": "^0.473.0",
@@ -179,6 +181,8 @@
   },
 
   "devDependencies": {
+
+    "@types/js-cookie": "^3.0.6",
 
     "@types/node": "^20",
 
