@@ -29,7 +29,7 @@ export default async function BlogPage() {
         ) : posts.length > 0 ? (
           // eslint-disable-next-line react/jsx-no-comment-textnodes
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            {/* // eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {posts.map((post: any) => (
               <PostPreview key={post.id} post={post} />
             ))}
