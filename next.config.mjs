@@ -32,6 +32,7 @@ const nextConfig = {
         pathname: "/**",
       },
     ],
+    domains: ["admin139255a85d.wpcomstaging.com"],
   },
   poweredByHeader: false,
   compress: true,
