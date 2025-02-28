@@ -22,16 +22,18 @@ export default async function BlogPage() {
         title="Blog | Clik.ai"
         description="Read the latest insights and updates from Clik.ai on commercial real estate and AI technology."
       />
-      <div className="container mx-auto px-4 py-12">
-        <h1 className="text-4xl font-bold mb-8">Clik.ai Blog</h1>
+      <div className="container mx-auto px-4 py-12 md:py-16 lg:py-20 mt-12">
+        <h1 className="text-4xl font-bold mb-8 text-center">
+          Clik.ai Blog&apos;s
+        </h1>
         {error ? (
           <p className="text-red-500 text-center">{error}</p>
         ) : posts.length > 0 ? (
-          // eslint-disable-next-line react/jsx-no-comment-textnodes
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {/* // eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {posts.map((post: any) => (
-              <PostPreview key={post.id} post={post} />
+              <div key={post.id} className="mt-8">
+                <PostPreview post={post} />
+              </div>
             ))}
           </div>
         ) : (

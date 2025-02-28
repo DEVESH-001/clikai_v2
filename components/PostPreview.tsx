@@ -5,9 +5,10 @@ import { format } from "date-fns";
 
 interface PostPreviewProps {
   post: any;
+  className?: string;
 }
 
-export default function PostPreview({ post }: PostPreviewProps) {
+export default function PostPreview({ post, className }: PostPreviewProps) {
   const featuredImage =
     post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "/placeholder.svg";
   const title = post.title?.rendered || "Untitled";
@@ -19,7 +20,9 @@ export default function PostPreview({ post }: PostPreviewProps) {
     : "Unknown Date";
 
   return (
-    <div className="mb-8 bg-white shadow-md rounded-lg overflow-hidden">
+    <div
+      className={`mb-8 bg-white shadow-md rounded-lg overflow-hidden ${className}`}
+    >
       <Image
         src={featuredImage || "/placeholder.svg"}
         alt={title}
