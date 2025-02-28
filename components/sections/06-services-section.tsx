@@ -6,6 +6,7 @@ import { type Key, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 import {
   Building2,
@@ -216,14 +217,16 @@ const SubserviceCard = ({
                       </li>
                     ))}
                   </ul>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="w-full text-xs"
-                    style={{ borderColor: color, color: color }}
-                  >
-                    <a href={subservice.href}>See Full Service Offering</a>
-                  </Button>
+                  <Link href={subservice.href}>
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-full text-xs"
+                      style={{ borderColor: color, color: color }}
+                    >
+                      See Full Service Offering
+                    </Button>
+                  </Link>
                 </motion.div>
               )}
             </AnimatePresence>
