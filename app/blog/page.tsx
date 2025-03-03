@@ -3,7 +3,7 @@ import { getAllPosts } from "@/lib/api";
 import PostPreview from "@/components/PostPreview";
 import SEO from "@/components/SEO";
 
-export const revalidate = 60; // revalidate every 60 seconds
+export const dynamic = "force-dynamic";
 
 export default async function BlogPage() {
   let posts = [];
@@ -23,9 +23,7 @@ export default async function BlogPage() {
         description="Read the latest insights and updates from Clik.ai on commercial real estate and AI technology."
       />
       <div className="container mx-auto px-4 py-12 md:py-16 lg:py-20 mt-12">
-        <h1 className="text-4xl font-bold mb-8 text-center">
-          Clik.ai Blog&apos;s
-        </h1>
+        <h1 className="text-4xl font-bold mb-8 text-center">Clik.ai Blog</h1>
         {error ? (
           <p className="text-red-500 text-center">{error}</p>
         ) : posts.length > 0 ? (
