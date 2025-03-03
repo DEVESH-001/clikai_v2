@@ -1,19 +1,31 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { getAllPosts } from "@/lib/api";
-import PostPreview from "@/components/PostPreview";
-import SEO from "@/components/SEO";
 
-export const dynamic = "force-dynamic";
+import { getAllPosts } from "@/lib/api"
+import PostPreview from "@/components/PostPreview"
+import Pagination from "@/components/Pagination"
+import SEO from "@/components/SEO"
 
-export default async function BlogPage() {
-  let posts = [];
-  let error = null;
+export const dynamic = "force-dynamic"
+
+export default async function BlogPage({
+  searchParams,
+}: {
+  searchParams: { [key: string]: string | string[] | undefined }
+}) {
+  const page = typeof searchParams.page === "string" ? Number.parseInt(searchParams.page, 10) : 1
+  const postsPerPage = 9
+
+  let posts = []
+  let totalPages = 0
+  let error = null
 
   try {
-    posts = await getAllPosts();
+    const result = await getAllPosts(page, postsPerPage)
+    posts = result.posts
+    totalPages = result.totalPages
   } catch (e) {
-    console.error("Failed to fetch posts:", e);
-    error = "Failed to load blog posts. Please try again later.";
+    console.error("Failed to fetch posts:", e)
+    error = "Failed to load blog posts. Please try again later."
   }
 
   return (
@@ -27,19 +39,21 @@ export default async function BlogPage() {
         {error ? (
           <p className="text-red-500 text-center">{error}</p>
         ) : posts.length > 0 ? (
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {posts.map((post: any) => (
-              <div key={post.id} className="mt-8">
-                <PostPreview post={post} />
-              </div>
-            ))}
-          </div>
+          <>
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {posts.map((post: any) => (
+                <div key={post.id} className="h-full">
+                  <PostPreview post={post} />
+                </div>
+              ))}
+            </div>
+            <Pagination currentPage={page} totalPages={totalPages} />
+          </>
         ) : (
-          <p className="text-xl text-center">
-            No posts found. Check back soon for updates!
-          </p>
+          <p className="text-xl text-center">No posts found. Check back soon for updates!</p>
         )}
       </div>
     </>
-  );
+  )
 }
+
