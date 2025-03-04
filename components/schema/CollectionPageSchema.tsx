@@ -19,6 +19,7 @@ export default function CollectionPageSchema({ title, description, url, itemCoun
       itemListOrder: "https://schema.org/ItemListOrderDescending",
       url: url,
     },
+    
   }
 
   return (
