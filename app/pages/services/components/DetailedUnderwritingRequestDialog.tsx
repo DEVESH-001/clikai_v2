@@ -1,4 +1,5 @@
-'use client'
+"use client";
+
 import type React from "react";
 import { useState } from "react";
 import {
@@ -22,9 +23,8 @@ const DetailedUnderwritingRequestDialog: React.FC<
 > = ({ open, onOpenChange }) => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  // Remove these lines
-  // const [osFile, setOsFile] = useState<File | null>(null)
-  // const [rrFile, setRrFile] = useState<File | null>(null)
+
+
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -73,4 +73,3 @@ const DetailedUnderwritingRequestDialog: React.FC<
 };
 
 export default DetailedUnderwritingRequestDialog;
-
