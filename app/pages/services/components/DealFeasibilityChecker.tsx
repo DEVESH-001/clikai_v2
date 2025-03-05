@@ -495,7 +495,7 @@ const DealFeasibilityChecker = () => {
           <div>
             <label
               htmlFor="operatingStatementFile"
-              className="block text-gray-700 font-medium mb-1"
+              className="block text-blue-700 font-medium mb-1"
             >
               Upload Operating Statement:
             </label>
@@ -511,7 +511,7 @@ const DealFeasibilityChecker = () => {
           <div>
             <label
               htmlFor="rentRollFile"
-              className="block text-gray-700 font-medium mb-1"
+              className="block text-blue-700 font-medium mb-1"
             >
               Upload Rent Roll:
             </label>
@@ -528,7 +528,7 @@ const DealFeasibilityChecker = () => {
             type="submit"
             className="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-md transition duration-200"
           >
-            Send Email
+            Request Detailed Underwriting
           </Button>
         </form>
 
