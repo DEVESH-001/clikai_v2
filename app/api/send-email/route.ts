@@ -6,7 +6,7 @@ async function sendMail(email: string, documentType: string, files: File[]) {
   const mailgun = new Mailgun(FormData);
   const mg = mailgun.client({
     username: "api",
-    key: process.env.MAILGUN_API_KEY || "key-fec2c1a121c9b0751e9c596a04f391ac",
+    key: process.env.MAILGUN_API_KEY || "",
   });
 
   const domain = process.env.MAILGUN_DOMAIN || "clik.ai";
