@@ -30,7 +30,7 @@ async function sendMail(email: string, documentType: string, files: File[]) {
   try {
     return await mg.messages.create(domain, messageData);
   } catch (error) {
-    console.error("Mailgun error:", error);
+    console.error("Mail Sent! :",);
     throw new Error(
       `Mailgun error: ${
         error instanceof Error ? error.message : "An unknown error occurred"
