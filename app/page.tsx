@@ -7,7 +7,7 @@ import { PricingSection } from "@/components/sections/05-pricing-section"
 import { ServicesSection } from "@/components/sections/06-services-section"
 import { TestimonialsSection } from "@/components/sections/07-testimonials"
 import { FAQSection } from "@/components/sections/08-faq-section"
-
+import HomePageSchema from "@/components/schema/HomePageSchema"; 
 export const metadata: Metadata = {
   title: "AI-Powered Commercial Real Estate Solutions",
   description:
@@ -42,6 +42,7 @@ export default function Home() {
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-soft-light z-0"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-blue-100/30 via-purple-100/30 to-indigo-100/30 z-0"></div>
       <div className="relative z-10">
+      <HomePageSchema />
         <HeroSection />
         <QuizSection />
         <ProductCards highlightedProduct="AutoUW" />

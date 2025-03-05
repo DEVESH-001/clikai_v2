@@ -22,7 +22,7 @@ export default function BlogPostingSchema({
     "@type": "BlogPosting",
     headline: title,
     description: description,
-    image: featuredImage || "https://clik.ai/default-blog-image.jpg",
+    image: featuredImage || "https://clik.ai/defau lt-blog-image.jpg",
     datePublished: datePublished,
     dateModified: dateModified || datePublished,
     author: {
