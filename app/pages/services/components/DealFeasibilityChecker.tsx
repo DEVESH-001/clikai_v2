@@ -460,69 +460,75 @@ const DealFeasibilityChecker = () => {
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label
-              htmlFor="email"
-              className="block text-gray-700 font-medium mb-1"
-            >
-              Email:
-            </label>
-            <input
-              type="email"
-              id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+          <div className="space-y-2">
+            <div>
+              <label
+                htmlFor="email"
+                className="block text-gray-700 font-medium"
+              >
+                Email:
+              </label>
+              <input
+                placeholder="yourmail@gmail.com"
+                type="email"
+                id="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="documentType"
+                className="block text-gray-700 font-medium "
+              >
+                Full Name
+              </label>
+              <input
+                placeholder="John Doe"
+                type="text"
+                id="documentType"
+                value={documentType}
+                onChange={(e) => setDocumentType(e.target.value)}
+                required
+                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
           </div>
-          <div>
-            <label
-              htmlFor="documentType"
-              className="block text-gray-700 font-medium mb-1"
-            >
-              Note:
-            </label>
-            <input
-              type="text"
-              id="documentType"
-              value={documentType}
-              onChange={(e) => setDocumentType(e.target.value)}
-              required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="operatingStatementFile"
-              className="block text-blue-700 font-medium mb-1"
-            >
-              Upload Operating Statement:
-            </label>
-            <input
-              type="file"
-              id="operatingStatementFile"
-              accept=".pdf, .xls, .xlsx"
-              onChange={handleOperatingStatementChange}
-              required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
-          </div>
-          <div>
-            <label
-              htmlFor="rentRollFile"
-              className="block text-blue-700 font-medium mb-1"
-            >
-              Upload Rent Roll:
-            </label>
-            <input
-              type="file"
-              id="rentRollFile"
-              accept=".pdf, .xls, .xlsx"
-              onChange={handleRentRollChange}
-              required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-            />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label
+                htmlFor="operatingStatementFile"
+                className="block text-blue-700 font-medium mb-1"
+              >
+                Operating Statement
+              </label>
+              <input
+                type="file"
+                id="operatingStatementFile"
+                accept=".pdf, .xls, .xlsx"
+                onChange={handleOperatingStatementChange}
+                required
+                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="rentRollFile"
+                className="block text-blue-700 font-medium mb-1"
+              >
+                Rent Roll
+              </label>
+              <input
+                type="file"
+                id="rentRollFile"
+                accept=".pdf, .xls, .xlsx"
+                onChange={handleRentRollChange}
+                required
+                className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
           </div>
           <Button
             type="submit"

@@ -6,7 +6,7 @@ async function sendMail(email: string, documentType: string, files: File[]) {
   const mailgun = new Mailgun(FormData);
   const mg = mailgun.client({
     username: "api",
-    key: process.env.MAILGUN_API_KEY || "mail-sent",
+    key: process.env.MAILGUN_API_KEY || "key-fec2c1a121c9b0751e9c596a04f391ac",
   });
 
   const domain = process.env.MAILGUN_DOMAIN || "clik.ai";
@@ -30,7 +30,7 @@ async function sendMail(email: string, documentType: string, files: File[]) {
   try {
     return await mg.messages.create(domain, messageData);
   } catch (error) {
-    console.error("Mail Sent! :", error);
+    console.error("Mailgun error:", error);
     throw new Error(
       `Mailgun error: ${
         error instanceof Error ? error.message : "An unknown error occurred"
