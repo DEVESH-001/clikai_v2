@@ -23,7 +23,7 @@ async function sendMail(email: string, documentType: string, files: File[]) {
     from: fromEmail,
     to: [email],
     subject: `Document Received - ${documentType}`,
-    text: `We have received your ${documentType}. files Our team is working on it and will update you soon.`,
+    text: `We have received your files. Our team is working on it and will update you soon.`,
     attachment: attachments, // Use the attachments array
   };
 
