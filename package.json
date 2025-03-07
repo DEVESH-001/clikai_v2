@@ -112,6 +112,8 @@
 
     "express": "^4.21.2",
 
+    "express-rate-limit": "^7.5.0",
+
     "form-data": "^4.0.2",
 
     "formidable": "^3.5.2",
@@ -207,7 +209,6 @@
     "@types/multiparty": "^4.2.1",
 
     "@types/node": "^20",
-
 
     "@types/react": "^18",
 
