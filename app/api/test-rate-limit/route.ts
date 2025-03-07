@@ -1,0 +1,51 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import { type NextRequest, NextResponse } from "next/server";
+
+const requestCounts: { [key: string]: number } = {};
+const RATE_LIMIT = 60; // Max requests per minute
+const TIME_WINDOW = 60 * 1000; // 1 minute
+const requestTimestamps: { [key: string]: number } = {};
+
+function rateLimit(request: NextRequest) {
+  const ip =
+    request.headers.get("x-forwarded-for") ||
+    request.headers.get("remote-addr") ||
+    "127.0.0.1";
+  const currentTime = Date.now();
+
+  if (!requestTimestamps[ip]) {
+    requestTimestamps[ip] = currentTime;
+    requestCounts[ip] = 1;
+  } else {
+    const timeElapsed = currentTime - requestTimestamps[ip];
+    if (timeElapsed > TIME_WINDOW) {
+      requestCounts[ip] = 1; // Reset count
+      requestTimestamps[ip] = currentTime; // Reset timestamp
+    } else {
+      requestCounts[ip]++;
+      if (requestCounts[ip] > RATE_LIMIT) {
+        return NextResponse.json(
+          {
+            success: false,
+            error: "Too many requests, please try again later.",
+          },
+          { status: 429 }
+        );
+      }
+    }
+  }
+  return null; // No rate limit exceeded
+}
+
+export async function GET(request: NextRequest) {
+  const rateLimitResponse = rateLimit(request);
+  if (rateLimitResponse) {
+    return rateLimitResponse;
+  }
+
+  return NextResponse.json({
+    success: true,
+    message:
+    "If you see this message more than 60 times per minute, rate limiting is not working!",
+  });
+}

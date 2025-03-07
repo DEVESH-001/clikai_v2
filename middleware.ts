@@ -1,8 +1,28 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import { apiRateLimiter, fileUploadRateLimiter } from "./lib/rate-limits";
 
-export function middleware(request: NextRequest) {
-  // Add CSRF protection
+
+export async function middleware(request: NextRequest) {
+  // Get the pathname
+  const path = request.nextUrl.pathname;
+
+  // Apply different rate limits based on the path
+  if (path.startsWith("/api/send-email")) {
+    // Apply stricter rate limiting for file uploads
+    const response = await fileUploadRateLimiter.middleware(request);
+    if (response.status === 429) {
+      return response;
+    }
+  } else if (path.startsWith("/api/")) {
+    // Apply standard API rate limiting
+    const response = await apiRateLimiter.middleware(request);
+    if (response.status === 429) {
+      return response;
+    }
+  }
+
+  // Add security headers
   const requestHeaders = new Headers(request.headers);
   const response = NextResponse.next({
     request: {
@@ -10,7 +30,7 @@ export function middleware(request: NextRequest) {
     },
   });
 
-  // Add additional security headers that might not be in next.config.js
+  // Add additional security headers
   response.headers.set("X-XSS-Protection", "1; mode=block");
   response.headers.set("X-Frame-Options", "SAMEORIGIN");
   response.headers.set("X-Content-Type-Options", "nosniff");
@@ -20,12 +40,9 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     */
+    // Apply to all API routes
+    "/api/:path*",
+    // Apply to all routes except static assets
     "/((?!_next/static|_next/image|favicon.ico).*)",
   ],
 };

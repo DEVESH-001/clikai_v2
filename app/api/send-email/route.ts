@@ -1,9 +1,43 @@
-import { NextResponse } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import FormData from "form-data";
 import Mailgun from "mailgun.js";
-import { sanitizeFileName, validateFile } from "@/lib/file-validation";
-import { uploadRateLimiter } from "@/lib/rate-limits";
+import { fileUploadRateLimiter } from "@/lib/rate-limits";
 
+
+// File validation utility
+function validateFile(file: File) {
+  // Check file size (10MB limit)
+  const maxSize = 10 * 1024 * 1024; // 10MB
+  if (file.size > maxSize) {
+    return { valid: false, error: `File size exceeds 10MB limit` };
+  }
+
+  // Check file type
+  const allowedTypes = [
+    "application/pdf",
+    "application/vnd.ms-excel",
+    "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "text/csv",
+  ];
+
+  if (!allowedTypes.includes(file.type)) {
+    return {
+      valid: false,
+      error: `Invalid file type. Allowed types: PDF, Excel, CSV`,
+    };
+  }
+
+  return { valid: true, error: null };
+}
+
+// Sanitize file name to prevent path traversal
+function sanitizeFileName(fileName: string) {
+  // Remove path components and special characters
+  return fileName
+    .replace(/[/\\?%*:|"<>]/g, "-")
+    .replace(/\.\./g, "")
+    .trim();
+}
 
 async function sendMail(email: string, documentType: string, files: File[]) {
   // Validate email format
@@ -64,13 +98,10 @@ async function sendMail(email: string, documentType: string, files: File[]) {
   }
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
   try {
-    // Get client IP for rate limiting
-    const ip = request.headers.get("x-forwarded-for") || "unknown";
-
-    // Check rate limit
-    const rateLimitResult = uploadRateLimiter.check(ip);
+    // Apply rate limiting (this is a backup in case middleware fails)
+    const rateLimitResult = await fileUploadRateLimiter.check(request);
     if (!rateLimitResult.success) {
       return NextResponse.json(
         {
@@ -85,6 +116,9 @@ export async function POST(request: Request) {
             "X-RateLimit-Limit": rateLimitResult.limit.toString(),
             "X-RateLimit-Remaining": rateLimitResult.remaining.toString(),
             "X-RateLimit-Reset": rateLimitResult.resetTime.toString(),
+            "Retry-After": Math.ceil(
+              (rateLimitResult.resetTime - Date.now()) / 1000
+            ).toString(),
           },
         }
       );
@@ -117,32 +151,33 @@ export async function POST(request: Request) {
     ) as File;
     const rentRollFile = formData.get("rentRollFile") as File;
 
-    if (!operatingStatementFile || !rentRollFile) {
+    if (operatingStatementFile) {
+      files.push(operatingStatementFile);
+    }
+
+    if (rentRollFile) {
+      files.push(rentRollFile);
+    }
+
+    if (files.length === 0) {
       return NextResponse.json(
-        {
-          success: false,
-          error: "Both operating statement and rent roll files are required",
-        },
+        { success: false, error: "At least one file is required" },
         { status: 400 }
       );
     }
 
-    // Validate each file
-    for (const file of [operatingStatementFile, rentRollFile]) {
-      const validation = validateFile(file);
-      if (!validation.valid) {
-        return NextResponse.json(
-          { success: false, error: validation.error },
-          { status: 400 }
-        );
-      }
-      files.push(file);
-    }
-
     const responseData = await sendMail(email, documentType, files);
+
     return NextResponse.json(
       { success: true, data: responseData },
-      { status: 200 }
+      {
+        status: 200,
+        headers: {
+          "X-RateLimit-Limit": rateLimitResult.limit.toString(),
+          "X-RateLimit-Remaining": rateLimitResult.remaining.toString(),
+          "X-RateLimit-Reset": rateLimitResult.resetTime.toString(),
+        },
+      }
     );
   } catch (error) {
     const errorMessage =

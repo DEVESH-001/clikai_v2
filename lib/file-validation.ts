@@ -1,24 +1,21 @@
-export type FileValidationResult = {
-  valid: boolean;
-  error?: string;
-};
-
 export const ALLOWED_FILE_TYPES = [
   "application/pdf",
   "application/vnd.ms-excel",
   "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+  "text/csv",
 ];
 
 export const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 
-export function validateFile(file: File): FileValidationResult {
+export function validateFile(file: File) {
   // Check file size
   if (file.size > MAX_FILE_SIZE) {
     return {
       valid: false,
-      error: `File size exceeds the maximum allowed size of ${
-        MAX_FILE_SIZE / (1024 * 1024)
-      }MB`,
+      error: `File size exceeds 10MB limit. Current size: ${(
+        file.size /
+        (1024 * 1024)
+      ).toFixed(2)}MB`,
     };
   }
 
@@ -26,40 +23,27 @@ export function validateFile(file: File): FileValidationResult {
   if (!ALLOWED_FILE_TYPES.includes(file.type)) {
     return {
       valid: false,
-      error: `File type ${file.type} is not allowed. Allowed types: PDF, Excel`,
+      error: `Invalid file type: ${file.type}. Allowed types: PDF, Excel, CSV`,
     };
   }
 
-  // Check file name for suspicious patterns
+  // Check for suspicious file extensions
   const fileName = file.name.toLowerCase();
-  const suspiciousPatterns = [
-    ".exe",
-    ".js",
-    ".php",
-    ".asp",
-    ".aspx",
-    ".jsp",
-    ".cgi",
-    ".bat",
-    ".cmd",
-    ".sh",
-  ];
-
-  if (suspiciousPatterns.some((pattern) => fileName.includes(pattern))) {
+  const suspiciousExtensions = [".exe", ".bat", ".cmd", ".sh", ".php", ".js"];
+  if (suspiciousExtensions.some((ext) => fileName.endsWith(ext))) {
     return {
       valid: false,
-      error: "File name contains suspicious patterns",
+      error: `Suspicious file extension detected: ${fileName}`,
     };
   }
 
-  return { valid: true };
+  return { valid: true, error: null };
 }
 
-// Additional function to sanitize file names
-export function sanitizeFileName(fileName: string): string {
-  // Remove any path information
-  const name = fileName.split(/[/\\]/).pop() || "";
-
-  // Replace any non-alphanumeric characters except for periods, underscores, and hyphens
-  return name.replace(/[^a-zA-Z0-9._-]/g, "_");
+export function sanitizeFileName(fileName: string) {
+  // Remove path components and special characters
+  return fileName
+    .replace(/[/\\?%*:|"<>]/g, "-")
+    .replace(/\.\./g, "")
+    .trim();
 }
