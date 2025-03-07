@@ -112,7 +112,7 @@ export default function LoanOnboardingPage() {
           >
             <div className="relative w-full aspect-[16/9]">
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-06%20at%205.42.56%E2%80%AFAM-OO7vdZpBUj6KYDj0Puu32UN6KYyaAk.png"
+               src="/images/Services_Section_Images/Lease&DataAdministration/LoanOnboarding/Hero_Image.png"
                 alt="Loan Onboarding Workflow"
                 fill
                 className="object-contain"

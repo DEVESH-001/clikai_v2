@@ -14,8 +14,8 @@ async function sendMail(email: string, documentType: string, files: File[]) {
 
   const attachments = await Promise.all(
     files.map(async (file) => ({
-      data: Buffer.from(await file.arrayBuffer()), // Convert to Buffer
-      filename: file.name, // Use the original file name
+      data: Buffer.from(await file.arrayBuffer()),
+      filename: file.name, 
     }))
   );
 
@@ -24,7 +24,7 @@ async function sendMail(email: string, documentType: string, files: File[]) {
     to: [email],
     subject: `Document Received - ${documentType}`,
     text: `We have received your files. Our team is working on it and will update you soon.`,
-    attachment: attachments, // Use the attachments array
+    attachment: attachments, 
   };
 
   try {

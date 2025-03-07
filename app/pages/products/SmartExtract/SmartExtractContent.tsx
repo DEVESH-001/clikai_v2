@@ -164,7 +164,7 @@ export default function SmartExtractPage() {
             >
               <div className="relative w-full h-full mt-12">
                 <Image
-                  src="/images/products/smartExtract.png"
+                  src="/images/Products_Section_Images/SmartExtract/Hero_Image.png"
                   alt="SmartExtract Architecture"
                   fill
                   className="object-contain"

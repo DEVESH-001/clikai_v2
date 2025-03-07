@@ -323,7 +323,7 @@ export default function SalesforceCustomizationPage() {
                 className="relative h-[500px]"
               >
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/salesforce-customization-rJUSlxmehxUtmrxkWOicaDg8iXL6GC.svg"
+                  src="/images/Services_Section_Images/Consulting_Tech/Salesforce/Hero_image.svg"
                   alt="Salesforce Customization"
                   fill
                   className="object-contain"

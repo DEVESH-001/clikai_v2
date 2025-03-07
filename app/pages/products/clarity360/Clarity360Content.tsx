@@ -171,10 +171,10 @@ export default function Clarity360OMPage() {
               className="relative w-full aspect-[16/9] max-w-[130%] mx-auto overflow-hidden mt-8 lg:mt-0"
             >
               <Image
-                src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/om-jDnb2bEQitbGHHXu0iZPkyF9YQbvDA.png"
+                src="/images/Products_Section_Images/Clarity360/Hero_Image.png"
                 alt="Clarity360 OM Interface"
-                width={2496}
-                height={1404}
+                width={800}
+                height={600}
                 objectFit="cover"
                 className="object-contain"
               />
@@ -207,10 +207,10 @@ export default function Clarity360OMPage() {
                       <Image
                         src={
                           index === 0
-                            ? "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Clarity360%20OM.jpg-lOu8mP5JRIN8osc7Ejhmc831HZHOsC.jpeg"
+                            ? "/images/Products_Section_Images/Clarity360/Clarity360OM.jpeg"
                             : index === 1
-                            ? "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Clarity360%20Insurance%20Image.jpg-6ZZ1ZUnLroGo1FPUj4pEXkDheozUyn.jpeg"
-                            : "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Clarity360%20Appraisals.jpg-thUMBgTJ1g55zaUdiI00KJd3pjzPLm.jpeg"
+                            ? "/images/Products_Section_Images/Clarity360/Clarity360_Insurance.jpeg"
+                            : "/images/Products_Section_Images/Clarity360/Clarity360Appraisals.jpeg"
                         }
                         alt={`${product.title} Interface`}
                         width={600}

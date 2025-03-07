@@ -185,11 +185,11 @@ export default function AutoUWPage() {
                 className="lg:w-1/2 w-full"
               >
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/AUW-7xDRwqT2OvYQV4o16Wvc80A2GNO94L.svg"
+                  src="/images/Products_Section_Images/AutoUW/Hero_Image.png"
                   alt="InvestAssist Platform Interface"
                   width={2000}
                   height={1600}
-                  className="w-[800px] h-[500px]"
+                  className="w-[900px] h-[600px]"
                   priority
                 />
               </motion.div>
@@ -250,7 +250,7 @@ export default function AutoUWPage() {
               <h3 className="text-xl font-bold mb-4">Upload Documents</h3>
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Upload%20Deal-zx9muvM8LvgR28kFH3gW7ddfPU5kJe.png"
+                  src="/images/Products_Section_Images/AutoUW/Upload_Documents.png"
                   alt="Upload Documents Interface"
                   fill
                   className="object-cover"
@@ -266,7 +266,7 @@ export default function AutoUWPage() {
               <h3 className="text-xl font-bold mb-4">Data Extraction</h3>
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Data%20Extraction-liqARN9USxbPy30Le7a15ykfmrpsAK.png"
+                  src="/images/Products_Section_Images/AutoUW/Data Extraction.png"
                   alt="Data Extraction Process"
                   fill
                   className="object-cover"
@@ -281,7 +281,7 @@ export default function AutoUWPage() {
               <h3 className="text-xl font-bold mb-4">Review & Validate</h3>
               <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Review%20n%20Validate-TsLG0W0udPhd9nf81lKXcweFtA4RWJ.png"
+                  src="/images/Products_Section_Images/AutoUW/Review & Validate.png"
                   alt="Review and Validation Interface"
                   fill
                   className="object-cover"
@@ -297,7 +297,7 @@ export default function AutoUWPage() {
               <div className="grid  gap-4">
                 <div className="relative aspect-[16/9] rounded-lg overflow-hidden">
                   <Image
-                    src={"/images/products/DownloadResults.png"}
+                    src="/images/Products_Section_Images/AutoUW/DownloadResults.png"
                     alt="Operating Statement Results"
                     className="object-cover rounded-lg shadow-2xl"
                     width={1000}
@@ -352,71 +352,71 @@ export default function AutoUWPage() {
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Simple and Transparent Pricing
-        </h2>
-        <p className="text-xl text-gray-600">
-          Choose the plan that best fits your needs
-        </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">
+              Simple and Transparent Pricing
+            </h2>
+            <p className="text-xl text-gray-600">
+              Choose the plan that best fits your needs
+            </p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-        {plans.map((plan, index) => (
-          <motion.div
-            key={index}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-          >
-            <Card
-          className={`p-6 h-full ${
-            index === 1
-              ? "bg-gradient-to-br from-blue-600 to-blue-600 text-white"
-              : "bg-white/90 backdrop-blur-sm"
-          } hover:shadow-lg transition-all duration-300`}
-            >
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-            <div className="text-4xl font-bold mb-4">
-              {typeof plan.price === "number" ||
-              typeof plan.monthlyPrice === "number"
-            ? `$${plan.monthlyPrice || plan.price}`
-            : plan.price}
-              {typeof plan.price === "number" && (
-            <span className="text-lg">/month</span>
-              )}
-            </div>
-            <p
-              className={`mb-6 ${
-            index === 1 ? "text-blue-100" : "text-gray-600"
-              }`}
-            >
-              {plan.description}
-            </p>
-            <ul className="space-y-3 mb-6 text-left">
-              {plan.features.map((feature, i) => (
-            <li key={i} className="flex items-center gap-2">
-              <CheckCircle2
-                className={`h-5 w-5 ${
-              index === 1 ? "text-blue-200" : "text-green-500"
-                }`}
-              />
-              <span>{feature}</span>
-            </li>
-              ))}
-            </ul>
-            <Button
-              className={`w-full rounded-[8px] ${
-            index === 1
-              ? "bg-white text-blue-600 hover:bg-blue-50"
-              : "bg-blue-600 text-white hover:bg-blue-700"
-              }`}
-            >
-              {plan.cta}
-            </Button>
-          </div>
-            </Card>
-          </motion.div>
-        ))}
+            {plans.map((plan, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <Card
+                  className={`p-6 h-full ${
+                    index === 1
+                      ? "bg-gradient-to-br from-blue-600 to-blue-600 text-white"
+                      : "bg-white/90 backdrop-blur-sm"
+                  } hover:shadow-lg transition-all duration-300`}
+                >
+                  <div className="text-center">
+                    <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                    <div className="text-4xl font-bold mb-4">
+                      {typeof plan.price === "number" ||
+                      typeof plan.monthlyPrice === "number"
+                        ? `$${plan.monthlyPrice || plan.price}`
+                        : plan.price}
+                      {typeof plan.price === "number" && (
+                        <span className="text-lg">/month</span>
+                      )}
+                    </div>
+                    <p
+                      className={`mb-6 ${
+                        index === 1 ? "text-blue-100" : "text-gray-600"
+                      }`}
+                    >
+                      {plan.description}
+                    </p>
+                    <ul className="space-y-3 mb-6 text-left">
+                      {plan.features.map((feature, i) => (
+                        <li key={i} className="flex items-center gap-2">
+                          <CheckCircle2
+                            className={`h-5 w-5 ${
+                              index === 1 ? "text-blue-200" : "text-green-500"
+                            }`}
+                          />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button
+                      className={`w-full rounded-[8px] ${
+                        index === 1
+                          ? "bg-white text-blue-600 hover:bg-blue-50"
+                          : "bg-blue-600 text-white hover:bg-blue-700"
+                      }`}
+                    >
+                      {plan.cta}
+                    </Button>
+                  </div>
+                </Card>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

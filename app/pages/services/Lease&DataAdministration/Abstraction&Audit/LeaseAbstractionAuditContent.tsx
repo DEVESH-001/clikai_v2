@@ -164,7 +164,7 @@ const services = [
 const tools = [
   {
     name: "Oracle JD Edwards",
-    logo: "/images/Services_Image/Oracle.png",
+    logo: "/images/Services_Section_Images/Lease&DataAdministration/Abstraction&Audit/Oracle.png",
     expertise: "Advanced",
     features: [
       "Financial Management",
@@ -174,13 +174,13 @@ const tools = [
   },
   {
     name: "Yardi",
-    logo: "/images/Services_Image/Yardi.png",
+    logo: "/images/Services_Section_Images/Lease&DataAdministration/Abstraction&Audit/Yardi.png",
     expertise: "Expert",
     features: ["Voyager", "Investment Management", "Lease Abstraction"],
   },
   {
     name: "MRI Software",
-    logo: "/images/Services_Image/MRI.webp",
+    logo: "/images/Services_Section_Images/Lease&DataAdministration/Abstraction&Audit/MRI.webp",
     expertise: "Advanced",
     features: [
       "Commercial Management",
@@ -190,7 +190,7 @@ const tools = [
   },
   {
     name: "Lease Harbor",
-    logo: "/images/Services_Image/Lease_Harbor.png.webp",
+    logo: "/images/Services_Section_Images/Lease&DataAdministration/Abstraction&Audit/Lease_Harbor.webp",
     expertise: "Expert",
     features: [
       "Lease Administration",
@@ -200,13 +200,13 @@ const tools = [
   },
   {
     name: "Visual Lease",
-    logo: "/images/Services_Image/visual.png",
+    logo: "/images/Services_Section_Images/Lease&DataAdministration/Abstraction&Audit/visual.png",
     expertise: "Advanced",
     features: ["Lease Accounting", "FASB/IASB Compliance", "Lease Abstraction"],
   },
   {
     name: "ProLease",
-    logo: "/images/Services_Image/proLease.png",
+    logo: "/images/Services_Section_Images/Lease&DataAdministration/Abstraction&Audit/proLease.png",
     expertise: "Advanced",
     features: [
       "Lease Administration",
@@ -216,7 +216,7 @@ const tools = [
   },
   {
     name: "Red Hat",
-    logo: "/images/Services_Image/Redhat.webp",
+    logo: "/images/Services_Section_Images/Lease&DataAdministration/Abstraction&Audit/Redhat.webp",
     expertise: "Expert",
     features: [
       "Enterprise Solutions",

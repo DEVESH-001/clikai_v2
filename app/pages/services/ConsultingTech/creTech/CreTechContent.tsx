@@ -256,7 +256,7 @@ export default function CRETechnologyConsultingPage() {
             >
               <div className="relative w-full h-[50vh] md:h-[800px]">
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/managed-services-ecosystem-9dLjT4mCgNpOl4DTMhp7OD0xVCvm2S.png"
+                  src="/images/Services_Section_Images/Consulting_Tech/CreTech/Hero_Image.png"
                   alt="Managed Services Ecosystem"
                   fill
                   priority

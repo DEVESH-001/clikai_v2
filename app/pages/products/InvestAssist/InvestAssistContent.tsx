@@ -97,7 +97,7 @@ export default function InvestAssistPage() {
                 className="lg:w-1/2 w-full"
               >
                 <Image
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/investAssist-combined-125jokgtmO7dgKE9jwB2QPPjWS8G6j.png"
+                  src="/images/Products_Section_Images/InvestAssist/Hero_Image.png"
                   alt="InvestAssist Platform Interface"
                   width={2000}
                   height={1600}

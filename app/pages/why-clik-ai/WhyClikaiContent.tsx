@@ -342,7 +342,7 @@ export default function WhyClikaiPage() {
                     <p className="text-gray-600">{milestone.description}</p>
                   </div>
                   <div className="relative">
-                    <div className="absolute w-4 h-4 bg-blue-600 rounded-full left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
+                    <div className="absolute  bg-blue-600 rounded-full left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2"></div>
                     <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center">
                       <Icon className="w-6 h-6 text-blue-600" />
                     </div>
