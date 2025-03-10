@@ -10,7 +10,6 @@ import ChatBot from "@/components/Chatbot";
 import OrganizationSchema from "@/components/schema/OrginazationSchema";
 import WebsiteSchema from "@/components/schema/WebsiteSchema";
 
-//import Mixpanel from "./mixpanel";
 
 
 //metadata
