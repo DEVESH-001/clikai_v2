@@ -45,6 +45,8 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 import { DisbursementFlowchart } from "../../components/DisbursementFlowchart";
+import { BookDemoModal } from "@/components/BookDemo";
+import { useState } from "react";
 
 ChartJS.register(
   CategoryScale,
@@ -79,6 +81,9 @@ const journey = [
   },
 ];
 export default function DisbursementPCNASupport() {
+    const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+    const openBookDemo = () => setIsBookDemoOpen(true);
+    const closeBookDemo = () => setIsBookDemoOpen(false);
   return (
     <div className={`min-h-screen ${GeistSans.className}`}>
       {/* Hero Section */}
@@ -516,6 +521,7 @@ export default function DisbursementPCNASupport() {
             >
               <Button
                 size="lg"
+                onClick={openBookDemo}
                 className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
               >
                 Book Demo
@@ -523,6 +529,7 @@ export default function DisbursementPCNASupport() {
               </Button>
             </motion.div>
           </motion.div>
+          <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
         </div>
       </section>
     </div>

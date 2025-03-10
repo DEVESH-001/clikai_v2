@@ -20,6 +20,7 @@ import {
 
 import { motion } from "framer-motion";
 import DynamicBackground from "@/components/DynamicBackgroud";
+import { BookDemoModal } from "@/components/BookDemo";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -107,6 +108,9 @@ const financialModels = [
 ];
 
 export default function CustomFinancialModelDevelopment() {
+    const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+    const openBookDemo = () => setIsBookDemoOpen(true);
+    const closeBookDemo = () => setIsBookDemoOpen(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [, setScrollY] = useState(0);
 
@@ -258,6 +262,7 @@ export default function CustomFinancialModelDevelopment() {
               </Button>
               <Button
                 size="lg"
+                onClick={openBookDemo}
                 variant="outline"
                 className="text-blue-600 border-blue-600 hover:bg-indigo-50 transition-colors duration-300"
               >
@@ -535,6 +540,7 @@ export default function CustomFinancialModelDevelopment() {
                 <Button
                   size="lg"
                   className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
+                  onClick={openBookDemo}
                 >
                   Book Demo
                   <ArrowRight className="ml-2 h-5 w-5" />
@@ -546,6 +552,7 @@ export default function CustomFinancialModelDevelopment() {
             </motion.div>
           </div>
         </section>
+        <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
       </div>
     </div>
   );

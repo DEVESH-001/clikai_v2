@@ -126,6 +126,18 @@ export function Scripts() {
             src="//js.hs-scripts.com/4401613.js"
             strategy="afterInteractive"
           />
+
+          {/* HubSpot Form with Google Meeting Link */}
+          <script
+            src="https://js.hsforms.net/forms/embed/4401613.js"
+            defer
+          ></script>
+          <div
+            className="hs-form-frame"
+            data-region="na1"
+            data-form-id="327d57f3-4c3b-4ab5-810a-c8b6daf37796"
+            data-portal-id="4401613"
+          ></div>
         </>
       )}
 

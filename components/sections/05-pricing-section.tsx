@@ -14,6 +14,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Switch } from "../ui/switch";
+import { BookDemoModal } from "../BookDemo";
 
 // Define the structure of a pricing plan
 interface Plan {
@@ -151,6 +152,9 @@ const featureComparison = [
 ];
 
 export function PricingSection() {
+  const [isBookDemoOpen, setIsBookDemoOpen] = React.useState(false);
+  const openBookDemo = () => setIsBookDemoOpen(true);
+  const closeBookDemo = () => setIsBookDemoOpen(false);
 
   const [dealsPerMonth, setDealsPerMonth] = React.useState(10);
   const [isYearly, setIsYearly] = React.useState(false);
@@ -223,7 +227,7 @@ export function PricingSection() {
             Choose the perfect plan for your business
           </p>
         </div>
-        
+
         {/* Billing Toggle */}
         <div className="flex items-center justify-center gap-3 mb-8">
           <span
@@ -257,7 +261,7 @@ export function PricingSection() {
             <span className="font-bold text-blue-600">{dealsPerMonth}</span>{" "}
             deals per month
           </p>
-          <div className="relative py-4"> 
+          <div className="relative py-4">
             <Slider
               value={[dealsPerMonth]}
               onValueChange={(value) => setDealsPerMonth(value[0])}
@@ -362,6 +366,7 @@ export function PricingSection() {
                       ? "bg-blue-600 hover:bg-blue-700"
                       : "bg-blue-500 hover:bg-blue-600"
                   } text-white font-bold py-2 px-4 rounded transition duration-300`}
+                  onClick={openBookDemo}
                 >
                   {plan.cta}
                 </Button>
@@ -373,7 +378,7 @@ export function PricingSection() {
         {/* Feature Comparison Table */}
         <div className="mt-16 max-w-4xl mx-auto bg-white/90 shadow-lg rounded-lg overflow-hidden backdrop-blur-sm">
           <Table>
-            <TableHeader >
+            <TableHeader>
               <TableRow>
                 <TableHead className="text-left text-black font-bold">
                   Feature
@@ -391,51 +396,52 @@ export function PricingSection() {
             </TableHeader>
             <TableBody>
               {featureComparison.map((item, index) => (
-              <TableRow
-                key={index}
-                className={index % 2 === 0 ? "bg-blue-100/40" : ""}
-              >
-                <TableCell className="font-medium text-gray-700">
-                {item.feature}
-                </TableCell>
-                <TableCell className="text-center">
-                {typeof item.selfService === "boolean" ? (
-                  item.selfService ? (
-                  <Check className="inline-block text-green-500" />
-                  ) : (
-                  <X className="inline-block text-red-500" />
-                  )
-                ) : (
-                  <span className="text-gray-600">{item.selfService}</span>
-                )}
-                </TableCell>
-                <TableCell className="text-center">
-                {typeof item.growth === "boolean" ? (
-                  item.growth ? (
-                  <Check className="inline-block text-green-500" />
-                  ) : (
-                  <X className="inline-block text-red-500" />
-                  )
-                ) : (
-                  <span className="text-gray-600">{item.growth}</span>
-                )}
-                </TableCell>
-                <TableCell className="text-center">
-                {typeof item.enterprise === "boolean" ? (
-                  item.enterprise ? (
-                  <Check className="inline-block text-green-500" />
-                  ) : (
-                  <X className="inline-block text-red-500" />
-                  )
-                ) : (
-                  <span className="text-gray-600">{item.enterprise}</span>
-                )}
-                </TableCell>
-              </TableRow>
+                <TableRow
+                  key={index}
+                  className={index % 2 === 0 ? "bg-blue-100/40" : ""}
+                >
+                  <TableCell className="font-medium text-gray-700">
+                    {item.feature}
+                  </TableCell>
+                  <TableCell className="text-center">
+                    {typeof item.selfService === "boolean" ? (
+                      item.selfService ? (
+                        <Check className="inline-block text-green-500" />
+                      ) : (
+                        <X className="inline-block text-red-500" />
+                      )
+                    ) : (
+                      <span className="text-gray-600">{item.selfService}</span>
+                    )}
+                  </TableCell>
+                  <TableCell className="text-center">
+                    {typeof item.growth === "boolean" ? (
+                      item.growth ? (
+                        <Check className="inline-block text-green-500" />
+                      ) : (
+                        <X className="inline-block text-red-500" />
+                      )
+                    ) : (
+                      <span className="text-gray-600">{item.growth}</span>
+                    )}
+                  </TableCell>
+                  <TableCell className="text-center">
+                    {typeof item.enterprise === "boolean" ? (
+                      item.enterprise ? (
+                        <Check className="inline-block text-green-500" />
+                      ) : (
+                        <X className="inline-block text-red-500" />
+                      )
+                    ) : (
+                      <span className="text-gray-600">{item.enterprise}</span>
+                    )}
+                  </TableCell>
+                </TableRow>
               ))}
             </TableBody>
           </Table>
         </div>
+        <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
       </div>
     </section>
   );

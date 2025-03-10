@@ -19,6 +19,7 @@ import { cn } from "@/lib/utils";
 
 import { usePathname } from "next/navigation";
 import { GeistSans } from "geist/font/sans";
+import { BookDemoModal } from "./BookDemo";
 
 // const navItemClass =
 //   "tracking-wider text-sm uppercase font-bold text-white hover:text-blue-300 transition-colors";
@@ -117,6 +118,8 @@ const services = [
   },
 ];
 
+
+
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
@@ -149,6 +152,12 @@ export function Navbar() {
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  //hubspot window
+    const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+
+    const openBookDemo = () => setIsBookDemoOpen(true);
+    const closeBookDemo = () => setIsBookDemoOpen(false);
 
   // Add scroll event listener
   React.useEffect(() => {
@@ -359,12 +368,16 @@ export function Navbar() {
             <Link href="/login" className={dynamicNavItemClass}>
               LOG IN
             </Link>
-            <Link href="/get-started">
-              <Button className="bg-blue-600 text-white font-bold hover:bg-blue-700">
+            <Link href="#">
+              <Button
+                className="bg-blue-600 text-white font-bold hover:bg-blue-700"
+                onClick={openBookDemo}
+              >
                 <span className={GeistSans.className}>BOOK DEMO</span>
               </Button>
             </Link>
           </div>
+          <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
         </div>
       </div>
 

@@ -6,8 +6,6 @@ import { useState } from "react";
 import { CookieBanner } from "./CookiesBanner";
 import { CookiePreferencesPopup } from "./cookie-preference-popup";
 
-
-
 interface CookieConsentProviderProps {
   children: React.ReactNode;
 }

@@ -24,6 +24,8 @@ import {
   Database,
   DollarSign,
 } from "lucide-react";
+import { BookDemoModal } from "@/components/BookDemo";
+import { useState } from "react";
 
 // Product data
 const products = [
@@ -111,6 +113,11 @@ const faqItems = [
 ];
 
 export default function Clarity360OMPage() {
+    const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+
+    const openBookDemo = () => setIsBookDemoOpen(true);
+    const closeBookDemo = () => setIsBookDemoOpen(false);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-purple-50 to-indigo-50">
       {/* Background Elements */}
@@ -158,6 +165,7 @@ export default function Clarity360OMPage() {
                 <Button
                   size="lg"
                   className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
+                  onClick={openBookDemo}
                 >
                   Book Demo
                   <ArrowUpRight className="ml-2 h-4 w-4" />
@@ -262,7 +270,10 @@ export default function Clarity360OMPage() {
                     whileTap={{ scale: 0.98 }}
                     className="mt-4"
                   >
-                    <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white">
+                    <Button
+                      className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white"
+                      onClick={openBookDemo}
+                    >
                       Book Demo
                       <ArrowUpRight className="ml-2 h-4 w-4" />
                     </Button>
@@ -544,6 +555,7 @@ export default function Clarity360OMPage() {
                 <Button
                   size="lg"
                   className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px] whitespace-nowrap"
+                  onClick={openBookDemo}
                 >
                   Book Demo
                   <ArrowUpRight className="ml-2 h-4 w-4" />
@@ -652,6 +664,7 @@ export default function Clarity360OMPage() {
                 <Button
                   size="lg"
                   className="w-full bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
+                  onClick={openBookDemo}
                 >
                   Book Demo
                   <ArrowUpRight className="ml-2 h-4 w-4" />
@@ -723,12 +736,14 @@ export default function Clarity360OMPage() {
               <Button
                 size="lg"
                 className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
+                onClick={openBookDemo}
               >
                 Book Demo
                 <ArrowUpRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
           </motion.div>
+          <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
         </div>
       </section>
     </div>

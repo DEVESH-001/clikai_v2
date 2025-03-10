@@ -26,6 +26,7 @@ import {
   ArcElement,
 } from "chart.js"
 import DealFeasibilityChecker from "../../components/DealFeasibilityChecker"
+import { BookDemoModal } from "@/components/BookDemo"
 
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend, ArcElement)
@@ -41,6 +42,9 @@ export default function UnderwritingDueDiligenceSupport() {
   const [userEmail, setUserEmail] = useState("");
   const [isUploading, setIsUploading] = useState(false);
   const { toast } = useToast();
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+  const openBookDemo = () => setIsBookDemoOpen(true);
+  const closeBookDemo = () => setIsBookDemoOpen(false);
 
   const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>, documentType: string) => {
     if (!e.target.files || !e.target.files[0]) return;
@@ -172,6 +176,7 @@ export default function UnderwritingDueDiligenceSupport() {
                 </h4>
                 <Button
                   size="lg"
+                  onClick={openBookDemo}
                   className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 text-lg px-8 py-3"
                 >
                   Book Demo
@@ -186,6 +191,7 @@ export default function UnderwritingDueDiligenceSupport() {
               >
                 <DealFeasibilityChecker />
               </motion.div>
+              <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
             </div>
           </div>
         </section>
@@ -744,7 +750,6 @@ export default function UnderwritingDueDiligenceSupport() {
                         </CardTitle>
                       </CardHeader>
                       <CardContent className="pt-2">
-
                         <div className="grid grid-cols-2 gap-2">
                           <div className="bg-purple-50 p-2 rounded-lg">
                             <h4 className="text-xs font-semibold text-purple-900">
@@ -1323,8 +1328,8 @@ export default function UnderwritingDueDiligenceSupport() {
             <Card className="max-w-2xl mx-auto">
               <CardContent className="p-6">
                 <div className="mb-4">
-                  <Label 
-                    htmlFor="user-email" 
+                  <Label
+                    htmlFor="user-email"
                     className="block mb-2 text-sm font-medium text-gray-700"
                   >
                     Your Email
@@ -1350,7 +1355,9 @@ export default function UnderwritingDueDiligenceSupport() {
                     <Input
                       id="operating-statement"
                       type="file"
-                      onChange={(e) => handleFileUpload(e, "Operating Statement")}
+                      onChange={(e) =>
+                        handleFileUpload(e, "Operating Statement")
+                      }
                       className="text-sm text-gray-700"
                       accept=".pdf,.xlsx,.xls"
                       disabled={isUploading}

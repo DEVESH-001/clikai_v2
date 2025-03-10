@@ -35,6 +35,8 @@ import {
 } from "@/components/ui/card";
 import type React from "react";
 import Link from "next/link";
+import { BookDemoModal } from "@/components/BookDemo";
+import { useState } from "react";
 
 const CodePreview = ({ children }: { children: React.ReactNode }) => (
   <div className="relative group">
@@ -71,6 +73,9 @@ const AIBackground = () => (
 );
 
 export default function SmartExtractPage() {
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+  const openBookDemo = () => setIsBookDemoOpen(true);
+  const closeBookDemo = () => setIsBookDemoOpen(false);
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
@@ -697,6 +702,7 @@ console.log(result.data);`}
               >
                 <Button
                   size="lg"
+                  onClick={openBookDemo}
                   className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
                 >
                   Book Demo
@@ -704,6 +710,7 @@ console.log(result.data);`}
                 </Button>
               </motion.div>
             </motion.div>
+            <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
           </div>
         </section>
       </div>

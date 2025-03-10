@@ -23,6 +23,8 @@ import {
   FileText,
 } from "lucide-react";
 import { HeroVideoDialogDemo } from "@/components/magicui/HeroVideoDialogDemo";
+import { BookDemoModal } from "@/components/BookDemo";
+import { useState } from "react";
 
 // Features data
 const features = [
@@ -135,6 +137,11 @@ const faqItems = [
 ];
 
 export default function AutoUWPage() {
+   const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+
+   const openBookDemo = () => setIsBookDemoOpen(true);
+   const closeBookDemo = () => setIsBookDemoOpen(false);
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-purple-50 to-indigo-50">
       {/* Background Elements */}
@@ -170,11 +177,16 @@ export default function AutoUWPage() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
                     size="lg"
+                    onClick={openBookDemo}
                     className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
                   >
                     Book Demo
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
+                  <BookDemoModal
+                    isOpen={isBookDemoOpen}
+                    onClose={closeBookDemo}
+                  />
                 </div>
               </motion.div>
 
@@ -409,7 +421,9 @@ export default function AutoUWPage() {
                         index === 1
                           ? "bg-white text-blue-600 hover:bg-blue-50"
                           : "bg-blue-600 text-white hover:bg-blue-700"
-                      }`}
+                      }
+                      `}
+                      onClick={openBookDemo}
                     >
                       {plan.cta}
                     </Button>
@@ -486,6 +500,7 @@ export default function AutoUWPage() {
             >
               <Button
                 size="lg"
+                onClick={openBookDemo}
                 className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
               >
                 Book Demo
@@ -493,6 +508,7 @@ export default function AutoUWPage() {
               </Button>
             </motion.div>
           </motion.div>
+          <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
         </div>
       </section>
     </div>

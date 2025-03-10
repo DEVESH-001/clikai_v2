@@ -1,7 +1,6 @@
 import type React from "react";
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
-import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 import { Navbar } from "@/components/navbar";
 import { Footer } from "@/components/footer";
@@ -11,8 +10,10 @@ import ChatBot from "@/components/Chatbot";
 import OrganizationSchema from "@/components/schema/OrginazationSchema";
 import WebsiteSchema from "@/components/schema/WebsiteSchema";
 
+//import Mixpanel from "./mixpanel";
 
 
+//metadata
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_APP_URL || "http://clikai-v2.vercel.app/"
@@ -49,24 +50,24 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-      <OrganizationSchema />
-      <WebsiteSchema />
+        <OrganizationSchema />
+        <WebsiteSchema />
       </head>
-
+      {/* <Mixpanel> */}
       <body className={GeistSans.className}>
         <CookieConsentProvider>
           <Scripts />
-          
           <Navbar />
           <main>
             {children}
-            <Analytics />
           </main>
-          <ChatBot/>
+          <ChatBot />
           <Footer />
         </CookieConsentProvider>
       </body>
+      {/* </Mixpanel> */}
     </html>
   );
 }
+
 

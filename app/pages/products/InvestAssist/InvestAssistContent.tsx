@@ -24,8 +24,15 @@ import {
 } from "@/components/ui/accordion";
 import { Switch } from "@/components/ui/switch";
 import { useState } from "react";
+import { BookDemoModal } from "@/components/BookDemo";
 
 export default function InvestAssistPage() {
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+
+  const openBookDemo = () => setIsBookDemoOpen(true);
+  const closeBookDemo = () => setIsBookDemoOpen(false);
+
+
   const [isYearly, setIsYearly] = useState(false);
 
   const calculateSavings = (monthlyPrice: number) => {
@@ -83,6 +90,7 @@ export default function InvestAssistPage() {
                   <Button
                     size="lg"
                     variant="outline"
+                    onClick={openBookDemo}
                     className="border-blue-600 text-blue-600 hover:bg-blue-50"
                   >
                     Book Demo
@@ -316,6 +324,7 @@ export default function InvestAssistPage() {
               <Button
                 size="lg"
                 className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+                onClick={openBookDemo}
               >
                 Book Demo
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -662,12 +671,14 @@ export default function InvestAssistPage() {
               <Button
                 size="lg"
                 variant="outline"
+                onClick={openBookDemo}
                 className="bg-transparent border-white text-white hover:bg-white/10 transition-all duration-300"
               >
                 Book Demo
               </Button>
             </div>
           </motion.div>
+          <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
         </div>
       </section>
     </div>

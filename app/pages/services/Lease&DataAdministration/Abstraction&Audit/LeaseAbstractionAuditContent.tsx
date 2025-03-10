@@ -21,6 +21,7 @@ import {
   Settings,
 } from "lucide-react";
 import Image from "next/image";
+import { BookDemoModal } from "@/components/BookDemo";
 
 // Enhanced services with more detail and balanced content
 const services = [
@@ -301,6 +302,9 @@ export default function LeaseAbstractionAuditPage() {
   // });
 
   //const [activeTab, setActiveTab] = useState("overview");
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+  const openBookDemo = () => setIsBookDemoOpen(true);
+  const closeBookDemo = () => setIsBookDemoOpen(false);
 
   // Animation variants
   const containerVariants = {
@@ -989,12 +993,14 @@ export default function LeaseAbstractionAuditPage() {
                 <Button
                   size="lg"
                   className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
+                  onClick={openBookDemo}
                 >
                   Book Demo
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </motion.div>
             </motion.div>
+            <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
           </div>
         </section>
       </div>
