@@ -240,14 +240,15 @@ export function Footer() {
                   Disclaimer
                 </Link>
               </li>
-              <li>
+              {/* Bug Bounty */}
+              {/* <li>
                 <Link
                   href="/pages/bug-bounty"
                   className="text-gray-300 hover:text-blue-300"
                 >
                   Bug Bounty
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>

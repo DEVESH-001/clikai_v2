@@ -16,6 +16,7 @@ import {
 import { Switch } from "../ui/switch";
 import { BookDemoModal } from "../BookDemo";
 
+
 // Define the structure of a pricing plan
 interface Plan {
   name: string;

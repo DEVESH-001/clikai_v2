@@ -53,7 +53,7 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.vercel-insights.com https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com; style-src 'self' 'unsafe-inline' https://*.hsforms.net; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://admin139255a85d.wpcomstaging.com https://*.vercel.app https://*.hubspot.com https://*.hsforms.com; frame-src 'self' https://*.hsforms.com https://*.hubspot.com",
+              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.vercel-insights.com https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com; style-src 'self' 'unsafe-inline' https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com; img-src 'self' data: https: blob:; font-src 'self' data: https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com; connect-src 'self' https://admin139255a85d.wpcomstaging.com https://*.vercel.app https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com; frame-src 'self' https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com",
           },
         ],
       },
