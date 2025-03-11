@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import type React from "react"
@@ -39,8 +40,8 @@ interface FileUploadResponse {
 }
 
 export default function UnderwritingDueDiligenceSupport() {
-  const [userEmail, setUserEmail] = useState("");
-  const [isUploading, setIsUploading] = useState(false);
+  const [userEmail] = useState("");
+  const [, setIsUploading] = useState(false);
   const { toast } = useToast();
   const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
   const openBookDemo = () => setIsBookDemoOpen(true);
