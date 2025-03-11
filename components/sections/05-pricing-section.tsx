@@ -14,7 +14,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Switch } from "../ui/switch";
-import { BookDemoModal } from "../BookDemo";
+import { BookDemoIframeModal } from "../BookDemoIframe";
+
 
 
 // Define the structure of a pricing plan
@@ -442,7 +443,7 @@ export function PricingSection() {
             </TableBody>
           </Table>
         </div>
-        <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+        <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
       </div>
     </section>
   );

@@ -31,11 +31,11 @@ export function BookDemoIframeModal({ isOpen, onClose }: BookDemoModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange} >
-      <DialogContent className="sm:max-w-[800px] max-h-[100vh] overflow-y-auto">
+      <DialogContent className="sm:max-w-[800px] max-h-[90vh] overflow-y-auto">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center">Secure Your Spot</DialogTitle>
           <DialogDescription className="text-center">
-            Fill in your details and select a convenient time for your personalized demo.
+          Fill in Your Details & Pick a Time! 
           </DialogDescription>
         </DialogHeader>
        

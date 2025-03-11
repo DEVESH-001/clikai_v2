@@ -24,7 +24,8 @@ import {
 } from "@/components/ui/accordion";
 import { Switch } from "@/components/ui/switch";
 import { useState } from "react";
-import { BookDemoModal } from "@/components/BookDemo";
+import { BookDemoIframeModal } from "@/components/BookDemoIframe";
+
 
 export default function InvestAssistPage() {
   const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
@@ -678,7 +679,7 @@ export default function InvestAssistPage() {
               </Button>
             </div>
           </motion.div>
-          <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+          <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
         </div>
       </section>
     </div>

@@ -45,8 +45,9 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
 import { DisbursementFlowchart } from "../../components/DisbursementFlowchart";
-import { BookDemoModal } from "@/components/BookDemo";
+
 import { useState } from "react";
+import { BookDemoIframeModal } from "@/components/BookDemoIframe";
 
 ChartJS.register(
   CategoryScale,
@@ -529,7 +530,7 @@ export default function DisbursementPCNASupport() {
               </Button>
             </motion.div>
           </motion.div>
-          <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+          <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
         </div>
       </section>
     </div>

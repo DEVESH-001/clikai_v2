@@ -26,7 +26,8 @@ import {
   ArcElement,
 } from "chart.js"
 import DealFeasibilityChecker from "../../components/DealFeasibilityChecker"
-import { BookDemoModal } from "@/components/BookDemo"
+import { BookDemoIframeModal } from "@/components/BookDemoIframe"
+
 
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend, ArcElement)
@@ -191,7 +192,7 @@ export default function UnderwritingDueDiligenceSupport() {
               >
                 <DealFeasibilityChecker />
               </motion.div>
-              <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+              <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
             </div>
           </div>
         </section>

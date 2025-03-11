@@ -24,8 +24,9 @@ import {
   Database,
   DollarSign,
 } from "lucide-react";
-import { BookDemoModal } from "@/components/BookDemo";
+
 import { useState } from "react";
+import { BookDemoIframeModal } from "@/components/BookDemoIframe";
 
 // Product data
 const products = [
@@ -743,7 +744,7 @@ export default function Clarity360OMPage() {
               </Button>
             </motion.div>
           </motion.div>
-          <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+          <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
         </div>
       </section>
     </div>

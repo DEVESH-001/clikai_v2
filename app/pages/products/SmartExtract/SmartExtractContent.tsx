@@ -35,8 +35,9 @@ import {
 } from "@/components/ui/card";
 import type React from "react";
 import Link from "next/link";
-import { BookDemoModal } from "@/components/BookDemo";
+
 import { useState } from "react";
+import { BookDemoIframeModal } from "@/components/BookDemoIframe";
 
 const CodePreview = ({ children }: { children: React.ReactNode }) => (
   <div className="relative group">
@@ -710,7 +711,10 @@ console.log(result.data);`}
                 </Button>
               </motion.div>
             </motion.div>
-            <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+            <BookDemoIframeModal
+              isOpen={isBookDemoOpen}
+              onClose={closeBookDemo}
+            />
           </div>
         </section>
       </div>

@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion"; 
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -23,8 +23,9 @@ import {
   FileText,
 } from "lucide-react";
 import { HeroVideoDialogDemo } from "@/components/magicui/HeroVideoDialogDemo";
-import { BookDemoModal } from "@/components/BookDemo";
+
 import { useState } from "react";
+import { BookDemoIframeModal } from "@/components/BookDemoIframe";
 
 // Features data
 const features = [
@@ -137,10 +138,10 @@ const faqItems = [
 ];
 
 export default function AutoUWPage() {
-   const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
 
-   const openBookDemo = () => setIsBookDemoOpen(true);
-   const closeBookDemo = () => setIsBookDemoOpen(false);
+  const openBookDemo = () => setIsBookDemoOpen(true);
+  const closeBookDemo = () => setIsBookDemoOpen(false);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-purple-50 to-indigo-50">
@@ -183,7 +184,7 @@ export default function AutoUWPage() {
                     Book Demo
                     <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
-                  <BookDemoModal
+                  <BookDemoIframeModal
                     isOpen={isBookDemoOpen}
                     onClose={closeBookDemo}
                   />
@@ -508,7 +509,10 @@ export default function AutoUWPage() {
               </Button>
             </motion.div>
           </motion.div>
-          <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+          <BookDemoIframeModal
+            isOpen={isBookDemoOpen}
+            onClose={closeBookDemo}
+          />
         </div>
       </section>
     </div>

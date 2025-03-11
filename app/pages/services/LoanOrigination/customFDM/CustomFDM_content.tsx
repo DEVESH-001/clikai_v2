@@ -20,7 +20,8 @@ import {
 
 import { motion } from "framer-motion";
 import DynamicBackground from "@/components/DynamicBackgroud";
-import { BookDemoModal } from "@/components/BookDemo";
+import { BookDemoIframeModal } from "@/components/BookDemoIframe";
+
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -552,7 +553,7 @@ export default function CustomFinancialModelDevelopment() {
             </motion.div>
           </div>
         </section>
-        <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+        <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
       </div>
     </div>
   );

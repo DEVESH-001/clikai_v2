@@ -21,7 +21,8 @@ import {
   Settings,
 } from "lucide-react";
 import Image from "next/image";
-import { BookDemoModal } from "@/components/BookDemo";
+import { BookDemoIframeModal } from "@/components/BookDemoIframe";
+
 
 // Enhanced services with more detail and balanced content
 const services = [
@@ -1000,7 +1001,7 @@ export default function LeaseAbstractionAuditPage() {
                 </Button>
               </motion.div>
             </motion.div>
-            <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+            <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
           </div>
         </section>
       </div>

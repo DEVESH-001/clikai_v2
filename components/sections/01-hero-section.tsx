@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 import { HeroGraphs } from "./hero-graphs";
 import { LogoCarousel } from "./02-logo-carousel";
 import { ParticleBackground } from "./ParticleBackground";
-import { BookDemoModal } from "../BookDemo";
+
+import { BookDemoIframeModal } from "../BookDemoIframe";
 
 
 export function HeroSection() {
@@ -79,7 +80,7 @@ export function HeroSection() {
       </div>
 
       {/* Book Demo Modal */}
-      <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+      <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
     </div>
   );
 }

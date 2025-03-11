@@ -19,7 +19,8 @@ import { cn } from "@/lib/utils";
 
 import { usePathname } from "next/navigation";
 import { GeistSans } from "geist/font/sans";
-import { BookDemoModal } from "./BookDemo";
+import { BookDemoIframeModal } from "./BookDemoIframe";
+
 
 // const navItemClass =
 //   "tracking-wider text-sm uppercase font-bold text-white hover:text-blue-300 transition-colors";
@@ -365,7 +366,7 @@ export function Navbar() {
 
           {/* Right Side Actions */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link href="/login" className={dynamicNavItemClass}>
+            <Link href="https://gateway.clik.ai/" className={dynamicNavItemClass}>
               LOG IN
             </Link>
             <Link href="#">
@@ -377,7 +378,7 @@ export function Navbar() {
               </Button>
             </Link>
           </div>
-          <BookDemoModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+<BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
         </div>
       </div>
 
