@@ -3,107 +3,149 @@
       xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
   <loc>https://clikai-v2.vercel.app/</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>1.00</priority>
 </url>
 <url>
   <loc>https://clikai-v2.vercel.app/pages/why-clik-ai</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-            <!-- Product Pages -->
 <url>
   <loc>https://clikai-v2.vercel.app/pages/products/autouw</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://clikai-v2.vercel.app/pages/products/InvestAssist</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://clikai-v2.vercel.app/pages/products/SmartExtract</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://clikai-v2.vercel.app/pages/products/clarity360</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-                          <!-- Service Pages -->
-<!-- Loan Origination -->
 <url>
   <loc>https://clikai-v2.vercel.app/pages/services/LoanOrigination/underwritingDDS</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://clikai-v2.vercel.app/pages/services/LoanOrigination/customFDM</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://clikai-v2.vercel.app/pages/services/LoanOrigination/disbursement&amp;PCNA</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-<!-- Lease & Data Administration -->
 <url>
   <loc>https://clikai-v2.vercel.app/pages/services/Lease&amp;DataAdministration/Abstraction&amp;Audit</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://clikai-v2.vercel.app/pages/services/Lease&amp;DataAdministration/Appraisal&amp;OMDataDigitization</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://clikai-v2.vercel.app/pages/services/Lease&amp;DataAdministration/LoanOnboarding&amp;DataDigitization</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-<!-- Consulting & Technology Solutions -->
 <url>
   <loc>https://clikai-v2.vercel.app/pages/services/ConsultingTech/salesforce</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://clikai-v2.vercel.app/pages/services/ConsultingTech/customRD</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://clikai-v2.vercel.app/pages/services/ConsultingTech/creTech</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/blog</loc>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://clikai-v2.vercel.app/pages/security</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://clikai-v2.vercel.app/pages/disclaimer</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://clikai-v2.vercel.app/pages/privacy-policy</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://clikai-v2.vercel.app/pages/terms-and-conditions</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
   <loc>https://clikai-v2.vercel.app/pages/contact-us</loc>
-  <lastmod>2025-02-25T06:48:15+00:00</lastmod>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
   <priority>0.80</priority>
 </url>
+<url>
+  <loc>https://clikai-v2.vercel.app/blog/5-important-steps-in-multifamily-underwriting-and-valuation</loc>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/blog/impact-of-transition-from-libor-to-sofr-for-multifamily-industry</loc>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/blog/chatgpt-and-the-future-of-multifamily-lending-a-comprehensive-overview</loc>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/blog/whats-the-difference-between-bfr-and-multifamily-underwriting</loc>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/blog/how-to-model-multifamily-cashflow-using-ai-powered-property-investment-software</loc>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/blog/5-major-factors-that-will-shape-the-multifamily-finance-industry-in-2022</loc>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/blog/latest-trends-in-multifamily-acquisitions-underwriting-technology-how-to-stay-ahead-of-the-curve</loc>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/blog/clik-ai-releases-smartextract-integration-into-other-cre-software-applications</loc>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://clikai-v2.vercel.app/blog/gpt-3-potential-applications-in-multifamily-investment-due-diligence</loc>
+  <lastmod>2025-03-11T11:54:50+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
 </urlset>
