@@ -27,6 +27,7 @@ import { GeistSans } from "geist/font/sans";
 
 import React from "react";
 import MeetingsModal from "@/components/MeetingModal";
+import { BookDemoIframeModal } from "@/components/BookDemoIframe";
 
 const services = [
   {
@@ -254,6 +255,10 @@ const TechnologyCard = ({ item }: { item: TechnologyItem }) => {
 };
 
 export default function SalesforceCustomizationPage() {
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+  const openBookDemo = () => setIsBookDemoOpen(true);
+  const closeBookDemo = () => setIsBookDemoOpen(false);
+
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [activeService, setActiveService] = useState<number | null>(null);
   const [activeBenefit, setActiveBenefit] = useState(null);
@@ -558,6 +563,7 @@ export default function SalesforceCustomizationPage() {
             >
               <Button
                 size="lg"
+                onClick={openBookDemo}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 rounded-[8px]"
               >
                 Discuss Your Engagement Needs
@@ -625,6 +631,7 @@ export default function SalesforceCustomizationPage() {
                   onClose={() => setIsModalOpen(false)}
                   meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
                 />
+                <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
         </section>
       </div>
     </div>

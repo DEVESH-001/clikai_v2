@@ -30,6 +30,7 @@ import {
 } from "chart.js";
 import { GradientBackground } from "@/components/sections/gradient-background";
 import MeetingsModal from "@/components/MeetingModal";
+import { BookDemoIframeModal } from "@/components/BookDemoIframe";
 
 ChartJS.register(
   CategoryScale,
@@ -1315,6 +1316,10 @@ const UseCaseSection = () => {
 
 export default function CustomReportingDashboardsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+    const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+    const openBookDemo = () => setIsBookDemoOpen(true);
+    const closeBookDemo = () => setIsBookDemoOpen(false);
+  
   return (
     <div className={`flex flex-col min-h-screen w-full ${GeistSans.className}`}>
       <main className="flex-grow relative overflow-hidden">
@@ -1657,6 +1662,7 @@ export default function CustomReportingDashboardsPage() {
                 <div className="mt-6 text-center">
                   <Button
                     size="lg"
+                    onClick={openBookDemo}
                     className="bg-blue-600 text-white hover:bg-blue-700 rounded-[8px]"
                   >
                     Discuss Your Engagement Needs
@@ -1724,6 +1730,7 @@ export default function CustomReportingDashboardsPage() {
                 onClose={() => setIsModalOpen(false)}
                 meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
               />
+          <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
       </main>
     </div>
   );
