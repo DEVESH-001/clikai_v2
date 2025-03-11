@@ -175,7 +175,7 @@ export function Navbar() {
     pathname === "/"
       ? isScrolled
         ? "text-gray-800"
-        : "text-white"
+        : "text-black"
       : "text-gray-800"
   } hover:text-blue-300 transition-colors`;
 
@@ -427,7 +427,7 @@ export function Navbar() {
               <div className="relative">
                 <button
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                  className={`flex justify-between items-center w-full px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 transition-all ${dynamicNavItemClass}`}
+                  className={` flex justify-between items-center w-full px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 transition-all ${dynamicNavItemClass}`}
                 >
                   SERVICES
                   <ChevronDown
