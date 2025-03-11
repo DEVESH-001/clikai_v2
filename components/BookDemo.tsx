@@ -47,7 +47,7 @@ export function BookDemoModal({ isOpen, onClose }: BookDemoModalProps) {
   return (
     <>
       <Dialog open={open} onOpenChange={handleOpenChange}>
-        <DialogContent className="sm:max-w-[500px]">
+        <DialogContent className="sm:max-w-[900px]">
           <DialogHeader>
             <DialogTitle className="text-2xl font-bold text-center">Secure Your Spot</DialogTitle>
             <DialogDescription className="text-center">

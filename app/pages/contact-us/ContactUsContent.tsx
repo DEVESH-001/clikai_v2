@@ -198,6 +198,7 @@ import { GeistSans } from "geist/font/sans"
 import HubspotForm from "@/components/ResumeHubspotForm"
 
 
+
 export default function ContactUsContent() {
   const [showHubspotForm, setShowHubspotForm] = useState(false)
 
@@ -359,9 +360,9 @@ export default function ContactUsContent() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative"
+            className="bg-white rounded-lg shadow-xl max-w-2xl w-full max-h-[90vh] overflow-y-auto relative mt-10"
           >
-            <div className="sticky top-0 flex justify-between items-center p-4 bg-white border-b z-10">
+            <div className="sticky top-0 flex justify-between items-center p-4 bg-white border-b z-10 ">
               <h3 className="text-xl font-bold">Submit Your Details</h3>
               <button onClick={() => setShowHubspotForm(false)} className="p-1 rounded-full hover:bg-gray-100">
                 <X className="w-6 h-6" />

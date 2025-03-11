@@ -65,7 +65,6 @@
 // }
 
 
-
 "use client"
 
 import { useState, useEffect } from "react"
@@ -117,9 +116,6 @@ export function BookDemoIframeModal({ isOpen, onClose }: BookDemoModalProps) {
             src={formUrl}
             width="100%"
             height="100%"
-            frameBorder="0"
-            marginHeight={0}
-            marginWidth={0}
             style={{ border: "none" }}
             onLoad={handleIframeLoad}
             title="Book a Demo Form"

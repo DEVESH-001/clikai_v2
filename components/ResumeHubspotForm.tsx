@@ -20,7 +20,7 @@ export default function HubspotForm({ region = "na1", portalId, formId, classNam
       script.defer = true
       script.async = true
       document.body.appendChild(script)
-    }
+    } 
   }, [portalId])
 
   return (
