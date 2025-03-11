@@ -478,7 +478,7 @@ export function Navbar() {
               {/* SIGN IN & GET STARTED */}
               <div className="border-t border-gray-300 pt-4 pb-3">
                 <Link
-                  href="/login"
+                  href="https://gateway.clik.ai/"
                   onClick={handleNavigation}
                   className="block px-4 py-2 text-sm font-medium text-gray-900 rounded-lg hover:bg-gray-100 transition-all"
                 >
@@ -486,7 +486,7 @@ export function Navbar() {
                 </Link>
                 <Link
                   href="/get-started"
-                  onClick={handleNavigation}
+                  onClick={openBookDemo}
                   className="block px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg text-center transition-all"
                 >
                   BOOK DEMO

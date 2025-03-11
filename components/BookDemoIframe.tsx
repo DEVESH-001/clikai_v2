@@ -64,7 +64,6 @@
 //   )
 // }
 
-
 "use client"
 
 import { useState, useEffect } from "react"
@@ -97,32 +96,43 @@ export function BookDemoIframeModal({ isOpen, onClose }: BookDemoModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent className="sm:max-w-[900px] max-h-[90vh] overflow-y-auto mt-12"> 
+      <DialogContent className="sm:max-w-[800px] md:max-w-[600px] w-[95vw] max-h-[90vh] h-auto overflow-y-auto p-4 md:p-6">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center">Secure Your Spot</DialogTitle>
           <DialogDescription className="text-center">
-            Fill in Your Details & Pick a Time!
+          Fill in Your Details & Pick a Time!
           </DialogDescription>
         </DialogHeader>
 
-        <div className="py-4 relative" style={{ height: "500px" }}>
+        <div className="py-2 md:py-4 relative w-full h-[70vh] md:h-[600px]">
           {isLoading && (
-            <div className="flex flex-col items-center justify-center py-8 absolute inset-0 bg-white z-10">
+            <div className="flex flex-col items-center justify-center absolute inset-0 bg-background z-10">
               <Loader2 className="h-8 w-8 animate-spin text-primary" />
-              <p className="mt-2 text-sm text-muted-foreground">Loading form...</p>
+              <p className="mt-2 text-sm text-muted-foreground">Loading HubSpot form...</p>
             </div>
           )}
           <iframe
             src={formUrl}
             width="100%"
             height="100%"
-            style={{ border: "none" }}
+            frameBorder="0"
+            marginHeight={0}
+            marginWidth={0}
+            style={{
+              border: "none",
+              width: "100%",
+              height: "100%",
+              minHeight: "500px",
+              overflow: "hidden",
+            }}
             onLoad={handleIframeLoad}
             title="Book a Demo Form"
             sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+            className="bg-transparent"
           />
         </div>
       </DialogContent>
     </Dialog>
   )
 }
+
