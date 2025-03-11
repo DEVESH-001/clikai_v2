@@ -119,6 +119,7 @@ export default function SmartExtractPage() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
                     size="lg"
+                    onClick={openBookDemo}
                     className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
                   >
                     Get API Access
