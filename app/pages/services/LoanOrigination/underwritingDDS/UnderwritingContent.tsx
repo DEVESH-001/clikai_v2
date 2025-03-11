@@ -8,8 +8,7 @@ import { GeistSans } from "geist/font/sans"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
+
 import { Clock, Zap, Building2, DollarSign, ArrowRight, CheckCircle } from "lucide-react"
 import { useToast } from "@/components/ui/use-toast"
 import { Bar, Line, Doughnut } from "react-chartjs-2"
@@ -1310,7 +1309,7 @@ export default function UnderwritingDueDiligenceSupport() {
           </div>
         </section>
         {/* File Upload Section */}
-        <section className="py-16 relative bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-100/80">
+        {/* <section className="py-16 relative bg-gradient-to-br from-blue-50 via-indigo-100 to-purple-100/80">
           <div className="container mx-auto px-4 relative z-10">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -1389,7 +1388,7 @@ export default function UnderwritingDueDiligenceSupport() {
               </CardContent>
             </Card>
           </div>
-        </section>
+        </section> */}
 
         {/* CTA Section */}
         <section className="relative py-16 bg-gradient-to-br from-[#001F3F] via-blue-900 to-blue-800">
