@@ -48,6 +48,7 @@ import { DisbursementFlowchart } from "../../components/DisbursementFlowchart";
 
 import { useState } from "react";
 import { BookDemoIframeModal } from "@/components/BookDemoIframe";
+import MeetingsModal from "@/components/MeetingModal";
 
 ChartJS.register(
   CategoryScale,
@@ -82,6 +83,7 @@ const journey = [
   },
 ];
 export default function DisbursementPCNASupport() {
+   const [isModalOpen, setIsModalOpen] = useState(false)
     const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
     const openBookDemo = () => setIsBookDemoOpen(true);
     const closeBookDemo = () => setIsBookDemoOpen(false);
@@ -155,6 +157,7 @@ export default function DisbursementPCNASupport() {
             >
               <Button
                 size="lg"
+                onClick={() => setIsModalOpen(true)}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 Schedule a Consultation
@@ -531,6 +534,11 @@ export default function DisbursementPCNASupport() {
             </motion.div>
           </motion.div>
           <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+           <MeetingsModal
+                  isOpen={isModalOpen}
+                  onClose={() => setIsModalOpen(false)}
+                  meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
+                />
         </div>
       </section>
     </div>

@@ -26,6 +26,7 @@ import {
 import { GeistSans } from "geist/font/sans";
 
 import React from "react";
+import MeetingsModal from "@/components/MeetingModal";
 
 const services = [
   {
@@ -253,6 +254,7 @@ const TechnologyCard = ({ item }: { item: TechnologyItem }) => {
 };
 
 export default function SalesforceCustomizationPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const [activeService, setActiveService] = useState<number | null>(null);
   const [activeBenefit, setActiveBenefit] = useState(null);
   const [activeEngagementModel, setActiveEngagementModel] = useState<
@@ -309,6 +311,7 @@ export default function SalesforceCustomizationPage() {
                 <div className="flex gap-4">
                   <Button
                     size="lg"
+                    onClick={() => setIsModalOpen(true)}
                     className="bg-blue-600 hover:bg-blue-700 text-white px-8 rounded-[8px]"
                   >
                     Schedule a Consultation
@@ -604,6 +607,7 @@ export default function SalesforceCustomizationPage() {
               >
                 <Button
                   size="lg"
+                  onClick={() => setIsModalOpen(true)}
                   className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
                 >
                   Schedule a Consultation
@@ -615,6 +619,12 @@ export default function SalesforceCustomizationPage() {
               </p>
             </motion.div>
           </div>
+          {/* Meeting Modal */}
+                <MeetingsModal
+                  isOpen={isModalOpen}
+                  onClose={() => setIsModalOpen(false)}
+                  meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
+                />
         </section>
       </div>
     </div>

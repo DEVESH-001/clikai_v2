@@ -51,7 +51,7 @@ const nextConfig = {
           },
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.vercel-insights.com https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com; style-src 'self' 'unsafe-inline' https://*.hsforms.net https://*.hubspot.com; img-src 'self' data: https: blob:; font-src 'self' data: https://*.hsforms.net https://*.hubspot.com; connect-src 'self' https://admin139255a85d.wpcomstaging.com https://*.vercel.app https://*.hsforms.net https://*.hubspot.com https://forms.hubspot.com https://*.hubspot-forms-static-embed.s3.amazonaws.com https://hubspot-forms-static-embed.s3.amazonaws.com https://*.amazonaws.com; frame-src 'self' https://*.hsforms.net https://*.hubspot.com https://share.hsforms.com; upgrade-insecure-requests;"
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.vercel-insights.com https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com https://static.hsappstatic.net; style-src 'self' 'unsafe-inline'; img-src 'self' data: https: blob:; font-src 'self' data:; connect-src 'self' https://admin139255a85d.wpcomstaging.com https://*.vercel.app https://*.hubspot.com https://*.hsforms.com; frame-src 'self' https://*.hubspot.com https://meetings.hubspot.com https://share.hsforms.com https://*.hsforms.com"
           }
         ]
       }
@@ -202,3 +202,4 @@ const nextConfig = {
 };
 
 export default nextConfig;
+

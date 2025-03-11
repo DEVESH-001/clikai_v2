@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowRight } from "lucide-react";
@@ -29,6 +29,7 @@ import {
   Legend,
 } from "chart.js";
 import { GradientBackground } from "@/components/sections/gradient-background";
+import MeetingsModal from "@/components/MeetingModal";
 
 ChartJS.register(
   CategoryScale,
@@ -1313,6 +1314,7 @@ const UseCaseSection = () => {
 };
 
 export default function CustomReportingDashboardsPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className={`flex flex-col min-h-screen w-full ${GeistSans.className}`}>
       <main className="flex-grow relative overflow-hidden">
@@ -1378,6 +1380,7 @@ export default function CustomReportingDashboardsPage() {
                 >
                   <Button
                     size="lg"
+                    onClick={() => setIsModalOpen(true)}
                     className="bg-blue-600 text-white hover:bg-blue-700 rounded-[8px]"
                   >
                     Schedule a Consultation
@@ -1464,6 +1467,7 @@ export default function CustomReportingDashboardsPage() {
                     </p>
                     <Button
                       size="lg"
+                      onClick={() => setIsModalOpen(true)}
                       className="bg-blue-600 text-white hover:bg-blue-700 w-full md:w-auto rounded-[8px]"
                     >
                       Schedule a Consultation
@@ -1705,6 +1709,7 @@ export default function CustomReportingDashboardsPage() {
               >
                 <Button
                   size="lg"
+                  onClick={() => setIsModalOpen(true)}
                   className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
                 >
                   Schedule a Consultation
@@ -1714,6 +1719,11 @@ export default function CustomReportingDashboardsPage() {
             </motion.div>
           </div>
         </section>
+         <MeetingsModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
+              />
       </main>
     </div>
   );

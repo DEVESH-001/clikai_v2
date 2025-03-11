@@ -27,6 +27,8 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
+import MeetingsModal from "@/components/MeetingModal";
+import { useState } from "react";
 
 // Stats data
 // const stats = [
@@ -71,6 +73,7 @@ const documentTypes = [
 ];
 
 export default function LoanOnboardingPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
   return (
     <div className={`min-h-screen ${GeistSans.className}`}>
       {/* Hero Section */}
@@ -96,6 +99,7 @@ export default function LoanOnboardingPage() {
               </p>
               <Button
                 size="lg"
+                onClick={() => setIsModalOpen(true)}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 Schedule a Consultation
@@ -562,6 +566,7 @@ export default function LoanOnboardingPage() {
             >
               <Button
                 size="lg"
+                onClick={() => setIsModalOpen(true)}
                 className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
               >
                 Schedule a Consultation
@@ -569,6 +574,11 @@ export default function LoanOnboardingPage() {
               </Button>
             </motion.div>
           </motion.div>
+            <MeetingsModal
+                  isOpen={isModalOpen}
+                  onClose={() => setIsModalOpen(false)}
+                  meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
+                />
         </div>
       </section>
     </div>

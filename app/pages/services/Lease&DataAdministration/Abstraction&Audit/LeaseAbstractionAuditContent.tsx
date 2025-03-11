@@ -22,7 +22,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import { BookDemoIframeModal } from "@/components/BookDemoIframe";
-
+import MeetingsModal from "@/components/MeetingModal";
 
 // Enhanced services with more detail and balanced content
 const services = [
@@ -295,6 +295,7 @@ const whyChooseUs = [
 // };
 
 export default function LeaseAbstractionAuditPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   // const { scrollYProgress } = useScroll();
   // const scaleX = useSpring(scrollYProgress, {
   //   stiffness: 100,
@@ -383,6 +384,7 @@ export default function LeaseAbstractionAuditPage() {
                 </p>
                 <Button
                   size="lg"
+                  onClick={() => setIsModalOpen(true)}
                   className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
                 >
                   Schedule a Consultation
@@ -1001,7 +1003,15 @@ export default function LeaseAbstractionAuditPage() {
                 </Button>
               </motion.div>
             </motion.div>
-            <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+            <BookDemoIframeModal
+              isOpen={isBookDemoOpen}
+              onClose={closeBookDemo}
+            />
+              <MeetingsModal
+                    isOpen={isModalOpen}
+                    onClose={() => setIsModalOpen(false)}
+                    meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
+                  />
           </div>
         </section>
       </div>

@@ -1427,13 +1427,18 @@ export default function UnderwritingDueDiligenceSupport() {
               >
                 <Button
                   size="lg"
+                  onClick={openBookDemo}
                   className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
                 >
-                  Talk To Us Now
+                  Book Demo
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </motion.div>
             </motion.div>
+             <BookDemoIframeModal
+                        isOpen={isBookDemoOpen}
+                        onClose={closeBookDemo}
+                      />
           </div>
         </section>
       </main>

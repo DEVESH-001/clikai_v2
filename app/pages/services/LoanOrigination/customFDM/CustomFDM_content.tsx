@@ -21,7 +21,7 @@ import {
 import { motion } from "framer-motion";
 import DynamicBackground from "@/components/DynamicBackgroud";
 import { BookDemoIframeModal } from "@/components/BookDemoIframe";
-
+import MeetingsModal from "@/components/MeetingModal";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
@@ -109,9 +109,10 @@ const financialModels = [
 ];
 
 export default function CustomFinancialModelDevelopment() {
-    const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
-    const openBookDemo = () => setIsBookDemoOpen(true);
-    const closeBookDemo = () => setIsBookDemoOpen(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+  const openBookDemo = () => setIsBookDemoOpen(true);
+  const closeBookDemo = () => setIsBookDemoOpen(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
   const [, setScrollY] = useState(0);
 
@@ -255,6 +256,7 @@ export default function CustomFinancialModelDevelopment() {
               className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 mt-6"
             >
               <Button
+              onClick={() => setIsModalOpen(true)}
                 size="lg"
                 className="bg-blue-600 text-white hover:bg-blue-700 rounded-[8px] transition-colors duration-300"
               >
@@ -554,6 +556,11 @@ export default function CustomFinancialModelDevelopment() {
           </div>
         </section>
         <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+         <MeetingsModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
+              />
       </div>
     </div>
   );
