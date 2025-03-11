@@ -1,9 +1,9 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import Link from "next/link";
-import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
+import * as React from "react"
+import Link from "next/link"
+import Image from "next/image"
+import { motion, AnimatePresence } from "framer-motion"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -11,16 +11,15 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
-import { Button } from "@/components/ui/button";
-import { Menu, X, ChevronDown } from "lucide-react";
-import { useState, useEffect } from "react";
-import { cn } from "@/lib/utils";
+} from "@/components/ui/navigation-menu"
+import { Button } from "@/components/ui/button"
+import { Menu, X, ChevronDown } from "lucide-react"
+import { useState, useEffect } from "react"
+import { cn } from "@/lib/utils"
 
-import { usePathname } from "next/navigation";
-import { GeistSans } from "geist/font/sans";
-import { BookDemoIframeModal } from "./BookDemoIframe";
-
+import { usePathname } from "next/navigation"
+import { GeistSans } from "geist/font/sans"
+import { BookDemoIframeModal } from "./BookDemoIframe"
 
 // const navItemClass =
 //   "tracking-wider text-sm uppercase font-bold text-white hover:text-blue-300 transition-colors";
@@ -51,7 +50,7 @@ const products = [
       },
     ],
   },
-];
+]
 
 // Updated Services Menu
 const services = [
@@ -117,106 +116,88 @@ const services = [
       },
     ],
   },
-];
+]
 
-
-
-const ListItem = React.forwardRef<
-  React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
-  return (
-    <li>
-      <NavigationMenuLink asChild>
-        <a
-          ref={ref}
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
-            className
-          )}
-          {...props}
-        >
-          <div className="text-sm font-medium leading-none">{title}</div>
-          <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-            {children}
-          </p>
-        </a>
-      </NavigationMenuLink>
-    </li>
-  );
-});
-ListItem.displayName = "ListItem";
+const ListItem = React.forwardRef<React.ElementRef<"a">, React.ComponentPropsWithoutRef<"a">>(
+  ({ className, title, children, ...props }, ref) => {
+    return (
+      <li>
+        <NavigationMenuLink asChild>
+          <a
+            ref={ref}
+            className={cn(
+              "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground",
+              className,
+            )}
+            {...props}
+          >
+            <div className="text-sm font-medium leading-none">{title}</div>
+            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">{children}</p>
+          </a>
+        </NavigationMenuLink>
+      </li>
+    )
+  },
+)
+ListItem.displayName = "ListItem"
 
 export function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileProductsOpen, setMobileProductsOpen] = useState(false);
-  const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const pathname = usePathname();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileProductsOpen, setMobileProductsOpen] = useState(false)
+  const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false)
+  const pathname = usePathname()
 
   //hubspot window
-    const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false)
 
-    const openBookDemo = () => setIsBookDemoOpen(true);
-    const closeBookDemo = () => setIsBookDemoOpen(false);
+  const openBookDemo = () => setIsBookDemoOpen(true)
+  const closeBookDemo = () => setIsBookDemoOpen(false)
 
   // Add scroll event listener
   React.useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
+      setIsScrolled(window.scrollY > 0)
+    }
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   // Update navItemClass to be dynamic based on scroll position and current page
   const dynamicNavItemClass = `tracking-wider text-sm uppercase font-bold ${
-    pathname === "/"
-      ? isScrolled
-        ? "text-gray-800"
-        : "text-black"
-      : "text-gray-800"
-  } hover:text-blue-300 transition-colors`;
+    pathname === "/" ? (isScrolled ? "text-gray-800" : "text-white") : "text-gray-800"
+  } hover:text-blue-300 transition-colors`
 
   // Add this function to handle navigation menu state
   const handleNavigation = () => {
     // Close mobile menu
-    setMobileMenuOpen(false);
+    setMobileMenuOpen(false)
     // Close mobile submenus
-    setMobileProductsOpen(false);
-    setMobileServicesOpen(false);
-  };
+    setMobileProductsOpen(false)
+    setMobileServicesOpen(false)
+  }
 
   // Add useEffect to handle route changes
   useEffect(() => {
     // Close menus on route change
-    handleNavigation();
-  }, [pathname]);
+    handleNavigation()
+  }, [pathname])
 
   return (
     <>
       <div
         className={`fixed top-0 left-0 right-0 z-[9999] w-full transition-colors duration-200 ${
-          isScrolled || pathname !== "/"
-            ? "bg-white shadow-md"
-            : "bg-transparent"
+          isScrolled || pathname !== "/" ? "bg-white shadow-md" : "bg-transparent"
         }`}
       >
         {/* Update container class for consistent padding */}
         <div className=" mx-auto px-8 flex h-16 items-center justify-between">
           <div className="flex items-center space-x-4">
-            <Link
-              href="/"
-              className="flex items-center space-x-2 cursor-pointer"
-            >
+            <Link href="/" className="flex items-center space-x-2 cursor-pointer">
               {/* White logo */}
               <Image
-                src={
-                  pathname === "/" && !isScrolled
-                    ? "/images/logo-white.svg"
-                    : "/images/logo.svg"
-                }
+                src={pathname === "/" && !isScrolled ? "/images/logo-white.svg" : "/images/logo.svg"}
                 alt="Clik.ai Logo"
                 width={100}
                 height={80}
@@ -239,9 +220,7 @@ export function Navbar() {
             <NavigationMenu className="hidden lg:flex flex-1 justify-center">
               <NavigationMenuList className="space-x-8">
                 <NavigationMenuItem value="products">
-                  <NavigationMenuTrigger
-                    className={`${dynamicNavItemClass} bg-transparent`}
-                  >
+                  <NavigationMenuTrigger className={`${dynamicNavItemClass} bg-transparent`}>
                     PRODUCTS
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -260,9 +239,7 @@ export function Navbar() {
                                     <div className="text-sm font-medium text-gray-900 group-hover:text-blue-600">
                                       {item.title}
                                     </div>
-                                    <p className="text-xs text-gray-500">
-                                      {item.description}
-                                    </p>
+                                    <p className="text-xs text-gray-500">{item.description}</p>
                                   </div>
                                 </Link>
                               </li>
@@ -273,11 +250,9 @@ export function Navbar() {
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-                    {/* //bg-transparent */}
-                <NavigationMenuItem value="services"> 
-                  <NavigationMenuTrigger
-                    className={`${dynamicNavItemClass} bg-transparent`}
-                  >
+                {/* //bg-transparent */}
+                <NavigationMenuItem value="services">
+                  <NavigationMenuTrigger className={`${dynamicNavItemClass} bg-transparent`}>
                     SERVICES
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -285,9 +260,7 @@ export function Navbar() {
                       <div className="grid grid-cols-3 gap-6">
                         {services.map((category) => (
                           <div key={category.title} className="space-y-2">
-                            <h3 className="text-lg font-semibold text-blue-600">
-                              {category.title}
-                            </h3>
+                            <h3 className="text-lg font-semibold text-blue-600">{category.title}</h3>
                             {/* <p className="text-sm text-gray-600 mb-2">
                               {category.description}
                             </p> */}
@@ -300,12 +273,8 @@ export function Navbar() {
                                     className="group flex items-center justify-between p-2 rounded-md hover:bg-blue-50 transition-colors"
                                   >
                                     <div>
-                                      <div className="text-sm font-medium text-gray-900">
-                                        {item.title}
-                                      </div>
-                                      <p className="text-xs text-gray-500">
-                                        {item.description}
-                                      </p>
+                                      <div className="text-sm font-medium text-gray-900">{item.title}</div>
+                                      <p className="text-xs text-gray-500">{item.description}</p>
                                     </div>
                                   </Link>
                                 </li>
@@ -320,10 +289,7 @@ export function Navbar() {
 
                 <NavigationMenuItem>
                   <Link href="/#pricing" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={dynamicNavItemClass}
-                      onClick={handleNavigation}
-                    >
+                    <NavigationMenuLink className={dynamicNavItemClass} onClick={handleNavigation}>
                       PRICING
                     </NavigationMenuLink>
                   </Link>
@@ -333,10 +299,7 @@ export function Navbar() {
 
                 <NavigationMenuItem>
                   <Link href="/pages/why-clik-ai/" legacyBehavior passHref>
-                    <NavigationMenuLink
-                      className={dynamicNavItemClass}
-                      onClick={handleNavigation}
-                    >
+                    <NavigationMenuLink className={dynamicNavItemClass} onClick={handleNavigation}>
                       WHY CLIK.AI
                     </NavigationMenuLink>
                   </Link>
@@ -348,20 +311,10 @@ export function Navbar() {
           {/* Mobile Menu Button */}
           <Button
             variant="ghost"
-            className={`lg:hidden ${
-              pathname === "/"
-                ? isScrolled
-                  ? "text-gray-800"
-                  : "text-white"
-                : "text-gray-800"
-            }`}
+            className={`lg:hidden ${pathname === "/" && !isScrolled ? "text-white" : "text-gray-800"}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
 
           {/* Right Side Actions */}
@@ -370,15 +323,12 @@ export function Navbar() {
               LOG IN
             </Link>
             <Link href="#">
-              <Button
-                className="bg-blue-600 text-white font-bold hover:bg-blue-700"
-                onClick={openBookDemo}
-              >
+              <Button className="bg-blue-600 text-white font-bold hover:bg-blue-700" onClick={openBookDemo}>
                 <span className={GeistSans.className}>BOOK DEMO</span>
               </Button>
             </Link>
           </div>
-<BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+          <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
         </div>
       </div>
 
@@ -396,14 +346,10 @@ export function Navbar() {
               <div className="relative">
                 <button
                   onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
-                  className={`flex justify-between items-center w-full px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 transition-all text-black ${dynamicNavItemClass}`}
+                  className="flex justify-between items-center w-full px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-200 transition-all text-gray-800"
                 >
                   PRODUCTS
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      mobileProductsOpen ? "rotate-180" : ""
-                    }`}
-                  />
+                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileProductsOpen ? "rotate-180" : ""}`} />
                 </button>
                 {mobileProductsOpen && (
                   <div className="pl-6 mt-2 space-y-2">
@@ -417,7 +363,7 @@ export function Navbar() {
                         >
                           {item.title}
                         </Link>
-                      ))
+                      )),
                     )}
                   </div>
                 )}
@@ -427,22 +373,16 @@ export function Navbar() {
               <div className="relative">
                 <button
                   onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                  className={` flex justify-between items-center w-full px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 transition-all ${dynamicNavItemClass}`}
+                  className="flex justify-between items-center w-full px-4 py-2 text-sm font-medium rounded-lg hover:bg-gray-100 transition-all text-gray-800"
                 >
                   SERVICES
-                  <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
-                      mobileServicesOpen ? "rotate-180" : ""
-                    }`}
-                  />
+                  <ChevronDown className={`w-4 h-4 transition-transform ${mobileServicesOpen ? "rotate-180" : ""}`} />
                 </button>
                 {mobileServicesOpen && (
                   <div className="pl-6 mt-2 space-y-3">
                     {services.map((category) => (
                       <div key={category.title} className="mb-2">
-                        <h3 className="text-sm font-semibold text-blue-600">
-                          {category.title}
-                        </h3>
+                        <h3 className="text-sm font-semibold text-blue-600">{category.title}</h3>
                         {category.items.map((item) => (
                           <Link
                             key={item.title}
@@ -478,7 +418,7 @@ export function Navbar() {
               {/* SIGN IN & GET STARTED */}
               <div className="border-t border-gray-300 pt-4 pb-3">
                 <Link
-                  href="https://gateway.clik.ai/"
+                  href="/login"
                   onClick={handleNavigation}
                   className="block px-4 py-2 text-sm font-medium text-gray-900 rounded-lg hover:bg-gray-100 transition-all"
                 >
@@ -486,7 +426,7 @@ export function Navbar() {
                 </Link>
                 <Link
                   href="/get-started"
-                  onClick={openBookDemo}
+                  onClick={handleNavigation}
                   className="block px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg text-center transition-all"
                 >
                   BOOK DEMO
@@ -497,5 +437,6 @@ export function Navbar() {
         )}
       </AnimatePresence>
     </>
-  );
+  )
 }
+
