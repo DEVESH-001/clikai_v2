@@ -20,3 +20,8 @@ HUBSPOT
 
 sharing link
 https://share.hsforms.com/2d2eqnS8QRfiGXBPqcmP9Xg2mcb1
+
+
+
+
+So currently the book demo from of Hubspot opens in new tab with the URL of hubspot, that i dont want my users to see the hubspot url for filling the form, Is there any way that the user does not see the hubspot url, and the form should not open in new tab, it should be open in existing tab/page only.

@@ -18,48 +18,46 @@ const nextConfig = {
   compress: true,
   reactStrictMode: true,
   swcMinify: true,
-
+  
   // Add security headers
   async headers() {
     return [
       {
-        source: "/:path*",
+        source: '/:path*',
         headers: [
           {
-            key: "X-DNS-Prefetch-Control",
-            value: "on",
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on'
           },
           {
-            key: "X-XSS-Protection",
-            value: "1; mode=block",
+            key: 'X-XSS-Protection',
+            value: '1; mode=block'
           },
           {
-            key: "X-Frame-Options",
-            value: "SAMEORIGIN",
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN'
           },
           {
-            key: "X-Content-Type-Options",
-            value: "nosniff",
+            key: 'X-Content-Type-Options',
+            value: 'nosniff'
           },
           {
-            key: "Referrer-Policy",
-            value: "strict-origin-when-cross-origin",
+            key: 'Referrer-Policy',
+            value: 'strict-origin-when-cross-origin'
           },
           {
-            key: "Permissions-Policy",
-            value:
-              "camera=(), microphone=(), geolocation=(), interest-cohort=()",
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()'
           },
           {
-            key: "Content-Security-Policy",
-            value:
-              "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.vercel-insights.com https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com; style-src 'self' 'unsafe-inline' https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com; img-src 'self' data: https: blob:; font-src 'self' data: https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com; connect-src 'self' https://admin139255a85d.wpcomstaging.com https://*.vercel.app https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com; frame-src 'self' https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com",
-          },
-        ],
-      },
-    ];
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://cdn.vercel-insights.com https://*.hsforms.net https://*.hsforms.com https://*.hubspot.com; style-src 'self' 'unsafe-inline' https://*.hsforms.net https://*.hubspot.com; img-src 'self' data: https: blob:; font-src 'self' data: https://*.hsforms.net https://*.hubspot.com; connect-src 'self' https://admin139255a85d.wpcomstaging.com https://*.vercel.app https://*.hsforms.net https://*.hubspot.com https://forms.hubspot.com https://*.hubspot-forms-static-embed.s3.amazonaws.com https://hubspot-forms-static-embed.s3.amazonaws.com https://*.amazonaws.com; frame-src 'self' https://*.hsforms.net https://*.hubspot.com https://share.hsforms.com; upgrade-insecure-requests;"
+          }
+        ]
+      }
+    ]
   },
-
+  
   async redirects() {
     return [
       {
