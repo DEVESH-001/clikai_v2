@@ -273,8 +273,8 @@ export function Navbar() {
                     </div>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
-
-                <NavigationMenuItem value="services">
+                    {/* //bg-transparent */}
+                <NavigationMenuItem value="services"> 
                   <NavigationMenuTrigger
                     className={`${dynamicNavItemClass} bg-transparent`}
                   >

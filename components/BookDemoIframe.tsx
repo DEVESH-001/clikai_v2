@@ -98,7 +98,7 @@ export function BookDemoIframeModal({ isOpen, onClose }: BookDemoModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent className="sm:max-w-[900px] max-h-[90vh] overflow-y-auto mt-10"> {/* Added mt-16 for top margin and increased max width */}
+      <DialogContent className="sm:max-w-[900px] max-h-[90vh] overflow-y-auto mt-12"> 
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center">Secure Your Spot</DialogTitle>
           <DialogDescription className="text-center">
@@ -106,7 +106,7 @@ export function BookDemoIframeModal({ isOpen, onClose }: BookDemoModalProps) {
           </DialogDescription>
         </DialogHeader>
 
-        <div className="py-4 relative" style={{ height: "600px" }}>
+        <div className="py-4 relative" style={{ height: "500px" }}>
           {isLoading && (
             <div className="flex flex-col items-center justify-center py-8 absolute inset-0 bg-white z-10">
               <Loader2 className="h-8 w-8 animate-spin text-primary" />
