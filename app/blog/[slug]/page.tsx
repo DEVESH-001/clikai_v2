@@ -76,7 +76,7 @@
 // }
 
 
-
+//NEW
 
 import { getPostBySlug, getAllPostSlugs } from "@/lib/api"
 import SEO from "@/components/SEO"
@@ -110,7 +110,7 @@ export default async function BlogPost({
   const dateModified = post.modified || datePublished
   const formattedDate = post.date ? format(new Date(post.date), "MMMM dd, yyyy") : "Unknown Date"
 
-  // Clean description for schema (remove HTML tags)
+
   const cleanDescription = post.excerpt.rendered.replace(/<[^>]+>/g, "").slice(0, 160)
 
   // Breadcrumb items
@@ -147,7 +147,7 @@ export default async function BlogPost({
                 className="text-3xl sm:text-4xl font-bold mb-4"
                 dangerouslySetInnerHTML={{ __html: post.title.rendered }}
               />
-              <div className="text-gray-600 mb-4">
+              <div className="text-gray-600 mb-4 ">
                 By {author} | {formattedDate}
               </div>
             </header>

@@ -61,7 +61,7 @@ const getRecommendedProduct = (answers: Record<number, string>) => {
   const automation = answers[5];
 
   if (primaryGoal === "CRE Document Data Extraction") {
-    return "clarity360";
+    return "Clarity360";
   }
 
   if (role === "Lender/Underwriter" || role === "Asset Manager") {
@@ -69,9 +69,9 @@ const getRecommendedProduct = (answers: Record<number, string>) => {
       automation ===
       "API-Driven Integration: I want to integrate document extraction into my existing systems."
     ) {
-      return "smartextract";
+      return "SmartExtract";
     }
-    return "autouw";
+    return "AutoUW";
   }
 
   if (role === "Investment Manager") {
@@ -88,7 +88,7 @@ const getRecommendedProduct = (answers: Record<number, string>) => {
     ) {
       return "SmartExtract";
     }
-    return "autouw";
+    return "AutoUW";
   }
 
   if (role === "Broker/Syndicator") {
@@ -97,19 +97,19 @@ const getRecommendedProduct = (answers: Record<number, string>) => {
       automation ===
         "Fully Automated: I prefer an end-to-end solution with little to no manual intervention."
     ) {
-      return "investassist";
+      return "InvestAssist";
     }
     if (
       automation ===
       "API-Driven Integration: I want to integrate document extraction into my existing systems."
     ) {
-      return "smartextract";
+      return "SmartExtract";
     }
-    return "autouw";
+    return "AutoUW";
   }
 
   // Default case
-  return "autouw";
+  return "AutoUW";
 };
 
 export function QuizSection() {
@@ -230,11 +230,11 @@ export function QuizSection() {
                 transition={{ duration: 0.3 }}
               >
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-semibold text-blue-900">
-                    {currentQuestionData.question}
+                  <h3 className="text-md md:text-xl font-semibold text-blue-900">
+                  {currentQuestionData.question}
                   </h3>
-                  <span className="text-sm text-gray-500">
-                    {currentQuestion + 1} of {questions.length}
+                  <span className="text-xs md:text-sm text-gray-500">
+                  {currentQuestion + 1} of {questions.length}
                   </span>
                 </div>
 

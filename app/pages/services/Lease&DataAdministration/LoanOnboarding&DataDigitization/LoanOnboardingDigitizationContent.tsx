@@ -5,7 +5,6 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
-  ArrowRight,
   FileText,
   Database,
   Zap,
@@ -103,7 +102,7 @@ export default function LoanOnboardingPage() {
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 Schedule a Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
+
               </Button>
             </motion.div>
           </div>
@@ -570,7 +569,7 @@ export default function LoanOnboardingPage() {
                 className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
               >
                 Schedule a Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
+
               </Button>
             </motion.div>
           </motion.div>

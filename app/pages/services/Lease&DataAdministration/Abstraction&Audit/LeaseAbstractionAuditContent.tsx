@@ -6,7 +6,6 @@ import { GeistSans } from "geist/font/sans";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  ArrowRight,
   CheckCircle,
   Building2,
   FileText,
@@ -385,10 +384,9 @@ export default function LeaseAbstractionAuditPage() {
                 <Button
                   size="lg"
                   onClick={() => setIsModalOpen(true)}
-                  className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+                  className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105  text-lg"
                 >
                   Schedule a Consultation
-                  <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </motion.div>
 
@@ -995,11 +993,11 @@ export default function LeaseAbstractionAuditPage() {
               >
                 <Button
                   size="lg"
-                  className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
+                  className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg rounded-[8px]"
                   onClick={openBookDemo}
                 >
                   Book Demo
-                  <ArrowRight className="ml-2 h-5 w-5" />
+
                 </Button>
               </motion.div>
             </motion.div>

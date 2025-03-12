@@ -11,7 +11,6 @@ import {
 } from "@/components/ui/accordion";
 import Image from "next/image";
 import {
-  ArrowUpRight,
   CheckCircle2,
   Clock,
   BarChart3,
@@ -165,11 +164,11 @@ export default function Clarity360OMPage() {
               >
                 <Button
                   size="lg"
-                  className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
+                  className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl text-base md:text-lg font-semibold px-6 py-3"
                   onClick={openBookDemo}
                 >
                   Book Demo
-                  <ArrowUpRight className="ml-2 h-4 w-4" />
+
                 </Button>
               </motion.div>
             </div>
@@ -272,11 +271,12 @@ export default function Clarity360OMPage() {
                     className="mt-4"
                   >
                     <Button
-                      className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white"
+                      className="w-full text-base bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white"
+                      
                       onClick={openBookDemo}
                     >
                       Book Demo
-                      <ArrowUpRight className="ml-2 h-4 w-4" />
+
                     </Button>
                   </motion.div>
                 </Card>
@@ -555,11 +555,11 @@ export default function Clarity360OMPage() {
                 </div>
                 <Button
                   size="lg"
-                  className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px] whitespace-nowrap"
+                  className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px] whitespace-nowrap text-base"
                   onClick={openBookDemo}
                 >
                   Book Demo
-                  <ArrowUpRight className="ml-2 h-4 w-4" />
+
                 </Button>
               </div>
             </Card>
@@ -664,11 +664,11 @@ export default function Clarity360OMPage() {
                 </p>
                 <Button
                   size="lg"
-                  className="w-full bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px]"
+                  className="w-full bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 rounded-[8px] text-base"
                   onClick={openBookDemo}
                 >
                   Book Demo
-                  <ArrowUpRight className="ml-2 h-4 w-4" />
+
                 </Button>
               </Card>
             </div>
@@ -740,7 +740,6 @@ export default function Clarity360OMPage() {
                 onClick={openBookDemo}
               >
                 Book Demo
-                <ArrowUpRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
           </motion.div>

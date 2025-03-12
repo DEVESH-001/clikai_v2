@@ -23,7 +23,6 @@ import {
   Briefcase,
   BanknoteIcon as Bank,
   Calculator,
-  ArrowUpRight,
 } from "lucide-react";
 import { GeistSans } from "geist/font/sans";
 import {
@@ -52,26 +51,26 @@ const CodePreview = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
-const AIBackground = () => (
-  <div className="absolute inset-0 overflow-hidden opacity-10">
-    <div className="absolute top-0 left-0 w-full h-full">
-      {[...Array(20)].map((_, i) => (
-        <div
-          key={i}
-          className="absolute rounded-full bg-blue-500/20 blur-3xl"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            width: `${Math.random() * 400 + 100}px`,
-            height: `${Math.random() * 400 + 100}px`,
-            animation: `float ${Math.random() * 10 + 10}s infinite`,
-            animationDelay: `${Math.random() * 5}s`,
-          }}
-        />
-      ))}
-    </div>
-  </div>
-);
+// const AIBackground = () => (
+//   <div className="absolute inset-0 overflow-hidden opacity-10">
+//     <div className="absolute top-0 left-0 w-full h-full">
+//       {[...Array(20)].map((_, i) => (
+//         <div
+//           key={i}
+//           className="absolute rounded-full bg-blue-500/20 blur-3xl"
+//           style={{
+//             left: `${Math.random() * 100}%`,
+//             top: `${Math.random() * 100}%`,
+//             width: `${Math.random() * 400 + 100}px`,
+//             height: `${Math.random() * 400 + 100}px`,
+//             animation: `float ${Math.random() * 10 + 10}s infinite`,
+//             animationDelay: `${Math.random() * 5}s`,
+//           }}
+//         />
+//       ))}
+//     </div>
+//   </div>
+// );
 
 export default function SmartExtractPage() {
   const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
@@ -84,7 +83,7 @@ export default function SmartExtractPage() {
     <>
       <div className={`min-h-screen ${GeistSans.className}`}>
         {/* Hero Section */}
-        <AIBackground />
+        {/* <AIBackground /> */}
         <div className="mx-auto px-8 lg:space-y-6 relative mt-8 sm:mt-12">
           <div className="absolute  inset-0 bg-gradient-to-b from-white via-blue-50 to-indigo-100"></div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -218,7 +217,7 @@ export default function SmartExtractPage() {
                   icon: FileText,
                   title: "Loan Servicing and Origination Softwares",
                   description:
-                    "Allow your platform users to parse rent roll and cashflow statement PDFs using Clikai's iFrame integration. Create loan sizers, OSARs, and asset management excel outputs instantaneously.",
+                    "Allow your platform users to parse rent roll and cashflow statement PDFs using Clik.ai iFrame integration. Create loan sizers, OSARs, and asset management excel outputs instantaneously.",
                 },
                 {
                   icon: Calculator,
@@ -708,7 +707,7 @@ console.log(result.data);`}
                   className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
                 >
                   Book Demo
-                  <ArrowUpRight className="ml-2 h-5 w-5" />
+
                 </Button>
               </motion.div>
             </motion.div>

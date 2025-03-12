@@ -317,10 +317,9 @@ export default function SalesforceCustomizationPage() {
                   <Button
                     size="lg"
                     onClick={() => setIsModalOpen(true)}
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 rounded-[8px]"
+                    className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
                   >
                     Schedule a Consultation
-                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                 </div>
               </motion.div>
@@ -564,7 +563,7 @@ export default function SalesforceCustomizationPage() {
               <Button
                 size="lg"
                 onClick={openBookDemo}
-                className="bg-blue-600 hover:bg-blue-700 text-white px-8 rounded-[8px]"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-8 rounded-[8px] text-xl "
               >
                 Discuss Your Engagement Needs
                 <ArrowRight className="ml-2 h-5 w-5" />
@@ -617,7 +616,7 @@ export default function SalesforceCustomizationPage() {
                   className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
                 >
                   Schedule a Consultation
-                  <ArrowRight className="ml-2 h-5 w-5" />
+
                 </Button>
               </motion.div>
               <p className="text-blue-200 mt-4">

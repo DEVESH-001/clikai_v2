@@ -5,7 +5,6 @@ import { GeistSans } from "geist/font/sans";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
-  ArrowRight,
   BarChart2,
   FileText,
   PieChart,
@@ -83,16 +82,16 @@ export default function InvestAssistPage() {
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
                     size="lg"
-                    className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+                    className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 text-base"
                   >
                     Instant Access
-                    <ArrowRight className="ml-2 h-5 w-5" />
+
                   </Button>
                   <Button
                     size="lg"
                     variant="outline"
                     onClick={openBookDemo}
-                    className="border-blue-600 text-blue-600 hover:bg-blue-50"
+                    className="border-blue-600 text-blue-600 hover:bg-blue-50 text-base"
                   >
                     Book Demo
                   </Button>
@@ -324,11 +323,11 @@ export default function InvestAssistPage() {
             >
               <Button
                 size="lg"
-                className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+                className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 text-base"
                 onClick={openBookDemo}
               >
                 Book Demo
-                <ArrowRight className="ml-2 h-5 w-5" />
+
               </Button>
             </motion.div>
           </div>
@@ -527,7 +526,7 @@ export default function InvestAssistPage() {
                   className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
                 >
                   Instant Access
-                  <ArrowRight className="ml-2 h-5 w-5" />
+
                 </Button>
               </div>
             </div>
@@ -664,16 +663,16 @@ export default function InvestAssistPage() {
             <div className="flex justify-center space-x-4">
               <Button
                 size="lg"
-                className="bg-white text-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105"
+                className="bg-white text-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 text-base"
               >
                 Instant Access
-                <ArrowRight className="ml-2 h-5 w-5" />
+
               </Button>
               <Button
                 size="lg"
                 variant="outline"
                 onClick={openBookDemo}
-                className="bg-transparent border-white text-white hover:bg-white/10 transition-all duration-300"
+                className="bg-transparent border-white text-white hover:bg-white/10 transition-all duration-300 text-base"
               >
                 Book Demo
               </Button>

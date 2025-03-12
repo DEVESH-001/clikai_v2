@@ -13,8 +13,6 @@ import {
 
 import Image from "next/image";
 import {
-  ArrowRight,
-  ArrowUpRight,
   BarChart3,
   Bot,
   Brain,
@@ -36,7 +34,7 @@ const features = [
     icon: FileText,
     gradient: "from-blue-500 to-purple-500",
   },
-  {
+  { 
     title: "Customizable Outputs",
     description:
       "Generate underwriting models tailored to your format or lender-specific templates",
@@ -179,10 +177,9 @@ export default function AutoUWPage() {
                   <Button
                     size="lg"
                     onClick={openBookDemo}
-                    className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
+                   className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl text-base md:text-lg font-semibold px-6 py-3"
                   >
                     Book Demo
-                    <ArrowRight className="ml-2 h-5 w-5" />
                   </Button>
                   <BookDemoIframeModal
                     isOpen={isBookDemoOpen}
@@ -502,10 +499,10 @@ export default function AutoUWPage() {
               <Button
                 size="lg"
                 onClick={openBookDemo}
-                className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
+               className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl text-base md:text-lg font-semibold px-6 py-6"
               >
                 Book Demo
-                <ArrowUpRight className="ml-2 h-5 w-5" />
+
               </Button>
             </motion.div>
           </motion.div>

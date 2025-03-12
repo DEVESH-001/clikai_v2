@@ -186,7 +186,6 @@
 
 //Latest
 
-
 "use client"
 
 import { useState } from "react"
@@ -377,4 +376,3 @@ export default function ContactUsContent() {
     </div>
   )
 }
-

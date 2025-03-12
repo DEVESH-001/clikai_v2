@@ -136,17 +136,17 @@ export function TestimonialsSection() {
           {/* Navigation Buttons */}
           <button
             onClick={handlePrevious}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-8 h-8 bg-transparent rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all"
             aria-label="Previous testimonial"
           >
-            <ChevronLeft className="w-6 h-6 text-gray-600" />
+            <ChevronLeft className="w-4 h-4 text-gray-600" />
           </button>
           <button
             onClick={handleNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-8 h-8 bg-transparent rounded-full shadow-lg flex items-center justify-center hover:bg-gray-50 transition-all"
             aria-label="Next testimonial"
           >
-            <ChevronRight className="w-6 h-6 text-gray-600" />
+            <ChevronRight className="w-4 h-4 text-gray-600" />
           </button>
 
           {/* Testimonial Content */}
@@ -159,14 +159,14 @@ export function TestimonialsSection() {
               transition={{ duration: 0.5 }}
               className="grid md:grid-cols-2 gap-8 items-center"
             >
-                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
                 <Image
                   src={testimonials[currentIndex].image || "/placeholder.svg"}
                   alt={testimonials[currentIndex].author}
                   fill
                   className="object-contain"
                 />
-                </div>
+              </div>
 
               <div className="flex flex-col justify-center">
                 {/* <blockquote className="text-2xl font-medium mb-6 text-gray-900">
@@ -190,7 +190,7 @@ export function TestimonialsSection() {
                 </div>
               </div>
             </motion.div>
-          </AnimatePresence> 
+          </AnimatePresence>
 
           {/* Company Indicators */}
           <div className="mt-12 border-t pt-8">

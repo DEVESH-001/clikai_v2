@@ -96,19 +96,19 @@ export function BookDemoIframeModal({ isOpen, onClose }: BookDemoModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
-      <DialogContent className="sm:max-w-[800px] md:max-w-[600px] w-[95vw] max-h-[90vh] h-auto overflow-y-auto p-4 md:p-6">
-        <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-center">Secure Your Spot</DialogTitle>
-          <DialogDescription className="text-center">
-          Fill in Your Details & Pick a Time!
+      <DialogContent className="sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] w-[92vw] max-h-[85vh] h-auto overflow-y-auto p-3 sm:p-4 md:p-6 mt-16 sm:mt-10 md:mt-6 rounded-xl">
+        <DialogHeader className="pb-2 sm:pb-3">
+          <DialogTitle className="text-xl sm:text-2xl font-bold text-center">Secure Your Spot</DialogTitle>
+          <DialogDescription className="text-center text-sm sm:text-base">
+            Fill in your details and select a convenient time for your personalized demo.
           </DialogDescription>
         </DialogHeader>
 
-        <div className="py-2 md:py-4 relative w-full h-[70vh] md:h-[600px]">
+        <div className="py-2 relative w-full h-[60vh] sm:h-[65vh] md:h-[70vh]">
           {isLoading && (
             <div className="flex flex-col items-center justify-center absolute inset-0 bg-background z-10">
-              <Loader2 className="h-8 w-8 animate-spin text-primary" />
-              <p className="mt-2 text-sm text-muted-foreground">Loading HubSpot form...</p>
+              <Loader2 className="h-6 w-6 sm:h-8 sm:w-8 animate-spin text-primary" />
+              {/* <p className="mt-2 text-xs sm:text-sm text-muted-foreground">Loading HubSpot form...</p> */}
             </div>
           )}
           <iframe
@@ -122,7 +122,7 @@ export function BookDemoIframeModal({ isOpen, onClose }: BookDemoModalProps) {
               border: "none",
               width: "100%",
               height: "100%",
-              minHeight: "500px",
+              minHeight: "300px",
               overflow: "hidden",
             }}
             onLoad={handleIframeLoad}

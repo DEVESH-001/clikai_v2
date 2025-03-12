@@ -16,15 +16,12 @@ import { Button } from "@/components/ui/button"
 import { Menu, X, ChevronDown } from "lucide-react"
 import { useState, useEffect } from "react"
 import { cn } from "@/lib/utils"
-
 import { usePathname } from "next/navigation"
 import { GeistSans } from "geist/font/sans"
 import { BookDemoIframeModal } from "./BookDemoIframe"
 
-// const navItemClass =
-//   "tracking-wider text-sm uppercase font-bold text-white hover:text-blue-300 transition-colors";
 
-// Updated Products structure
+//  Products structure
 const products = [
   {
     items: [
@@ -314,13 +311,15 @@ export function Navbar() {
             className={`lg:hidden ${pathname === "/" && !isScrolled ? "text-white" : "text-gray-800"}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
           </Button>
 
           {/* Right Side Actions */}
           <div className="hidden lg:flex items-center space-x-4">
-            <Link href="https://gateway.clik.ai/" className={dynamicNavItemClass}>
-              LOG IN
+            <Link href="https://gateway.clik.ai/">
+              <Button className="bg-blue-600 text-white font-bold hover:bg-blue-700">
+                <span className={GeistSans.className}>LOG IN</span>
+              </Button>
             </Link>
             <Link href="#">
               <Button className="bg-blue-600 text-white font-bold hover:bg-blue-700" onClick={openBookDemo}>
@@ -416,17 +415,17 @@ export function Navbar() {
               </Link>
 
               {/* SIGN IN & GET STARTED */}
-              <div className="border-t border-gray-300 pt-4 pb-3">
+              <div className="border-t border-gray-300 pt-4 pb-3 space-y-3">
                 <Link
-                  href="/login"
+                  href="https://gateway.clik.ai/"
                   onClick={handleNavigation}
-                  className="block px-4 py-2 text-sm font-medium text-gray-900 rounded-lg hover:bg-gray-100 transition-all"
+                  className="block px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg text-center transition-all"
                 >
                   LOG IN
                 </Link>
                 <Link
-                  href="/get-started"
-                  onClick={handleNavigation}
+                  href="#"
+                  onClick={openBookDemo}
                   className="block px-4 py-2 text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 rounded-lg text-center transition-all"
                 >
                   BOOK DEMO

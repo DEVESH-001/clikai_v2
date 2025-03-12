@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import {
-  ArrowRight,
   Users,
   FileCheck,
   Shield,
@@ -161,7 +160,6 @@ export default function DisbursementPCNASupport() {
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 Schedule a Consultation
-                <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </motion.div>
           </div>
@@ -529,7 +527,7 @@ export default function DisbursementPCNASupport() {
                 className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
               >
                 Book Demo
-                <ArrowRight className="ml-2 h-5 w-5" />
+
               </Button>
             </motion.div>
           </motion.div>

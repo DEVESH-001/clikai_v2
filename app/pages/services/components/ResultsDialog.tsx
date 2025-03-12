@@ -1,91 +1,80 @@
-"use client" 
-import type React from "react";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-} from "@/components/ui/dialog";
-import { motion } from "framer-motion";
-import { AlertTriangle, CheckCircle } from "lucide-react";
-import { GeistSans } from "geist/font/sans";
+"use client"
+
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { Progress } from "@/components/ui/progress"
+import { ScrollArea } from "@/components/ui/scroll-area"
+import { CheckCircle } from "lucide-react"
 
 interface ResultsDialogProps {
-  open: boolean;
-  onOpenChange: (open: boolean) => void;
-  underwritingScore: number;
-  riskFlags: Array<{ type: string; message: string }>;
-  bestLenderFit: string;
-  suggestedAdjustments: string;
+  open: boolean
+  onOpenChange: (open: boolean) => void
+  underwritingScore: number
+  riskFlags: Array<{
+    type: string
+    message: string
+  }>
+  bestLenderFit: string
+  suggestedAdjustments: string
 }
 
-const ResultsDialog: React.FC<ResultsDialogProps> = ({
+export default function ResultsDialog({
   open,
   onOpenChange,
   underwritingScore,
   riskFlags,
   bestLenderFit,
   suggestedAdjustments,
-}) => {
+}: ResultsDialogProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className={`sm:max-w-[425px] ${GeistSans.className}`}>
+      <DialogContent className="sm:max-w-[600px] w-[95vw] p-4 md:p-6 mt-16 sm:mt-12 md:mt-8">
         <DialogHeader>
-          <DialogTitle>Deal Analysis Results</DialogTitle>
+          <DialogTitle className="text-2xl font-bold text-center">Deal Analysis Results</DialogTitle>
         </DialogHeader>
-        <div className="mt-4 space-y-4">
-          <div>
-            <h3 className="text-sm font-semibold mb-1">Underwriting Score</h3>
-            <motion.div
-              className="w-full h-2 bg-gray-200 rounded-full overflow-hidden"
-              initial={{ width: 0 }}
-              animate={{ width: `${underwritingScore}%` }}
-              transition={{ duration: 0.5 }}
-            >
-              <div
-                className="h-full bg-blue-600"
-                style={{ width: `${underwritingScore}%` }}
-              ></div>
-            </motion.div>
-            <div className="text-xs text-gray-500 mt-1">
-              {underwritingScore}%
+        <ScrollArea className="h-[70vh] sm:h-[60vh] md:h-auto pr-4">
+          <div className="space-y-6">
+            {/* Underwriting Score */}
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Underwriting Score</h3>
+              <Progress value={underwritingScore} className="h-2 mb-1" />
+              <p className="text-lg font-medium">{underwritingScore}%</p>
             </div>
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold mb-1">Risk Flags</h3>
-            {riskFlags.map((flag, index) => (
-              <div
-                key={index}
-                className={`flex items-center text-xs mb-1 text-${
-                  flag.type === "high"
-                    ? "red"
-                    : flag.type === "medium"
-                    ? "orange"
-                    : "green"
-                }-600`}
-              >
-                <AlertTriangle className="w-3 h-3 mr-1" />
-                <span>{flag.message}</span>
+
+            {/* Risk Flags */}
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Risk Flags</h3>
+              <ul className="space-y-2">
+                {riskFlags.map((flag, index) => (
+                  <li key={index} className="flex items-start">
+                    <span
+                      className={`inline-block w-2 h-2 mt-2 mr-2 rounded-full ${
+                        flag.type === "high" ? "bg-red-500" : flag.type === "medium" ? "bg-yellow-500" : "bg-green-500"
+                      }`}
+                    />
+                    <span className="text-sm">{flag.message}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Best Lender Fit */}
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Best Lender Fit</h3>
+              <div className="flex items-center">
+                <CheckCircle className="w-5 h-5 text-green-500 mr-2" />
+                <span className="text-lg">{bestLenderFit}</span>
               </div>
-            ))}
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold mb-1">Best Lender Fit</h3>
-            <div className="flex items-center text-xs">
-              <CheckCircle className="w-3 h-3 mr-1 text-green-600" />
-              <span>{bestLenderFit}</span>
+            </div>
+
+            {/* Suggested Adjustments */}
+            <div>
+              <h3 className="text-xl font-semibold mb-2">Suggested Adjustments</h3>
+              <p className="text-sm text-gray-600">{suggestedAdjustments}</p>
             </div>
           </div>
-          <div>
-            <h3 className="text-sm font-semibold mb-1">
-              Suggested Adjustments
-            </h3>
-            <p className="text-xs text-gray-700">{suggestedAdjustments}</p>
-          </div>
-        </div>
+        </ScrollArea>
       </DialogContent>
     </Dialog>
-  );
-};
+  )
+}
 
-export default ResultsDialog;
