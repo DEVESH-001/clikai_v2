@@ -12,6 +12,10 @@ Allow: /contact-us
 Allow: /security
 Allow: /privacy-policy
 Allow: /terms-and-conditions
+Allow: /pages/
+Allow: /pages/products/
+Allow: /pages/services/
+Allow: /pages/why-clik-ai
 
 # Disallow crawling of administrative and private areas
 Disallow: /admin/
@@ -31,10 +35,5 @@ Disallow: /*?utm_*
 # Sitemaps
 Sitemap: https://clikai-v2.vercel.app/sitemap.xml
 
-
 # Host directive
-Host:  https://clikai-v2.vercel.app/sitemap.xml
-
-
-
-
+Host: https://clikai-v2.vercel.app

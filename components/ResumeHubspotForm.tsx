@@ -1,3 +1,5 @@
+//this is called on contact_us page for uploading Resume
+
 "use client"
 
 import { useEffect, useRef } from "react"
@@ -13,7 +15,6 @@ export default function HubspotForm({ region = "na1", portalId, formId, classNam
   const formRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    // Only load the script if it hasn't been loaded yet
     if (!document.querySelector(`script[src*="hsforms.net/forms/embed/${portalId}.js"]`)) {
       const script = document.createElement("script")
       script.src = `https://js.hsforms.net/forms/embed/${portalId}.js`
