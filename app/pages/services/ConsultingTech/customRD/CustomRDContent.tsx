@@ -29,8 +29,8 @@ import {
   Legend,
 } from "chart.js";
 import { GradientBackground } from "@/components/sections/gradient-background";
-import MeetingsModal from "@/components/MeetingModal";
-import { BookDemoIframeModal } from "@/components/BookDemoIframe";
+import MeetingsModal from "@/components/hubspot_form/MeetingModal";
+import { BookDemoIframeModal } from "@/components/hubspot_form/BookDemoIframe";
 
 ChartJS.register(
   CategoryScale,
@@ -1316,10 +1316,10 @@ const UseCaseSection = () => {
 
 export default function CustomReportingDashboardsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
-    const openBookDemo = () => setIsBookDemoOpen(true);
-    const closeBookDemo = () => setIsBookDemoOpen(false);
-  
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+  const openBookDemo = () => setIsBookDemoOpen(true);
+  const closeBookDemo = () => setIsBookDemoOpen(false);
+
   return (
     <div className={`flex flex-col min-h-screen w-full ${GeistSans.className}`}>
       <main className="flex-grow relative overflow-hidden">
@@ -1389,7 +1389,6 @@ export default function CustomReportingDashboardsPage() {
                     className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-base rounded-[8px]"
                   >
                     Schedule a Consultation
-
                   </Button>
                 </motion.div>
               </div>
@@ -1476,7 +1475,6 @@ export default function CustomReportingDashboardsPage() {
                       className="bg-blue-600 text-white hover:bg-blue-700 w-full md:w-auto rounded-[8px]"
                     >
                       Schedule a Consultation
-
                     </Button>
                   </div>
                   <div className="space-y-4">
@@ -1719,18 +1717,17 @@ export default function CustomReportingDashboardsPage() {
                   className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
                 >
                   Schedule a Consultation
-
                 </Button>
               </motion.div>
             </motion.div>
           </div>
         </section>
-         <MeetingsModal
-                isOpen={isModalOpen}
-                onClose={() => setIsModalOpen(false)}
-                meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
-              />
-          <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+        <MeetingsModal
+          isOpen={isModalOpen}
+          onClose={() => setIsModalOpen(false)}
+          meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
+        />
+        <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
       </main>
     </div>
   );

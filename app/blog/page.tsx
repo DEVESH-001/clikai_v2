@@ -57,47 +57,46 @@
 //   )
 // }
 
-
-
-
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { getAllPosts } from "@/lib/api"
-import PostPreview from "@/components/PostPreview"
-import Pagination from "@/components/Pagination"
-import SEO from "@/components/SEO"
-import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema"
-import CollectionPageSchema from "@/components/schema/CollectionPageSchema"
+import { getAllPosts } from "@/lib/api";
+import PostPreview from "@/components/PostPreview";
+import Pagination from "@/components/sections/Pagination_Blogs";
+import SEO from "@/components/Seo";
+import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
+import CollectionPageSchema from "@/components/schema/CollectionPageSchema";
 
-
-export const dynamic = "force-dynamic"
+export const dynamic = "force-dynamic";
 
 export default async function BlogPage({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined }
+  searchParams: { [key: string]: string | string[] | undefined };
 }) {
-  const page = typeof searchParams.page === "string" ? Number.parseInt(searchParams.page, 10) : 1
-  const postsPerPage = 9
+  const page =
+    typeof searchParams.page === "string"
+      ? Number.parseInt(searchParams.page, 10)
+      : 1;
+  const postsPerPage = 9;
 
-  let posts = []
-  let totalPages = 0
-  let error = null
+  let posts = [];
+  let totalPages = 0;
+  let error = null;
 
   try {
-    const result = await getAllPosts(page, postsPerPage)
-    posts = result.posts
-    totalPages = result.totalPages
+    const result = await getAllPosts(page, postsPerPage);
+    posts = result.posts;
+    totalPages = result.totalPages;
   } catch (e) {
-    console.error("Failed to fetch posts:", e)
-    error = "Failed to load blog posts. Please try again later."
+    console.error("Failed to fetch posts:", e);
+    error = "Failed to load blog posts. Please try again later.";
   }
 
   // Breadcrumb items
   const breadcrumbItems = [
     { name: "Home", url: "https://clik.ai" },
     { name: "Blog", url: "https://clik.ai/blog" },
-  ]
+  ];
 
   return (
     <>
@@ -131,10 +130,11 @@ export default async function BlogPage({
             <Pagination currentPage={page} totalPages={totalPages} />
           </>
         ) : (
-          <p className="text-xl text-center">No posts found. Check back soon for updates!</p>
+          <p className="text-xl text-center">
+            No posts found. Check back soon for updates!
+          </p>
         )}
       </div>
     </>
-  )
+  );
 }
-

@@ -23,7 +23,7 @@ import {
 import { HeroVideoDialogDemo } from "@/components/magicui/HeroVideoDialogDemo";
 
 import { useState } from "react";
-import { BookDemoIframeModal } from "@/components/BookDemoIframe";
+import { BookDemoIframeModal } from "@/components/hubspot_form/BookDemoIframe";
 
 // Features data
 const features = [
@@ -34,7 +34,7 @@ const features = [
     icon: FileText,
     gradient: "from-blue-500 to-purple-500",
   },
-  { 
+  {
     title: "Customizable Outputs",
     description:
       "Generate underwriting models tailored to your format or lender-specific templates",
@@ -177,7 +177,7 @@ export default function AutoUWPage() {
                   <Button
                     size="lg"
                     onClick={openBookDemo}
-                   className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl text-base md:text-lg font-semibold px-6 py-3"
+                    className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl text-base md:text-lg font-semibold px-6 py-3"
                   >
                     Book Demo
                   </Button>
@@ -499,10 +499,9 @@ export default function AutoUWPage() {
               <Button
                 size="lg"
                 onClick={openBookDemo}
-               className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl text-base md:text-lg font-semibold px-6 py-6"
+                className="bg-blue-600 text-white hover:bg-blue-700 transform hover:scale-105 transition-all duration-200 shadow-lg hover:shadow-xl text-base md:text-lg font-semibold px-6 py-6"
               >
                 Book Demo
-
               </Button>
             </motion.div>
           </motion.div>

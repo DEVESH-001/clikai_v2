@@ -23,15 +23,13 @@ import {
 } from "@/components/ui/accordion";
 import { Switch } from "@/components/ui/switch";
 import { useState } from "react";
-import { BookDemoIframeModal } from "@/components/BookDemoIframe";
-
+import { BookDemoIframeModal } from "@/components/hubspot_form/BookDemoIframe";
 
 export default function InvestAssistPage() {
   const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
 
   const openBookDemo = () => setIsBookDemoOpen(true);
   const closeBookDemo = () => setIsBookDemoOpen(false);
-
 
   const [isYearly, setIsYearly] = useState(false);
 
@@ -85,7 +83,6 @@ export default function InvestAssistPage() {
                     className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 text-base"
                   >
                     Instant Access
-
                   </Button>
                   <Button
                     size="lg"
@@ -327,7 +324,6 @@ export default function InvestAssistPage() {
                 onClick={openBookDemo}
               >
                 Book Demo
-
               </Button>
             </motion.div>
           </div>
@@ -526,7 +522,6 @@ export default function InvestAssistPage() {
                   className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105"
                 >
                   Instant Access
-
                 </Button>
               </div>
             </div>
@@ -666,7 +661,6 @@ export default function InvestAssistPage() {
                 className="bg-white text-blue-600 hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 text-base"
               >
                 Instant Access
-
               </Button>
               <Button
                 size="lg"
@@ -678,7 +672,10 @@ export default function InvestAssistPage() {
               </Button>
             </div>
           </motion.div>
-          <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+          <BookDemoIframeModal
+            isOpen={isBookDemoOpen}
+            onClose={closeBookDemo}
+          />
         </div>
       </section>
     </div>

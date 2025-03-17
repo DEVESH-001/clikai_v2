@@ -1,3 +1,5 @@
+//not using this file. We are using Script file.
+
 import Document, { Html, Head,  NextScript } from "next/document";
 import Script from "next/script";
 

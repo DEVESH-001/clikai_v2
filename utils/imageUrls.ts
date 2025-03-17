@@ -1,3 +1,5 @@
+//currenly we are not using it
+
 export const imageUrls = {
   logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-new-blue-gcGeMIUcq2sSMFRvDZk9SdQmG3m1P7.svg",
   products: {

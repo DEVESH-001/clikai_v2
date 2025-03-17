@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { CookieConsentBanner } from "@/components/cookie-consent";
+import { CookieConsentBanner } from "@/components/cookies/cookie-consent";
 import { CookiePreferencesPopup } from "./cookie-preference-popup";
 
 export function CookieConsentManager() {

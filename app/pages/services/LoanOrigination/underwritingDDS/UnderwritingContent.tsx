@@ -1,18 +1,25 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import { GeistSans } from "geist/font/sans"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import { GeistSans } from "geist/font/sans";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-import { Clock, Zap, Building2, DollarSign, ArrowRight, CheckCircle } from "lucide-react"
-import { useToast } from "@/components/ui/use-toast"
-import { Bar, Line, Doughnut } from "react-chartjs-2"
+import {
+  Clock,
+  Zap,
+  Building2,
+  DollarSign,
+  ArrowRight,
+  CheckCircle,
+} from "lucide-react";
+import { useToast } from "@/components/ui/use-toast";
+import { Bar, Line, Doughnut } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -24,40 +31,54 @@ import {
   Tooltip,
   Legend,
   ArcElement,
-} from "chart.js"
-import DealFeasibilityChecker from "../../components/DealFeasibilityChecker"
-import { BookDemoIframeModal } from "@/components/BookDemoIframe"
+} from "chart.js";
+import DealFeasibilityChecker from "../../components/DealFeasibilityChecker";
+import { BookDemoIframeModal } from "@/components/hubspot_form/BookDemoIframe";
 
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, BarElement, Title, Tooltip, Legend, ArcElement)
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  BarElement,
+  Title,
+  Tooltip,
+  Legend,
+  ArcElement
+);
 
-const MotionCard = motion(Card)
+const MotionCard = motion(Card);
 
 interface FileUploadResponse {
-  success: boolean
-  message: string
+  success: boolean;
+  message: string;
 }
 
 export default function UnderwritingDueDiligenceSupport() {
-  const [userEmail] = useState("")
-  const [, setIsUploading] = useState(false)
-  const { toast } = useToast()
-  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false)
-  const openBookDemo = () => setIsBookDemoOpen(true)
-  const closeBookDemo = () => setIsBookDemoOpen(false)
+  const [userEmail] = useState("");
+  const [, setIsUploading] = useState(false);
+  const { toast } = useToast();
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+  const openBookDemo = () => setIsBookDemoOpen(true);
+  const closeBookDemo = () => setIsBookDemoOpen(false);
 
-  const handleFileUpload = async (e: React.ChangeEvent<HTMLInputElement>, documentType: string) => {
-    if (!e.target.files || !e.target.files[0]) return
+  const handleFileUpload = async (
+    e: React.ChangeEvent<HTMLInputElement>,
+    documentType: string
+  ) => {
+    if (!e.target.files || !e.target.files[0]) return;
 
     if (!userEmail) {
       toast({
         title: "Email Required",
-        description: "Please enter your email address before uploading documents.",
+        description:
+          "Please enter your email address before uploading documents.",
         variant: "destructive",
-      })
-      return
+      });
+      return;
     }
 
-    setIsUploading(true)
+    setIsUploading(true);
     try {
       const response = await fetch("/api/send-email", {
         method: "POST",
@@ -69,28 +90,31 @@ export default function UnderwritingDueDiligenceSupport() {
           documentType,
           fileName: e.target.files[0].name,
         }),
-      })
+      });
 
-      const data: FileUploadResponse = await response.json()
+      const data: FileUploadResponse = await response.json();
 
       if (data.success) {
         toast({
           title: "Document Received",
           description: `We've received your ${documentType} and sent a confirmation email.`,
-        })
+        });
       } else {
-        throw new Error(data.message || "Failed to process document")
+        throw new Error(data.message || "Failed to process document");
       }
     } catch (error) {
       toast({
         title: "Upload Failed",
-        description: error instanceof Error ? error.message : "Failed to upload document. Please try again.",
+        description:
+          error instanceof Error
+            ? error.message
+            : "Failed to upload document. Please try again.",
         variant: "destructive",
-      })
+      });
     } finally {
-      setIsUploading(false)
+      setIsUploading(false);
     }
-  }
+  };
 
   const dealUnderwritingFeatures = [
     "Loan Sizing & DSCR Modeling – Determine maximum loan eligibility",
@@ -98,7 +122,7 @@ export default function UnderwritingDueDiligenceSupport() {
     "Sensitivity Analysis – Evaluate impact of rent growth, interest rates, and market shifts",
     "Lender-Specific Models – Custom templates for Fannie, Freddie, HUD, CMBS lenders",
     "Scenario Analysis – Create multiple financing scenarios for deal comparison",
-  ]
+  ];
 
   const autoUWFeatures = [
     "Operating Statement (OS) & Rent Roll Data Extraction – AI-powered document parsing",
@@ -106,7 +130,7 @@ export default function UnderwritingDueDiligenceSupport() {
     "Lease Abstracting – Validate lease terms, rent escalations, and occupancy data",
     "Charge Code Mapping – Standardized revenue categorization across properties",
     "Vacancy & Concessions Analysis – Identify risks and market trends",
-  ]
+  ];
 
   const financialModelFeatures = [
     "Custom Financial Models – Property-specific underwriting models",
@@ -114,7 +138,7 @@ export default function UnderwritingDueDiligenceSupport() {
     "CREFC-Formatted Reports – Standardized underwriting outputs for lenders",
     "Cash Flow Projections – Long-term NOI and NCF analysis",
     "Capital Expenditure Planning – Predict renovation impact on financials",
-  ]
+  ];
 
   const dueDiligenceFeatures = [
     "Loan & Lease Abstracting – Comprehensive property-level documentation review",
@@ -122,7 +146,7 @@ export default function UnderwritingDueDiligenceSupport() {
     "Market Comps & Risk Analysis – Assess regional property trends",
     "Insurance & Environmental Risk Assessment – Identify potential liabilities",
     "Regulatory Compliance – Ensure alignment with CREFC, CMBS, and lender guidelines",
-  ]
+  ];
 
   const assetSummaryFeatures = [
     "Asset Summary Reports – Property-level underwriting with borrower background",
@@ -130,7 +154,7 @@ export default function UnderwritingDueDiligenceSupport() {
     "Cap Rate Analysis – Determine market-based valuation trends",
     "Pro Forma Modeling – Projected cash flow vs. actual market conditions",
     "Investor Waterfall Structuring – GP/LP return modeling & promote calculations",
-  ]
+  ];
 
   const cmbsFeatures = [
     "CMBS Loan Underwriting – Loan analysis and structuring for commercial mortgage-backed securities",
@@ -138,10 +162,12 @@ export default function UnderwritingDueDiligenceSupport() {
     "Loan Risk Assessment – Detailed stress testing for credit & prepayment risks",
     "Structured Finance Advisory – Custom financial structuring and securitization support",
     "Debt Market Trends & Benchmarking – Comparative analysis of lending terms across institutions",
-  ]
+  ];
 
   return (
-    <div className={`min-h-screen ${GeistSans.className} relative overflow-hidden`}>
+    <div
+      className={`min-h-screen ${GeistSans.className} relative overflow-hidden`}
+    >
       {/* AI-themed background elements */}
       <div className="absolute  w-full h-full overflow-hidden z-0">
         {/* // eslint-disable-next-line react/no-children-prop */}
@@ -167,8 +193,9 @@ export default function UnderwritingDueDiligenceSupport() {
                   <span className="text-gray-900">at Unbeatable Value</span>
                 </h1>
                 <h4 className="text-lg sm:text-xl text-gray-700 mb-8 text-center lg:text-left">
-                  Our seasoned analysts deliver precise, AI-assisted underwriting support. Accelerate deals with faster
-                  turnaround times while maintaining top-tier accuracy.
+                  Our seasoned analysts deliver precise, AI-assisted
+                  underwriting support. Accelerate deals with faster turnaround
+                  times while maintaining top-tier accuracy.
                 </h4>
                 <Button
                   size="lg"
@@ -187,7 +214,10 @@ export default function UnderwritingDueDiligenceSupport() {
               >
                 <DealFeasibilityChecker />
               </motion.div>
-              <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+              <BookDemoIframeModal
+                isOpen={isBookDemoOpen}
+                onClose={closeBookDemo}
+              />
             </div>
           </div>
         </section>
@@ -200,7 +230,11 @@ export default function UnderwritingDueDiligenceSupport() {
           {/* Decorative background elements */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {/* Curved lines */}
-            <svg className="absolute w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <svg
+              className="absolute w-full h-full"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            >
               <motion.path
                 d="M0,50 C30,20 70,80 100,50"
                 stroke="rgba(59, 130, 246, 0.2)"
@@ -258,13 +292,17 @@ export default function UnderwritingDueDiligenceSupport() {
               className="text-center mb-12"
             >
               <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600">
-                Same-Day CRE Underwriting – Powered by Experts, Accelerated by Technology
+                Same-Day CRE Underwriting – Powered by Experts, Accelerated by
+                Technology
               </h2>
               <h4 className="text-xl text-gray-600 max-w-4xl mx-auto">
                 Clik.ai&apos;s experienced underwriting professionals deliver{" "}
-                <span className="font-semibold">lender-ready underwriting reports on the same day</span>. Our
-                proprietary tools like AutoUnderwriting extract and normalize financial data to streamline the
-                process—without compromising accuracy or quality.
+                <span className="font-semibold">
+                  lender-ready underwriting reports on the same day
+                </span>
+                . Our proprietary tools like AutoUnderwriting extract and
+                normalize financial data to streamline the process—without
+                compromising accuracy or quality.
               </h4>
             </motion.div>
 
@@ -306,7 +344,9 @@ export default function UnderwritingDueDiligenceSupport() {
                     <CardContent className="p-6">
                       <item.icon className="w-12 h-12 text-blue-600 mb-4" />
                       <h3 className="text-lg font-bold mb-2">{item.title}</h3>
-                      <p className="text-sm text-gray-600">{item.description}</p>
+                      <p className="text-sm text-gray-600">
+                        {item.description}
+                      </p>
                     </CardContent>
                   </MotionCard>
                 </motion.div>
@@ -326,7 +366,9 @@ export default function UnderwritingDueDiligenceSupport() {
               <div className="grid md:grid-cols-2 gap-8">
                 <MotionCard className="bg-gradient-to-br from-gray-50 to-gray-100 backdrop-blur-sm border border-gray-200/50">
                   <CardContent className="p-6">
-                    <h4 className="text-xl font-bold mb-4">Traditional In-House Underwriting Process</h4>
+                    <h4 className="text-xl font-bold mb-4">
+                      Traditional In-House Underwriting Process
+                    </h4>
                     <div className="space-y-4">
                       {[
                         "Gathering & verifying property financials",
@@ -335,7 +377,10 @@ export default function UnderwritingDueDiligenceSupport() {
                         "Scenario analysis & lender reporting",
                         "Slower approvals & higher costs",
                       ].map((step, index) => (
-                        <div key={index} className="flex items-center text-gray-500">
+                        <div
+                          key={index}
+                          className="flex items-center text-gray-500"
+                        >
                           <span className="text-red-500 mr-2">❌</span>
                           <span>{step}</span>
                         </div>
@@ -346,7 +391,9 @@ export default function UnderwritingDueDiligenceSupport() {
 
                 <MotionCard className="bg-gradient-to-br from-blue-50 to-indigo-100 backdrop-blur-sm border border-blue-200/50">
                   <CardContent className="p-6">
-                    <h4 className="text-xl font-bold mb-4">Clik.ai&apos;s Same-Day Underwriting Process</h4>
+                    <h4 className="text-xl font-bold mb-4">
+                      Clik.ai&apos;s Same-Day Underwriting Process
+                    </h4>
                     <div className="space-y-4">
                       {[
                         "AutoExtract Financials from OS/RR",
@@ -355,7 +402,10 @@ export default function UnderwritingDueDiligenceSupport() {
                         "Deal scenario analysis & lender-ready reporting",
                         "Faster deal execution & cost-effective underwriting",
                       ].map((step, index) => (
-                        <div key={index} className="flex items-center text-gray-900">
+                        <div
+                          key={index}
+                          className="flex items-center text-gray-900"
+                        >
                           <span className="text-green-500 mr-2">✅</span>
                           <span>{step}</span>
                         </div>
@@ -382,8 +432,10 @@ export default function UnderwritingDueDiligenceSupport() {
                 Comprehensive CRE Underwriting & Due Diligence Support
               </h2>
               <h4 className="text-xl text-gray-600 max-w-4xl mx-auto">
-                Clik.ai&apos;s underwriting experts provide lender-ready models, cash flow analysis, financial
-                validation, and due diligence support—ensuring faster, compliant, and data-driven deal decisions.
+                Clik.ai&apos;s underwriting experts provide lender-ready models,
+                cash flow analysis, financial validation, and due diligence
+                support—ensuring faster, compliant, and data-driven deal
+                decisions.
               </h4>
             </motion.div>
             <Tabs defaultValue="deal-underwriting" className="w-full">
@@ -430,7 +482,9 @@ export default function UnderwritingDueDiligenceSupport() {
                       transition={{ duration: 0.5 }}
                     >
                       <CardHeader className="pb-2">
-                        <CardTitle className="text-xl mb-1">CRE Deal Underwriting</CardTitle>
+                        <CardTitle className="text-xl mb-1">
+                          CRE Deal Underwriting
+                        </CardTitle>
                         <p className="text-sm text-muted-foreground">
                           Comprehensive deal analysis and loan structuring
                         </p>
@@ -455,8 +509,12 @@ export default function UnderwritingDueDiligenceSupport() {
                       transition={{ duration: 0.5 }}
                     >
                       <CardHeader className="pb-2">
-                        <CardTitle className="text-xl mb-1">AutoUW - OS & Rent Roll Analysis</CardTitle>
-                        <p className="text-sm text-muted-foreground">AI-powered data extraction and normalization</p>
+                        <CardTitle className="text-xl mb-1">
+                          AutoUW - OS & Rent Roll Analysis
+                        </CardTitle>
+                        <p className="text-sm text-muted-foreground">
+                          AI-powered data extraction and normalization
+                        </p>
                       </CardHeader>
                       <CardContent className="pt-2">
                         <ul className="space-y-2">
@@ -478,8 +536,12 @@ export default function UnderwritingDueDiligenceSupport() {
                       transition={{ duration: 0.5 }}
                     >
                       <CardHeader className="pb-2">
-                        <CardTitle className="text-xl mb-1">Financial Model Creation & Spreading</CardTitle>
-                        <p className="text-sm text-muted-foreground">Customizable models for various scenarios</p>
+                        <CardTitle className="text-xl mb-1">
+                          Financial Model Creation & Spreading
+                        </CardTitle>
+                        <p className="text-sm text-muted-foreground">
+                          Customizable models for various scenarios
+                        </p>
                       </CardHeader>
                       <CardContent className="pt-2">
                         <ul className="space-y-2">
@@ -501,8 +563,12 @@ export default function UnderwritingDueDiligenceSupport() {
                       transition={{ duration: 0.5 }}
                     >
                       <CardHeader className="pb-2">
-                        <CardTitle className="text-xl mb-1">Due Diligence & Compliance Review</CardTitle>
-                        <p className="text-sm text-muted-foreground">Thorough review to mitigate risks</p>
+                        <CardTitle className="text-xl mb-1">
+                          Due Diligence & Compliance Review
+                        </CardTitle>
+                        <p className="text-sm text-muted-foreground">
+                          Thorough review to mitigate risks
+                        </p>
                       </CardHeader>
                       <CardContent className="pt-2">
                         <ul className="space-y-2">
@@ -524,8 +590,12 @@ export default function UnderwritingDueDiligenceSupport() {
                       transition={{ duration: 0.5 }}
                     >
                       <CardHeader className="pb-2">
-                        <CardTitle className="text-xl mb-1">Asset Summary & Investment Analysis</CardTitle>
-                        <p className="text-sm text-muted-foreground">Data-driven insights for investment decisions</p>
+                        <CardTitle className="text-xl mb-1">
+                          Asset Summary & Investment Analysis
+                        </CardTitle>
+                        <p className="text-sm text-muted-foreground">
+                          Data-driven insights for investment decisions
+                        </p>
                       </CardHeader>
                       <CardContent className="pt-2">
                         <ul className="space-y-2">
@@ -547,8 +617,12 @@ export default function UnderwritingDueDiligenceSupport() {
                       transition={{ duration: 0.5 }}
                     >
                       <CardHeader className="pb-2">
-                        <CardTitle className="text-xl mb-1">CMBS & Structured Finance Underwriting</CardTitle>
-                        <p className="text-sm text-muted-foreground">Specialized expertise for complex transactions</p>
+                        <CardTitle className="text-xl mb-1">
+                          CMBS & Structured Finance Underwriting
+                        </CardTitle>
+                        <p className="text-sm text-muted-foreground">
+                          Specialized expertise for complex transactions
+                        </p>
                       </CardHeader>
                       <CardContent className="pt-2 px-4">
                         <ul className="space-y-2">
@@ -574,7 +648,9 @@ export default function UnderwritingDueDiligenceSupport() {
                       transition={{ duration: 0.5 }}
                     >
                       <CardHeader className="pb-2">
-                        <CardTitle className="text-xl mb-1">Key Metrics & Performance</CardTitle>
+                        <CardTitle className="text-xl mb-1">
+                          Key Metrics & Performance
+                        </CardTitle>
                       </CardHeader>
                       <CardContent className="pt-2">
                         <div className="h-[120px] mb-2">
@@ -640,24 +716,48 @@ export default function UnderwritingDueDiligenceSupport() {
                         </div>
                         <div className="grid grid-cols-2 gap-2">
                           <div className="bg-blue-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-blue-900">Total Deal Volume</h4>
-                            <p className="text-lg font-bold text-blue-600">$15.3B+</p>
-                            <p className="text-[10px] text-blue-700">Across all asset types</p>
+                            <h4 className="text-xs font-semibold text-blue-900">
+                              Total Deal Volume
+                            </h4>
+                            <p className="text-lg font-bold text-blue-600">
+                              $15.3B+
+                            </p>
+                            <p className="text-[10px] text-blue-700">
+                              Across all asset types
+                            </p>
                           </div>
                           <div className="bg-indigo-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-indigo-900">Success Rate</h4>
-                            <p className="text-lg font-bold text-indigo-600">97.8%</p>
-                            <p className="text-[10px] text-indigo-700">Approval rate</p>
+                            <h4 className="text-xs font-semibold text-indigo-900">
+                              Success Rate
+                            </h4>
+                            <p className="text-lg font-bold text-indigo-600">
+                              97.8%
+                            </p>
+                            <p className="text-[10px] text-indigo-700">
+                              Approval rate
+                            </p>
                           </div>
                           <div className="bg-purple-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-purple-900">Avg. Processing Time</h4>
-                            <p className="text-lg font-bold text-purple-600">8hrs</p>
-                            <p className="text-[10px] text-purple-700">Same-day delivery</p>
+                            <h4 className="text-xs font-semibold text-purple-900">
+                              Avg. Processing Time
+                            </h4>
+                            <p className="text-lg font-bold text-purple-600">
+                              8hrs
+                            </p>
+                            <p className="text-[10px] text-purple-700">
+                              Same-day delivery
+                            </p>
                           </div>
                           <div className="bg-green-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-green-900">Efficiency Gain</h4>
-                            <p className="text-lg font-bold text-green-600">65%</p>
-                            <p className="text-[10px] text-green-700">Time saved vs. traditional methods</p>
+                            <h4 className="text-xs font-semibold text-green-900">
+                              Efficiency Gain
+                            </h4>
+                            <p className="text-lg font-bold text-green-600">
+                              65%
+                            </p>
+                            <p className="text-[10px] text-green-700">
+                              Time saved vs. traditional methods
+                            </p>
                           </div>
                         </div>
                       </CardContent>
@@ -671,29 +771,55 @@ export default function UnderwritingDueDiligenceSupport() {
                       transition={{ duration: 0.5 }}
                     >
                       <CardHeader className="pb-2">
-                        <CardTitle className="text-xl mb-1">Key Metrics & Performance</CardTitle>
+                        <CardTitle className="text-xl mb-1">
+                          Key Metrics & Performance
+                        </CardTitle>
                       </CardHeader>
                       <CardContent className="pt-2">
                         <div className="grid grid-cols-2 gap-2">
                           <div className="bg-purple-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-purple-900">Documents Processed</h4>
-                            <p className="text-lg font-bold text-purple-600">95k+</p>
-                            <p className="text-[10px] text-purple-700">OS & RR documents</p>
+                            <h4 className="text-xs font-semibold text-purple-900">
+                              Documents Processed
+                            </h4>
+                            <p className="text-lg font-bold text-purple-600">
+                              95k+
+                            </p>
+                            <p className="text-[10px] text-purple-700">
+                              OS & RR documents
+                            </p>
                           </div>
                           <div className="bg-blue-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-blue-900">Processing Time</h4>
-                            <p className="text-lg font-bold text-blue-600">25min</p>
-                            <p className="text-[10px] text-blue-700">Average per document</p>
+                            <h4 className="text-xs font-semibold text-blue-900">
+                              Processing Time
+                            </h4>
+                            <p className="text-lg font-bold text-blue-600">
+                              25min
+                            </p>
+                            <p className="text-[10px] text-blue-700">
+                              Average per document
+                            </p>
                           </div>
                           <div className="bg-green-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-green-900">Accuracy Rate</h4>
-                            <p className="text-lg font-bold text-green-600">99.2%</p>
-                            <p className="text-[10px] text-green-700">AI-powered extraction</p>
+                            <h4 className="text-xs font-semibold text-green-900">
+                              Accuracy Rate
+                            </h4>
+                            <p className="text-lg font-bold text-green-600">
+                              99.2%
+                            </p>
+                            <p className="text-[10px] text-green-700">
+                              AI-powered extraction
+                            </p>
                           </div>
                           <div className="bg-indigo-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-indigo-900">Efficiency Gain</h4>
-                            <p className="text-lg font-bold text-indigo-600">65%</p>
-                            <p className="text-[10px] text-indigo-700">Time saved vs. traditional methods</p>
+                            <h4 className="text-xs font-semibold text-indigo-900">
+                              Efficiency Gain
+                            </h4>
+                            <p className="text-lg font-bold text-indigo-600">
+                              65%
+                            </p>
+                            <p className="text-[10px] text-indigo-700">
+                              Time saved vs. traditional methods
+                            </p>
                           </div>
                         </div>
                       </CardContent>
@@ -707,13 +833,21 @@ export default function UnderwritingDueDiligenceSupport() {
                       transition={{ duration: 0.5 }}
                     >
                       <CardHeader className="pb-2">
-                        <CardTitle className="text-xl mb-1">Key Metrics & Performance</CardTitle>
+                        <CardTitle className="text-xl mb-1">
+                          Key Metrics & Performance
+                        </CardTitle>
                       </CardHeader>
                       <CardContent className="pt-2">
                         <div className="h-[120px] mb-2">
                           <Bar
                             data={{
-                              labels: ["Agency", "CMBS", "Bridge", "Construction", "Other"],
+                              labels: [
+                                "Agency",
+                                "CMBS",
+                                "Bridge",
+                                "Construction",
+                                "Other",
+                              ],
                               datasets: [
                                 {
                                   label: "Models Created",
@@ -772,24 +906,48 @@ export default function UnderwritingDueDiligenceSupport() {
                         </div>
                         <div className="grid grid-cols-2 gap-2">
                           <div className="bg-blue-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-blue-900">Models Created</h4>
-                            <p className="text-lg font-bold text-blue-600">3,000+</p>
-                            <p className="text-[10px] text-blue-700">Custom financial models</p>
+                            <h4 className="text-xs font-semibold text-blue-900">
+                              Models Created
+                            </h4>
+                            <p className="text-lg font-bold text-blue-600">
+                              3,000+
+                            </p>
+                            <p className="text-[10px] text-blue-700">
+                              Custom financial models
+                            </p>
                           </div>
                           <div className="bg-indigo-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-indigo-900">Time Saved</h4>
-                            <p className="text-lg font-bold text-indigo-600">65%</p>
-                            <p className="text-[10px] text-indigo-700">vs. traditional methods</p>
+                            <h4 className="text-xs font-semibold text-indigo-900">
+                              Time Saved
+                            </h4>
+                            <p className="text-lg font-bold text-indigo-600">
+                              65%
+                            </p>
+                            <p className="text-[10px] text-indigo-700">
+                              vs. traditional methods
+                            </p>
                           </div>
                           <div className="bg-purple-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-purple-900">Model Types</h4>
-                            <p className="text-lg font-bold text-purple-600">15+</p>
-                            <p className="text-[10px] text-purple-700">Specialized templates</p>
+                            <h4 className="text-xs font-semibold text-purple-900">
+                              Model Types
+                            </h4>
+                            <p className="text-lg font-bold text-purple-600">
+                              15+
+                            </p>
+                            <p className="text-[10px] text-purple-700">
+                              Specialized templates
+                            </p>
                           </div>
                           <div className="bg-green-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-green-900">Efficiency Gain</h4>
-                            <p className="text-lg font-bold text-green-600">65%</p>
-                            <p className="text-[10px] text-green-700">Time saved vs. traditional methods</p>
+                            <h4 className="text-xs font-semibold text-green-900">
+                              Efficiency Gain
+                            </h4>
+                            <p className="text-lg font-bold text-green-600">
+                              65%
+                            </p>
+                            <p className="text-[10px] text-green-700">
+                              Time saved vs. traditional methods
+                            </p>
                           </div>
                         </div>
                       </CardContent>
@@ -803,7 +961,9 @@ export default function UnderwritingDueDiligenceSupport() {
                       transition={{ duration: 0.5 }}
                     >
                       <CardHeader className="pb-2">
-                        <CardTitle className="text-xl mb-1">Key Metrics & Performance</CardTitle>
+                        <CardTitle className="text-xl mb-1">
+                          Key Metrics & Performance
+                        </CardTitle>
                       </CardHeader>
                       <CardContent className="pt-2">
                         <div className="h-[120px] mb-2">
@@ -870,24 +1030,48 @@ export default function UnderwritingDueDiligenceSupport() {
                         </div>
                         <div className="grid grid-cols-2 gap-2">
                           <div className="bg-blue-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-blue-900">Properties Reviewed</h4>
-                            <p className="text-lg font-bold text-blue-600">5,210+</p>
-                            <p className="text-[10px] text-blue-700">Comprehensive analysis</p>
+                            <h4 className="text-xs font-semibold text-blue-900">
+                              Properties Reviewed
+                            </h4>
+                            <p className="text-lg font-bold text-blue-600">
+                              5,210+
+                            </p>
+                            <p className="text-[10px] text-blue-700">
+                              Comprehensive analysis
+                            </p>
                           </div>
                           <div className="bg-green-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-green-900">Risk Identified</h4>
-                            <p className="text-lg font-bold text-green-600">96.8%</p>
-                            <p className="text-[10px] text-green-700">Detection rate</p>
+                            <h4 className="text-xs font-semibold text-green-900">
+                              Risk Identified
+                            </h4>
+                            <p className="text-lg font-bold text-green-600">
+                              96.8%
+                            </p>
+                            <p className="text-[10px] text-green-700">
+                              Detection rate
+                            </p>
                           </div>
                           <div className="bg-purple-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-purple-900">Time to Complete</h4>
-                            <p className="text-lg font-bold text-purple-600">40hrs</p>
-                            <p className="text-[10px] text-purple-700">Average turnaround</p>
+                            <h4 className="text-xs font-semibold text-purple-900">
+                              Time to Complete
+                            </h4>
+                            <p className="text-lg font-bold text-purple-600">
+                              40hrs
+                            </p>
+                            <p className="text-[10px] text-purple-700">
+                              Average turnaround
+                            </p>
                           </div>
                           <div className="bg-indigo-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-indigo-900">Efficiency Gain</h4>
-                            <p className="text-lg font-bold text-indigo-600">65%</p>
-                            <p className="text-[10px] text-indigo-700">Time saved vs. traditional methods</p>
+                            <h4 className="text-xs font-semibold text-indigo-900">
+                              Efficiency Gain
+                            </h4>
+                            <p className="text-lg font-bold text-indigo-600">
+                              65%
+                            </p>
+                            <p className="text-[10px] text-indigo-700">
+                              Time saved vs. traditional methods
+                            </p>
                           </div>
                         </div>
                       </CardContent>
@@ -901,13 +1085,22 @@ export default function UnderwritingDueDiligenceSupport() {
                       transition={{ duration: 0.5 }}
                     >
                       <CardHeader className="pb-2">
-                        <CardTitle className="text-xl mb-1">Key Metrics & Performance</CardTitle>
+                        <CardTitle className="text-xl mb-1">
+                          Key Metrics & Performance
+                        </CardTitle>
                       </CardHeader>
                       <CardContent className="pt-2">
                         <div className="h-[120px] mb-2">
                           <Doughnut
                             data={{
-                              labels: ["Multifamily", "Office", "Retail", "Industrial", "Mixed-Use", "Other"],
+                              labels: [
+                                "Multifamily",
+                                "Office",
+                                "Retail",
+                                "Industrial",
+                                "Mixed-Use",
+                                "Other",
+                              ],
                               datasets: [
                                 {
                                   data: [35, 22, 18, 12, 8, 5],
@@ -967,24 +1160,48 @@ export default function UnderwritingDueDiligenceSupport() {
                         </div>
                         <div className="grid grid-cols-2 gap-2">
                           <div className="bg-blue-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-blue-900">Portfolio Value</h4>
-                            <p className="text-lg font-bold text-blue-600">$28B+</p>
-                            <p className="text-[10px] text-blue-700">Assets analyzed</p>
+                            <h4 className="text-xs font-semibold text-blue-900">
+                              Portfolio Value
+                            </h4>
+                            <p className="text-lg font-bold text-blue-600">
+                              $28B+
+                            </p>
+                            <p className="text-[10px] text-blue-700">
+                              Assets analyzed
+                            </p>
                           </div>
                           <div className="bg-indigo-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-indigo-900">Properties</h4>
-                            <p className="text-lg font-bold text-indigo-600">4,800+</p>
-                            <p className="text-[10px] text-indigo-700">Detailed analysis</p>
+                            <h4 className="text-xs font-semibold text-indigo-900">
+                              Properties
+                            </h4>
+                            <p className="text-lg font-bold text-indigo-600">
+                              4,800+
+                            </p>
+                            <p className="text-[10px] text-indigo-700">
+                              Detailed analysis
+                            </p>
                           </div>
                           <div className="bg-purple-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-purple-900">Markets</h4>
-                            <p className="text-lg font-bold text-purple-600">120+</p>
-                            <p className="text-[10px] text-purple-700">Coverage</p>
+                            <h4 className="text-xs font-semibold text-purple-900">
+                              Markets
+                            </h4>
+                            <p className="text-lg font-bold text-purple-600">
+                              120+
+                            </p>
+                            <p className="text-[10px] text-purple-700">
+                              Coverage
+                            </p>
                           </div>
                           <div className="bg-green-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-green-900">Efficiency Gain</h4>
-                            <p className="text-lg font-bold text-green-600">65%</p>
-                            <p className="text-[10px] text-green-700">Time saved vs. traditional methods</p>
+                            <h4 className="text-xs font-semibold text-green-900">
+                              Efficiency Gain
+                            </h4>
+                            <p className="text-lg font-bold text-green-600">
+                              65%
+                            </p>
+                            <p className="text-[10px] text-green-700">
+                              Time saved vs. traditional methods
+                            </p>
                           </div>
                         </div>
                       </CardContent>
@@ -998,7 +1215,9 @@ export default function UnderwritingDueDiligenceSupport() {
                       transition={{ duration: 0.5 }}
                     >
                       <CardHeader className="pb-2">
-                        <CardTitle className="text-xl mb-1">Key Metrics & Performance</CardTitle>
+                        <CardTitle className="text-xl mb-1">
+                          Key Metrics & Performance
+                        </CardTitle>
                       </CardHeader>
                       <CardContent className="pt-2">
                         <div className="h-[120px] mb-2">
@@ -1063,24 +1282,48 @@ export default function UnderwritingDueDiligenceSupport() {
                         </div>
                         <div className="grid grid-cols-2 gap-2">
                           <div className="bg-blue-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-blue-900">Total Volume</h4>
-                            <p className="text-lg font-bold text-blue-600">$44.2B+</p>
-                            <p className="text-[10px] text-blue-700">CMBS deals analyzed</p>
+                            <h4 className="text-xs font-semibold text-blue-900">
+                              Total Volume
+                            </h4>
+                            <p className="text-lg font-bold text-blue-600">
+                              $44.2B+
+                            </p>
+                            <p className="text-[10px] text-blue-700">
+                              CMBS deals analyzed
+                            </p>
                           </div>
                           <div className="bg-indigo-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-indigo-900">Loans Reviewed</h4>
-                            <p className="text-lg font-bold text-indigo-600">2,830+</p>
-                            <p className="text-[10px] text-indigo-700">Detailed analysis</p>
+                            <h4 className="text-xs font-semibold text-indigo-900">
+                              Loans Reviewed
+                            </h4>
+                            <p className="text-lg font-bold text-indigo-600">
+                              2,830+
+                            </p>
+                            <p className="text-[10px] text-indigo-700">
+                              Detailed analysis
+                            </p>
                           </div>
                           <div className="bg-purple-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-purple-900">Success Rate</h4>
-                            <p className="text-lg font-bold text-purple-600">99.5%</p>
-                            <p className="text-[10px] text-purple-700">Accuracy rate</p>
+                            <h4 className="text-xs font-semibold text-purple-900">
+                              Success Rate
+                            </h4>
+                            <p className="text-lg font-bold text-purple-600">
+                              99.5%
+                            </p>
+                            <p className="text-[10px] text-purple-700">
+                              Accuracy rate
+                            </p>
                           </div>
                           <div className="bg-green-50 p-2 rounded-lg">
-                            <h4 className="text-xs font-semibold text-green-900">Efficiency Gain</h4>
-                            <p className="text-lg font-bold text-green-600">65%</p>
-                            <p className="text-[10px] text-green-700">Time saved vs. traditional methods</p>
+                            <h4 className="text-xs font-semibold text-green-900">
+                              Efficiency Gain
+                            </h4>
+                            <p className="text-lg font-bold text-green-600">
+                              65%
+                            </p>
+                            <p className="text-[10px] text-green-700">
+                              Time saved vs. traditional methods
+                            </p>
                           </div>
                         </div>
                       </CardContent>
@@ -1177,8 +1420,15 @@ export default function UnderwritingDueDiligenceSupport() {
         <section className="relative py-16 bg-gradient-to-br from-[#001F3F] via-blue-900 to-blue-800">
           <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-soft-light"></div>
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <svg className="absolute w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-              <path d="M0,0 C30,40 70,60 100,0 L100,100 L0,100 Z" fill="rgba(255, 255, 255, 0.05)" />
+            <svg
+              className="absolute w-full h-full"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0,0 C30,40 70,60 100,0 L100,100 L0,100 Z"
+                fill="rgba(255, 255, 255, 0.05)"
+              />
             </svg>
           </div>
           <div className="container mx-auto px-4 relative z-10">
@@ -1192,7 +1442,8 @@ export default function UnderwritingDueDiligenceSupport() {
                 Need Lender-Ready Underwriting & Due Diligence Support?
               </h2>
               <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">
-                Ready to explore how our CRE technology solutions can transform your business?
+                Ready to explore how our CRE technology solutions can transform
+                your business?
               </p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -1205,25 +1456,19 @@ export default function UnderwritingDueDiligenceSupport() {
                   className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
                 >
                   Book Demo
-
                 </Button>
               </motion.div>
             </motion.div>
-            <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+            <BookDemoIframeModal
+              isOpen={isBookDemoOpen}
+              onClose={closeBookDemo}
+            />
           </div>
         </section>
       </main>
     </div>
-  )
+  );
 }
-
-
-
-
-
-
-
-
 
 /* eslint-disable react/no-children-prop */
 // "use client";

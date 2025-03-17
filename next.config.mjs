@@ -203,7 +203,6 @@
 
 // export default nextConfig;
 
-
 const nextConfig = {
   images: {
     remotePatterns: [
@@ -408,4 +407,3 @@ const nextConfig = {
 };
 
 export default nextConfig;
-

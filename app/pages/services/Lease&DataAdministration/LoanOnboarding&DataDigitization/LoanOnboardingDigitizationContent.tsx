@@ -26,7 +26,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import MeetingsModal from "@/components/MeetingModal";
+import MeetingsModal from "@/components/hubspot_form/MeetingModal";
 import { useState } from "react";
 
 // Stats data
@@ -72,7 +72,7 @@ const documentTypes = [
 ];
 
 export default function LoanOnboardingPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className={`min-h-screen ${GeistSans.className}`}>
       {/* Hero Section */}
@@ -102,7 +102,6 @@ export default function LoanOnboardingPage() {
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-6 text-lg rounded-lg transition-all duration-300 transform hover:scale-105"
               >
                 Schedule a Consultation
-
               </Button>
             </motion.div>
           </div>
@@ -115,7 +114,7 @@ export default function LoanOnboardingPage() {
           >
             <div className="relative w-full aspect-[16/9]">
               <Image
-               src="/images/Services_Section_Images/Lease&DataAdministration/LoanOnboarding/Hero_Image.png"
+                src="/images/Services_Section_Images/Lease&DataAdministration/LoanOnboarding/Hero_Image.png"
                 alt="Loan Onboarding Workflow"
                 fill
                 className="object-contain"
@@ -569,15 +568,14 @@ export default function LoanOnboardingPage() {
                 className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
               >
                 Schedule a Consultation
-
               </Button>
             </motion.div>
           </motion.div>
-            <MeetingsModal
-                  isOpen={isModalOpen}
-                  onClose={() => setIsModalOpen(false)}
-                  meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
-                />
+          <MeetingsModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
+          />
         </div>
       </section>
     </div>

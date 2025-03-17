@@ -25,7 +25,7 @@ import {
 } from "lucide-react";
 
 import { useState } from "react";
-import { BookDemoIframeModal } from "@/components/BookDemoIframe";
+import { BookDemoIframeModal } from "@/components/hubspot_form/BookDemoIframe";
 
 // Product data
 const products = [
@@ -113,10 +113,10 @@ const faqItems = [
 ];
 
 export default function Clarity360OMPage() {
-    const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
 
-    const openBookDemo = () => setIsBookDemoOpen(true);
-    const closeBookDemo = () => setIsBookDemoOpen(false);
+  const openBookDemo = () => setIsBookDemoOpen(true);
+  const closeBookDemo = () => setIsBookDemoOpen(false);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-purple-50 to-indigo-50">
@@ -168,7 +168,6 @@ export default function Clarity360OMPage() {
                   onClick={openBookDemo}
                 >
                   Book Demo
-
                 </Button>
               </motion.div>
             </div>
@@ -272,11 +271,9 @@ export default function Clarity360OMPage() {
                   >
                     <Button
                       className="w-full text-base bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white"
-                      
                       onClick={openBookDemo}
                     >
                       Book Demo
-
                     </Button>
                   </motion.div>
                 </Card>
@@ -559,7 +556,6 @@ export default function Clarity360OMPage() {
                   onClick={openBookDemo}
                 >
                   Book Demo
-
                 </Button>
               </div>
             </Card>
@@ -668,7 +664,6 @@ export default function Clarity360OMPage() {
                   onClick={openBookDemo}
                 >
                   Book Demo
-
                 </Button>
               </Card>
             </div>
@@ -743,7 +738,10 @@ export default function Clarity360OMPage() {
               </Button>
             </motion.div>
           </motion.div>
-          <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+          <BookDemoIframeModal
+            isOpen={isBookDemoOpen}
+            onClose={closeBookDemo}
+          />
         </div>
       </section>
     </div>

@@ -33,7 +33,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "app/api/content/data.ts", "components/CookieConsent.tsx "  ],
+, "app/api/content/data.ts", "components/CookieConsent.tsx ", "components/HubspotForm"  ],
   "exclude": [
     "node_modules"
   ]

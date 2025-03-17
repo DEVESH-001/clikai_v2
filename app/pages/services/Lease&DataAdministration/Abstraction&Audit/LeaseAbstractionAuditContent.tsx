@@ -20,8 +20,8 @@ import {
   Settings,
 } from "lucide-react";
 import Image from "next/image";
-import { BookDemoIframeModal } from "@/components/BookDemoIframe";
-import MeetingsModal from "@/components/MeetingModal";
+import { BookDemoIframeModal } from "@/components/hubspot_form/BookDemoIframe";
+import MeetingsModal from "@/components/hubspot_form/MeetingModal";
 
 // Enhanced services with more detail and balanced content
 const services = [
@@ -997,7 +997,6 @@ export default function LeaseAbstractionAuditPage() {
                   onClick={openBookDemo}
                 >
                   Book Demo
-
                 </Button>
               </motion.div>
             </motion.div>
@@ -1005,11 +1004,11 @@ export default function LeaseAbstractionAuditPage() {
               isOpen={isBookDemoOpen}
               onClose={closeBookDemo}
             />
-              <MeetingsModal
-                    isOpen={isModalOpen}
-                    onClose={() => setIsModalOpen(false)}
-                    meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
-                  />
+            <MeetingsModal
+              isOpen={isModalOpen}
+              onClose={() => setIsModalOpen(false)}
+              meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
+            />
           </div>
         </section>
       </div>

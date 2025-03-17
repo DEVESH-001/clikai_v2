@@ -1,3 +1,5 @@
+//file validation in UnderWriting Section
+
 export const ALLOWED_FILE_TYPES = [
   "application/pdf",
   "application/vnd.ms-excel",

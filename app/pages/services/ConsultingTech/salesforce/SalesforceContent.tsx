@@ -26,8 +26,8 @@ import {
 import { GeistSans } from "geist/font/sans";
 
 import React from "react";
-import MeetingsModal from "@/components/MeetingModal";
-import { BookDemoIframeModal } from "@/components/BookDemoIframe";
+import MeetingsModal from "@/components/hubspot_form/MeetingModal";
+import { BookDemoIframeModal } from "@/components/hubspot_form/BookDemoIframe";
 
 const services = [
   {
@@ -259,7 +259,7 @@ export default function SalesforceCustomizationPage() {
   const openBookDemo = () => setIsBookDemoOpen(true);
   const closeBookDemo = () => setIsBookDemoOpen(false);
 
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [activeService, setActiveService] = useState<number | null>(null);
   const [activeBenefit, setActiveBenefit] = useState(null);
   const [activeEngagementModel, setActiveEngagementModel] = useState<
@@ -616,7 +616,6 @@ export default function SalesforceCustomizationPage() {
                   className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
                 >
                   Schedule a Consultation
-
                 </Button>
               </motion.div>
               <p className="text-blue-200 mt-4">
@@ -625,12 +624,15 @@ export default function SalesforceCustomizationPage() {
             </motion.div>
           </div>
           {/* Meeting Modal */}
-                <MeetingsModal
-                  isOpen={isModalOpen}
-                  onClose={() => setIsModalOpen(false)}
-                  meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
-                />
-                <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
+          <MeetingsModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
+          />
+          <BookDemoIframeModal
+            isOpen={isBookDemoOpen}
+            onClose={closeBookDemo}
+          />
         </section>
       </div>
     </div>

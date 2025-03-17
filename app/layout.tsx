@@ -2,17 +2,15 @@ import type React from "react";
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import "./globals.css";
-import { Navbar } from "@/components/navbar";
-import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/sections/10_Navbar";
+import { Footer } from "@/components/sections/9_Footer";
 import { Scripts } from "@/components/Scripts";
-import { CookieConsentProvider } from "@/components/CookieConsentProvider";
-import ChatBot from "@/components/Chatbot";
+import { CookieConsentProvider } from "@/components/cookies/CookieConsentProvider";
+import ChatBot from "@/components/chatbot/Chatbot";
 import OrganizationSchema from "@/components/schema/OrginazationSchema";
 import WebsiteSchema from "@/components/schema/WebsiteSchema";
 
-
-
-//metadata
+//Metadata
 export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_APP_URL || "http://clikai-v2.vercel.app/"
@@ -57,9 +55,7 @@ export default function RootLayout({
         <CookieConsentProvider>
           <Scripts />
           <Navbar />
-          <main>
-            {children}
-          </main>
+          <main>{children}</main>
           <ChatBot />
           <Footer />
         </CookieConsentProvider>
@@ -68,5 +64,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-

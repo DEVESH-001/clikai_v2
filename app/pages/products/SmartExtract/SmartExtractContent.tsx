@@ -36,7 +36,7 @@ import type React from "react";
 import Link from "next/link";
 
 import { useState } from "react";
-import { BookDemoIframeModal } from "@/components/BookDemoIframe";
+import { BookDemoIframeModal } from "@/components/hubspot_form/BookDemoIframe";
 
 const CodePreview = ({ children }: { children: React.ReactNode }) => (
   <div className="relative group">
@@ -707,7 +707,6 @@ console.log(result.data);`}
                   className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
                 >
                   Book Demo
-
                 </Button>
               </motion.div>
             </motion.div>

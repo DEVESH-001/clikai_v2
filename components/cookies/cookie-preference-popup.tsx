@@ -157,6 +157,8 @@ export function CookiePreferencesPopup({
   return createPortal(modalContent, document.body);
 }
 
+
+//old
 // "use client";
 
 // import { useState, useEffect } from "react";

@@ -2,13 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import {
-  Users,
-  FileCheck,
-  Shield,
-  Clock,
-  ShieldCheck,
-} from "lucide-react";
+import { Users, FileCheck, Shield, Clock, ShieldCheck } from "lucide-react";
 
 import { GeistSans } from "geist/font/sans";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -46,8 +40,8 @@ import "swiper/css/scrollbar";
 import { DisbursementFlowchart } from "../../components/DisbursementFlowchart";
 
 import { useState } from "react";
-import { BookDemoIframeModal } from "@/components/BookDemoIframe";
-import MeetingsModal from "@/components/MeetingModal";
+import { BookDemoIframeModal } from "@/components/hubspot_form/BookDemoIframe";
+import MeetingsModal from "@/components/hubspot_form/MeetingModal";
 
 ChartJS.register(
   CategoryScale,
@@ -82,10 +76,10 @@ const journey = [
   },
 ];
 export default function DisbursementPCNASupport() {
-   const [isModalOpen, setIsModalOpen] = useState(false)
-    const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
-    const openBookDemo = () => setIsBookDemoOpen(true);
-    const closeBookDemo = () => setIsBookDemoOpen(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+  const openBookDemo = () => setIsBookDemoOpen(true);
+  const closeBookDemo = () => setIsBookDemoOpen(false);
   return (
     <div className={`min-h-screen ${GeistSans.className}`}>
       {/* Hero Section */}
@@ -527,16 +521,18 @@ export default function DisbursementPCNASupport() {
                 className="bg-blue-600 text-white hover:bg-blue-700 px-8 py-6 text-lg font-semibold rounded-[8px]"
               >
                 Book Demo
-
               </Button>
             </motion.div>
           </motion.div>
-          <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
-           <MeetingsModal
-                  isOpen={isModalOpen}
-                  onClose={() => setIsModalOpen(false)}
-                  meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
-                />
+          <BookDemoIframeModal
+            isOpen={isBookDemoOpen}
+            onClose={closeBookDemo}
+          />
+          <MeetingsModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
+          />
         </div>
       </section>
     </div>

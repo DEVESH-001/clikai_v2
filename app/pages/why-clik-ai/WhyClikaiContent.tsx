@@ -18,7 +18,7 @@ import {
   Sparkles,
   Bot,
 } from "lucide-react";
-import MeetingsModal from "@/components/MeetingModal";
+import MeetingsModal from "@/components/hubspot_form/MeetingModal";
 import { useState } from "react";
 
 // import { GeistSans } from "geist/font/sans";
@@ -149,7 +149,7 @@ const whyChoosePoints = [
 ];
 
 export default function WhyClikaiPage() {
-   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-purple-50 to-indigo-50">
       <div className="absolute inset-0 overflow-hidden">
@@ -441,12 +441,12 @@ export default function WhyClikaiPage() {
               </Button>
             </motion.div>
           </motion.div>
-           {/* Meetings Modal */}
-                <MeetingsModal
-                  isOpen={isModalOpen}
-                  onClose={() => setIsModalOpen(false)}
-                  meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
-                />
+          {/* Meetings Modal */}
+          <MeetingsModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
+          />
         </div>
       </section>
     </div>

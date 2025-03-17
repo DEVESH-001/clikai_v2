@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { GeistSans } from "geist/font/sans"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js"
+import { useState, useEffect } from "react";
+import { GeistSans } from "geist/font/sans";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
 import {
   Maximize2,
   Minimize2,
@@ -15,14 +15,14 @@ import {
   PenTool,
   Headphones,
   ChevronRight,
-} from "lucide-react"
+} from "lucide-react";
 
-import { motion } from "framer-motion"
+import { motion } from "framer-motion";
 
-import { BookDemoIframeModal } from "@/components/BookDemoIframe"
-import MeetingsModal from "@/components/MeetingModal"
+import { BookDemoIframeModal } from "@/components/hubspot_form/BookDemoIframe";
+import MeetingsModal from "@/components/hubspot_form/MeetingModal";
 
-ChartJS.register(ArcElement, Tooltip, Legend)
+ChartJS.register(ArcElement, Tooltip, Legend);
 
 const financialModels = [
   {
@@ -105,37 +105,37 @@ const financialModels = [
       "AI-Driven Market Rent Adjustments",
     ],
   },
-]
+];
 
 export default function CustomFinancialModelDevelopment() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false)
-  const openBookDemo = () => setIsBookDemoOpen(true)
-  const closeBookDemo = () => setIsBookDemoOpen(false)
-  const [isFullscreen, setIsFullscreen] = useState(false)
-  const [, setScrollY] = useState(0)
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+  const openBookDemo = () => setIsBookDemoOpen(true);
+  const closeBookDemo = () => setIsBookDemoOpen(false);
+  const [isFullscreen, setIsFullscreen] = useState(false);
+  const [, setScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY)
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const toggleFullscreen = () => {
-    const iframe = document.querySelector("iframe")
+    const iframe = document.querySelector("iframe");
     if (iframe) {
       if (!isFullscreen) {
         if (iframe.requestFullscreen) {
-          iframe.requestFullscreen()
+          iframe.requestFullscreen();
         }
       } else {
         if (document.exitFullscreen) {
-          document.exitFullscreen()
+          document.exitFullscreen();
         }
       }
-      setIsFullscreen(!isFullscreen)
+      setIsFullscreen(!isFullscreen);
     }
-  }
+  };
 
   return (
     <div
@@ -144,12 +144,19 @@ export default function CustomFinancialModelDevelopment() {
       <div className="relative z-10">
         {/* Curvy background elements */}
         <div className="absolute inset-0 overflow-hidden">
-          <svg className="absolute w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <svg
+            className="absolute w-full h-full"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
             <motion.path
               d="M0,50 Q25,30 50,50 T100,50 L100,100 L0,100 Z"
               fill="url(#grad1)"
               animate={{
-                d: ["M0,50 Q25,30 50,50 T100,50 L100,100 L0,100 Z", "M0,50 Q25,70 50,50 T100,50 L100,100 L0,100 Z"],
+                d: [
+                  "M0,50 Q25,30 50,50 T100,50 L100,100 L0,100 Z",
+                  "M0,50 Q25,70 50,50 T100,50 L100,100 L0,100 Z",
+                ],
               }}
               transition={{
                 repeat: Number.POSITIVE_INFINITY,
@@ -162,7 +169,10 @@ export default function CustomFinancialModelDevelopment() {
               d="M0,60 Q35,90 70,60 T100,60 L100,100 L0,100 Z"
               fill="url(#grad2)"
               animate={{
-                d: ["M0,60 Q35,90 70,60 T100,60 L100,100 L0,100 Z", "M0,60 Q35,30 70,60 T100,60 L100,100 L0,100 Z"],
+                d: [
+                  "M0,60 Q35,90 70,60 T100,60 L100,100 L0,100 Z",
+                  "M0,60 Q35,30 70,60 T100,60 L100,100 L0,100 Z",
+                ],
               }}
               transition={{
                 repeat: Number.POSITIVE_INFINITY,
@@ -202,7 +212,8 @@ export default function CustomFinancialModelDevelopment() {
                 <span className="text-gray-900">Development</span>
               </h1>
               <p className="text-lg md:text-xl text-gray-600 mb-6">
-                Revolutionize your CRE decision-making with our cutting-edge AI models
+                Revolutionize your CRE decision-making with our cutting-edge AI
+                models
               </p>
             </motion.div>
 
@@ -219,8 +230,14 @@ export default function CustomFinancialModelDevelopment() {
                   className="bg-white text-indigo-600 hover:bg-indigo-50 transition-colors duration-300"
                   size="sm"
                 >
-                  {isFullscreen ? <Minimize2 size={20} /> : <Maximize2 size={20} />}
-                  <span className="ml-2">{isFullscreen ? "Exit Fullscreen" : "Fullscreen"}</span>
+                  {isFullscreen ? (
+                    <Minimize2 size={20} />
+                  ) : (
+                    <Maximize2 size={20} />
+                  )}
+                  <span className="ml-2">
+                    {isFullscreen ? "Exit Fullscreen" : "Fullscreen"}
+                  </span>
                 </Button>
               </div>
               <div className="relative" style={{ paddingTop: "56.25%" }}>
@@ -286,7 +303,9 @@ export default function CustomFinancialModelDevelopment() {
                 >
                   <Card className="h-full bg-gradient-to-br from-white to-blue-50 backdrop-blur-sm hover:shadow-lg transition-shadow duration-300">
                     <CardHeader className="bg-gradient-to-r from-blue-100 to-indigo-100 p-4">
-                      <CardTitle className="text-lg font-medium text-indigo-800">{model.title}</CardTitle>
+                      <CardTitle className="text-lg font-medium text-indigo-800">
+                        {model.title}
+                      </CardTitle>
                     </CardHeader>
                     <CardContent className="p-4">
                       <p className="text-sm text-blue-600 mb-3">{model.for}</p>
@@ -338,37 +357,43 @@ export default function CustomFinancialModelDevelopment() {
               {[
                 {
                   title: "Initial Consultation",
-                  description: "We discuss your specific needs and objectives to tailor our approach.",
+                  description:
+                    "We discuss your specific needs and objectives to tailor our approach.",
                   align: "left",
                   icon: <Workflow className="w-8 h-8 text-white" />,
                 },
                 {
                   title: "Model Design",
-                  description: "Our experts create a tailored blueprint based on your requirements.",
+                  description:
+                    "Our experts create a tailored blueprint based on your requirements.",
                   align: "right",
                   icon: <FileSearch className="w-8 h-8 text-white" />,
                 },
                 {
                   title: "Development",
-                  description: "We build the model using our library of tested, reusable components.",
+                  description:
+                    "We build the model using our library of tested, reusable components.",
                   align: "left",
                   icon: <Code className="w-8 h-8 text-white" />,
                 },
                 {
                   title: "Rigorous Testing",
-                  description: "Comprehensive testing to ensure accuracy and reliability of all calculations.",
+                  description:
+                    "Comprehensive testing to ensure accuracy and reliability of all calculations.",
                   align: "right",
                   icon: <CheckCircle className="w-8 h-8 text-white" />,
                 },
                 {
                   title: "Review & Refinement",
-                  description: "We present the model and make adjustments based on your feedback.",
+                  description:
+                    "We present the model and make adjustments based on your feedback.",
                   align: "left",
                   icon: <PenTool className="w-8 h-8 text-white" />,
                 },
                 {
                   title: "Delivery & Ongoing Support",
-                  description: "We provide the final model with documentation and continuous support.",
+                  description:
+                    "We provide the final model with documentation and continuous support.",
                   align: "right",
                   icon: <Headphones className="w-8 h-8 text-white" />,
                 },
@@ -381,15 +406,21 @@ export default function CustomFinancialModelDevelopment() {
                   }}
                   whileInView={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: index * 0.2 }}
-                  className={`flex items-center mb-12 last:mb-0 ${step.align === "right" ? "flex-row-reverse" : ""}`}
+                  className={`flex items-center mb-12 last:mb-0 ${
+                    step.align === "right" ? "flex-row-reverse" : ""
+                  }`}
                 >
                   <div
                     className={`w-1/2 ${
                       step.align === "right" ? "pl-6" : "pr-6"
                     } ${step.align === "right" ? "text-left" : "text-right"}`}
                   >
-                    <h3 className="text-lg font-semibold mb-2 text-gray-900">{step.title}</h3>
-                    <p className="text-base text-gray-600">{step.description}</p>
+                    <h3 className="text-lg font-semibold mb-2 text-gray-900">
+                      {step.title}
+                    </h3>
+                    <p className="text-base text-gray-600">
+                      {step.description}
+                    </p>
                   </div>
                   <div className="relative">
                     <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white font-bold">
@@ -458,7 +489,9 @@ export default function CustomFinancialModelDevelopment() {
                     <CardHeader>
                       <div className="flex items-center space-x-4">
                         <span className="text-4xl">{item.icon}</span>
-                        <CardTitle className="text-2xl text-indigo-800">{item.title}</CardTitle>
+                        <CardTitle className="text-2xl text-indigo-800">
+                          {item.title}
+                        </CardTitle>
                       </div>
                     </CardHeader>
                     <CardContent>
@@ -476,8 +509,15 @@ export default function CustomFinancialModelDevelopment() {
         <section className="py-16 relative overflow-hidden bg-gradient-to-br from-[#001F3F] via-blue-900 to-blue-800">
           <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-soft-light"></div>
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
-            <svg className="absolute w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-              <path d="M0,0 C30,40 70,60 100,0 L100,100 L0,100 Z" fill="rgba(255, 255, 255, 0.05)" />
+            <svg
+              className="absolute w-full h-full"
+              viewBox="0 0 100 100"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M0,0 C30,40 70,60 100,0 L100,100 L0,100 Z"
+                fill="rgba(255, 255, 255, 0.05)"
+              />
             </svg>
           </div>
           <div className="container mx-auto px-4 relative z-10">
@@ -491,7 +531,8 @@ export default function CustomFinancialModelDevelopment() {
                 Ready to Elevate Your Financial Modeling with AI?
               </h2>
               <p className="text-xl text-blue-100 max-w-3xl mx-auto mb-12">
-                Let&apos;s create a custom AI-powered solution tailored to your unique CRE needs.
+                Let&apos;s create a custom AI-powered solution tailored to your
+                unique CRE needs.
               </p>
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -517,6 +558,5 @@ export default function CustomFinancialModelDevelopment() {
         />
       </div>
     </div>
-  )
+  );
 }
-

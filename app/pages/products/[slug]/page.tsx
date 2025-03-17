@@ -6,7 +6,7 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
   const productData = {
     name:
       params.slug === "autouw"
-        ? "AutoUW"
+        ? "AutoUW" 
         : params.slug === "InvestAssist"
           ? "InvestAssist"
           : params.slug === "SmartExtract"
@@ -33,11 +33,11 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       />
       <BreadcrumbSchema items={breadcrumbItems} />
 
-      {/* Your product page content here */}
+      {/* Product page content */}
       <div className="container mx-auto px-4 py-8">
         <h1 className="text-4xl font-bold mb-4">{productData.name}</h1>
         <p>{productData.description}</p>
-        {/* Rest of your product page */}
+        {/* Rest of the product page */}
       </div>
     </>
   )

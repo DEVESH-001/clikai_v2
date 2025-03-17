@@ -1,13 +1,13 @@
-"use client"
+"use client";
 
-import type React from "react"
+import type React from "react";
 
-import { useState } from "react"
-import { motion } from "framer-motion"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { GeistSans } from "geist/font/sans"
-import { Card } from "@/components/ui/card"
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { GeistSans } from "geist/font/sans";
+import { Card } from "@/components/ui/card";
 
 import {
   ArrowRight,
@@ -25,54 +25,78 @@ import {
   Target,
   Building2,
   Settings,
-} from "lucide-react"
-import { Suspense } from "react"
-import { GradientBackground } from "@/components/sections/gradient-background"
-import MeetingsModal from "@/components/MeetingModal"
+} from "lucide-react";
+import { Suspense } from "react";
+import { GradientBackground } from "@/components/sections/gradient-background";
+import MeetingsModal from "@/components/hubspot_form/MeetingModal";
 
 const benefits = [
   {
     icon: Clock,
     title: "Round-the-Clock Operations",
-    bullets: ["• Follow-the-sun model for 24/7 productivity.", "• Seamless workflows across time zones."],
+    bullets: [
+      "• Follow-the-sun model for 24/7 productivity.",
+      "• Seamless workflows across time zones.",
+    ],
   },
   {
     icon: DollarSign,
     title: "Cost Efficiency",
-    bullets: ["• Reduce operational expenses.", "• Scalable resource models for flexibility."],
+    bullets: [
+      "• Reduce operational expenses.",
+      "• Scalable resource models for flexibility.",
+    ],
   },
   {
     icon: Globe,
     title: "Access to Global Talent",
-    bullets: ["• Make immediate fulfillment based on demand.", "• Specialized expertise at competitive rates."],
+    bullets: [
+      "• Make immediate fulfillment based on demand.",
+      "• Specialized expertise at competitive rates.",
+    ],
   },
   {
     icon: Zap,
     title: "Accelerated Delivery",
-    bullets: ["• Speed up project delivery with dedicated offshore teams.", "• Follow-the-sun Delivery model."],
+    bullets: [
+      "• Speed up project delivery with dedicated offshore teams.",
+      "• Follow-the-sun Delivery model.",
+    ],
   },
-]
+];
 
 const setupSteps = [
   {
     icon: FileText,
     title: "Service Definition",
-    details: ["Define the scope of offshored functions.", "Assess commercial viability."],
+    details: [
+      "Define the scope of offshored functions.",
+      "Assess commercial viability.",
+    ],
   },
   {
     icon: ArrowUpRight,
     title: "Service Transition",
-    details: ["Ensure smooth migration of processes.", "Establish operational frameworks and SLAs."],
+    details: [
+      "Ensure smooth migration of processes.",
+      "Establish operational frameworks and SLAs.",
+    ],
   },
   {
     icon: Cog,
     title: "Service Delivery",
-    details: ["Align teams across onshore and offshore locations.", "Implement secure IT infrastructure."],
+    details: [
+      "Align teams across onshore and offshore locations.",
+      "Implement secure IT infrastructure.",
+    ],
   },
   {
     icon: TrendingUp,
     title: "Service Improvement",
-    details: ["Introduce automation and best practices.", "Optimize existing processes for better outcomes."],
+    details: [
+      "Introduce automation and best practices.",
+      "Optimize existing processes for better outcomes.",
+    ],
   },
   {
     icon: Lightbulb,
@@ -82,21 +106,31 @@ const setupSteps = [
       "Optimize IT infrastructure and business applications.",
     ],
   },
-]
+];
 
 interface SetupStepProps {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
-  title: string
-  details: string[]
-  isLast: boolean
-  isLeft: boolean
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  title: string;
+  details: string[];
+  isLast: boolean;
+  isLeft: boolean;
 }
 
-const SetupStep = ({ icon: Icon, title, details, isLast, isLeft }: SetupStepProps) => {
-  const [isHovered, setIsHovered] = useState(false)
+const SetupStep = ({
+  icon: Icon,
+  title,
+  details,
+  isLast,
+  isLeft,
+}: SetupStepProps) => {
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className={`flex ${isLeft ? "flex-row-reverse" : ""} items-center w-full mb-12 relative`}>
+    <div
+      className={`flex ${
+        isLeft ? "flex-row-reverse" : ""
+      } items-center w-full mb-12 relative`}
+    >
       <div className={`w-[60%] ${isLeft ? "pl-6" : "pr-6"}`}>
         <motion.div
           initial={{ opacity: 0, x: isLeft ? 20 : -20 }}
@@ -107,16 +141,27 @@ const SetupStep = ({ icon: Icon, title, details, isLast, isLeft }: SetupStepProp
           } relative`}
         >
           <div
-            className={`absolute top-1/2 ${isLeft ? "right-full" : "left-full"} w-12 h-0.5 bg-blue-200`}
+            className={`absolute top-1/2 ${
+              isLeft ? "right-full" : "left-full"
+            } w-12 h-0.5 bg-blue-200`}
             style={{ transform: "translateY(-50%)" }}
           />
           <h3 className="text-xl font-semibold mb-3 text-gray-900">{title}</h3>
           <ul className="space-y-2 text-base">
             {details.map((detail, index) => (
-              <li key={index} className={`flex items-start ${isLeft ? "justify-end" : ""}`}>
-                {!isLeft && <CheckSquare className="w-5 h-5 text-blue-500 mr-3 flex-shrink-0 mt-0.5" />}
-                <span className="text-sm text-gray-600 whitespace-nowrap overflow-hidden text-ellipsis">{detail}</span>
-                {isLeft && <CheckSquare className="w-5 h-5 text-blue-500 ml-3 flex-shrink-0 mt-0.5" />}
+              <li
+                key={index}
+                className={`flex items-start ${isLeft ? "justify-end" : ""}`}
+              >
+                {!isLeft && (
+                  <CheckSquare className="w-5 h-5 text-blue-500 mr-3 flex-shrink-0 mt-0.5" />
+                )}
+                <span className="text-sm text-gray-600 whitespace-nowrap overflow-hidden text-ellipsis">
+                  {detail}
+                </span>
+                {isLeft && (
+                  <CheckSquare className="w-5 h-5 text-blue-500 ml-3 flex-shrink-0 mt-0.5" />
+                )}
               </li>
             ))}
           </ul>
@@ -136,18 +181,20 @@ const SetupStep = ({ icon: Icon, title, details, isLast, isLeft }: SetupStepProp
           >
             <Icon className="w-8 h-8 text-white" />
           </motion.div>
-          {!isLast && <div className="absolute top-full left-1/2 w-0.5 h-32 bg-blue-200 transform -translate-x-1/2" />}
+          {!isLast && (
+            <div className="absolute top-full left-1/2 w-0.5 h-32 bg-blue-200 transform -translate-x-1/2" />
+          )}
         </div>
       </div>
       <div className="w-5/12" />
     </div>
-  )
-}
+  );
+};
 
 interface ResultCardProps {
-  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>
-  title: string
-  details: string[]
+  icon: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+  title: string;
+  details: string[];
 }
 
 const ResultCard = ({ icon: Icon, title, details }: ResultCardProps) => {
@@ -166,13 +213,15 @@ const ResultCard = ({ icon: Icon, title, details }: ResultCardProps) => {
         ))}
       </ul>
     </div>
-  )
-}
+  );
+};
 
 export default function CRETechnologyConsultingPage() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
-    <div className={`min-h-screen w-full ${GeistSans.className} relative overflow-hidden`}>
+    <div
+      className={`min-h-screen w-full ${GeistSans.className} relative overflow-hidden`}
+    >
       {/* Hero Section */}
       <GradientBackground className="pt-24 pb-12 overflow-hidden">
         <div className="container mx-auto px-4 max-w-full relative z-10">
@@ -191,7 +240,8 @@ export default function CRETechnologyConsultingPage() {
                 Now
               </h1>
               <p className="text-xl md:text-2xl text-gray-600 mb-6 leading-relaxed">
-                Gain the competitive edge with 24/7 operations, reduced costs, and global talent access
+                Gain the competitive edge with 24/7 operations, reduced costs,
+                and global talent access
               </p>
               <div className="flex gap-4 justify-center">
                 <Button
@@ -233,7 +283,9 @@ export default function CRETechnologyConsultingPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-8"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Choose Offshore Captive Centers?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Why Choose Offshore Captive Centers?
+            </h2>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-6 mt-12">
             <Suspense fallback={<div>Loading benefit cards...</div>}>
@@ -250,7 +302,9 @@ export default function CRETechnologyConsultingPage() {
                         <div className="p-2 rounded-full bg-blue-100 mr-4">
                           <benefit.icon className="w-6 h-6 text-blue-600" />
                         </div>
-                        <h3 className="text-xl font-semibold text-gray-900">{benefit.title}</h3>
+                        <h3 className="text-xl font-semibold text-gray-900">
+                          {benefit.title}
+                        </h3>
                       </div>
                       <ul className="text-sm text-gray-600 space-y-2">
                         {benefit.bullets.map((bullet, index) => (
@@ -284,7 +338,12 @@ export default function CRETechnologyConsultingPage() {
           </motion.div>
           <div className="relative max-w-4xl mx-auto">
             {setupSteps.map((step, index) => (
-              <SetupStep key={index} {...step} isLast={index === setupSteps.length - 1} isLeft={index % 2 === 0} />
+              <SetupStep
+                key={index}
+                {...step}
+                isLast={index === setupSteps.length - 1}
+                isLeft={index % 2 === 0}
+              />
             ))}
           </div>
         </div>
@@ -299,9 +358,12 @@ export default function CRETechnologyConsultingPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-8"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Results You Can Measure and Scale</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Results You Can Measure and Scale
+            </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Captive Centers are built to deliver measurable outcomes, from cost savings to operational excellence
+              Captive Centers are built to deliver measurable outcomes, from
+              cost savings to operational excellence
             </p>
           </motion.div>
           <div className="grid md:grid-cols-2 gap-8">
@@ -313,7 +375,10 @@ export default function CRETechnologyConsultingPage() {
               <ResultCard
                 icon={BarChart}
                 title="Service Measurement"
-                details={["Detailed KPI and SLA reporting.", "Risk and project reporting for transparency."]}
+                details={[
+                  "Detailed KPI and SLA reporting.",
+                  "Risk and project reporting for transparency.",
+                ]}
               />
             </motion.div>
             <motion.div
@@ -324,7 +389,10 @@ export default function CRETechnologyConsultingPage() {
               <ResultCard
                 icon={Target}
                 title="Transformation Goals"
-                details={["Implement optimization strategies.", "Achieve scalability and long-term growth."]}
+                details={[
+                  "Implement optimization strategies.",
+                  "Achieve scalability and long-term growth.",
+                ]}
               />
             </motion.div>
           </div>
@@ -340,7 +408,9 @@ export default function CRETechnologyConsultingPage() {
             transition={{ duration: 0.5 }}
             className="text-center mb-8"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Partner with Clik.ai?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Why Partner with Clik.ai?
+            </h2>
           </motion.div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -353,12 +423,14 @@ export default function CRETechnologyConsultingPage() {
               {
                 icon: Settings,
                 title: "Flexible Resource Models",
-                description: "Adaptable solutions that scale with your business requirements and growth objectives.",
+                description:
+                  "Adaptable solutions that scale with your business requirements and growth objectives.",
               },
               {
                 icon: ArrowUpRight,
                 title: "End-to-End Support",
-                description: "Comprehensive assistance from transition to scalable growth, ensuring smooth operations.",
+                description:
+                  "Comprehensive assistance from transition to scalable growth, ensuring smooth operations.",
               },
             ].map((item, index) => (
               <motion.div
@@ -371,7 +443,9 @@ export default function CRETechnologyConsultingPage() {
                 <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-blue-600 text-white">
                   <item.icon className="w-8 h-8" />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-gray-900">{item.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-gray-900">
+                  {item.title}
+                </h3>
                 <p className="text-gray-600">{item.description}</p>
               </motion.div>
             ))}
@@ -383,8 +457,15 @@ export default function CRETechnologyConsultingPage() {
       <section className="relative z-10 py-16 bg-gradient-to-br from-[#001F3F] via-blue-900 to-blue-800">
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-soft-light"></div>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <svg className="absolute w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path d="M0,0 C30,40 70,60 100,0 L100,100 L0,100 Z" fill="rgba(255, 255, 255, 0.05)" />
+          <svg
+            className="absolute w-full h-full"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M0,0 C30,40 70,60 100,0 L100,100 L0,100 Z"
+              fill="rgba(255, 255, 255, 0.05)"
+            />
           </svg>
         </div>
         <div className="container mx-auto px-4 relative z-10">
@@ -398,7 +479,8 @@ export default function CRETechnologyConsultingPage() {
               Let&apos;s Transform Your CRE Business Together
             </h2>
             <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">
-              Ready to explore how our CRE technology solutions can transform your business?
+              Ready to explore how our CRE technology solutions can transform
+              your business?
             </p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -411,7 +493,6 @@ export default function CRETechnologyConsultingPage() {
                 onClick={() => setIsModalOpen(true)}
               >
                 Schedule a Consultation
-
               </Button>
             </motion.div>
           </motion.div>
@@ -424,6 +505,5 @@ export default function CRETechnologyConsultingPage() {
         meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
       />
     </div>
-  )
+  );
 }
-

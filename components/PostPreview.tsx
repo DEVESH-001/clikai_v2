@@ -4,7 +4,7 @@ import Link from "next/link";
 import { formatDistanceToNow } from "date-fns";
 
 interface PostPreviewProps {
-  post: any; // You might want to create a proper type for this
+  post: any; 
 }
 
 export default function PostPreview({ post }: PostPreviewProps) {

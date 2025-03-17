@@ -1,12 +1,12 @@
 
 import type { Metadata } from "next"
-import { HeroSection } from "@/components/sections/01-hero-section"
-import { QuizSection } from "@/components/sections/03-quiz-section"
-import { ProductCards } from "@/components/sections/04-product-cards"
-import { PricingSection } from "@/components/sections/05-pricing-section"
-import { ServicesSection } from "@/components/sections/06-services-section"
-import { TestimonialsSection } from "@/components/sections/07-testimonials"
-import { FAQSection } from "@/components/sections/08-faq-section"
+import { HeroSection } from "@/components/sections/1_HeroSection"
+import { QuizSection } from "@/components/sections/3_QuizSection"
+import { ProductCards } from "@/components/sections/4_ProductCards"
+import { PricingSection } from "@/components/sections/5_PricingSection"
+import { ServicesSection } from "@/components/sections/6_ServiceSection"
+import { TestimonialsSection } from "@/components/sections/7_Testimonials"
+import { FAQSection } from "@/components/sections/8_FaqSection"
 import HomePageSchema from "@/components/schema/HomePageSchema"; 
 export const metadata: Metadata = {
   title: "AI-Powered Commercial Real Estate Solutions",
