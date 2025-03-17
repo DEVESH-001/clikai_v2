@@ -1,32 +1,25 @@
-"use client";
+"use client"
 
-import * as React from "react";
-import { Slider } from "@/components/ui/slider";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Check, X } from "lucide-react";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table";
-import { Switch } from "../ui/switch";
-import { BookDemoIframeModal } from "../hubspot_form/BookDemoIframe";
+import * as React from "react"
+import { Slider } from "@/components/ui/slider"
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
+import { Check, X } from "lucide-react"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
+import { Switch } from "../ui/switch"
+import { BookDemoIframeModal } from "../hubspot_form/BookDemoIframe"
 
 // Define the structure of a pricing plan
 interface Plan {
-  name: string;
-  description: string;
-  monthlyPrice?: number;
-  price?: string;
-  perDealPrice?: number;
-  features: string[];
-  bestFor: string[];
-  cta: string;
-  ribbon?: string;
+  name: string
+  description: string
+  monthlyPrice?: number
+  price?: string
+  perDealPrice?: number
+  features: string[]
+  bestFor: string[]
+  cta: string
+  ribbon?: string
 }
 
 // Define the structure and content of each pricing plan
@@ -104,7 +97,7 @@ const plans: Plan[] = [
     ],
     cta: "Book Demo",
   },
-];
+]
 
 const featureComparison = [
   {
@@ -149,39 +142,36 @@ const featureComparison = [
     growth: false,
     enterprise: true,
   },
-];
+]
 
 export function PricingSection() {
-  const [isBookDemoOpen, setIsBookDemoOpen] = React.useState(false);
-  const openBookDemo = () => setIsBookDemoOpen(true);
-  const closeBookDemo = () => setIsBookDemoOpen(false);
+  const [isBookDemoOpen, setIsBookDemoOpen] = React.useState(false)
+  const openBookDemo = () => setIsBookDemoOpen(true)
+  const closeBookDemo = () => setIsBookDemoOpen(false)
 
-  const [dealsPerMonth, setDealsPerMonth] = React.useState(10);
-  const [isYearly, setIsYearly] = React.useState(false);
+  const [dealsPerMonth, setDealsPerMonth] = React.useState(10)
+  const [isYearly, setIsYearly] = React.useState(false)
 
   const getHighlightedPlan = (deals: number) => {
-    if (deals <= 4) return "Self-Service";
-    if (deals <= 20) return "Growth";
-    return "Enterprise";
-  };
+    if (deals <= 4) return "Self-Service"
+    if (deals <= 20) return "Growth"
+    return "Enterprise"
+  }
 
-  const highlightedPlan = getHighlightedPlan(dealsPerMonth);
+  const highlightedPlan = getHighlightedPlan(dealsPerMonth)
 
   const calculateYearlyPrice = (monthlyPrice: number) => {
-    return (monthlyPrice * 10).toFixed(0);
-  };
+    return (monthlyPrice * 10).toFixed(0)
+  }
 
   const calculateSavings = (monthlyPrice: number) => {
-    return (
-      ((monthlyPrice * 12 - monthlyPrice * 10) / (monthlyPrice * 12)) *
-      100
-    ).toFixed(0);
-  };
+    return (((monthlyPrice * 12 - monthlyPrice * 10) / (monthlyPrice * 12)) * 100).toFixed(0)
+  }
 
   return (
     <section
       id="pricing"
-      className="pt-16 pb-24 relative overflow-hidden bg-gradient-to-b from-blue-50 via-purple-50 to-indigo-50"
+      className="pt-6 pb-24 relative overflow-hidden bg-gradient-to-b from-blue-50 via-purple-50 to-indigo-50"
     >
       {/* Abstract background pattern with curvy lines */}
       <div className="absolute inset-0 overflow-hidden">
@@ -220,46 +210,27 @@ export function PricingSection() {
 
       <div className="container px-4 mx-auto relative z-10">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-gray-900">
-            Pricing Plans
-          </h2>
-          <p className="text-xl text-gray-600">
-            Choose the perfect plan for your business
-          </p>
+          <h2 className="text-4xl font-bold mb-4 text-gray-900">Pricing Plans</h2>
+          <p className="text-xl text-gray-600">Choose the perfect plan for your business</p>
         </div>
 
         {/* Billing Toggle */}
         <div className="flex items-center justify-center gap-3 mb-8">
-          <span
-            className={`text-lg ${
-              !isYearly ? "text-gray-900 font-bold" : "text-gray-600"
-            }`}
-          >
-            Monthly
-          </span>
+          <span className={`text-lg ${!isYearly ? "text-gray-900 font-bold" : "text-gray-600"}`}>Monthly</span>
           <Switch
             checked={isYearly}
             onCheckedChange={setIsYearly}
             className="bg-blue-500 data-[state=checked]:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
           />
-          <span
-            className={`text-lg ${
-              isYearly ? "text-gray-900 font-bold" : "text-gray-600"
-            }`}
-          >
-            Yearly{" "}
-            <span className="text-green-600 text-base font-bold">
-              (Save {calculateSavings(49)}%)
-            </span>
+          <span className={`text-lg ${isYearly ? "text-gray-900 font-bold" : "text-gray-600"}`}>
+            Yearly <span className="text-green-600 text-base font-bold">(Save {calculateSavings(49)}%)</span>
           </span>
         </div>
 
         {/* Deals Slider */}
         <div className="max-w-2xl mx-auto mb-12">
           <p className="text-center mb-3 text-lg text-gray-700">
-            I need{" "}
-            <span className="font-bold text-blue-600">{dealsPerMonth}</span>{" "}
-            deals per month
+            I need <span className="font-bold text-blue-600">{dealsPerMonth}</span> deals per month
           </p>
           <div className="relative py-4">
             <Slider
@@ -280,13 +251,7 @@ export function PricingSection() {
                   transform: "translateX(-50%)",
                 }}
               >
-                <span
-                  className={`${
-                    value === dealsPerMonth ? "font-bold text-blue-600" : ""
-                  }`}
-                >
-                  {value}
-                </span>
+                <span className={`${value === dealsPerMonth ? "font-bold text-blue-600" : ""}`}>{value}</span>
               </div>
             ))}
           </div>
@@ -312,26 +277,17 @@ export function PricingSection() {
               )}
               <div className="p-6 flex flex-col h-full">
                 {/* Plan Name */}
-                <h3 className="text-2xl font-bold mb-2 text-gray-900">
-                  {plan.name}
-                </h3>
+                <h3 className="text-2xl font-bold mb-2 text-gray-900">{plan.name}</h3>
                 {/* Description */}
                 <p className="text-blue-600 mb-4">{plan.description}</p>
                 <div className="mb-6">
                   {/* Price */}
                   {plan.monthlyPrice ? (
                     <div className="text-4xl font-bold text-gray-900">
-                      $
-                      {isYearly
-                        ? calculateYearlyPrice(plan.monthlyPrice)
-                        : plan.monthlyPrice}
-                      <span className="text-xl font-normal text-gray-600">
-                        /{isYearly ? "Year" : "Month"}
-                      </span>
+                      ${isYearly ? calculateYearlyPrice(plan.monthlyPrice) : plan.monthlyPrice}
+                      <span className="text-xl font-normal text-gray-600">/{isYearly ? "Year" : "Month"}</span>
                       {plan.name === "Self-Service" && (
-                        <span className="block text-lg font-normal text-green-600 mt-1">
-                          during beta*
-                        </span>
+                        <span className="block text-lg font-normal text-green-600 mt-1">during beta*</span>
                       )}
                       {plan.perDealPrice && (
                         <span className="block text-lg font-normal text-gray-600 mt-1">
@@ -340,9 +296,7 @@ export function PricingSection() {
                       )}
                     </div>
                   ) : (
-                    <div className="text-3xl font-bold text-gray-900">
-                      {plan.price}
-                    </div>
+                    <div className="text-3xl font-bold text-gray-900">{plan.price}</div>
                   )}{" "}
                   {isYearly && plan.monthlyPrice && (
                     <p className="text-sm text-green-600 font-semibold mt-2">
@@ -362,9 +316,7 @@ export function PricingSection() {
                 {/* Call-to-Action Button */}
                 <Button
                   className={`w-full ${
-                    highlightedPlan === plan.name
-                      ? "bg-blue-600 hover:bg-blue-700"
-                      : "bg-blue-500 hover:bg-blue-600"
+                    highlightedPlan === plan.name ? "bg-blue-600 hover:bg-blue-700" : "bg-blue-500 hover:bg-blue-600"
                   } text-white font-bold py-2 px-4 rounded transition duration-300`}
                   onClick={openBookDemo}
                 >
@@ -380,29 +332,16 @@ export function PricingSection() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead className="text-left text-black font-bold">
-                  Feature
-                </TableHead>
-                <TableHead className="text-center text-black font-bold">
-                  Self-Service
-                </TableHead>
-                <TableHead className="text-center text-black font-bold">
-                  Growth
-                </TableHead>
-                <TableHead className="text-center text-black font-bold">
-                  Enterprise
-                </TableHead>
+                <TableHead className="text-left text-black font-bold">Feature</TableHead>
+                <TableHead className="text-center text-black font-bold">Self-Service</TableHead>
+                <TableHead className="text-center text-black font-bold">Growth</TableHead>
+                <TableHead className="text-center text-black font-bold">Enterprise</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {featureComparison.map((item, index) => (
-                <TableRow
-                  key={index}
-                  className={index % 2 === 0 ? "bg-blue-100/40" : ""}
-                >
-                  <TableCell className="font-medium text-gray-700">
-                    {item.feature}
-                  </TableCell>
+                <TableRow key={index} className={index % 2 === 0 ? "bg-blue-100/40" : ""}>
+                  <TableCell className="font-medium text-gray-700">{item.feature}</TableCell>
                   <TableCell className="text-center">
                     {typeof item.selfService === "boolean" ? (
                       item.selfService ? (
@@ -444,8 +383,10 @@ export function PricingSection() {
         <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
       </div>
     </section>
-  );
+  )
 }
+
+
 
 // //parag sir latest it
 

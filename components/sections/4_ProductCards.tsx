@@ -1,38 +1,25 @@
-"use client";
+"use client"
 
-import { useRef, useEffect, useState } from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-  useAnimation,
-} from "framer-motion";
-import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import {
-  ArrowRight,
-  CheckCircle2,
-  BarChart2,
-  Zap,
-  Users,
-  Clock,
-} from "lucide-react";
-import Image from "next/image";
-import { GeistSans } from "geist/font/sans";
+import type React from "react"
 
+import { useRef, useEffect, useState } from "react"
+import { motion, useScroll, useTransform, useSpring, useAnimation } from "framer-motion"
+import { Card } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Button } from "@/components/ui/button"
+import { ArrowRight, CheckCircle2, BarChart2, Zap, Users, Clock } from "lucide-react"
+import Image from "next/image"
+import { GeistSans } from "geist/font/sans"
 
 interface ProductCardsProps {
-  highlightedProduct?: string;
+  highlightedProduct?: string
 }
 
 const products = [
   {
     title: "AutoUW",
     badge: "Most Popular",
-    description:
-      "AI-powered underwriting automation for commercial real estate loans.",
+    description: "AI-powered underwriting automation for commercial real estate loans.",
     features: [
       "Automated financial spreading and rent roll analysis",
       "Real-time risk assessment and credit scoring",
@@ -57,8 +44,7 @@ const products = [
   {
     title: "InvestAssist",
     badge: "New",
-    description:
-      "Comprehensive investment analysis and portfolio management platform.",
+    description: "Comprehensive investment analysis and portfolio management platform.",
     features: [
       "Advanced deal modeling with machine learning insights",
       "Automated investment memos and presentations",
@@ -83,8 +69,7 @@ const products = [
   {
     title: "SmartExtract",
     badge: "Enterprise Ready",
-    description:
-      "Intelligent document processing and data extraction API for CRE.",
+    description: "Intelligent document processing and data extraction API for CRE.",
     features: [
       "Multi-document type support (leases, financials, legal)",
       "Contextual data extraction with 99.9% accuracy",
@@ -106,13 +91,11 @@ const products = [
     theme: "violet",
     height: "500",
     width: "500",
-
   },
   {
     title: "Clarity360",
     badge: "GenAI Powered",
-    description:
-      "Comprehensive CRE document analysis and market intelligence platform.",
+    description: "Comprehensive CRE document analysis and market intelligence platform.",
     features: [
       "AI-driven market comps and trend analysis",
       "Automated property valuation and risk assessment",
@@ -133,56 +116,55 @@ const products = [
     theme: "indigo",
     height: "500",
     width: "500",
-    
   },
-];
+]
 
 interface Product {
-  title: string;
-  badge: string;
-  description: string;
-  features: string[];
-  stats: { label: string; value: string; icon: React.ComponentType }[];
-  useCases: string[];
-  image: string;
-  link: string;
-  theme: string;
+  title: string
+  badge: string
+  description: string
+  features: string[]
+  stats: { label: string; value: string; icon: React.ComponentType }[]
+  useCases: string[]
+  image: string
+  link: string
+  theme: string
 }
 
 function ProductCard({ product, index }: { product: Product; index: number }) {
-  const cardRef = useRef(null);
-  const controls = useAnimation();
-  const [isVisible, setIsVisible] = useState(false);
+  const cardRef = useRef(null)
+  const controls = useAnimation()
+  const [isVisible, setIsVisible] = useState(false)
 
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ["start end", "end start"],
-  });
+  })
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8]);
+  const y = useTransform(scrollYProgress, [0, 1], [100, -100])
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8])
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+        setIsVisible(entry.isIntersecting)
         if (entry.isIntersecting) {
-          controls.start("visible");
+          controls.start("visible")
         }
       },
-      { threshold: 0.1 }
-    );
+      { threshold: 0.1 },
+    )
 
     if (cardRef.current) {
-      observer.observe(cardRef.current);
+      observer.observe(cardRef.current)
     }
 
-    return () => observer.disconnect();
-  }, [controls]);
+    return () => observer.disconnect()
+  }, [controls])
 
-  const springConfig = { stiffness: 100, damping: 30 };
-  const springY = useSpring(y, springConfig);
-  const springScale = useSpring(scale, springConfig);
+  const springConfig = { stiffness: 100, damping: 30 }
+  const springY = useSpring(y, springConfig)
+  const springScale = useSpring(scale, springConfig)
 
   return (
     <motion.div
@@ -191,9 +173,7 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
         y: springY,
         scale: springScale,
       }}
-      className={`relative w-full ${
-        index % 2 === 0 ? "lg:translate-y-32" : ""
-      }`}
+      className={`relative w-full ${index % 2 === 0 ? "lg:translate-y-32" : ""}`}
     >
       <Card
         className={`group relative overflow-hidden backdrop-blur-sm bg-gradient-to-br from-white to-blue-100 border-0 shadow-xl hover:shadow-2xl transition-all duration-500`}
@@ -210,27 +190,18 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
               <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-violet-600">
                 {product.title}
               </h3>
-              <p className="text-sm md:text-base lg:text-lg text-gray-600 mb-4">
-                {product.description}
-              </p>
+              <p className="text-sm md:text-base lg:text-lg text-gray-600 mb-4">{product.description}</p>
 
               <div className="grid grid-cols-3 gap-2 md:gap-4 mb-6">
                 {product.stats.map((stat, i) => {
-                  const Icon = stat.icon;
+                  const Icon = stat.icon
                   return (
-                    <div
-                      key={i}
-                      className="text-center p-2 bg-white/60 rounded-lg backdrop-blur-sm"
-                    >
+                    <div key={i} className="text-center p-2 bg-white/60 rounded-lg backdrop-blur-sm">
                       <Icon />
-                      <div className="text-lg md:text-2xl font-bold text-blue-600">
-                        {stat.value}
-                      </div>
-                      <div className="text-xs md:text-sm text-gray-500">
-                        {stat.label}
-                      </div>
+                      <div className="text-lg md:text-2xl font-bold text-blue-600">{stat.value}</div>
+                      <div className="text-xs md:text-sm text-gray-500">{stat.label}</div>
                     </div>
-                  );
+                  )
                 })}
               </div>
 
@@ -296,13 +267,13 @@ function ProductCard({ product, index }: { product: Product; index: number }) {
         </div>
       </Card>
     </motion.div>
-  );
+  )
 }
 
 export function ProductCards({}: ProductCardsProps) {
   return (
     <section
-      className={`relative py-12 md:py-16 lg:py-24 overflow-hidden bg-gradient-to-b from-indigo-50 via-purple-50 to-blue-50 ${GeistSans.className}`}
+      className={`relative py-6 md:py-8 lg:py-12 overflow-hidden bg-gradient-to-b from-indigo-50 via-purple-50 to-blue-50 ${GeistSans.className}`}
     >
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-soft-light"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-blue-100/20 via-purple-100/20 to-indigo-100/20"></div>
@@ -328,8 +299,7 @@ export function ProductCards({}: ProductCardsProps) {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-base md:text-lg lg:text-xl text-gray-700  mx-auto"
           >
-            Revolutionize your commercial real estate operations with our suite
-            of cutting-edge AI technologies
+            Revolutionize your commercial real estate operations with our suite of cutting-edge AI technologies
           </motion.p>
         </div>
 
@@ -340,5 +310,6 @@ export function ProductCards({}: ProductCardsProps) {
         </div>
       </div>
     </section>
-  );
+  )
 }
+
