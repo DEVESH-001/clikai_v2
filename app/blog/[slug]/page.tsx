@@ -84,7 +84,7 @@ import { format } from "date-fns";
 import Link from "next/link";
 import BlogPostingSchema from "@/components/schema/BlogPostingSchema";
 import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
-import SEO from "@/components/Seo";
+import SEO from "@/components/SEO";
 
 export const dynamic = "force-dynamic";
 
