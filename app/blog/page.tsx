@@ -67,6 +67,7 @@ import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 import CollectionPageSchema from "@/components/schema/CollectionPageSchema";
 import SEO from "@/components/SEO";
 
+
 export const dynamic = "force-dynamic";
 
 export default async function BlogPage({

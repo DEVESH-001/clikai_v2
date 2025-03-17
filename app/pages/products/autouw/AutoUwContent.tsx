@@ -1,43 +1,29 @@
-"use client";
+"use client"
 
-import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+import { motion } from "framer-motion"
+import { Button } from "@/components/ui/button"
+import { Card } from "@/components/ui/card"
 
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
-import Image from "next/image";
-import {
-  BarChart3,
-  Bot,
-  Brain,
-  CheckCircle2,
-  Clock,
-  FileText,
-} from "lucide-react";
-import { HeroVideoDialogDemo } from "@/components/magicui/HeroVideoDialogDemo";
+import Image from "next/image"
+import { BarChart3, Bot, Brain, CheckCircle2, Clock, FileText } from "lucide-react"
+import { HeroVideoDialogDemo } from "@/components/magicui/HeroVideoDialogDemo"
 
-import { useState } from "react";
-import { BookDemoIframeModal } from "@/components/hubspot_form/BookDemoIframe";
+import { useState } from "react"
+import { BookDemoIframeModal } from "@/components/hubspot_form/BookDemoIframe"
 
 // Features data
 const features = [
   {
     title: "Financial Data Extraction",
-    description:
-      "Extract data from Operating Statements and Rent Rolls with 100% accuracy",
+    description: "Extract data from Operating Statements and Rent Rolls with 100% accuracy",
     icon: FileText,
     gradient: "from-blue-500 to-purple-500",
   },
   {
     title: "Customizable Outputs",
-    description:
-      "Generate underwriting models tailored to your format or lender-specific templates",
+    description: "Generate underwriting models tailored to your format or lender-specific templates",
     icon: Bot,
     gradient: "from-green-500 to-teal-500",
   },
@@ -53,7 +39,7 @@ const features = [
     icon: Brain,
     gradient: "from-purple-500 to-pink-500",
   },
-];
+]
 
 // Benefits data
 const benefits = [
@@ -75,7 +61,7 @@ const benefits = [
     metric: "50+",
     icon: BarChart3,
   },
-];
+]
 
 // Pricing plans
 const plans = [
@@ -109,7 +95,7 @@ const plans = [
     ],
     cta: "Get Started",
   },
-];
+]
 
 // FAQ items
 const faqItems = [
@@ -133,13 +119,13 @@ const faqItems = [
     answer:
       "Our Enterprise plan is designed for high-volume users. We'll work with you to create a custom package that meets your specific needs, including unlimited deals and custom integrations.",
   },
-];
+]
 
 export default function AutoUWPage() {
-  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
+  const [isBookDemoOpen, setIsBookDemoOpen] = useState(false)
 
-  const openBookDemo = () => setIsBookDemoOpen(true);
-  const closeBookDemo = () => setIsBookDemoOpen(false);
+  const openBookDemo = () => setIsBookDemoOpen(true)
+  const closeBookDemo = () => setIsBookDemoOpen(false)
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 via-purple-50 to-indigo-50">
@@ -154,7 +140,7 @@ export default function AutoUWPage() {
 
       <div className="relative">
         <section className="relative z-10 pt-16 pb-16 overflow-hidden mt-14 ">
-          <div className="mx-auto px-8 lg:space-y-6 relative">
+          <div className="mx-auto px-4 sm:px-6 lg:px-8 relative">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -170,8 +156,8 @@ export default function AutoUWPage() {
                   <span className="text-gray-900"> with Precision</span>
                 </h1>
                 <p className="text-lg md:text-xl text-gray-600 mb-8">
-                  From Operating Statements to Rent Rolls, streamline your
-                  underwriting workflows with AutoUW&apos;s AI-powered solution.
+                  From Operating Statements to Rent Rolls, streamline your underwriting workflows with AutoUW&apos;s
+                  AI-powered solution.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button
@@ -181,10 +167,7 @@ export default function AutoUWPage() {
                   >
                     Book Demo
                   </Button>
-                  <BookDemoIframeModal
-                    isOpen={isBookDemoOpen}
-                    onClose={closeBookDemo}
-                  />
+                  <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
                 </div>
               </motion.div>
 
@@ -192,16 +175,18 @@ export default function AutoUWPage() {
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="lg:w-1/2 w-full"
+                className="lg:w-1/2 w-full flex justify-center items-center overflow-visible"
               >
-                <Image
-                  src="/images/Products_Section_Images/AutoUW/Hero_Image.png"
-                  alt="InvestAssist Platform Interface"
-                  width={2000}
-                  height={1600}
-                  className="w-[900px] h-[600px]"
-                  priority
-                />
+                <div className="relative w-full max-w-md sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-4xl 2xl:max-w-5xl">
+                  <Image
+                    src="/images/Products_Section_Images/AutoUW/Hero_Image.png"
+                    alt="InvestAssist Platform Interface"
+                    width={2000}
+                    height={1600}
+                    className="w-full h-auto object-contain lg:scale-110 xl:scale-125 2xl:scale-130 transform-gpu"
+                    priority
+                  />
+                </div>
               </motion.div>
             </div>
           </div>
@@ -214,9 +199,7 @@ export default function AutoUWPage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Why AutoUW?</h2>
-            <p className="text-xl text-gray-600">
-              Powerful features that transform your underwriting process
-            </p>
+            <p className="text-xl text-gray-600">Powerful features that transform your underwriting process</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature, index) => (
@@ -227,9 +210,7 @@ export default function AutoUWPage() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 <Card className="p-6 h-full bg-white/90 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
-                  <div
-                    className={`p-3 rounded-lg bg-gradient-to-r ${feature.gradient} w-fit mb-4`}
-                  >
+                  <div className={`p-3 rounded-lg bg-gradient-to-r ${feature.gradient} w-fit mb-4`}>
                     <feature.icon className="h-6 w-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
@@ -248,12 +229,8 @@ export default function AutoUWPage() {
       <section className="py-16 relative bg-gradient-to-b from-white/50 to-blue-50/50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              How AutoUW Works
-            </h2>
-            <p className="text-xl text-gray-600">
-              Simple, efficient, and powerful workflow
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">How AutoUW Works</h2>
+            <p className="text-xl text-gray-600">Simple, efficient, and powerful workflow</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 mb-12">
             <Card className="p-6 bg-white/90 backdrop-blur-sm">
@@ -266,10 +243,7 @@ export default function AutoUWPage() {
                   className="object-cover"
                 />
               </div>
-              <p className="mt-4 text-gray-600">
-                Easily upload and manage your Operating Statements and Rent
-                Rolls
-              </p>
+              <p className="mt-4 text-gray-600">Easily upload and manage your Operating Statements and Rent Rolls</p>
             </Card>
 
             <Card className="p-6 bg-white/90 backdrop-blur-sm">
@@ -282,9 +256,7 @@ export default function AutoUWPage() {
                   className="object-cover"
                 />
               </div>
-              <p className="mt-4 text-gray-600">
-                AI-powered extraction of critical financial data
-              </p>
+              <p className="mt-4 text-gray-600">AI-powered extraction of critical financial data</p>
             </Card>
 
             <Card className="p-6 bg-white/90 backdrop-blur-sm">
@@ -297,9 +269,7 @@ export default function AutoUWPage() {
                   className="object-cover"
                 />
               </div>
-              <p className="mt-4 text-gray-600">
-                Verify extracted data with side-by-side document viewing
-              </p>
+              <p className="mt-4 text-gray-600">Verify extracted data with side-by-side document viewing</p>
             </Card>
 
             <Card className="p-6 bg-white/90 backdrop-blur-sm">
@@ -315,9 +285,7 @@ export default function AutoUWPage() {
                   />
                 </div>
               </div>
-              <p className="mt-4 text-gray-600">
-                Export comprehensive analysis in your preferred format
-              </p>
+              <p className="mt-4 text-gray-600">Export comprehensive analysis in your preferred format</p>
             </Card>
           </div>
         </div>
@@ -327,12 +295,8 @@ export default function AutoUWPage() {
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Achieve More with AutoUW
-            </h2>
-            <p className="text-xl text-gray-600">
-              Measurable improvements in your underwriting process
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Achieve More with AutoUW</h2>
+            <p className="text-xl text-gray-600">Measurable improvements in your underwriting process</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {benefits.map((benefit, index) => (
@@ -345,9 +309,7 @@ export default function AutoUWPage() {
                 <Card className="p-6 h-full bg-white/90 backdrop-blur-sm hover:shadow-lg transition-all duration-300">
                   <div className="text-center">
                     <benefit.icon className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                    <div className="text-4xl font-bold text-blue-600 mb-2">
-                      {benefit.metric}
-                    </div>
+                    <div className="text-4xl font-bold text-blue-600 mb-2">{benefit.metric}</div>
                     <h3 className="text-xl font-bold mb-2">{benefit.title}</h3>
                     <p className="text-gray-600">{benefit.description}</p>
                   </div>
@@ -362,12 +324,8 @@ export default function AutoUWPage() {
       <section className="py-16 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Simple and Transparent Pricing
-            </h2>
-            <p className="text-xl text-gray-600">
-              Choose the plan that best fits your needs
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Simple and Transparent Pricing</h2>
+            <p className="text-xl text-gray-600">Choose the plan that best fits your needs</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             {plans.map((plan, index) => (
@@ -387,29 +345,16 @@ export default function AutoUWPage() {
                   <div className="text-center">
                     <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                     <div className="text-4xl font-bold mb-4">
-                      {typeof plan.price === "number" ||
-                      typeof plan.monthlyPrice === "number"
+                      {typeof plan.price === "number" || typeof plan.monthlyPrice === "number"
                         ? `$${plan.monthlyPrice || plan.price}`
                         : plan.price}
-                      {typeof plan.price === "number" && (
-                        <span className="text-lg">/month</span>
-                      )}
+                      {typeof plan.price === "number" && <span className="text-lg">/month</span>}
                     </div>
-                    <p
-                      className={`mb-6 ${
-                        index === 1 ? "text-blue-100" : "text-gray-600"
-                      }`}
-                    >
-                      {plan.description}
-                    </p>
+                    <p className={`mb-6 ${index === 1 ? "text-blue-100" : "text-gray-600"}`}>{plan.description}</p>
                     <ul className="space-y-3 mb-6 text-left">
                       {plan.features.map((feature, i) => (
                         <li key={i} className="flex items-center gap-2">
-                          <CheckCircle2
-                            className={`h-5 w-5 ${
-                              index === 1 ? "text-blue-200" : "text-green-500"
-                            }`}
-                          />
+                          <CheckCircle2 className={`h-5 w-5 ${index === 1 ? "text-blue-200" : "text-green-500"}`} />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -437,24 +382,16 @@ export default function AutoUWPage() {
       <section className="py-16 relative bg-gradient-to-b from-white/50 to-blue-50/50 ">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-xl text-gray-600">
-              Find answers to common questions about AutoUW
-            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+            <p className="text-xl text-gray-600">Find answers to common questions about AutoUW</p>
           </div>
           <div className="max-w-3xl mx-auto">
             <Card className="bg-white/90 backdrop-blur-sm rounded-[8px]">
               <Accordion type="single" collapsible className="w-full">
                 {faqItems.map((item, index) => (
                   <AccordionItem key={index} value={`item-${index}`}>
-                    <AccordionTrigger className="text-left text-lg font-medium px-6">
-                      {item.question}
-                    </AccordionTrigger>
-                    <AccordionContent className="px-6 text-gray-600">
-                      {item.answer}
-                    </AccordionContent>
+                    <AccordionTrigger className="text-left text-lg font-medium px-6">{item.question}</AccordionTrigger>
+                    <AccordionContent className="px-6 text-gray-600">{item.answer}</AccordionContent>
                   </AccordionItem>
                 ))}
               </Accordion>
@@ -467,15 +404,8 @@ export default function AutoUWPage() {
       <section className="relative z-10 py-16 bg-gradient-to-br from-[#001F3F] via-blue-900 to-blue-800">
         <div className="absolute inset-0 bg-[url('/noise.png')] opacity-5 mix-blend-soft-light"></div>
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <svg
-            className="absolute w-full h-full"
-            viewBox="0 0 100 100"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,0 C30,40 70,60 100,0 L100,100 L0,100 Z"
-              fill="rgba(255, 255, 255, 0.05)"
-            />
+          <svg className="absolute w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+            <path d="M0,0 C30,40 70,60 100,0 L100,100 L0,100 Z" fill="rgba(255, 255, 255, 0.05)" />
           </svg>
         </div>
         <div className="container mx-auto px-4 relative z-10">
@@ -485,9 +415,7 @@ export default function AutoUWPage() {
             transition={{ duration: 0.5 }}
             className="text-center"
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ready to Transform Your Underwriting?
-            </h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Ready to Transform Your Underwriting?</h2>
             <p className="text-lg text-blue-100 max-w-3xl mx-auto mb-8">
               Schedule a demo today and see AutoUW in action.
             </p>
@@ -505,12 +433,10 @@ export default function AutoUWPage() {
               </Button>
             </motion.div>
           </motion.div>
-          <BookDemoIframeModal
-            isOpen={isBookDemoOpen}
-            onClose={closeBookDemo}
-          />
+          <BookDemoIframeModal isOpen={isBookDemoOpen} onClose={closeBookDemo} />
         </div>
       </section>
     </div>
-  );
+  )
 }
+
