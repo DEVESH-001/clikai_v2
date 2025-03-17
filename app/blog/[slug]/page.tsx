@@ -78,12 +78,13 @@
 //NEW
 
 import { getPostBySlug, getAllPostSlugs } from "@/lib/api";
-import SEO from "@/components/Seo";
+
 import Image from "next/image";
 import { format } from "date-fns";
 import Link from "next/link";
 import BlogPostingSchema from "@/components/schema/BlogPostingSchema";
 import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
+import SEO from "@/components/Seo";
 
 export const dynamic = "force-dynamic";
 

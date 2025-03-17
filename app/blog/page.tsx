@@ -62,9 +62,10 @@
 import { getAllPosts } from "@/lib/api";
 import PostPreview from "@/components/PostPreview";
 import Pagination from "@/components/sections/Pagination_Blogs";
-import SEO from "@/components/Seo";
+
 import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 import CollectionPageSchema from "@/components/schema/CollectionPageSchema";
+import SEO from "@/components/Seo";
 
 export const dynamic = "force-dynamic";
 
