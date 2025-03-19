@@ -1,4 +1,15 @@
 HUBSPOT DETAILS : 
+<script src="https://js.hsforms.net/forms/embed/4401613.js" defer></script>
+<div class="hs-form-frame" data-region="na1" data-form-id="7767aa9d-2f10-45f8-865c-13ea7263fd5e" data-portal-id="4401613"></div>
+
+https://share.hsforms.com/2d2eqnS8QRfiGXBPqcmP9Xg2mcb1
+
+
+
+
+
+
+
 
 #Hubspot Form Script
 <script src="https://js.hsforms.net/forms/embed/4401613.js" defer></script>
@@ -34,3 +45,36 @@ https://share.hsforms.com/2d2eqnS8QRfiGXBPqcmP9Xg2mcb1
 #parag_demo_booking_pricing
 <script src="https://js.hsforms.net/forms/embed/4401613.js" defer></script>
 <div class="hs-form-frame" data-region="na1" data-form-id="c2e945ca-53de-45b6-820f-8a8ded7b49e2" data-portal-id="4401613"></div>
+
+
+
+//18th march
+<script src="https://js.hsforms.net/forms/embed/4401613.js" defer></script>
+<div class="hs-form-frame" data-region="na1" data-form-id="7767aa9d-2f10-45f8-865c-13ea7263fd5e" data-portal-id="4401613"></div>
+
+https://share.hsforms.com/2d2eqnS8QRfiGXBPqcmP9Xg2mcb1
+
+<!-- Start of Meetings Embed Script -->
+    <div class="meetings-iframe-container" data-src="https://meetings.hubspot.com/prerit/prerit-gautam?embed=true"></div>
+    <script type="text/javascript" src="https://static.hsappstatic.net/MeetingsEmbed/ex/MeetingsEmbedCode.js"></script>
+  <!-- End of Meetings Embed Script -->
+
+  https://meetings.hubspot.com/prerit/prerit-gautam
+
+
+
+#Wordpress newletter email
+newsletter@admin139255a85d.wpcomstaging.com
+
+
+<div class="tnp tnp-subscription ">
+<form method="post" action="https://admin139255a85d.wpcomstaging.com/wp-admin/admin-ajax.php?action=tnp&na=s">
+<input type="hidden" name="nlang" value="">
+<div class="tnp-field tnp-field-firstname"><label for="tnp-1">First name</label>
+<input class="tnp-name" type="text" name="nn" id="tnp-1" value="" placeholder=""></div>
+<div class="tnp-field tnp-field-email"><label for="tnp-2">Email</label>
+<input class="tnp-email" type="email" name="ne" id="tnp-2" value="" placeholder="" required></div>
+<div class="tnp-field tnp-field-button" style="text-align: left"><input class="tnp-submit" type="submit" value="Subscribe" style="">
+</div>
+</form>
+</div>

@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Wordpress API Code 
-
-const API_URL = process.env.WORDPRESS_API_URL || "https://admin139255a85d.wpcomstaging.com/wp-json/wp/v2"
+ 
+const API_URL = process.env.WORDPRESS_API_URL || "https://admin139255a85d.wpcomstaging.com/wp-json/wp/v2/posts"
 
 export async function getAllPosts(page = 1, perPage = 9) {
   const postsRes = await fetch(`${API_URL}/posts?_embed&page=${page}&per_page=${perPage}`, { cache: "no-store" })

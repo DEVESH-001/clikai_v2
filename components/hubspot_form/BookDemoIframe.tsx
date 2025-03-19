@@ -65,7 +65,7 @@ export function BookDemoIframeModal({ isOpen, onClose }: BookDemoModalProps) {
             onLoad={handleIframeLoad}
             title="Book a Demo Form"
             sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
-            className="bg-transparent"
+            className="bg-transparent "
           />
         </div>
       </DialogContent>

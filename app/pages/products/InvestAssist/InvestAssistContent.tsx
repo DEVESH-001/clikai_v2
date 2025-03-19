@@ -78,12 +78,7 @@ export default function InvestAssistPage() {
                   analysis at scale.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <Button
-                    size="lg"
-                    className="bg-blue-600 text-white hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 text-base"
-                  >
-                    Instant Access
-                  </Button>
+                 
                   <Button
                     size="lg"
                     variant="outline"
