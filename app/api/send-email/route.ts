@@ -1,3 +1,4 @@
+//used in underwriting (services section) to send email with attachments
 import { type NextRequest, NextResponse } from "next/server";
 import FormData from "form-data";
 import Mailgun from "mailgun.js";

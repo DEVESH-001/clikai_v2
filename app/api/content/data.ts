@@ -1,3 +1,4 @@
+//chatbot content
 export const websiteContent = `
 I am an AI assistant for Clik.ai. Here's what you should know about us:
 

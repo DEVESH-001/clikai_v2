@@ -14,7 +14,7 @@ import {
 import { useState } from "react";
 import { CookiePreferencesPopup } from "../cookies/cookie-preference-popup";
 
-// Main Footer component
+
 export function Footer() {
   const [isPreferencesOpen, setIsPreferencesOpen] = useState(false);
   const [productsOpen, setProductsOpen] = useState(false);

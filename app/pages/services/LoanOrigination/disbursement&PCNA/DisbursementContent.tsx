@@ -284,68 +284,6 @@ export default function DisbursementPCNASupport() {
         </div>
       </section>
 
-      {/* Reserve Disbursements Section
-      <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold mb-4 text-gray-900">
-              Reserve Disbursements Management
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our manual disbursement process ensures accuracy, compliance, and
-              efficiency.
-            </p>
-          </motion.div>
-
-          <VerticalTimeline>
-            {[
-              {
-                title: "Reserve Tracking and Reconciliation",
-                description:
-                  "Track reserve balances against repair needs identified in PCNA reports. Reconcile reserve funds to ensure sufficient balances for upcoming property needs.",
-                icon: <DollarSign />,
-              },
-              {
-                title: "Disbursement Requests",
-                description:
-                  "Process reserve disbursement requests from borrowers, ensuring they align with approved maintenance or repair activities as outlined in PCNA reports.",
-                icon: <FileCheck />,
-              },
-              {
-                title: "Compliance Verification",
-                description:
-                  "Verify that reserve fund use complies with loan terms and lender policies, minimizing compliance risk for the servicer.",
-                icon: <ShieldCheck />,
-              },
-            ].map((step, index) => (
-              <VerticalTimelineElement
-                key={index}
-                className="vertical-timeline-element--work"
-                contentStyle={{
-                  background: "rgb(255, 255, 255)",
-                  color: "#333",
-                }}
-                contentArrowStyle={{
-                  borderRight: "7px solid  rgb(255, 255, 255)",
-                }}
-                iconStyle={{ background: "rgb(59, 130, 246)", color: "#fff" }}
-                icon={step.icon}
-              >
-                <h3 className="vertical-timeline-element-title text-xl font-bold">
-                  {step.title}
-                </h3>
-                <p className="text-gray-700 mt-2">{step.description}</p>
-              </VerticalTimelineElement>
-            ))}
-          </VerticalTimeline>
-        </div>
-      </section> */}
-
       {/* Our Edge Section */}
       <section className="py-16 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4">

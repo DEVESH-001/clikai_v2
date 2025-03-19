@@ -1,3 +1,4 @@
+//chatgpt api route
 import { NextResponse } from "next/server";
 import { Configuration, OpenAIApi } from "openai";
 import axios from "axios";

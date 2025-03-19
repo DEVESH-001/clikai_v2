@@ -7,7 +7,7 @@ import { HeroGraphs } from "./hero-graphs";
 import { LogoCarousel } from "./2_LogoCarousel";
 import dynamic from "next/dynamic";
 
-// Dynamically import ParticleBackground with no SSR
+
 const DynamicParticleBackground = dynamic(
   () => import("./ParticleBackground").then((mod) => mod.ParticleBackground),
   {

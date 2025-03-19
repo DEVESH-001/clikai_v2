@@ -51,27 +51,6 @@ const CodePreview = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
-// const AIBackground = () => (
-//   <div className="absolute inset-0 overflow-hidden opacity-10">
-//     <div className="absolute top-0 left-0 w-full h-full">
-//       {[...Array(20)].map((_, i) => (
-//         <div
-//           key={i}
-//           className="absolute rounded-full bg-blue-500/20 blur-3xl"
-//           style={{
-//             left: `${Math.random() * 100}%`,
-//             top: `${Math.random() * 100}%`,
-//             width: `${Math.random() * 400 + 100}px`,
-//             height: `${Math.random() * 400 + 100}px`,
-//             animation: `float ${Math.random() * 10 + 10}s infinite`,
-//             animationDelay: `${Math.random() * 5}s`,
-//           }}
-//         />
-//       ))}
-//     </div>
-//   </div>
-// );
-
 export default function SmartExtractPage() {
   const [isBookDemoOpen, setIsBookDemoOpen] = useState(false);
   const openBookDemo = () => setIsBookDemoOpen(true);
