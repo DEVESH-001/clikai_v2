@@ -214,10 +214,10 @@ export default function Clarity360OMPage() {
                       <Image
                         src={
                           index === 0
-                            ? "/images/Products_Section_Images/Clarity360/Clarity360OM.jpeg"
+                            ? "/images/Products_Section_Images/Clarity360/clarity360OM.jpg"
                             : index === 1
-                            ? "/images/Products_Section_Images/Clarity360/Clarity360_Insurance.jpeg"
-                            : "/images/Products_Section_Images/Clarity360/Clarity360Appraisals.jpeg"
+                            ? "/images/Products_Section_Images/Clarity360/clarity360_Insurance.jpg"
+                            : "/images/Products_Section_Images/Clarity360/apprasialRepost.jpg"
                         }
                         alt={`${product.title} Interface`}
                         width={600}
@@ -502,7 +502,7 @@ export default function Clarity360OMPage() {
                     className="rounded-lg overflow-hidden shadow-xl"
                   >
                     <Image
-                      src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Clarity360%20Insurance%20Image.jpg-6ZZ1ZUnLroGo1FPUj4pEXkDheozUyn.jpeg"
+                      src="/images/Products_Section_Images/Clarity360/clarity360_Insurance.jpg"
                       alt="Clarity360 Insurance ACORD Extraction Interface"
                       width={800}
                       height={600}
@@ -637,7 +637,7 @@ export default function Clarity360OMPage() {
                   className="rounded-lg overflow-hidden shadow-xl"
                 >
                   <Image
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Clarity360%20Appraisals.jpg-aipgDcapz6TpU286rSQZPPENMQGViL.jpeg"
+                    src="/images/Products_Section_Images/Clarity360/apprasialRepost.jpg"
                     alt="Clarity360 Appraisal Parser Interface"
                     width={800}
                     height={600}
