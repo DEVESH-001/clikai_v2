@@ -57,7 +57,7 @@
 //   )
 // }
 
-/* eslint-disable @typescript-eslint/no-explicit-any */
+
 
 import { getAllPosts } from "@/lib/api";
 import PostPreview from "@/components/PostPreview";

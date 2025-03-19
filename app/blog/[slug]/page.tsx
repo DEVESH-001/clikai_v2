@@ -24,8 +24,7 @@
 
 //   const featuredImage = post._embedded?.["wp:featuredmedia"]?.[0]?.source_url;
 //   const author = post._embedded?.["author"]?.[0]?.name || "Unknown Author";
-//   const date = post.date
-//     ? format(new Date(post.date), "MMMM dd, yyyy")
+//   const date = post.date  ? format(new Date(post.date), "MMMM dd, yyyy")
 //     : "Unknown Date";
 
 //   return (
