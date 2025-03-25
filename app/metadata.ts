@@ -35,10 +35,10 @@ export const metadata: Metadata = {
     siteName: "Clik.AI",
     images: [
       {
-        url: "/opengraph/default.jpg",
+        url: "/opengraph/Clikai.png",
         width: 1200,
         height: 630,
-        alt: "Clik.AI Default",
+        alt: "Clik.AI Landing pa",
       },
     ],
   },
@@ -79,7 +79,7 @@ export const contactUsMetadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "/opengraph/contact-us.jpg",
+        url: "/opengraph/contact-us.png",
         width: 1200,
         height: 630,
         alt: "Contact Clik.AI",
@@ -350,7 +350,7 @@ export const SmartExtractMetaData: Metadata = {
     "property information capture",
   ],
   openGraph: {
-    images: "/opengraph/smartextract.png",
+    images: "/opengraph/SmratExtract.png",
   },
 }
 
@@ -504,7 +504,7 @@ export const CustomFDMMetaData: Metadata = {
     "investment return analysis",
   ],
   openGraph: {
-    images: "/opengraph/custom-fdm.jpg",
+    images: "/public/opengraph/CFDM.png",
   },
 }
 
@@ -555,7 +555,7 @@ export const DisbursementPCNAMetaData: Metadata = {
     "real estate financial services",
   ],
   openGraph: {
-    images: "/opengraph/disbursement-pcna.jpg",
+    images: "/public/opengraph/PCNA.png",
   },
 }
 
@@ -657,7 +657,7 @@ export const LoanDocumentDigitisationMetaData: Metadata = {
     "real estate document accessibility",
   ],
   openGraph: {
-    images: "/opengraph/loan-loan-digitisation.png",
+    images: "/public/opengraph/clarity360.png",
   },
 }
 
@@ -708,7 +708,7 @@ export const LoanOnboardingDigitizationMetaData: Metadata = {
     "real estate document digitization",
   ],
   openGraph: {
-    images: "/opengraph/loan-onboarding.png",
+    images: "/opengraph/LoanOnBoarding.png",
   },
 }
 
@@ -912,7 +912,7 @@ export const WhyClikAIMetaData: Metadata = {
     "real estate AI benefits",
   ],
   openGraph: {
-    images: "/opengraph/default2.png",
+    images: "/opengraph/WhyChooseUs.png",
   },
 }
 
@@ -963,7 +963,7 @@ export const PrivacyPolicyMetaData: Metadata = {
     "real estate privacy protection",
   ],
   openGraph: {
-    images: "/opengraph/default2.png",
+    images: "/opengraph/PrivacyPolicy.png",
   },
 }
 
@@ -1013,7 +1013,7 @@ export const TermsConditionsMetaData: Metadata = {
     "commercial service agreement",
   ],
   openGraph: {
-    images: "/opengraph/default2.png",
+    images: "/opengraph/PrivacyPolicy.png",
   },
 }
 

@@ -57,8 +57,6 @@
 //   )
 // }
 
-
-
 import { getAllPosts } from "@/lib/api";
 import PostPreview from "@/components/PostPreview";
 import Pagination from "@/components/sections/Pagination_Blogs";
@@ -66,7 +64,6 @@ import Pagination from "@/components/sections/Pagination_Blogs";
 import BreadcrumbSchema from "@/components/schema/BreadcrumbSchema";
 import CollectionPageSchema from "@/components/schema/CollectionPageSchema";
 import SEO from "@/components/SEO";
-
 
 export const dynamic = "force-dynamic";
 
