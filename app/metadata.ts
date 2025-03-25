@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         url: "/opengraph/Clikai.png",
         width: 1200,
         height: 630,
-        alt: "Clik.AI Landing pa",
+        alt: "Clik.AI Landing page",
       },
     ],
   },

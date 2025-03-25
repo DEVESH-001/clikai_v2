@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   description:
     "Clik.ai provides AI-powered solutions for commercial real estate, including lease abstraction, underwriting, and portfolio management.",
   keywords: [
-    "Commercial Real Estate",
+    "Commercial Real Estate", 
     "AI",
     "Machine Learning",
     "Lease Abstraction",

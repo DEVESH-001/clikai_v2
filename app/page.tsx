@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     siteName: "Clik.ai",
     images: [
       {
-        url: "https://www.clik.ai/og-image.jpg",
+        url: "/opengraph/Clikai.png",
         width: 1200,
         height: 630,
         alt: "Clik.ai Open Graph Image",
