@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
-import { apiRateLimiter, fileUploadRateLimiter } from "./lib/rate-limit"
+import { apiRateLimiter, fileUploadRateLimiter } from "./lib/rate-limits"
+
 
 export async function middleware(request: NextRequest) {
   // Get the pathname and method
