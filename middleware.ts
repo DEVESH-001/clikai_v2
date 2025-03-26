@@ -1,20 +1,20 @@
-// import { NextResponse } from "next/server"
+import { NextResponse } from "next/server"
+import type { NextRequest } from "next/server"
+
+export function middleware(request: NextRequest) {
+
+  const path = request.nextUrl.pathname
+  const method = request.method
 
 
-export function middleware() {
+  if (!path.startsWith("/api/")) {
 
-  // const path = request.nextUrl.pathname
-  // const method = request.method
-
-
-  // if (!path.startsWith("/api/")) {
-
-  //   if (method !== "GET" && method !== "HEAD") {
-  //     // Create a new URL for the not-found page
-  //     const notFoundUrl = new URL("/404", request.url)
-  //     return NextResponse.redirect(notFoundUrl)
-  //   }
-  // }
+    if (method !== "GET" && method !== "HEAD") {
+      // Create a new URL for the not-found page
+      const notFoundUrl = new URL("/404", request.url)
+      return NextResponse.redirect(notFoundUrl)
+    }
+  }
 
   // For all other requests, security headers
   // const response = NextResponse.next()
@@ -32,3 +32,4 @@ export const config = {
     "/((?!_next/static|_next/image|favicon.ico|api/).*)",
   ],
 }
+
