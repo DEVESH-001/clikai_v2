@@ -1,12 +1,17 @@
+"use client"
+
+import { useEffect } from "react"
+import { useRouter } from "next/router"
 import Link from "next/link"
-import type { Metadata } from "next"
 
-export const metadata: Metadata = {
-  title: "Page Not Found | Clik.ai",
-  description: "The page you are looking for could not be found.",
-}
+export default function Custom404() {
+  const router = useRouter()
 
-export default function NotFoundPage() {
+  useEffect(() => {
+    // Log the 404 error
+    console.log(`404 error: ${router.asPath}`)
+  }, [router.asPath])
+
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white px-4">
       <h1 className="text-6xl font-bold text-gray-800 mb-4">404</h1>
