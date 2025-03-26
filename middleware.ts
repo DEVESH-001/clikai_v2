@@ -47,20 +47,58 @@
 //   ],
 // }
 
+
+
+// import { NextResponse } from "next/server";
+// import type { NextRequest } from "next/server";
+
+// export function middleware(request: NextRequest) {
+//   if (request.method === "POST" && !request.nextUrl.pathname.startsWith("/api/")) {
+//     const apiUrl = new URL("/", request.nextUrl.origin);
+//     apiUrl.searchParams.set("url", request.nextUrl.toString());
+
+//     return NextResponse.redirect(apiUrl);
+//   }
+  
+//   return NextResponse.next();
+// }
+
+// export const config = {
+//   matcher: ["/((?!_next/|_vercel/|api/|favicon.ico|.*\\.).*)"],
+// };
+
+
+
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
-  if (request.method === "POST" && !request.nextUrl.pathname.startsWith("/api/")) {
-    const apiUrl = new URL("/", request.nextUrl.origin);
-    apiUrl.searchParams.set("url", request.nextUrl.toString());
+export async function middleware(request: NextRequest) {
+  console.log('Middleware triggered for path:', request.nextUrl.pathname);
 
-    return NextResponse.redirect(apiUrl);
+  try {
+    const requestHeaders = new Headers(request.headers);
+    const response = NextResponse.next({
+      request: {
+        headers: requestHeaders,
+      },
+    });
+
+    // Apply security headers
+    response.headers.set("X-XSS-Protection", "1; mode=block");
+    response.headers.set("X-Frame-Options", "SAMEORIGIN");
+    response.headers.set("X-Content-Type-Options", "nosniff");
+
+    return response;
+  } catch (error) {
+    console.error('Middleware error:', error);
+    return NextResponse.error();
   }
-  
-  return NextResponse.next();
 }
 
+// Match all API requests (except Next.js static assets)
 export const config = {
-  matcher: ["/((?!_next/|_vercel/|api/|favicon.ico|.*\\.).*)"],
+  matcher: [
+    "/api/:path*",
+    "/((?!_next/static|_next/image|favicon.ico).*)",
+  ],
 };
