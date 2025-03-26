@@ -52,7 +52,7 @@ import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
   if (request.method === "POST" && !request.nextUrl.pathname.startsWith("/api/")) {
-    const apiUrl = new URL("/api/convert-method", request.nextUrl.origin);
+    const apiUrl = new URL("/", request.nextUrl.origin);
     apiUrl.searchParams.set("url", request.nextUrl.toString());
 
     return NextResponse.redirect(apiUrl);
