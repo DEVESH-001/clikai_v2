@@ -47,26 +47,20 @@
 //   ],
 // }
 
-
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const path = request.nextUrl.pathname;
+  if (request.method === "POST" && !request.nextUrl.pathname.startsWith("/api/")) {
+    const apiUrl = new URL("/api/convert-method", request.nextUrl.origin);
+    apiUrl.searchParams.set("url", request.nextUrl.toString());
 
-  if (request.method === "POST" && !path.startsWith("/api/")) {
-    const url = request.nextUrl.clone();
-    url.searchParams.set("_method", "GET");
-
-    // Rewrite instead of redirect to prevent the loop
-    return NextResponse.rewrite(url);
+    return NextResponse.redirect(apiUrl);
   }
-
+  
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: [
-    "/((?!_next/|_vercel/|api/|favicon.ico|.*\\.).*)",
-  ],
+  matcher: ["/((?!_next/|_vercel/|api/|favicon.ico|.*\\.).*)"],
 };

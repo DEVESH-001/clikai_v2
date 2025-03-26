@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button"
 export default function NotFound() {
   return (
     <div className="relative min-h-screen bg-gradient-to-b from-blue-50 via-purple-50 to-indigo-50">
-      <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-soft-light z-0"></div>
+      <div className="absolute inset-0  opacity-10 mix-blend-soft-light z-0"></div>
       <div className="absolute inset-0 bg-gradient-to-t from-blue-100/30 via-purple-100/30 to-indigo-100/30 z-0"></div>
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 text-center">
         <h1 className="text-8xl font-bold text-gray-800 mb-4">404</h1>
