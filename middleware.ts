@@ -1,58 +1,57 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
+import { apiRateLimiter, fileUploadRateLimiter } from "./lib/rate-limits"
 
-// List of valid routes in your application
-const validRoutes = [
-  "/",
-  "/about-us",
-  "/blog",
-  "/contact-us",
-  "/disclaimer",
-  "/privacy-policy",
-  "/products",
-  "/security",
-  "/services",
-  "/terms-and-conditions",
-  "/why-clik-ai",
-]
 
-// List of valid dynamic route patterns
-const validDynamicRoutePatterns = [
-  /^\/blog\/[^/]+$/,
-  /^\/products\/[^/]+$/,
-  /^\/products\/(autouw|clarity360|InvestAssist|SmartExtract)$/,
-  /^\/services\/[^/]+\/[^/]+$/,
-  /^\/services\/(ConsultingTech|Lease&DataAdministration|LoanOrigination)\/[^/]+$/,
-]
+export async function middleware(request: NextRequest) {
+  // Get the pathname and method
+  const path = request.nextUrl.pathname
+  const method = request.method
 
-export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl
-
-  // Skip for API routes, static files, and favicon
-  if (
-    pathname.startsWith("/_next") ||
-    pathname.startsWith("/api") ||
-    pathname.includes(".") ||
-    pathname === "/favicon.ico"
-  ) {
-    return NextResponse.next()
+  // Only process GET requests for non-API routes
+  if (!path.startsWith("/api/") && method !== "GET") {
+    // Return 404 for POST/PUT/DELETE requests to non-API routes
+    return new NextResponse(null, { status: 404 })
   }
 
-  // Check if the route is valid
-  const isValidRoute = validRoutes.some((route) => pathname === route || pathname.startsWith(`${route}/`))
-
-  // Check if the route matches any valid dynamic route pattern
-  const isValidDynamicRoute = validDynamicRoutePatterns.some((pattern) => pattern.test(pathname))
-
-  // If it's not a valid route or dynamic route, redirect to 404
-  if (!isValidRoute && !isValidDynamicRoute) {
-    // Create a URL for the 404 page
-    const notFoundUrl = new URL("/not-found", request.url)
-
-    // Return a NextResponse with the 404 status
-    return NextResponse.rewrite(notFoundUrl)
+  // Apply different rate limits based on the path
+  if (path.startsWith("/api/send-email")) {
+    // Apply stricter rate limiting for file uploads
+    const response = await fileUploadRateLimiter.middleware(request)
+    if (response.status === 429) {
+      return response
+    }
+  } else if (path.startsWith("/api/")) {
+    // Apply standard API rate limiting
+    const response = await apiRateLimiter.middleware(request)
+    if (response.status === 429) {
+      return response
+    }
   }
 
-  return NextResponse.next()
+  // Add security headers
+  const requestHeaders = new Headers(request.headers)
+  const response = NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  })
+
+  // Add additional security headers
+  response.headers.set("X-XSS-Protection", "1; mode=block")
+  response.headers.set("X-Frame-Options", "SAMEORIGIN")
+  response.headers.set("X-Content-Type-Options", "nosniff")
+  response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin")
+
+  return response
+}
+
+export const config = {
+  matcher: [
+    // Apply to all API routes
+    "/api/:path*",
+    // Apply to all routes except static assets
+    "/((?!_next/static|_next/image|favicon.ico).*)",
+  ],
 }
 
