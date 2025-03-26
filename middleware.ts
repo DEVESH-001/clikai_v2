@@ -64,7 +64,7 @@ export function middleware(request: NextRequest) {
     url.searchParams.set("_method", "GET")
 
     // Redirect to the same URL but force a GET request
-    return NextResponse.redirect(new URL('/', request.url))
+    return NextResponse.redirect(url)
   }
 
   // Continue with the request normally
