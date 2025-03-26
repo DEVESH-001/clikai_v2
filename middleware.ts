@@ -1,57 +1,56 @@
-import { NextResponse } from "next/server";
-import type { NextRequest } from "next/server";
-import { apiRateLimiter, fileUploadRateLimiter } from "./lib/rate-limits";
+import { NextResponse } from "next/server"
+import type { NextRequest } from "next/server"
+import { apiRateLimiter, fileUploadRateLimiter } from "./lib/rate-limit"
 
 export async function middleware(request: NextRequest) {
   // Get the pathname and method
-  const path = request.nextUrl.pathname;
-  const method = request.method;
+  const path = request.nextUrl.pathname
+  const method = request.method
 
-  // Handle 405 Method Not Allowed
-  // if (method !== "GET" && !path.startsWith("/api/")) {
-  //   return new NextResponse("Method Not Allowed", {
-  //     status: 405,
-  //     headers: {
-  //       Allow: "GET",
-  //       "Content-Type": "text/plain",
-  //     },
-  //   });
-  // }
+  // Only process GET requests for non-API routes
+  if (!path.startsWith("/api/") && method !== "GET") {
+    // Return 404 for POST/PUT/DELETE requests to non-API routes
+    return new NextResponse(null, { status: 404 })
+  }
 
-  // Apply rate limiting only for API routes
-  if (path.startsWith("/api/")) {
-    if (path.startsWith("/api/send-email")) {
-      const response = await fileUploadRateLimiter.middleware(request);
-      if (response.status === 429) {
-        return response;
-      }
-    } else {
-      const response = await apiRateLimiter.middleware(request);
-      if (response.status === 429) {
-        return response;
-      }
+  // Apply different rate limits based on the path
+  if (path.startsWith("/api/send-email")) {
+    // Apply stricter rate limiting for file uploads
+    const response = await fileUploadRateLimiter.middleware(request)
+    if (response.status === 429) {
+      return response
+    }
+  } else if (path.startsWith("/api/")) {
+    // Apply standard API rate limiting
+    const response = await apiRateLimiter.middleware(request)
+    if (response.status === 429) {
+      return response
     }
   }
 
   // Add security headers
-  const response = NextResponse.next();
+  const requestHeaders = new Headers(request.headers)
+  const response = NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  })
 
-  response.headers.set("X-XSS-Protection", "1; mode=block");
-  response.headers.set("X-Frame-Options", "SAMEORIGIN");
-  response.headers.set("X-Content-Type-Options", "nosniff");
-  // Add CORS headers
-  response.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  response.headers.set("Access-Control-Allow-Headers", "Content-Type");
+  // Add additional security headers
+  response.headers.set("X-XSS-Protection", "1; mode=block")
+  response.headers.set("X-Frame-Options", "SAMEORIGIN")
+  response.headers.set("X-Content-Type-Options", "nosniff")
+  response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin")
 
-  return response;
+  return response
 }
 
 export const config = {
   matcher: [
-    // Match all request paths except for the ones starting with:
-    // - _next/static (static files)
-    // - _next/image (image optimization files)
-    // - favicon.ico (favicon file)
+    // Apply to all API routes
+    "/api/:path*",
+    // Apply to all routes except static assets
     "/((?!_next/static|_next/image|favicon.ico).*)",
   ],
-};
+}
+
