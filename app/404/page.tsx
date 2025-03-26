@@ -1,6 +1,12 @@
 import Link from "next/link"
+import type { Metadata } from "next"
 
-export default function NotFound() {
+export const metadata: Metadata = {
+  title: "Page Not Found | Clik.ai",
+  description: "The page you are looking for could not be found.",
+}
+
+export default function NotFoundPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-white px-4">
       <h1 className="text-6xl font-bold text-gray-800 mb-4">404</h1>

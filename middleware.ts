@@ -1,37 +1,23 @@
 import { NextResponse } from "next/server"
 import type { NextRequest } from "next/server"
-import { apiRateLimiter, fileUploadRateLimiter } from "./lib/rate-limits"
 
-
-export async function middleware(request: NextRequest) {
+export function middleware(request: NextRequest) {
   // Get the pathname and method
   const path = request.nextUrl.pathname
+  const method = request.method
 
-
-  // Apply different rate limits based on the path
-  if (path.startsWith("/api/send-email")) {
-    // Apply stricter rate limiting for file uploads
-    const response = await fileUploadRateLimiter.middleware(request)
-    if (response.status === 429) {
-      return response
-    }
-  } else if (path.startsWith("/api/")) {
-    // Apply standard API rate limiting
-    const response = await apiRateLimiter.middleware(request)
-    if (response.status === 429) {
-      return response
+  // Only handle non-API routes
+  if (!path.startsWith("/api/")) {
+    // For POST/PUT/DELETE requests to non-API routes, redirect to 404
+    if (method !== "GET" && method !== "HEAD") {
+      // Create a new URL for the not-found page
+      const notFoundUrl = new URL("/404", request.url)
+      return NextResponse.redirect(notFoundUrl)
     }
   }
 
-  // Add security headers
-  const requestHeaders = new Headers(request.headers)
-  const response = NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  })
-
-  // Add additional security headers
+  // For all other requests, add security headers
+  const response = NextResponse.next()
   response.headers.set("X-XSS-Protection", "1; mode=block")
   response.headers.set("X-Frame-Options", "SAMEORIGIN")
   response.headers.set("X-Content-Type-Options", "nosniff")
@@ -42,10 +28,8 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Apply to all API routes
-    "/api/:path*",
-    // Apply to all routes except static assets
-    "/((?!_next/static|_next/image|favicon.ico).*)",
+    // Apply to all routes except static assets and API routes
+    "/((?!_next/static|_next/image|favicon.ico|api/).*)",
   ],
 }
 

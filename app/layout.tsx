@@ -1,20 +1,18 @@
-import type React from "react";
-import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import "./globals.css";
-import { Navbar } from "@/components/sections/10_Navbar";
-import { Footer } from "@/components/sections/9_Footer";
-import { Scripts } from "@/components/Scripts";
-import { CookieConsentProvider } from "@/components/cookies/CookieConsentProvider";
-import ChatBot from "@/components/chatbot/Chatbot";
-import OrganizationSchema from "@/components/schema/OrginazationSchema";
-import WebsiteSchema from "@/components/schema/WebsiteSchema";
+import type React from "react"
+import type { Metadata } from "next"
+import { GeistSans } from "geist/font/sans"
+import "./globals.css"
+import { Navbar } from "@/components/sections/10_Navbar"
+import { Footer } from "@/components/sections/9_Footer"
+import { Scripts } from "@/components/Scripts"
+import { CookieConsentProvider } from "@/components/cookies/CookieConsentProvider"
+import ChatBot from "@/components/chatbot/Chatbot"
+import OrganizationSchema from "@/components/schema/OrginazationSchema"
+import WebsiteSchema from "@/components/schema/WebsiteSchema"
 
 //Metadata
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_APP_URL || "http://clikai-v2.vercel.app/"
-  ),
+  metadataBase: new URL("https://clik.ai"),
   title: {
     default: "Clik.ai - AI-Powered Commercial Real Estate Solutions",
     template: "%s | Clik.ai",
@@ -22,7 +20,7 @@ export const metadata: Metadata = {
   description:
     "Clik.ai provides AI-powered solutions for commercial real estate, including lease abstraction, underwriting, and portfolio management.",
   keywords: [
-    "Commercial Real Estate", 
+    "Commercial Real Estate",
     "AI",
     "Machine Learning",
     "Lease Abstraction",
@@ -37,20 +35,29 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-};
+  twitter: {
+    card: "summary_large_image",
+    title: "Clik.ai - AI-Powered Commercial Real Estate Solutions",
+    description:
+      "Clik.ai provides AI-powered solutions for commercial real estate, including lease abstraction, underwriting, and portfolio management.",
+    images: ["https://clik.ai/opengraph/Clikai.png"],
+  },
+}
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <html lang="en">
       <head>
+        <meta name="robots" content="index, follow" />
+        <meta name="googlebot" content="index, follow" />
         <OrganizationSchema />
         <WebsiteSchema />
       </head>
-      {/* <Mixpanel> */}
+
       <body className={GeistSans.className}>
         <CookieConsentProvider>
           <Scripts />
@@ -60,7 +67,7 @@ export default function RootLayout({
           <Footer />
         </CookieConsentProvider>
       </body>
-      {/* </Mixpanel> */}
     </html>
-  );
+  )
 }
+
