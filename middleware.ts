@@ -6,13 +6,7 @@ import { apiRateLimiter, fileUploadRateLimiter } from "./lib/rate-limits"
 export async function middleware(request: NextRequest) {
   // Get the pathname and method
   const path = request.nextUrl.pathname
-  const method = request.method
 
-  // Only process GET requests for non-API routes
-  if (!path.startsWith("/api/") && method !== "GET") {
-    // Return 404 for POST/PUT/DELETE requests to non-API routes
-    return new NextResponse(null, { status: 404 })
-  }
 
   // Apply different rate limits based on the path
   if (path.startsWith("/api/send-email")) {
