@@ -8,15 +8,15 @@ export async function middleware(request: NextRequest) {
   const method = request.method;
 
   // Handle 405 Method Not Allowed
-  if (method !== "GET" && !path.startsWith("/api/")) {
-    return new NextResponse("Method Not Allowed", {
-      status: 405,
-      headers: {
-        Allow: "GET",
-        "Content-Type": "text/plain",
-      },
-    });
-  }
+  // if (method !== "GET" && !path.startsWith("/api/")) {
+  //   return new NextResponse("Method Not Allowed", {
+  //     status: 405,
+  //     headers: {
+  //       Allow: "GET",
+  //       "Content-Type": "text/plain",
+  //     },
+  //   });
+  // }
 
   // Apply rate limiting only for API routes
   if (path.startsWith("/api/")) {
