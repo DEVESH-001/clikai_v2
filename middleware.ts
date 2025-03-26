@@ -11,8 +11,8 @@ export function middleware(request: NextRequest) {
 
     if (method !== "GET" && method !== "HEAD") {
 
-      //const notFoundUrl = new URL("/404", request.url)
-      return NextResponse.redirect('/')
+      const notFoundUrl = new URL("/404", request.url)
+      return NextResponse.redirect(notFoundUrl)
     }
   }
 
