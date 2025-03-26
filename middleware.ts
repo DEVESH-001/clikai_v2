@@ -1,32 +1,48 @@
-import { NextRequest, NextResponse } from "next/server";
-import { apiRateLimiter, fileUploadRateLimiter } from "./lib/rate-limits";
+import { fileUploadRateLimiter, apiRateLimiter } from './lib/rate-limits';
+import { NextResponse } from "next/server"
+import type { NextRequest } from "next/server"
 
 export async function middleware(request: NextRequest) {
-  const path = request.nextUrl.pathname;
+  console.log('Middleware triggered for path:', request.nextUrl.pathname);
 
-  // If it's a non-existent page, let Next.js handle the 404 normally
-  if (!path.startsWith("/api") && !path.startsWith("/dashboard")) {
-    return NextResponse.next(); // Do nothing, let Next.js handle it
+  try {
+    const path = request.nextUrl.pathname
+    
+    if (path.startsWith("/api/send-email")) {
+      const response = await fileUploadRateLimiter.middleware(request)
+      if (response.status === 429) {
+        console.log('Rate limit exceeded for file upload');
+        return response
+      }
+    } else if (path.startsWith("/api/")) {
+      const response = await apiRateLimiter.middleware(request)
+      if (response.status === 429) {
+        console.log('Rate limit exceeded for API');
+        return response
+      }
+    }
+
+    const requestHeaders = new Headers(request.headers)
+    const response = NextResponse.next({
+      request: {
+        headers: requestHeaders,
+      },
+    })
+
+    response.headers.set("X-XSS-Protection", "1; mode=block")
+    response.headers.set("X-Frame-Options", "SAMEORIGIN")
+    response.headers.set("X-Content-Type-Options", "nosniff")
+    
+    return response
+  } catch (error) {
+    console.error('Middleware error:', error);
+    return NextResponse.error();
   }
-
-  // Apply rate limits only to API routes
-  if (path.startsWith("/api/send-email")) {
-    const response = await fileUploadRateLimiter.middleware(request);
-    if (response.status === 429) return response;
-  } else if (path.startsWith("/api/")) {
-    const response = await apiRateLimiter.middleware(request);
-    if (response.status === 429) return response;
-  }
-
-  // Add security headers
-  const response = NextResponse.next();
-  response.headers.set("X-XSS-Protection", "1; mode=block");
-  response.headers.set("X-Frame-Options", "SAMEORIGIN");
-  response.headers.set("X-Content-Type-Options", "nosniff");
-
-  return response;
 }
 
 export const config = {
-  matcher: ["/api/:path*"], // Apply only to API routes, not all pages
-};
+  matcher: [
+    "/api/:path*",
+    "/((?!_next/static|_next/image|favicon.ico).*)",
+  ],
+}
