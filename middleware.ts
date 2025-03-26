@@ -10,9 +10,9 @@ export function middleware(request: NextRequest) {
   if (!path.startsWith("/api/")) {
 
     if (method !== "GET" && method !== "HEAD") {
-      // Create a new URL for the not-found page
-      const notFoundUrl = new URL("/404", request.url)
-      return NextResponse.redirect(notFoundUrl)
+
+      //const notFoundUrl = new URL("/404", request.url)
+      return NextResponse.redirect('/')
     }
   }
 
