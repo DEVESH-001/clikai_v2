@@ -77,7 +77,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/lenders-banks",
+        source: "/lenders-banks.html",
         destination: "/pages/products/autouw",
         permanent: true,
       },
