@@ -169,7 +169,7 @@ const nextConfig = {
         permanent: true,
       },
       {
-        source: "/automated-underwriting",
+        source: "/automated-underwriting.html",
         destination: "/pages/products/autouw",
         permanent: true,
       },
