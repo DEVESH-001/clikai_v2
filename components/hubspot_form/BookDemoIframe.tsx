@@ -1,40 +1,50 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { Loader2 } from "lucide-react"
+import { useState, useEffect } from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
+import { Loader2 } from "lucide-react";
 
 interface BookDemoModalProps {
-  isOpen: boolean
-  onClose: () => void
+  isOpen: boolean;
+  onClose: () => void;
 }
 
 export function BookDemoIframeModal({ isOpen, onClose }: BookDemoModalProps) {
-  const [open, setOpen] = useState(isOpen)
-  const [isLoading, setIsLoading] = useState(true)
-  // Direct link to the HubSpot form
-  const formUrl = "https://share.hsforms.com/2d2eqnS8QRfiGXBPqcmP9Xg2mcb1"
+  const [open, setOpen] = useState(isOpen);
+  const [isLoading, setIsLoading] = useState(true);
+  // Direct link to the HubSpot
+   const formUrl = "https://share.hsforms.com/2ywauGhyDTl-of14Nk8dU_w2mcb1";
+  
 
-  useEffect(() => {
-    setOpen(isOpen)
-  }, [isOpen])
+  https: useEffect(() => {
+    setOpen(isOpen);
+  }, [isOpen]);
 
   const handleOpenChange = (open: boolean) => {
-    setOpen(open)
-    if (!open) onClose()
-  }
+    setOpen(open);
+    if (!open) onClose();
+  };
 
   const handleIframeLoad = () => {
-    setIsLoading(false)
-  }
+    setIsLoading(false);
+  };
 
   return (
     <Dialog open={open} onOpenChange={handleOpenChange}>
       <DialogContent className="sm:max-w-[600px] md:max-w-[700px] lg:max-w-[800px] w-[92vw] max-h-[85vh] h-auto overflow-y-auto p-3 sm:p-4 md:p-6 mt-16 sm:mt-10 md:mt-6 rounded-xl">
         <DialogHeader className="pb-2 sm:pb-3">
-          <DialogTitle className="text-xl sm:text-2xl font-bold text-center">Secure Your Spot</DialogTitle>
+          <DialogTitle className="text-xl sm:text-2xl font-bold text-center">
+            Secure Your Spot
+          </DialogTitle>
           <DialogDescription className="text-center text-sm sm:text-base">
-            Fill in your details and select a convenient time for your personalized demo.
+            Fill in your details and select a convenient time for your
+            personalized demo.
           </DialogDescription>
         </DialogHeader>
 
@@ -67,6 +77,5 @@ export function BookDemoIframeModal({ isOpen, onClose }: BookDemoModalProps) {
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
-

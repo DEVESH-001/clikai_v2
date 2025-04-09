@@ -85,11 +85,6 @@ export default function ChatBot() {
     document.addEventListener("mouseup", stopDrag);
   };
 
-  const formatResponse = (text: string) => {
-    // Example: Convert newlines to <br> for HTML rendering
-    return text.replace(/\n/g, "<br>");
-  };
-
   return (
     <div className="fixed bottom-4 right-4 z-50">
       {!isOpen ? (
@@ -169,10 +164,9 @@ export default function ChatBot() {
                         fontFamily: "Arial, sans-serif",
                         fontSize: "14px",
                       }}
-                      dangerouslySetInnerHTML={{
-                        __html: formatResponse(msg.text),
-                      }}
-                    />
+                    >
+                      {msg.text}
+                    </div>
                   </div>
                 ))}
                 {isLoading && (
@@ -214,4 +208,3 @@ export default function ChatBot() {
     </div>
   );
 }
-

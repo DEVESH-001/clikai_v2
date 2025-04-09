@@ -1,42 +1,46 @@
 //used in Schedule a Consultation
 
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
-import HubspotMeetings from "./HubspotMeeting"
+import { useEffect, useState } from "react";
+import { X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import HubspotMeetings from "./HubspotMeeting";
 
 interface MeetingsModalProps {
-  isOpen: boolean
-  onClose: () => void
-  meetingUrl: string
+  isOpen: boolean;
+  onClose: () => void;
+  meetingUrl: string;
 }
 
-export default function MeetingsModal({ isOpen, onClose, meetingUrl }: MeetingsModalProps) {
-  const [isMounted, setIsMounted] = useState(false)
+export default function MeetingsModal({
+  isOpen,
+  onClose,
+  meetingUrl,
+}: MeetingsModalProps) {
+  const [isMounted, setIsMounted] = useState(false);
 
   // Handle escape key press
   useEffect(() => {
-    setIsMounted(true)
+    setIsMounted(true);
 
     const handleEscape = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose()
-    }
+      if (e.key === "Escape") onClose();
+    };
 
     if (isOpen) {
-      document.addEventListener("keydown", handleEscape)
+      document.addEventListener("keydown", handleEscape);
       // Prevent scrolling when modal is open
-      document.body.style.overflow = "hidden"
+      document.body.style.overflow = "hidden";
     }
 
     return () => {
-      document.removeEventListener("keydown", handleEscape)
-      document.body.style.overflow = "auto"
-    }
-  }, [isOpen, onClose])
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "auto";
+    };
+  }, [isOpen, onClose]);
 
-  if (!isMounted) return null
+  if (!isMounted) return null;
 
   return (
     <AnimatePresence>
@@ -65,7 +69,9 @@ export default function MeetingsModal({ isOpen, onClose, meetingUrl }: MeetingsM
             </button>
 
             <div className="p-6 pt-10">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Schedule a Consultation</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                Schedule a Consultation
+              </h2>
               <div className="h-[600px]">
                 <HubspotMeetings url={meetingUrl} className="w-full h-full" />
               </div>
@@ -74,5 +80,5 @@ export default function MeetingsModal({ isOpen, onClose, meetingUrl }: MeetingsM
         </motion.div>
       )}
     </AnimatePresence>
-  )
+  );
 }

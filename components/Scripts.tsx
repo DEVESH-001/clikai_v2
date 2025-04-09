@@ -24,17 +24,16 @@ export function Scripts() {
     loadPreferences();
   }, []);
 
-  if (!cookiePreferences.analytics && !cookiePreferences.marketing) {
+  if (!cookiePreferences?.analytics && !cookiePreferences?.marketing) {
     return null;
   }
 
   return (
     <>
       {/* Base Styles */}
-      <style
-        dangerouslySetInnerHTML={{
-          __html: `
-            .w-dropdown-list {
+      <style>
+        {`
+           .w-dropdown-list {
               box-shadow: 0 50px 100px rgba(50,50,93,.1), 0 15px 35px rgba(50,50,93,.15), 0 5px 15px rgba(0,0,0,.1);
               transition: all 0.3s, opacity 0.1s, transform 0.2s;
             }
@@ -46,11 +45,9 @@ export function Scripts() {
                 box-shadow: none;
               }
             }
-          `,
-        }}
-      />
-
-      {cookiePreferences.analytics && (
+          `}
+      </style>
+      {cookiePreferences?.analytics && (
         <>
           {/* Google Analytics */}
           <Script
@@ -140,10 +137,6 @@ export function Scripts() {
           ></div>
         </>
       )}
-
-{/* Parag Book Demo For Pricing Plans */}
-
-
 
       {/* No-Script Fallbacks */}
       <noscript>

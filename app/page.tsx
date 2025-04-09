@@ -8,6 +8,7 @@ import { ServicesSection } from "@/components/sections/6_ServiceSection"
 import { TestimonialsSection } from "@/components/sections/7_Testimonials"
 import { FAQSection } from "@/components/sections/8_FaqSection"
 import HomePageSchema from "@/components/schema/HomePageSchema"; 
+
 export const metadata: Metadata = {
   title: "AI-Powered Commercial Real Estate Solutions",
   description:
@@ -50,6 +51,7 @@ export default function Home() {
         <ServicesSection />
         <TestimonialsSection />
         <FAQSection />
+
       </div>
     </div>
   )

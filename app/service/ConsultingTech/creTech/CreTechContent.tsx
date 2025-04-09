@@ -499,7 +499,7 @@ export default function CRETechnologyConsultingPage() {
         </div>
       </section>
       {/* Meetings Modal */}
-      <MeetingsModal
+      <MeetingsModal 
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
         meetingUrl="https://meetings.hubspot.com/prerit/demo-meeting"
