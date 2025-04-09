@@ -71,7 +71,7 @@ export default function ThankYouContent() {
                         3. Solution
                       </div>
                       <p className="text-gray-600">
-                        We'll work together to find the perfect solution for
+                        We&apos;ll work together to find the perfect solution for
                         your needs.
                       </p>
                     </div>
